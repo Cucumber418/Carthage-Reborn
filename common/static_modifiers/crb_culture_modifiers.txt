@@ -1,0 +1,26 @@
+﻿# 每个文化都必须有这六个技术性修正，否则游戏会报错
+
+crb_punic_standard_of_living_modifier_positive = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+	state_crb_punic_standard_of_living_add = 1
+}
+crb_punic_standard_of_living_modifier_negative = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+	state_crb_punic_standard_of_living_add = 1
+}
+crb_punic_cultural_acceptance_modifier_positive = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+	country_crb_punic_cultural_acceptance_add = 1
+}
+crb_punic_cultural_acceptance_modifier_negative = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+	country_crb_punic_cultural_acceptance_add = 1
+}
+crb_punic_fervor_target_modifier_positive = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+	country_fervor_target_crb_punic_add = 1
+}
+crb_punic_fervor_target_modifier_negative = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+	country_fervor_target_crb_punic_add = 1
+}

@@ -1,0 +1,17 @@
+﻿# 文化遗产：腓尼基
+heritage_crb_phoenician = {
+	type = heritage
+	trait_group = heritage_group_crb_phoenician
+}
+
+# 语言：布匿语
+language_crb_punic = {
+	type = language
+	trait_group = language_group_crb_canaanite
+}
+
+# 宗教遗产：迦南多神信仰
+heritage_crb_canaanite_pantheon = {
+	type = heritage
+	trait_group = heritage_group_crb_canaanite_religion
+}

@@ -1,0 +1,33 @@
+﻿# 布匿文化
+# 人名都用 crb_name_ 前缀，避免和本体同名的本地化 key 冲突
+
+crb_punic = {
+	color = rgb{ 112 38 102 }
+	religion = crb_tanit
+	heritage = heritage_crb_phoenician
+	language = language_crb_punic
+	traditions = { }
+
+	male_common_first_names = {
+		crb_name_Hanno crb_name_Hamilcar crb_name_Hasdrubal crb_name_Hannibal crb_name_Mago
+		crb_name_Himilco crb_name_Bomilcar crb_name_Gisco crb_name_Adherbal crb_name_Carthalo
+		crb_name_Maharbal crb_name_Bostar crb_name_Hiram crb_name_Abibaal crb_name_Eshmunazar
+		crb_name_Abdmelqart crb_name_Baalyaton crb_name_Bodashtart crb_name_Azmelqart crb_name_Hanniba_al
+	}
+	female_common_first_names = {
+		crb_name_Sophonisba crb_name_Elissa crb_name_Arishat crb_name_Imilce crb_name_Batbaal
+		crb_name_Amotmelqart crb_name_Tanitbaal crb_name_Ummashtart
+	}
+	common_last_names = {
+		crb_name_Gisco crb_name_Bomilcar crb_name_Adherbal crb_name_Himilco crb_name_Bodmelqart
+		crb_name_Abdeshmun crb_name_Sapho crb_name_Carthalo
+	}
+	noble_last_names = {
+		crb_name_Barca crb_name_Magonid crb_name_Hannonid crb_name_Gisconid
+	}
+
+	ethnicities = {
+		1 = arab
+	}
+	graphics = arabic
+}

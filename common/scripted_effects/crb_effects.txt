@@ -1,0 +1,109 @@
+﻿# ============================================================
+# 开局人口转换
+# 作用域：国家（布匿）
+# 首都地区 60% 的人口转为布匿文化，其余地区 20%
+# 转为布匿文化的人口改信塔尼特多神教
+# ============================================================
+crb_convert_starting_pops_effect = {
+	every_scope_state = {
+		if = {
+			limit = { is_capital = yes }
+			every_scope_pop = {
+				limit = { NOT = { has_pop_culture = crb_punic } }
+				change_pop_culture = { target = cu:crb_punic value = 0.6 }
+			}
+		}
+		else = {
+			every_scope_pop = {
+				limit = { NOT = { has_pop_culture = crb_punic } }
+				change_pop_culture = { target = cu:crb_punic value = 0.2 }
+			}
+		}
+	}
+	every_scope_state = {
+		every_scope_pop = {
+			limit = {
+				has_pop_culture = crb_punic
+				NOT = { has_pop_religion = crb_tanit }
+			}
+			change_pop_religion = { target = rel:crb_tanit value = 1 }
+		}
+	}
+}
+
+# ============================================================
+# 利益集团改名
+# 作用域：国家（布匿）
+# 开局执行一次，之后每月检查一次
+#   田主 / 船主：未受认可时使用，受认可后变回地主 / 实业家
+#   奉神者：塔尼特多神教为国教时使用
+#   书记：一直使用
+# 用变量记录当前状态，只在状态变化时改名
+# ============================================================
+crb_update_ig_names_effect = {
+	# 田主、船主
+	if = {
+		limit = {
+			is_country_type = unrecognized
+			NOT = { has_variable = crb_punic_ig_names }
+		}
+		set_variable = crb_punic_ig_names
+		every_interest_group = {
+			limit = { is_interest_group_type = ig_landowners }
+			set_interest_group_name = crb_ig_baal_hasadeh
+		}
+		every_interest_group = {
+			limit = { is_interest_group_type = ig_industrialists }
+			set_interest_group_name = crb_ig_baal_oniyah
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = { is_country_type = unrecognized }
+			has_variable = crb_punic_ig_names
+		}
+		remove_variable = crb_punic_ig_names
+		every_interest_group = {
+			limit = { is_interest_group_type = ig_landowners }
+			set_interest_group_name = ig_landowners
+		}
+		every_interest_group = {
+			limit = { is_interest_group_type = ig_industrialists }
+			set_interest_group_name = ig_industrialists
+		}
+	}
+
+	# 奉神者
+	if = {
+		limit = {
+			has_state_religion = rel:crb_tanit
+			NOT = { has_variable = crb_votaries_name }
+		}
+		set_variable = crb_votaries_name
+		every_interest_group = {
+			limit = { is_interest_group_type = ig_devout }
+			set_interest_group_name = crb_ig_votaries
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = { has_state_religion = rel:crb_tanit }
+			has_variable = crb_votaries_name
+		}
+		remove_variable = crb_votaries_name
+		every_interest_group = {
+			limit = { is_interest_group_type = ig_devout }
+			set_interest_group_name = ig_devout
+		}
+	}
+
+	# 书记
+	if = {
+		limit = { NOT = { has_variable = crb_soperim_name } }
+		set_variable = crb_soperim_name
+		every_interest_group = {
+			limit = { is_interest_group_type = ig_intelligentsia }
+			set_interest_group_name = crb_ig_soperim
+		}
+	}
+}

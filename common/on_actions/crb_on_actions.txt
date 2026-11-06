@@ -1,0 +1,34 @@
+﻿# 挂到本体的 on_action 上（同名 on_action 的 on_actions 列表会合并，不会覆盖本体）
+
+on_game_started = {
+	on_actions = {
+		crb_on_game_started
+	}
+}
+
+on_monthly_pulse_country = {
+	on_actions = {
+		crb_monthly_pulse_country
+	}
+}
+
+# 开局：人口转换 + 利益集团改名
+crb_on_game_started = {
+	effect = {
+		c:TUN ?= {
+			crb_convert_starting_pops_effect = yes
+			crb_update_ig_names_effect = yes
+		}
+	}
+}
+
+# 每月：检查利益集团名称是否需要切换（受认可、国教变化）
+crb_monthly_pulse_country = {
+	trigger = {
+		exists = c:TUN
+		this = c:TUN
+	}
+	effect = {
+		crb_update_ig_names_effect = yes
+	}
+}

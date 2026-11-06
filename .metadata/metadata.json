@@ -1,0 +1,12 @@
+{
+  "name" : "迦太基重生 Carthage Reborn",
+  "id" : "com.github.cucumber418.carthage-reborn",
+  "version" : "0.1.0",
+  "supported_game_version" : "1.15.*",
+  "short_description" : "布匿重生，迦太基再临。",
+  "tags" : [ "Historical", "Gameplay" ],
+  "relationships" : [ ],
+  "game_custom_data" : {
+    "multiplayer_synchronized" : true
+  }
+}

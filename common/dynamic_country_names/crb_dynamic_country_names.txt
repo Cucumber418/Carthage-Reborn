@@ -1,0 +1,31 @@
+﻿# 未受认可时使用默认国名"布匿"（本地化 key：TUN）
+# 受认可后改称"迦太基"
+# priority 设得较高，保证覆盖本体可能存在的突尼斯动态国名
+
+TUN = {
+	dynamic_country_name = {
+		name = crb_carthage
+		adjective = crb_carthage_adj
+		is_main_tag_only = yes
+		priority = 50
+
+		trigger = {
+			scope:actor ?= {
+				NOT = { is_country_type = unrecognized }
+			}
+		}
+	}
+
+	dynamic_country_name = {
+		name = TUN
+		adjective = TUN_ADJ
+		is_main_tag_only = yes
+		priority = 49
+
+		trigger = {
+			scope:actor ?= {
+				is_country_type = unrecognized
+			}
+		}
+	}
+}

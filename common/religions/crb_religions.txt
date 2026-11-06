@@ -1,0 +1,7 @@
+﻿# 塔尼特多神教
+# 图标暂时借用本体图标，之后可以换成自制的塔尼特符号
+crb_tanit = {
+	icon = "gfx/interface/icons/religion_icons/animist.dds"
+	heritage = heritage_crb_canaanite_pantheon
+	color = { 0.44 0.15 0.40 }
+}

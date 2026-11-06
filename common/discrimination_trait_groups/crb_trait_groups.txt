@@ -1,0 +1,13 @@
+﻿# 文化组
+heritage_group_crb_phoenician = {
+	type = heritage
+}
+
+language_group_crb_canaanite = {
+	type = language
+}
+
+# 宗教组
+heritage_group_crb_canaanite_religion = {
+	type = heritage
+}

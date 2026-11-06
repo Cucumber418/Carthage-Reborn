@@ -1,0 +1,10 @@
+﻿# 迦太基重生：用布匿替换本体的突尼斯（TUN）
+# 保留 TUN 这个代码，这样本体里所有引用突尼斯的外交、地区和事件都能继续正常工作
+
+REPLACE:TUN = {
+	color = rgb{ 112 38 102 }	# 推罗紫
+	country_type = unrecognized
+	tier = kingdom
+	cultures = { crb_punic }
+	capital = STATE_TUNISIA
+}

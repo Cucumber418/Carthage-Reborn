@@ -1,0 +1,41 @@
+﻿# 与本体同名，整体覆盖本体突尼斯的开局人物（原本的贝伊家族不再出现）
+
+CHARACTERS = {
+	c:TUN ?= {
+		# 国家元首：保守主战派元老，暂时掌控政权
+		create_character = {
+			first_name = crb_name_Hamilcar
+			last_name = crb_name_Gisconid
+			noble = yes
+			ruler = yes
+			age = 61
+			interest_group = ig_landowners
+			ideology = ideology_jingoist_leader
+			historical = yes
+		}
+
+		# 田主领袖：汉诺派元老
+		create_character = {
+			first_name = crb_name_Hanno
+			last_name = crb_name_Hannonid
+			noble = yes
+			ig_leader = yes
+			age = 56
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			historical = yes
+		}
+
+		# 军队领袖：巴卡家族的年轻将领
+		create_character = {
+			first_name = crb_name_Hasdrubal
+			last_name = crb_name_Barca
+			noble = yes
+			ig_leader = yes
+			age = 34
+			interest_group = ig_armed_forces
+			ideology = ideology_jingoist_leader
+			historical = yes
+		}
+	}
+}
