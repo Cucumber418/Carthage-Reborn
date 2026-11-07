@@ -640,7 +640,7 @@ crb_create_puppet_TRP_effect = {
 		}
 		create_diplomatic_pact = {
 			country = c:TRP
-			type = puppet
+			type = crb_trading_post
 		}
 	}
 }
@@ -690,7 +690,7 @@ crb_create_puppet_NUM_effect = {
 		}
 		create_diplomatic_pact = {
 			country = c:NUM
-			type = puppet
+			type = crb_trading_post
 		}
 	}
 }
@@ -761,7 +761,7 @@ crb_create_puppet_IBT_effect = {
 		}
 		create_diplomatic_pact = {
 			country = c:IBT
-			type = puppet
+			type = crb_trading_post
 		}
 	}
 }
@@ -828,7 +828,7 @@ crb_create_puppet_GLT_effect = {
 		}
 		create_diplomatic_pact = {
 			country = c:GLT
-			type = puppet
+			type = crb_trading_post
 		}
 	}
 }
@@ -872,7 +872,7 @@ crb_create_puppet_SNT_effect = {
 		}
 		create_diplomatic_pact = {
 			country = c:SNT
-			type = puppet
+			type = crb_trading_post
 		}
 	}
 }
@@ -916,7 +916,7 @@ crb_create_puppet_IOP_effect = {
 		}
 		create_diplomatic_pact = {
 			country = c:IOP
-			type = puppet
+			type = crb_trading_post
 		}
 	}
 }
@@ -1103,4 +1103,317 @@ crb_create_puppet_RPR_with_tooltip_effect = {
 	hidden_effect = {
 		crb_create_puppet_RPR_effect = yes
 	}
+}
+
+# ============================================================
+# 重走罗马路：建立行省（而不是商站）
+# 同一个国家代码，带上 crb_province 变量后改用行省的国名、旗帜和法律
+# ============================================================
+
+# 建立行省 TRP（作用域：迦太基）
+crb_create_province_TRP_effect = {
+	random_scope_state = {
+		limit = {
+			is_capital = no
+			OR = {
+				state_region = s:STATE_TRIPOLI
+				state_region = s:STATE_LIBYA
+				state_region = s:STATE_LIBYAN_DESERT
+			}
+		}
+		save_scope_as = crb_puppet_first_state
+	}
+	if = {
+		limit = { exists = scope:crb_puppet_first_state }
+		create_country = {
+			tag = TRP
+			origin = root
+			state = scope:crb_puppet_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
+				set_variable = crb_province
+				crb_province_laws_effect = yes
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				OR = {
+					state_region = s:STATE_TRIPOLI
+					state_region = s:STATE_LIBYA
+					state_region = s:STATE_LIBYAN_DESERT
+				}
+			}
+			set_state_owner = c:TRP
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
+		}
+		create_diplomatic_pact = {
+			country = c:TRP
+			type = crb_province
+		}
+	}
+}
+
+crb_create_province_TRP_with_tooltip_effect = {
+	custom_tooltip = crb_create_province_TRP_tt
+	hidden_effect = {
+		crb_create_province_TRP_effect = yes
+	}
+}
+
+# 建立行省 NUM（作用域：迦太基）
+crb_create_province_NUM_effect = {
+	random_scope_state = {
+		limit = {
+			is_capital = no
+			OR = {
+				state_region = s:STATE_ALGIERS
+				state_region = s:STATE_CONSTANTINE
+				state_region = s:STATE_ORAN
+			}
+		}
+		save_scope_as = crb_puppet_first_state
+	}
+	if = {
+		limit = { exists = scope:crb_puppet_first_state }
+		create_country = {
+			tag = NUM
+			origin = root
+			state = scope:crb_puppet_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
+				set_variable = crb_province
+				crb_province_laws_effect = yes
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				OR = {
+					state_region = s:STATE_ALGIERS
+					state_region = s:STATE_CONSTANTINE
+					state_region = s:STATE_ORAN
+				}
+			}
+			set_state_owner = c:NUM
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
+		}
+		create_diplomatic_pact = {
+			country = c:NUM
+			type = crb_province
+		}
+	}
+}
+
+crb_create_province_NUM_with_tooltip_effect = {
+	custom_tooltip = crb_create_province_NUM_tt
+	hidden_effect = {
+		crb_create_province_NUM_effect = yes
+	}
+}
+
+# 建立行省 IBT（作用域：迦太基）
+crb_create_province_IBT_effect = {
+	random_scope_state = {
+		limit = {
+			is_capital = no
+			OR = {
+				state_region = s:STATE_MURCIA
+				state_region = s:STATE_VALENCIA
+				state_region = s:STATE_CATALONIA
+				state_region = s:STATE_ARAGON
+				state_region = s:STATE_LOWER_ANDALUSIA
+				state_region = s:STATE_UPPER_ANDALUSIA
+				state_region = s:STATE_NEW_CASTILE
+				state_region = s:STATE_OLD_CASTILE
+				state_region = s:STATE_LEON
+				state_region = s:STATE_EXTREMADURA
+				state_region = s:STATE_GALICIA
+				state_region = s:STATE_ASTURIAS
+				state_region = s:STATE_BASQUE_COUNTRY
+			}
+		}
+		save_scope_as = crb_puppet_first_state
+	}
+	if = {
+		limit = { exists = scope:crb_puppet_first_state }
+		create_country = {
+			tag = IBT
+			origin = root
+			state = scope:crb_puppet_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
+				set_variable = crb_province
+				crb_province_laws_effect = yes
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				OR = {
+					state_region = s:STATE_MURCIA
+					state_region = s:STATE_VALENCIA
+					state_region = s:STATE_CATALONIA
+					state_region = s:STATE_ARAGON
+					state_region = s:STATE_LOWER_ANDALUSIA
+					state_region = s:STATE_UPPER_ANDALUSIA
+					state_region = s:STATE_NEW_CASTILE
+					state_region = s:STATE_OLD_CASTILE
+					state_region = s:STATE_LEON
+					state_region = s:STATE_EXTREMADURA
+					state_region = s:STATE_GALICIA
+					state_region = s:STATE_ASTURIAS
+					state_region = s:STATE_BASQUE_COUNTRY
+				}
+			}
+			set_state_owner = c:IBT
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
+		}
+		create_diplomatic_pact = {
+			country = c:IBT
+			type = crb_province
+		}
+	}
+}
+
+crb_create_province_IBT_with_tooltip_effect = {
+	custom_tooltip = crb_create_province_IBT_tt
+	hidden_effect = {
+		crb_create_province_IBT_effect = yes
+	}
+}
+
+# 建立行省 GLT（作用域：迦太基）
+crb_create_province_GLT_effect = {
+	random_scope_state = {
+		limit = {
+			is_capital = no
+			crb_is_gaul_post_state_trigger = yes
+		}
+		save_scope_as = crb_puppet_first_state
+	}
+	if = {
+		limit = { exists = scope:crb_puppet_first_state }
+		create_country = {
+			tag = GLT
+			origin = root
+			state = scope:crb_puppet_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
+				set_variable = crb_province
+				crb_province_laws_effect = yes
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				crb_is_gaul_post_state_trigger = yes
+			}
+			set_state_owner = c:GLT
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
+		}
+		create_diplomatic_pact = {
+			country = c:GLT
+			type = crb_province
+		}
+	}
+}
+
+crb_create_province_GLT_with_tooltip_effect = {
+	custom_tooltip = crb_create_province_GLT_tt
+	hidden_effect = {
+		crb_create_province_GLT_effect = yes
+	}
+}
+
+# 建立行省 SNT（作用域：迦太基）
+crb_create_province_SNT_effect = {
+	random_scope_state = {
+		limit = {
+			is_capital = no
+			crb_is_alpine_post_state_trigger = yes
+		}
+		save_scope_as = crb_puppet_first_state
+	}
+	if = {
+		limit = { exists = scope:crb_puppet_first_state }
+		create_country = {
+			tag = SNT
+			origin = root
+			state = scope:crb_puppet_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
+				set_variable = crb_province
+				crb_province_laws_effect = yes
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				crb_is_alpine_post_state_trigger = yes
+			}
+			set_state_owner = c:SNT
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
+		}
+		create_diplomatic_pact = {
+			country = c:SNT
+			type = crb_province
+		}
+	}
+}
+
+crb_create_province_SNT_with_tooltip_effect = {
+	custom_tooltip = crb_create_province_SNT_tt
+	hidden_effect = {
+		crb_create_province_SNT_effect = yes
+	}
+}
+
+# 行省的法律：由迦太基派出的总督治理（作用域：新建的行省）
+crb_province_laws_effect = {
+	activate_law = law_type:law_oligarchy
+	activate_law = law_type:law_appointed_bureaucrats
+	activate_law = law_type:law_secret_police
+	activate_law = law_type:law_mercantilism
+	activate_law = law_type:law_state_religion
 }

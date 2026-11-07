@@ -56,6 +56,14 @@ TRP = {
 		subject_canton = crb_TRP
 		priority = 1
 	}
+	flag_definition = {
+		coa = crb_TRP_province
+		subject_canton = crb_TRP_province
+		priority = 10
+		trigger = {
+			scope:actor ?= { has_variable = crb_province }
+		}
+	}
 }
 
 NUM = {
@@ -63,6 +71,14 @@ NUM = {
 		coa = crb_NUM
 		subject_canton = crb_NUM
 		priority = 1
+	}
+	flag_definition = {
+		coa = crb_NUM_province
+		subject_canton = crb_NUM_province
+		priority = 10
+		trigger = {
+			scope:actor ?= { has_variable = crb_province }
+		}
 	}
 }
 
@@ -72,6 +88,14 @@ IBT = {
 		subject_canton = crb_IBT
 		priority = 1
 	}
+	flag_definition = {
+		coa = crb_IBT_province
+		subject_canton = crb_IBT_province
+		priority = 10
+		trigger = {
+			scope:actor ?= { has_variable = crb_province }
+		}
+	}
 }
 
 GLT = {
@@ -80,6 +104,14 @@ GLT = {
 		subject_canton = crb_GLT
 		priority = 1
 	}
+	flag_definition = {
+		coa = crb_GLT_province
+		subject_canton = crb_GLT_province
+		priority = 10
+		trigger = {
+			scope:actor ?= { has_variable = crb_province }
+		}
+	}
 }
 
 SNT = {
@@ -87,6 +119,14 @@ SNT = {
 		coa = crb_SNT
 		subject_canton = crb_SNT
 		priority = 1
+	}
+	flag_definition = {
+		coa = crb_SNT_province
+		subject_canton = crb_SNT_province
+		priority = 10
+		trigger = {
+			scope:actor ?= { has_variable = crb_province }
+		}
 	}
 }
 

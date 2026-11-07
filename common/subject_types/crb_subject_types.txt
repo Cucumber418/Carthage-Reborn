@@ -1,0 +1,135 @@
+﻿# 迦太基专属的附庸类型
+# 原版傀儡国要求宗主国已受认可、且等级高于附庸；布匿开局未受认可，用原版傀儡国会立即失效（附庸直接独立）
+# 所以单独定义"商站"和"行省"两种附庸类型，格式参照原版 subject_type_puppet、subject_type_crown_land
+
+subject_type_crb_trading_post = {
+	allow_change_country_flag = yes
+	use_overlord_map_color = yes
+	use_overlord_ruler = no
+	annex_on_country_formation = yes
+	can_start_own_diplomatic_plays = no
+	breaks_if_subject_not_protected = yes
+	join_overlord_wars = yes
+	forced_into_overlord_revolution = yes
+	can_have_subjects = no
+	overlord_must_be_higher_rank = no
+	overlord_must_be_same_country_type = no
+	use_for_release_country = no
+	gives_prestige_to_overlord = yes
+
+	diplomatic_action = crb_trading_post
+	re_establish_war_goal = make_protectorate
+
+	autonomy_level = 1
+	category = same_as_puppet
+
+	higher_autonomy_subject_type_alternatives = {
+		subject_type_protectorate
+	}
+
+	same_autonomy_subject_type_alternatives = {
+		subject_type_puppet
+	}
+
+	# 与原版傀儡国的区别：允许未受认可的国家（开局的布匿）作为宗主国
+	valid_overlord_country_types = {
+		recognized
+		colonial
+		unrecognized
+	}
+
+	valid_subject_country_types = {
+		recognized
+		unrecognized
+	}
+
+	valid_overlord_ranks = {
+		great_power
+		major_power
+		minor_power
+		insignificant_power
+		unrecognized_major_power
+		unrecognized_regional_power
+		unrecognized_power
+	}
+
+	valid_subject_ranks = {
+		great_power
+		major_power
+		minor_power
+		insignificant_power
+		unrecognized_major_power
+		unrecognized_regional_power
+		unrecognized_power
+	}
+
+	ai_value = {
+		value = 1.5
+	}
+}
+
+subject_type_crb_province = {
+	allow_change_country_flag = yes
+	use_overlord_map_color = yes
+	use_overlord_ruler = no
+	annex_on_country_formation = yes
+	can_start_own_diplomatic_plays = no
+	breaks_if_subject_not_protected = yes
+	join_overlord_wars = yes
+	forced_into_overlord_revolution = yes
+	can_have_subjects = no
+	overlord_must_be_higher_rank = no
+	overlord_must_be_same_country_type = no
+	use_for_release_country = no
+	gives_prestige_to_overlord = yes
+
+	diplomatic_action = crb_province
+	re_establish_war_goal = make_protectorate
+
+	autonomy_level = 1
+	category = same_as_puppet
+
+	higher_autonomy_subject_type_alternatives = {
+		subject_type_protectorate
+	}
+
+	same_autonomy_subject_type_alternatives = {
+		subject_type_crown_land
+	}
+
+	# 与原版傀儡国的区别：允许未受认可的国家（开局的布匿）作为宗主国
+	valid_overlord_country_types = {
+		recognized
+		colonial
+		unrecognized
+	}
+
+	valid_subject_country_types = {
+		recognized
+		unrecognized
+	}
+
+	valid_overlord_ranks = {
+		great_power
+		major_power
+		minor_power
+		insignificant_power
+		unrecognized_major_power
+		unrecognized_regional_power
+		unrecognized_power
+	}
+
+	valid_subject_ranks = {
+		great_power
+		major_power
+		minor_power
+		insignificant_power
+		unrecognized_major_power
+		unrecognized_regional_power
+		unrecognized_power
+	}
+
+	ai_value = {
+		value = 1.5
+	}
+}

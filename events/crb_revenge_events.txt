@@ -288,3 +288,73 @@ crb_revenge.9 = {
 		}
 	}
 }
+
+crb_revenge.6 = {
+	type = country_event
+	placement = root
+
+	title = crb_revenge.6.t
+	desc = crb_revenge.6.d
+	flavor = crb_revenge.6.f
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志按钮触发
+	}
+
+	option = {
+		name = crb_revenge.6.a
+		default_option = yes
+		crb_create_puppet_GLT_with_tooltip_effect = yes
+	}
+
+	option = {
+		name = crb_revenge.6.b
+		change_infamy = 15
+		crb_create_province_GLT_with_tooltip_effect = yes
+	}
+}
+
+crb_revenge.7 = {
+	type = country_event
+	placement = root
+
+	title = crb_revenge.7.t
+	desc = crb_revenge.7.d
+	flavor = crb_revenge.7.f
+
+	event_image = {
+		video = "ep1_ca_mountain_pass_civilian"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志按钮触发
+	}
+
+	option = {
+		name = crb_revenge.7.a
+		default_option = yes
+		crb_create_puppet_SNT_with_tooltip_effect = yes
+	}
+
+	option = {
+		name = crb_revenge.7.b
+		change_infamy = 15
+		crb_create_province_SNT_with_tooltip_effect = yes
+	}
+}

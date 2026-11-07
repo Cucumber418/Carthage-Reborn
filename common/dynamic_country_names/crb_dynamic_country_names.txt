@@ -29,3 +29,63 @@ REPLACE:TUN = {
 		}
 	}
 }
+
+TRP = {
+	dynamic_country_name = {
+		name = TRP_crb_province
+		adjective = TRP_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = {
+			scope:actor ?= { has_variable = crb_province }
+		}
+	}
+}
+
+NUM = {
+	dynamic_country_name = {
+		name = NUM_crb_province
+		adjective = NUM_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = {
+			scope:actor ?= { has_variable = crb_province }
+		}
+	}
+}
+
+IBT = {
+	dynamic_country_name = {
+		name = IBT_crb_province
+		adjective = IBT_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = {
+			scope:actor ?= { has_variable = crb_province }
+		}
+	}
+}
+
+GLT = {
+	dynamic_country_name = {
+		name = GLT_crb_province
+		adjective = GLT_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = {
+			scope:actor ?= { has_variable = crb_province }
+		}
+	}
+}
+
+SNT = {
+	dynamic_country_name = {
+		name = SNT_crb_province
+		adjective = SNT_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = {
+			scope:actor ?= { has_variable = crb_province }
+		}
+	}
+}

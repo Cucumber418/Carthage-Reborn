@@ -273,7 +273,7 @@ crb_found_gaul_post_button = {
 
 	effect = {
 		set_variable = crb_gaul_post_founded
-		crb_create_puppet_GLT_with_tooltip_effect = yes
+		trigger_event = { id = crb_revenge.6 popup = yes }
 	}
 }
 
@@ -336,7 +336,7 @@ crb_found_alpine_post_button = {
 
 	effect = {
 		set_variable = crb_alpine_post_founded
-		crb_create_puppet_SNT_with_tooltip_effect = yes
+		trigger_event = { id = crb_revenge.7 popup = yes }
 	}
 }
 

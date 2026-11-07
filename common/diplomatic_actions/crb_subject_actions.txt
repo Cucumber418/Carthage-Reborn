@@ -1,0 +1,109 @@
+﻿# 建立"商站""行省"附庸关系用的外交行动（格式照搬原版 20_subject_puppet.txt）
+
+crb_trading_post = {
+	groups= {
+		general # for breaking only
+	}
+	show_in_lens = no
+
+	potential = { # 只能通过迦太基的事件和按钮建立
+		always = no
+	}
+
+	pact = {
+		cost = 10
+		has_junior_participant = yes
+		maintenance_paid_by = first_country
+		income_transfer = 0.3
+		second_country_gets_income_transfer = no
+		income_transfer_based_on_second_country = yes
+
+		max_target_involvement = 8000
+		target_involvement_applies_to = source_country
+
+		relations_progress_per_day = 1
+		relations_improvement_max = 50
+
+		subject_type = subject_type_crb_trading_post
+
+		second_modifier = {
+			country_law_enactment_imposition_success_add = 0.1
+		}
+
+		actor_can_break = {
+			is_diplomatic_play_committed_participant = no
+		}
+
+		target_can_break = { # 只能通过外交博弈脱离
+			always = no
+		}
+
+		manual_break_effect = {
+			create_bidirectional_truce = { country = scope:target_country months = 60 }
+		}
+
+		auto_break_effect = {
+			create_bidirectional_truce = { country = scope:target_country months = 60 }
+		}
+	}
+
+	ai = {
+		will_break = {
+			always = no
+		}
+	}
+}
+
+crb_province = {
+	groups= {
+		general # for breaking only
+	}
+	show_in_lens = no
+
+	potential = { # 只能通过迦太基的事件和按钮建立
+		always = no
+	}
+
+	pact = {
+		cost = 10
+		has_junior_participant = yes
+		maintenance_paid_by = first_country
+		income_transfer = 0.5
+		second_country_gets_income_transfer = no
+		income_transfer_based_on_second_country = yes
+
+		max_target_involvement = 8000
+		target_involvement_applies_to = source_country
+
+		relations_progress_per_day = 1
+		relations_improvement_max = 50
+
+		subject_type = subject_type_crb_province
+
+		second_modifier = {
+			country_law_enactment_imposition_success_add = 0.1
+		}
+
+		actor_can_break = {
+			is_diplomatic_play_committed_participant = no
+		}
+
+		target_can_break = { # 只能通过外交博弈脱离
+			always = no
+		}
+
+		manual_break_effect = {
+			create_bidirectional_truce = { country = scope:target_country months = 60 }
+		}
+
+		auto_break_effect = {
+			create_bidirectional_truce = { country = scope:target_country months = 60 }
+		}
+	}
+
+	ai = {
+		will_break = {
+			always = no
+		}
+	}
+}

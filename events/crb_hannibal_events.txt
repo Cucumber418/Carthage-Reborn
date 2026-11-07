@@ -77,6 +77,16 @@ crb_hannibal.1 = {
 	}
 
 	option = {
+		name = crb_hannibal.1.c
+		trigger = {
+			NOT = { exists = c:TRP }
+		}
+		change_infamy = 10
+		crb_create_province_TRP_with_tooltip_effect = yes
+		crb_hannibal_entry_reward_effect = yes
+	}
+
+	option = {
 		name = crb_hannibal.1.b
 		default_option = yes
 		crb_hannibal_stability_effect = yes
@@ -112,6 +122,20 @@ crb_hannibal.2 = {
 			NOT = { exists = c:NUM }
 		}
 		crb_create_puppet_NUM_with_tooltip_effect = yes
+		crb_hannibal_entry_reward_effect = yes
+		s:STATE_FEZ = { add_claim = root }
+		s:STATE_MARRAKECH = { add_claim = root }
+		s:STATE_AL_RIF = { add_claim = root }
+		s:STATE_INNER_MOROCCO = { add_claim = root }
+	}
+
+	option = {
+		name = crb_hannibal.2.c
+		trigger = {
+			NOT = { exists = c:NUM }
+		}
+		change_infamy = 15
+		crb_create_province_NUM_with_tooltip_effect = yes
 		crb_hannibal_entry_reward_effect = yes
 		s:STATE_FEZ = { add_claim = root }
 		s:STATE_MARRAKECH = { add_claim = root }
@@ -277,6 +301,16 @@ crb_hannibal.6 = {
 			NOT = { exists = c:IBT }
 		}
 		crb_create_puppet_IBT_with_tooltip_effect = yes
+		crb_hannibal_entry_reward_effect = yes
+	}
+
+	option = {
+		name = crb_hannibal.6.c
+		trigger = {
+			NOT = { exists = c:IBT }
+		}
+		change_infamy = 15
+		crb_create_province_IBT_with_tooltip_effect = yes
 		crb_hannibal_entry_reward_effect = yes
 	}
 
