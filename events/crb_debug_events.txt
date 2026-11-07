@@ -161,7 +161,6 @@ crb_debug.6 = {
 		# 日志没有开始：直接执行结局
 		else = {
 			set_variable = crb_hanno_barca_concluded
-			crb_barca_victory_effect = yes
 			trigger_event = {
 				id = crb_hanno_barca.2
 				popup = yes
@@ -201,7 +200,6 @@ crb_debug.7 = {
 		# 日志没有开始：直接执行结局
 		else = {
 			set_variable = crb_hanno_barca_concluded
-			crb_hanno_victory_effect = yes
 			trigger_event = {
 				id = crb_hanno_barca.3
 				popup = yes

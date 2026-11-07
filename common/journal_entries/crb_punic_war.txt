@@ -1,5 +1,5 @@
 ﻿# 第 N 次布匿战争
-# 与持有西西里土地的国家开战时，由 crb_monthly_pulse_country 用 add_journal_entry 加入
+# 与持有西西里土地的国家进入外交博弈（准备阶段）或开战时，由 crb_monthly_pulse_country 用 add_journal_entry 加入
 # 首次为第四次，之后每次结束序号 +1
 je_crb_punic_war = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
@@ -28,14 +28,17 @@ je_crb_punic_war = {
 		}
 	}
 
-	# 失败：战争结束，但没有拿下西西里
+	# 失败：对峙或战争结束，但没有拿下西西里
 	outcome = {
 		header = je_standard_failure_header
 		effect_header = je_standard_on_failure_header
 		color = "blue_negative"
 		conclusion_desc = je_standard_failure_conclusion_desc
 		trigger = {
-			is_at_war = no
+			custom_tooltip = {
+				text = crb_punic_war_over_tt
+				NOT = { crb_at_war_with_sicily_holder_trigger = yes }
+			}
 			NOT = { owns_entire_state_region = STATE_SICILY }
 		}
 		effect = {

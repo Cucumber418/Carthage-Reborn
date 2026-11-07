@@ -6,6 +6,25 @@ on_game_started = {
 	}
 }
 
+# 地区易手、新建地区时：在原版动态地名之后套用迦太基历史地名（根作用域：州）
+on_state_owner_change = {
+	on_actions = {
+		crb_on_state_changed
+	}
+}
+
+on_state_created = {
+	on_actions = {
+		crb_on_state_changed
+	}
+}
+
+crb_on_state_changed = {
+	effect = {
+		crb_assign_punic_name_to_state_effect = yes
+	}
+}
+
 on_monthly_pulse_country = {
 	on_actions = {
 		crb_monthly_pulse_country
@@ -39,9 +58,8 @@ crb_monthly_pulse_country = {
 	}
 	effect = {
 		crb_update_ig_names_effect = yes
-		# 历史地名：新拥有的地区改名，失去的地区恢复原名
+		# 历史地名：每月重新套用一次，防止被原版动态地名覆盖
 		crb_apply_punic_state_names_effect = yes
-		crb_reset_lost_punic_state_names_effect = yes
 		# 第 N 次布匿战争
 		crb_punic_war_check_effect = yes
 		# 受认可后移除"迦太基仍未毁灭"
@@ -62,5 +80,27 @@ crb_monthly_pulse_subject = {
 	}
 	effect = {
 		crb_apply_punic_state_names_effect = yes
+	}
+}
+
+# 外交博弈开始、有国家加入博弈时：检查是否要开始"第 N 次布匿战争"（根作用域：外交博弈）
+on_diplomatic_play_started = {
+	on_actions = {
+		crb_on_diplo_play_changed
+	}
+}
+
+on_diplo_play_join_side = {
+	on_actions = {
+		crb_on_diplo_play_changed
+	}
+}
+
+crb_on_diplo_play_changed = {
+	effect = {
+		every_scope_play_involved = {
+			limit = { crb_is_carthage_trigger = yes }
+			crb_punic_war_check_effect = yes
+		}
 	}
 }

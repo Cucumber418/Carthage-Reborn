@@ -178,328 +178,416 @@ crb_hb_hanno_gain_medium = {
 
 # ============================================================
 # 历史地名
-# 迦太基（主流文化为布匿的国家）拥有的地区改用迦太基人的历史称呼
-# 地区易手后恢复原名
+# 迦太基、以及迦太基建立的傀儡国和商站拥有的地区，改用迦太基人的历史称呼
+# 原版的"动态地名"会在地区易手时重新计算名称（见原版 00_dynamic_state_names.txt），
+# 所以这里在同样的时机（地区易手、新建地区）以及每月都重新套用一次
 # 与原版一致：开启"无动态地名"游戏规则时不改名
 # ============================================================
 
-# 作用域：国家
-crb_apply_punic_state_names_effect = {
+# 作用域：州
+crb_assign_punic_name_to_state_effect = {
 	if = {
 		limit = {
 			NOT = { has_game_rule = no_dynamic_naming }
-			crb_uses_punic_names_trigger = yes
+			owner ?= { crb_uses_punic_names_trigger = yes }
 		}
-		every_scope_state = {
-			limit = { NOT = { has_variable = crb_punic_name } }
-		if = {
-			limit = { state_region = s:STATE_TUNISIA }
-			set_state_name = STATE_TUNISIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_TRIPOLI }
-			set_state_name = STATE_TRIPOLI_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_LIBYA }
-			set_state_name = STATE_LIBYA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_LIBYAN_DESERT }
-			set_state_name = STATE_LIBYAN_DESERT_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_ALGIERS }
-			set_state_name = STATE_ALGIERS_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_CONSTANTINE }
-			set_state_name = STATE_CONSTANTINE_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_ORAN }
-			set_state_name = STATE_ORAN_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_FEZ }
-			set_state_name = STATE_FEZ_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_AL_RIF }
-			set_state_name = STATE_AL_RIF_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_MARRAKECH }
-			set_state_name = STATE_MARRAKECH_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_INNER_MOROCCO }
-			set_state_name = STATE_INNER_MOROCCO_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_WEST_SAHARA }
-			set_state_name = STATE_WEST_SAHARA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_MAURITANIA }
-			set_state_name = STATE_MAURITANIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_SENEGAL }
-			set_state_name = STATE_SENEGAL_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_GUINEA }
-			set_state_name = STATE_GUINEA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_SIERRA_LEONE }
-			set_state_name = STATE_SIERRA_LEONE_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_SOUTH_CAMEROON }
-			set_state_name = STATE_SOUTH_CAMEROON_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_CANARY_ISLANDS }
-			set_state_name = STATE_CANARY_ISLANDS_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_SICILY }
-			set_state_name = STATE_SICILY_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_MALTA }
-			set_state_name = STATE_MALTA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_BALEARIC_ISLANDS }
-			set_state_name = STATE_BALEARIC_ISLANDS_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_SARDINIA }
-			set_state_name = STATE_SARDINIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_CORSICA }
-			set_state_name = STATE_CORSICA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_CRETE }
-			set_state_name = STATE_CRETE_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_CYPRUS }
-			set_state_name = STATE_CYPRUS_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_MURCIA }
-			set_state_name = STATE_MURCIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_LOWER_ANDALUSIA }
-			set_state_name = STATE_LOWER_ANDALUSIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_UPPER_ANDALUSIA }
-			set_state_name = STATE_UPPER_ANDALUSIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_VALENCIA }
-			set_state_name = STATE_VALENCIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_CATALONIA }
-			set_state_name = STATE_CATALONIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_ARAGON }
-			set_state_name = STATE_ARAGON_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_NEW_CASTILE }
-			set_state_name = STATE_NEW_CASTILE_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_OLD_CASTILE }
-			set_state_name = STATE_OLD_CASTILE_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_LEON }
-			set_state_name = STATE_LEON_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_EXTREMADURA }
-			set_state_name = STATE_EXTREMADURA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_GALICIA }
-			set_state_name = STATE_GALICIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_ASTURIAS }
-			set_state_name = STATE_ASTURIAS_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_BASQUE_COUNTRY }
-			set_state_name = STATE_BASQUE_COUNTRY_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_ESTREMADURA }
-			set_state_name = STATE_ESTREMADURA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_ALENTEJO }
-			set_state_name = STATE_ALENTEJO_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_LANGUEDOC }
-			set_state_name = STATE_LANGUEDOC_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_PROVENCE }
-			set_state_name = STATE_PROVENCE_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_RHONE }
-			set_state_name = STATE_RHONE_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_SAVOY }
-			set_state_name = STATE_SAVOY_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_WEST_SWITZERLAND }
-			set_state_name = STATE_WEST_SWITZERLAND_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_EAST_SWITZERLAND }
-			set_state_name = STATE_EAST_SWITZERLAND_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_PIEDMONT }
-			set_state_name = STATE_PIEDMONT_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_LOMBARDY }
-			set_state_name = STATE_LOMBARDY_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_VENETIA }
-			set_state_name = STATE_VENETIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_EMILIA }
-			set_state_name = STATE_EMILIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_ROMAGNA }
-			set_state_name = STATE_ROMAGNA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_TUSCANY }
-			set_state_name = STATE_TUSCANY_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_UMBRIA }
-			set_state_name = STATE_UMBRIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_LAZIO }
-			set_state_name = STATE_LAZIO_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_ABRUZZO }
-			set_state_name = STATE_ABRUZZO_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_CAMPANIA }
-			set_state_name = STATE_CAMPANIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_APULIA }
-			set_state_name = STATE_APULIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_CALABRIA }
-			set_state_name = STATE_CALABRIA_crb
-			set_variable = crb_punic_name
-		}
-		else_if = {
-			limit = { state_region = s:STATE_LEBANON }
-			set_state_name = STATE_LEBANON_crb
-			set_variable = crb_punic_name
-		}
-		}
+		crb_set_punic_state_name_effect = yes
+	}
+	else_if = {
+		limit = { has_variable = crb_punic_name }
+		remove_variable = crb_punic_name
+		# 交还给原版的动态地名
+		evaluate_and_assign_state_hub_dynamic_names = yes
 	}
 }
 
-# 作用域：任意
-crb_reset_lost_punic_state_names_effect = {
-	every_state = {
-		limit = {
-			has_variable = crb_punic_name
-			NOT = { owner = { crb_uses_punic_names_trigger = yes } }
+# 作用域：州（已确认属于迦太基一方）
+crb_set_punic_state_name_effect = {
+	if = {
+		limit = { state_region = s:STATE_TUNISIA }
+		set_state_name = STATE_TUNISIA_crb
+		set_hub_name = {
+			type = city
+			name = HUB_NAME_STATE_TUNISIA_city_crb
 		}
-		reset_state_name = yes
-		remove_variable = crb_punic_name
+		set_hub_name = {
+			type = port
+			name = HUB_NAME_STATE_TUNISIA_port_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_TRIPOLI }
+		set_state_name = STATE_TRIPOLI_crb
+		set_hub_name = {
+			type = city
+			name = HUB_NAME_STATE_TRIPOLI_city_crb
+		}
+		set_hub_name = {
+			type = port
+			name = HUB_NAME_STATE_TRIPOLI_port_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_LIBYA }
+		set_state_name = STATE_LIBYA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_LIBYAN_DESERT }
+		set_state_name = STATE_LIBYAN_DESERT_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_ALGIERS }
+		set_state_name = STATE_ALGIERS_crb
+		set_hub_name = {
+			type = city
+			name = HUB_NAME_STATE_ALGIERS_city_crb
+		}
+		set_hub_name = {
+			type = port
+			name = HUB_NAME_STATE_ALGIERS_port_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_CONSTANTINE }
+		set_state_name = STATE_CONSTANTINE_crb
+		set_hub_name = {
+			type = city
+			name = HUB_NAME_STATE_CONSTANTINE_city_crb
+		}
+		set_hub_name = {
+			type = port
+			name = HUB_NAME_STATE_CONSTANTINE_port_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_ORAN }
+		set_state_name = STATE_ORAN_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_FEZ }
+		set_state_name = STATE_FEZ_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_AL_RIF }
+		set_state_name = STATE_AL_RIF_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_MARRAKECH }
+		set_state_name = STATE_MARRAKECH_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_INNER_MOROCCO }
+		set_state_name = STATE_INNER_MOROCCO_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_WEST_SAHARA }
+		set_state_name = STATE_WEST_SAHARA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_MAURITANIA }
+		set_state_name = STATE_MAURITANIA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_SENEGAL }
+		set_state_name = STATE_SENEGAL_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_GUINEA }
+		set_state_name = STATE_GUINEA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_SIERRA_LEONE }
+		set_state_name = STATE_SIERRA_LEONE_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_SOUTH_CAMEROON }
+		set_state_name = STATE_SOUTH_CAMEROON_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_CANARY_ISLANDS }
+		set_state_name = STATE_CANARY_ISLANDS_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_SICILY }
+		set_state_name = STATE_SICILY_crb
+		set_hub_name = {
+			type = city
+			name = HUB_NAME_STATE_SICILY_city_crb
+		}
+		set_hub_name = {
+			type = port
+			name = HUB_NAME_STATE_SICILY_port_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_MALTA }
+		set_state_name = STATE_MALTA_crb
+		set_hub_name = {
+			type = city
+			name = HUB_NAME_STATE_MALTA_city_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_BALEARIC_ISLANDS }
+		set_state_name = STATE_BALEARIC_ISLANDS_crb
+		set_hub_name = {
+			type = city
+			name = HUB_NAME_STATE_BALEARIC_ISLANDS_city_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_SARDINIA }
+		set_state_name = STATE_SARDINIA_crb
+		set_hub_name = {
+			type = port
+			name = HUB_NAME_STATE_SARDINIA_port_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_CORSICA }
+		set_state_name = STATE_CORSICA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_CRETE }
+		set_state_name = STATE_CRETE_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_CYPRUS }
+		set_state_name = STATE_CYPRUS_crb
+		set_hub_name = {
+			type = port
+			name = HUB_NAME_STATE_CYPRUS_port_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_MURCIA }
+		set_state_name = STATE_MURCIA_crb
+		set_hub_name = {
+			type = port
+			name = HUB_NAME_STATE_MURCIA_port_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_LOWER_ANDALUSIA }
+		set_state_name = STATE_LOWER_ANDALUSIA_crb
+		set_hub_name = {
+			type = port
+			name = HUB_NAME_STATE_LOWER_ANDALUSIA_port_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_UPPER_ANDALUSIA }
+		set_state_name = STATE_UPPER_ANDALUSIA_crb
+		set_hub_name = {
+			type = port
+			name = HUB_NAME_STATE_UPPER_ANDALUSIA_port_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_VALENCIA }
+		set_state_name = STATE_VALENCIA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_CATALONIA }
+		set_state_name = STATE_CATALONIA_crb
+		set_hub_name = {
+			type = city
+			name = HUB_NAME_STATE_CATALONIA_city_crb
+		}
+		set_hub_name = {
+			type = port
+			name = HUB_NAME_STATE_CATALONIA_port_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_ARAGON }
+		set_state_name = STATE_ARAGON_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_NEW_CASTILE }
+		set_state_name = STATE_NEW_CASTILE_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_OLD_CASTILE }
+		set_state_name = STATE_OLD_CASTILE_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_LEON }
+		set_state_name = STATE_LEON_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_EXTREMADURA }
+		set_state_name = STATE_EXTREMADURA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_GALICIA }
+		set_state_name = STATE_GALICIA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_ASTURIAS }
+		set_state_name = STATE_ASTURIAS_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_BASQUE_COUNTRY }
+		set_state_name = STATE_BASQUE_COUNTRY_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_ESTREMADURA }
+		set_state_name = STATE_ESTREMADURA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_ALENTEJO }
+		set_state_name = STATE_ALENTEJO_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_LANGUEDOC }
+		set_state_name = STATE_LANGUEDOC_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_PROVENCE }
+		set_state_name = STATE_PROVENCE_crb
+		set_hub_name = {
+			type = city
+			name = HUB_NAME_STATE_PROVENCE_city_crb
+		}
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_RHONE }
+		set_state_name = STATE_RHONE_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_SAVOY }
+		set_state_name = STATE_SAVOY_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_WEST_SWITZERLAND }
+		set_state_name = STATE_WEST_SWITZERLAND_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_EAST_SWITZERLAND }
+		set_state_name = STATE_EAST_SWITZERLAND_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_PIEDMONT }
+		set_state_name = STATE_PIEDMONT_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_LOMBARDY }
+		set_state_name = STATE_LOMBARDY_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_VENETIA }
+		set_state_name = STATE_VENETIA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_EMILIA }
+		set_state_name = STATE_EMILIA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_ROMAGNA }
+		set_state_name = STATE_ROMAGNA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_TUSCANY }
+		set_state_name = STATE_TUSCANY_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_UMBRIA }
+		set_state_name = STATE_UMBRIA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_LAZIO }
+		set_state_name = STATE_LAZIO_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_ABRUZZO }
+		set_state_name = STATE_ABRUZZO_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_CAMPANIA }
+		set_state_name = STATE_CAMPANIA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_APULIA }
+		set_state_name = STATE_APULIA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_CALABRIA }
+		set_state_name = STATE_CALABRIA_crb
+		set_variable = crb_punic_name
+	}
+	else_if = {
+		limit = { state_region = s:STATE_LEBANON }
+		set_state_name = STATE_LEBANON_crb
+		set_hub_name = {
+			type = city
+			name = HUB_NAME_STATE_LEBANON_city_crb
+		}
+		set_variable = crb_punic_name
+	}
+}
+
+# 作用域：国家
+crb_apply_punic_state_names_effect = {
+	every_scope_state = {
+		crb_assign_punic_name_to_state_effect = yes
 	}
 }
 
@@ -529,6 +617,10 @@ crb_create_puppet_TRP_effect = {
 			on_created = {
 				set_variable = crb_carthaginian_subject
 				set_state_religion = rel:crb_tanit
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
 			}
 		}
 		every_scope_state = {
@@ -541,6 +633,10 @@ crb_create_puppet_TRP_effect = {
 				}
 			}
 			set_state_owner = c:TRP
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
 		}
 		create_diplomatic_pact = {
 			country = c:TRP
@@ -571,6 +667,10 @@ crb_create_puppet_NUM_effect = {
 			on_created = {
 				set_variable = crb_carthaginian_subject
 				set_state_religion = rel:crb_tanit
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
 			}
 		}
 		every_scope_state = {
@@ -583,6 +683,10 @@ crb_create_puppet_NUM_effect = {
 				}
 			}
 			set_state_owner = c:NUM
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
 		}
 		create_diplomatic_pact = {
 			country = c:NUM
@@ -623,6 +727,10 @@ crb_create_puppet_IBT_effect = {
 			on_created = {
 				set_variable = crb_carthaginian_subject
 				set_state_religion = rel:crb_tanit
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
 				activate_law = law_type:law_mercantilism
 			}
 		}
@@ -646,6 +754,10 @@ crb_create_puppet_IBT_effect = {
 				}
 			}
 			set_state_owner = c:IBT
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
 		}
 		create_diplomatic_pact = {
 			country = c:IBT
@@ -695,6 +807,10 @@ crb_create_puppet_GLT_effect = {
 			on_created = {
 				set_variable = crb_carthaginian_subject
 				set_state_religion = rel:crb_tanit
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
 				activate_law = law_type:law_mercantilism
 				activate_law = law_type:law_landed_voting
 			}
@@ -705,6 +821,10 @@ crb_create_puppet_GLT_effect = {
 				crb_is_gaul_post_state_trigger = yes
 			}
 			set_state_owner = c:GLT
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
 		}
 		create_diplomatic_pact = {
 			country = c:GLT
@@ -731,6 +851,10 @@ crb_create_puppet_SNT_effect = {
 			on_created = {
 				set_variable = crb_carthaginian_subject
 				set_state_religion = rel:crb_tanit
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
 				activate_law = law_type:law_protectionism
 				activate_law = law_type:law_national_militia
 			}
@@ -741,6 +865,10 @@ crb_create_puppet_SNT_effect = {
 				crb_is_alpine_post_state_trigger = yes
 			}
 			set_state_owner = c:SNT
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
 		}
 		create_diplomatic_pact = {
 			country = c:SNT
@@ -767,6 +895,10 @@ crb_create_puppet_IOP_effect = {
 			on_created = {
 				set_variable = crb_carthaginian_subject
 				set_state_religion = rel:crb_tanit
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
 				activate_law = law_type:law_free_trade
 				activate_law = law_type:law_wealth_voting
 			}
@@ -777,6 +909,10 @@ crb_create_puppet_IOP_effect = {
 				crb_is_south_italy_state_trigger = yes
 			}
 			set_state_owner = c:IOP
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
 		}
 		create_diplomatic_pact = {
 			country = c:IOP
@@ -803,6 +939,10 @@ crb_create_puppet_RPR_effect = {
 			on_created = {
 				set_variable = crb_carthaginian_subject
 				set_state_religion = rel:crb_tanit
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
 				activate_law = law_type:law_oligarchy
 				activate_law = law_type:law_secret_police
 			}
@@ -813,6 +953,10 @@ crb_create_puppet_RPR_effect = {
 				crb_is_south_italy_state_trigger = yes
 			}
 			set_state_owner = c:RPR
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
 		}
 		create_diplomatic_pact = {
 			country = c:RPR
@@ -885,8 +1029,8 @@ crb_expand_trading_posts_effect = {
 crb_punic_war_check_effect = {
 	if = {
 		limit = {
+			crb_is_carthage_trigger = yes
 			NOT = { has_journal_entry = je_crb_punic_war }
-			is_at_war = yes
 			NOT = { owns_entire_state_region = STATE_SICILY }
 			crb_at_war_with_sicily_holder_trigger = yes
 		}
@@ -905,5 +1049,58 @@ crb_punic_war_advance_number_effect = {
 	change_variable = {
 		name = crb_punic_war_number
 		add = 1
+	}
+}
+
+# ============================================================
+# 建立傀儡国、商站：带说明文字的版本（事件选项、按钮中使用）
+# ============================================================
+
+crb_create_puppet_TRP_with_tooltip_effect = {
+	custom_tooltip = crb_create_puppet_TRP_tt
+	hidden_effect = {
+		crb_create_puppet_TRP_effect = yes
+	}
+}
+
+crb_create_puppet_NUM_with_tooltip_effect = {
+	custom_tooltip = crb_create_puppet_NUM_tt
+	hidden_effect = {
+		crb_create_puppet_NUM_effect = yes
+	}
+}
+
+crb_create_puppet_IBT_with_tooltip_effect = {
+	custom_tooltip = crb_create_puppet_IBT_tt
+	hidden_effect = {
+		crb_create_puppet_IBT_effect = yes
+	}
+}
+
+crb_create_puppet_GLT_with_tooltip_effect = {
+	custom_tooltip = crb_create_puppet_GLT_tt
+	hidden_effect = {
+		crb_create_puppet_GLT_effect = yes
+	}
+}
+
+crb_create_puppet_SNT_with_tooltip_effect = {
+	custom_tooltip = crb_create_puppet_SNT_tt
+	hidden_effect = {
+		crb_create_puppet_SNT_effect = yes
+	}
+}
+
+crb_create_puppet_IOP_with_tooltip_effect = {
+	custom_tooltip = crb_create_puppet_IOP_tt
+	hidden_effect = {
+		crb_create_puppet_IOP_effect = yes
+	}
+}
+
+crb_create_puppet_RPR_with_tooltip_effect = {
+	custom_tooltip = crb_create_puppet_RPR_tt
+	hidden_effect = {
+		crb_create_puppet_RPR_effect = yes
 	}
 }

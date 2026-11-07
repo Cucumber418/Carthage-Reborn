@@ -112,10 +112,10 @@ crb_is_south_italy_state_trigger = {
 	}
 }
 
-# 正在与持有西西里土地的国家交战（作用域：国家）
+# 正在与持有西西里土地的国家对峙或交战（作用域：国家）
+# 包括外交博弈的准备阶段和正式战争
 crb_at_war_with_sicily_holder_trigger = {
-	any_country = {
-		has_war_with = root
+	any_enemy_in_diplo_play = {
 		any_scope_state = {
 			state_region = s:STATE_SICILY
 		}

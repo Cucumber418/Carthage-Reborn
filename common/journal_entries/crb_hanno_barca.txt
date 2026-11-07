@@ -162,7 +162,7 @@ je_crb_hanno_barca = {
 		}
 		effect = {
 			set_variable = crb_hanno_barca_concluded
-			crb_barca_victory_effect = yes
+			show_as_tooltip = { crb_barca_victory_effect = yes }
 			hidden_effect = { crb_hanno_barca_cleanup_effect = yes }
 			trigger_event = {
 				id = crb_hanno_barca.2
@@ -187,7 +187,7 @@ je_crb_hanno_barca = {
 		}
 		effect = {
 			set_variable = crb_hanno_barca_concluded
-			crb_hanno_victory_effect = yes
+			show_as_tooltip = { crb_hanno_victory_effect = yes }
 			hidden_effect = { crb_hanno_barca_cleanup_effect = yes }
 			trigger_event = {
 				id = crb_hanno_barca.3

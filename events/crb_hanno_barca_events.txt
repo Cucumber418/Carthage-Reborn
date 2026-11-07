@@ -55,6 +55,7 @@ crb_hanno_barca.2 = {
 	option = {
 		name = crb_hanno_barca.2.a
 		default_option = yes
+		crb_barca_victory_effect = yes
 	}
 }
 
@@ -84,6 +85,7 @@ crb_hanno_barca.3 = {
 	option = {
 		name = crb_hanno_barca.3.a
 		default_option = yes
+		crb_hanno_victory_effect = yes
 	}
 }
 

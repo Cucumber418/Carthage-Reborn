@@ -242,7 +242,7 @@ crb_revenge.5 = {
 		trigger = {
 			NOT = { exists = c:IOP }
 		}
-		crb_create_puppet_IOP_effect = yes
+		crb_create_puppet_IOP_with_tooltip_effect = yes
 	}
 
 	option = {
@@ -250,8 +250,7 @@ crb_revenge.5 = {
 		trigger = {
 			NOT = { exists = c:RPR }
 		}
-		change_infamy = 15
-		crb_create_puppet_RPR_effect = yes
+		crb_create_puppet_RPR_with_tooltip_effect = yes
 	}
 }
 
@@ -280,5 +279,12 @@ crb_revenge.9 = {
 	option = {
 		name = crb_revenge.9.a
 		default_option = yes
+		add_modifier = {
+			name = crb_revenge_complete
+			days = stupidly_long_modifier_time
+		}
+		add_loyalists = {
+			value = medium_radicals
+		}
 	}
 }

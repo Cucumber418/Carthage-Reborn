@@ -130,8 +130,10 @@ je_crb_cultural_revival = {
 		}
 		effect = {
 			set_variable = crb_revival_concluded
-			add_modifier = {
-				name = crb_punic_revival
+			show_as_tooltip = {
+				add_modifier = {
+					name = crb_punic_revival
+				}
 			}
 			trigger_event = { id = crb_revival.6 popup = yes }
 		}

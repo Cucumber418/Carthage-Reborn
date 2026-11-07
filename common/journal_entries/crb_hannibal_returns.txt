@@ -25,23 +25,12 @@ je_crb_hannibal_returns = {
 	}
 
 	immediate = {
-		# 获得各目标地区的宣称
-		s:STATE_TRIPOLI = { add_claim = root }
-		s:STATE_LIBYA = { add_claim = root }
-		s:STATE_ALGIERS = { add_claim = root }
-		s:STATE_CONSTANTINE = { add_claim = root }
-		s:STATE_ORAN = { add_claim = root }
-		s:STATE_SICILY = { add_claim = root }
-		s:STATE_BALEARIC_ISLANDS = { add_claim = root }
-		s:STATE_MALTA = { add_claim = root }
-		s:STATE_CRETE = { add_claim = root }
-		s:STATE_CYPRUS = { add_claim = root }
-		s:STATE_LOWER_ANDALUSIA = { add_claim = root }
-		s:STATE_MURCIA = { add_claim = root }
-		s:STATE_VALENCIA = { add_claim = root }
-		s:STATE_UPPER_ANDALUSIA = { add_claim = root }
-		s:STATE_LEBANON = { add_claim = root }
-		trigger_event = { id = crb_hannibal.0 popup = yes }
+		# 宣称在开场事件的选项中获得，这样玩家可以在选项上看到
+		if = {
+			limit = { NOT = { has_variable = crb_hannibal_intro_shown } }
+			set_variable = crb_hannibal_intro_shown
+			trigger_event = { id = crb_hannibal.0 popup = yes }
+		}
 	}
 
 	on_monthly_pulse = {
@@ -153,9 +142,11 @@ je_crb_hannibal_returns = {
 		}
 		effect = {
 			set_variable = crb_hannibal_concluded
-			add_modifier = {
-				name = crb_hannibal_returned
-				days = very_long_modifier_time
+			show_as_tooltip = {
+				add_modifier = {
+					name = crb_hannibal_returned
+					days = very_long_modifier_time
+				}
 			}
 			trigger_event = { id = crb_hannibal.8 popup = yes }
 		}

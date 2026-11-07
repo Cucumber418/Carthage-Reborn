@@ -186,3 +186,225 @@ crb_punic_war_pledge_button = {
 		}
 	}
 }
+
+# ============================================================
+# 两千年的复仇路：日志里的按钮
+# 每个阶段的按钮用掉后，下一阶段的土地拿下时，该位置变为对应的商站按钮
+# ============================================================
+
+crb_revenge_stage1_button = {
+	name = "crb_revenge_stage1_button"
+	desc = "crb_revenge_stage1_button_desc"
+
+	visible = {
+		has_journal_entry = je_crb_revenge_road
+		NOT = { has_variable = crb_revenge_stage1_taken }
+	}
+
+	possible = {
+		crb_is_carthage_trigger = yes
+	}
+
+	ai_chance = {
+		value = 100
+	}
+
+	effect = {
+		set_variable = crb_revenge_stage1_taken
+		trigger_event = { id = crb_revenge.1 popup = yes }
+	}
+}
+
+crb_revenge_stage2_button = {
+	name = "crb_revenge_stage2_button"
+	desc = "crb_revenge_stage2_button_desc"
+
+	visible = {
+		has_journal_entry = je_crb_revenge_road
+		has_variable = crb_revenge_stage1_taken
+		NOT = { has_variable = crb_revenge_stage2_taken }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = crb_revenge_stage1_lands_tt
+			crb_controls_region_trigger = { REGION = STATE_CATALONIA }
+			crb_controls_region_trigger = { REGION = STATE_VALENCIA }
+			crb_controls_region_trigger = { REGION = STATE_MURCIA }
+			crb_controls_region_trigger = { REGION = STATE_UPPER_ANDALUSIA }
+			crb_controls_region_trigger = { REGION = STATE_LOWER_ANDALUSIA }
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+
+	effect = {
+		set_variable = crb_revenge_stage2_taken
+		trigger_event = { id = crb_revenge.2 popup = yes }
+	}
+}
+
+crb_found_gaul_post_button = {
+	name = "crb_found_gaul_post_button"
+	desc = "crb_found_gaul_post_button_desc"
+
+	visible = {
+		has_journal_entry = je_crb_revenge_road
+		has_variable = crb_revenge_stage2_taken
+		NOT = { has_variable = crb_gaul_post_founded }
+	}
+
+	possible = {
+		is_at_war = no
+		custom_tooltip = {
+			text = crb_revenge_stage2_lands_tt
+			crb_controls_region_trigger = { REGION = STATE_LANGUEDOC }
+			crb_controls_region_trigger = { REGION = STATE_PROVENCE }
+			crb_controls_region_trigger = { REGION = STATE_RHONE }
+		}
+		NOT = { exists = c:GLT }
+	}
+
+	ai_chance = {
+		value = 50
+	}
+
+	effect = {
+		set_variable = crb_gaul_post_founded
+		crb_create_puppet_GLT_with_tooltip_effect = yes
+	}
+}
+
+crb_revenge_stage3_button = {
+	name = "crb_revenge_stage3_button"
+	desc = "crb_revenge_stage3_button_desc"
+
+	visible = {
+		has_journal_entry = je_crb_revenge_road
+		has_variable = crb_revenge_stage2_taken
+		NOT = { has_variable = crb_revenge_stage3_taken }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = crb_revenge_stage2_lands_tt
+			crb_controls_region_trigger = { REGION = STATE_LANGUEDOC }
+			crb_controls_region_trigger = { REGION = STATE_PROVENCE }
+			crb_controls_region_trigger = { REGION = STATE_RHONE }
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+
+	effect = {
+		set_variable = crb_revenge_stage3_taken
+		trigger_event = { id = crb_revenge.3 popup = yes }
+	}
+}
+
+crb_found_alpine_post_button = {
+	name = "crb_found_alpine_post_button"
+	desc = "crb_found_alpine_post_button_desc"
+
+	visible = {
+		has_journal_entry = je_crb_revenge_road
+		has_variable = crb_revenge_stage3_taken
+		NOT = { has_variable = crb_alpine_post_founded }
+	}
+
+	possible = {
+		is_at_war = no
+		custom_tooltip = {
+			text = crb_revenge_stage3_lands_tt
+			crb_controls_region_trigger = { REGION = STATE_WEST_SWITZERLAND }
+			crb_controls_region_trigger = { REGION = STATE_EAST_SWITZERLAND }
+			crb_controls_region_trigger = { REGION = STATE_SAVOY }
+			crb_controls_region_trigger = { REGION = STATE_PIEDMONT }
+			crb_controls_region_trigger = { REGION = STATE_LOMBARDY }
+			crb_controls_region_trigger = { REGION = STATE_VENETIA }
+		}
+		NOT = { exists = c:SNT }
+	}
+
+	ai_chance = {
+		value = 50
+	}
+
+	effect = {
+		set_variable = crb_alpine_post_founded
+		crb_create_puppet_SNT_with_tooltip_effect = yes
+	}
+}
+
+crb_revenge_stage4_button = {
+	name = "crb_revenge_stage4_button"
+	desc = "crb_revenge_stage4_button_desc"
+
+	visible = {
+		has_journal_entry = je_crb_revenge_road
+		has_variable = crb_revenge_stage3_taken
+		NOT = { has_variable = crb_revenge_stage4_taken }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = crb_revenge_stage3_lands_tt
+			crb_controls_region_trigger = { REGION = STATE_WEST_SWITZERLAND }
+			crb_controls_region_trigger = { REGION = STATE_EAST_SWITZERLAND }
+			crb_controls_region_trigger = { REGION = STATE_SAVOY }
+			crb_controls_region_trigger = { REGION = STATE_PIEDMONT }
+			crb_controls_region_trigger = { REGION = STATE_LOMBARDY }
+			crb_controls_region_trigger = { REGION = STATE_VENETIA }
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+
+	effect = {
+		set_variable = crb_revenge_stage4_taken
+		trigger_event = { id = crb_revenge.4 popup = yes }
+	}
+}
+
+crb_handle_rome_button = {
+	name = "crb_handle_rome_button"
+	desc = "crb_handle_rome_button_desc"
+
+	visible = {
+		has_journal_entry = je_crb_revenge_road
+		has_variable = crb_revenge_stage4_taken
+		NOT = { has_variable = crb_rome_handled }
+	}
+
+	possible = {
+		is_at_war = no
+		custom_tooltip = {
+			text = crb_revenge_stage4_lands_tt
+			crb_controls_region_trigger = { REGION = STATE_EMILIA }
+			crb_controls_region_trigger = { REGION = STATE_ROMAGNA }
+			crb_controls_region_trigger = { REGION = STATE_TUSCANY }
+			crb_controls_region_trigger = { REGION = STATE_UMBRIA }
+			crb_controls_region_trigger = { REGION = STATE_LAZIO }
+			crb_controls_region_trigger = { REGION = STATE_ABRUZZO }
+			crb_controls_region_trigger = { REGION = STATE_CAMPANIA }
+			crb_controls_region_trigger = { REGION = STATE_APULIA }
+			crb_controls_region_trigger = { REGION = STATE_CALABRIA }
+			crb_controls_region_trigger = { REGION = STATE_SARDINIA }
+		}
+	}
+
+	ai_chance = {
+		value = 50
+	}
+
+	effect = {
+		set_variable = crb_rome_handled
+		trigger_event = { id = crb_revenge.5 popup = yes }
+	}
+}

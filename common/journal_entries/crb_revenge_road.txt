@@ -1,5 +1,5 @@
 ﻿# 两千年的复仇路（巴卡派路线）
-# 通过决议推进：翻过比利牛斯！、越过高卢！、翻过阿尔卑斯！、复仇开始！
+# 通过日志里的按钮推进：翻过比利牛斯！、越过高卢！、翻过阿尔卑斯！、复仇开始！
 je_crb_revenge_road = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
@@ -28,6 +28,14 @@ je_crb_revenge_road = {
 	immediate = {
 		trigger_event = { id = crb_revenge.0 popup = yes }
 	}
+
+	scripted_button = crb_revenge_stage1_button
+	scripted_button = crb_revenge_stage2_button
+	scripted_button = crb_found_gaul_post_button
+	scripted_button = crb_revenge_stage3_button
+	scripted_button = crb_found_alpine_post_button
+	scripted_button = crb_revenge_stage4_button
+	scripted_button = crb_handle_rome_button
 
 	status_desc = {
 		first_valid = {
@@ -70,12 +78,14 @@ je_crb_revenge_road = {
 		}
 		effect = {
 			set_variable = crb_revenge_concluded
-			add_modifier = {
-				name = crb_revenge_complete
-				days = stupidly_long_modifier_time
-			}
-			add_loyalists = {
-				value = medium_radicals
+			show_as_tooltip = {
+				add_modifier = {
+					name = crb_revenge_complete
+					days = stupidly_long_modifier_time
+				}
+				add_loyalists = {
+					value = medium_radicals
+				}
 			}
 			trigger_event = { id = crb_revenge.9 popup = yes }
 		}
