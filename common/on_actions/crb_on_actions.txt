@@ -104,3 +104,35 @@ crb_on_diplo_play_changed = {
 		}
 	}
 }
+
+# 迦太基特色事件：每半年有 35% 的概率从中随机抽取一个
+on_half_yearly_pulse_country = {
+	on_actions = {
+		crb_flavor_events
+	}
+}
+
+crb_flavor_events = {
+	trigger = {
+		crb_is_carthage_trigger = yes
+	}
+	random_events = {
+		chance_to_happen = 35
+		10 = crb_flavor.1
+		10 = crb_flavor.2
+		10 = crb_flavor.3
+		10 = crb_flavor.4
+		10 = crb_flavor.5
+		10 = crb_flavor.6
+		10 = crb_flavor.7
+		10 = crb_flavor.8
+		10 = crb_flavor.9
+		10 = crb_flavor.10
+		10 = crb_flavor.11
+		10 = crb_flavor.12
+		10 = crb_flavor.13
+		10 = crb_flavor.14
+		10 = crb_flavor.15
+		10 = crb_flavor.16
+	}
+}

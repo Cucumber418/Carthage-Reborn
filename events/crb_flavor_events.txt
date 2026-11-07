@@ -1,0 +1,768 @@
+﻿namespace = crb_flavor
+
+# 迦太基特色事件：每半年有一定概率从中随机抽取一个（见 crb_on_actions.txt）
+# 事件本身的 trigger 决定能否被抽中；一次性事件用变量记录
+
+# 比尔萨山的牛皮
+crb_flavor.1 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.1.t
+	desc = crb_flavor.1.d
+	flavor = crb_flavor.1.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		NOT = { has_variable = crb_flavor_1_fired }
+		any_scope_state = { state_region = s:STATE_TUNISIA }
+	}
+
+	immediate = {
+		set_variable = crb_flavor_1_fired
+	}
+
+	option = {
+		name = crb_flavor.1.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_byrsa_survey
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_flavor.1.b
+		add_modifier = {
+			name = crb_flavor_byrsa_deeds
+			days = normal_modifier_time
+		}
+	}
+}
+
+# 腓尼基字母
+crb_flavor.2 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.2.t
+	desc = crb_flavor.2.d
+	flavor = crb_flavor.2.f
+
+	event_image = {
+		video = "ip3_village_school"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		exists = ig:ig_intelligentsia
+	}
+
+	option = {
+		name = crb_flavor.2.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_punic_letters
+			multiplier = money_amount_multiplier_small
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_flavor.2.b
+		add_modifier = {
+			name = crb_flavor_literacy_first
+			days = normal_modifier_time
+		}
+	}
+}
+
+# 推罗紫
+crb_flavor.3 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.3.t
+	desc = crb_flavor.3.d
+	flavor = crb_flavor.3.f
+
+	event_image = {
+		video = "middleeast_middleclass_cafe"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		any_scope_state = { is_coastal = yes }
+	}
+
+	option = {
+		name = crb_flavor.3.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_tyrian_purple
+			multiplier = money_amount_multiplier_small
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_flavor.3.b
+		add_modifier = {
+			name = crb_flavor_purple_sold
+			multiplier = money_amount_multiplier_small
+			days = short_modifier_time
+		}
+	}
+}
+
+# 马与棕榈
+crb_flavor.4 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.4.t
+	desc = crb_flavor.4.d
+	flavor = crb_flavor.4.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+	}
+
+	option = {
+		name = crb_flavor.4.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_horse_palm_coins
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_flavor.4.b
+		add_modifier = {
+			name = crb_flavor_hoard_melted
+			multiplier = money_amount_multiplier_small
+			days = short_modifier_time
+		}
+	}
+}
+
+# 马戈的农书
+crb_flavor.5 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.5.t
+	desc = crb_flavor.5.d
+	flavor = crb_flavor.5.f
+
+	event_image = {
+		video = "africa_prosperous_farm"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		NOT = { has_variable = crb_flavor_5_fired }
+		exists = ig:ig_landowners
+	}
+
+	immediate = {
+		set_variable = crb_flavor_5_fired
+	}
+
+	option = {
+		name = crb_flavor.5.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_mago_distributed
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_flavor.5.b
+		add_modifier = {
+			name = crb_flavor_mago_sold
+			multiplier = money_amount_multiplier_small
+			days = short_modifier_time
+		}
+	}
+}
+
+# 布匿人的信义
+crb_flavor.6 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.6.t
+	desc = crb_flavor.6.d
+	flavor = crb_flavor.6.f
+
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		NOT = { is_country_type = unrecognized }
+	}
+
+	option = {
+		name = crb_flavor.6.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_punic_faith_protest
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_flavor.6.b
+		add_modifier = {
+			name = crb_flavor_punic_faith_proven
+			days = normal_modifier_time
+		}
+	}
+}
+
+# 迦太基必须毁灭
+crb_flavor.7 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.7.t
+	desc = crb_flavor.7.d
+	flavor = crb_flavor.7.f
+
+	event_image = {
+		video = "ep1_printing_press"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		NOT = { crb_controls_region_trigger = { REGION = STATE_LAZIO } }
+	}
+
+	option = {
+		name = crb_flavor.7.a
+		default_option = yes
+		add_loyalists = {
+			value = medium_radicals
+		}
+		add_modifier = {
+			name = crb_flavor_cato_answered
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_flavor.7.b
+		add_modifier = {
+			name = crb_flavor_cato_ignored
+			days = normal_modifier_time
+		}
+	}
+}
+
+# 战象
+crb_flavor.8 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.8.t
+	desc = crb_flavor.8.d
+	flavor = crb_flavor.8.f
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		exists = ig:ig_armed_forces
+	}
+
+	option = {
+		name = crb_flavor.8.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_elephant_parade
+			multiplier = money_amount_multiplier_medium
+			days = short_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_flavor.8.b
+		add_modifier = {
+			name = crb_flavor_elephants_refused
+			days = normal_modifier_time
+		}
+	}
+}
+
+# 萨朗波
+crb_flavor.9 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.9.t
+	desc = crb_flavor.9.d
+	flavor = crb_flavor.9.f
+
+	event_image = {
+		video = "europenorthamerica_art_gallery"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		NOT = { has_variable = crb_flavor_9_fired }
+		game_date >= 1862.1.1
+		exists = c:FRA
+	}
+
+	immediate = {
+		set_variable = crb_flavor_9_fired
+	}
+
+	option = {
+		name = crb_flavor.9.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_salammbo_welcomed
+			days = long_modifier_time
+		}
+		change_relations = {
+			country = c:FRA
+			value = 20
+		}
+	}
+
+	option = {
+		name = crb_flavor.9.b
+		add_modifier = {
+			name = crb_flavor_salammbo_rejected
+			days = normal_modifier_time
+		}
+		add_loyalists = {
+			value = small_radicals
+		}
+	}
+}
+
+# 海底的沉船
+crb_flavor.10 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.10.t
+	desc = crb_flavor.10.d
+	flavor = crb_flavor.10.f
+
+	event_image = {
+		video = "unspecific_naval_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		any_scope_state = { is_coastal = yes }
+	}
+
+	option = {
+		name = crb_flavor.10.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_shipwreck_museum
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_flavor.10.b
+		add_modifier = {
+			name = crb_flavor_shipwreck_sold
+			multiplier = money_amount_multiplier_small
+			days = short_modifier_time
+		}
+	}
+}
+
+# 百零四人议会
+crb_flavor.11 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.11.t
+	desc = crb_flavor.11.d
+	flavor = crb_flavor.11.f
+
+	event_image = {
+		video = "middleeast_courtroom_upheaval"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		has_law = law_type:law_crb_dual_sufetes
+	}
+
+	option = {
+		name = crb_flavor.11.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_council_restored
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_flavor.11.b
+		add_modifier = {
+			name = crb_flavor_council_rejected
+			days = normal_modifier_time
+		}
+	}
+}
+
+# 梅尔卡特的节日
+crb_flavor.12 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.12.t
+	desc = crb_flavor.12.d
+	flavor = crb_flavor.12.f
+
+	event_image = {
+		video = "ip5_countryside_procession"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		country_has_state_religion = rel:crb_tanit
+	}
+
+	option = {
+		name = crb_flavor.12.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_melqart_grand
+			multiplier = money_amount_multiplier_medium
+			days = short_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_flavor.12.b
+		add_modifier = {
+			name = crb_flavor_melqart_modest
+			days = short_modifier_time
+		}
+	}
+}
+
+# 锡之路
+crb_flavor.13 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.13.t
+	desc = crb_flavor.13.d
+	flavor = crb_flavor.13.f
+
+	event_image = {
+		video = "unspecific_steam_ship"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		exists = c:GBR
+		exists = ig:ig_industrialists
+		any_scope_state = { is_coastal = yes }
+	}
+
+	option = {
+		name = crb_flavor.13.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_tin_route
+			days = normal_modifier_time
+		}
+		change_relations = {
+			country = c:GBR
+			value = 20
+		}
+	}
+
+	option = {
+		name = crb_flavor.13.b
+		add_modifier = {
+			name = crb_flavor_tin_route_refused
+			days = normal_modifier_time
+		}
+	}
+}
+
+# 汉尼拔的誓言
+crb_flavor.14 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.14.t
+	desc = crb_flavor.14.d
+	flavor = crb_flavor.14.f
+
+	event_image = {
+		video = "votp_monarch_holding_court"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		has_variable = crb_barca_victory
+	}
+
+	option = {
+		name = crb_flavor.14.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_oath_sworn
+			days = normal_modifier_time
+		}
+		add_loyalists = {
+			value = small_radicals
+		}
+	}
+
+	option = {
+		name = crb_flavor.14.b
+		add_modifier = {
+			name = crb_flavor_oath_refused
+			days = normal_modifier_time
+		}
+	}
+}
+
+# 撒盐的传说
+crb_flavor.15 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.15.t
+	desc = crb_flavor.15.d
+	flavor = crb_flavor.15.f
+
+	event_image = {
+		video = "ep2_intellectual_writer"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		NOT = { has_variable = crb_flavor_15_fired }
+		game_date >= 1850.1.1
+	}
+
+	immediate = {
+		set_variable = crb_flavor_15_fired
+	}
+
+	option = {
+		name = crb_flavor.15.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_salt_history
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_flavor.15.b
+		add_modifier = {
+			name = crb_flavor_salt_legend
+			days = normal_modifier_time
+		}
+		add_loyalists = {
+			value = small_radicals
+		}
+	}
+}
+
+# 海上的私掠
+crb_flavor.16 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.16.t
+	desc = crb_flavor.16.d
+	flavor = crb_flavor.16.f
+
+	event_image = {
+		video = "unspecific_naval_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		# 由 on_action crb_flavor_events 触发
+		crb_is_carthage_trigger = yes
+		has_modifier = crb_carthago_non_deleta
+	}
+
+	option = {
+		name = crb_flavor.16.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_prize_shared
+			multiplier = money_amount_multiplier_medium
+			days = short_modifier_time
+		}
+		change_infamy = 3
+	}
+
+	option = {
+		name = crb_flavor.16.b
+		add_modifier = {
+			name = crb_flavor_prize_released
+			days = normal_modifier_time
+		}
+	}
+}

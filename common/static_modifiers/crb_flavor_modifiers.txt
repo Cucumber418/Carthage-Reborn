@@ -1,0 +1,180 @@
+﻿# 迦太基特色事件的修正
+
+crb_flavor_byrsa_survey = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_legitimacy_base_add = 5
+}
+
+crb_flavor_byrsa_deeds = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	interest_group_ig_landowners_approval_add = 2
+}
+
+crb_flavor_punic_letters = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	state_assimilation_mult = 0.15
+	interest_group_ig_intelligentsia_approval_add = 2
+	country_expenses_add = 1
+}
+
+crb_flavor_literacy_first = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	state_education_access_add = 0.05
+}
+
+crb_flavor_tyrian_purple = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_prestige_add = 10
+	building_dye_plantation_throughput_add = 0.1
+	country_expenses_add = 1
+}
+
+crb_flavor_purple_sold = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_minting_add = 1
+}
+
+crb_flavor_horse_palm_coins = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 5
+	country_legitimacy_base_add = 5
+}
+
+crb_flavor_hoard_melted = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_minting_add = 1
+}
+
+crb_flavor_mago_distributed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_group_bg_agriculture_throughput_add = 0.1
+	building_group_bg_plantations_throughput_add = 0.1
+	interest_group_ig_landowners_approval_add = 1
+}
+
+crb_flavor_mago_sold = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_minting_add = 1
+	country_prestige_add = 5
+}
+
+crb_flavor_punic_faith_protest = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_add = 10
+}
+
+crb_flavor_punic_faith_proven = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_infamy_decay_mult = 0.2
+}
+
+crb_flavor_cato_answered = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_ig_armed_forces_approval_add = 2
+}
+
+crb_flavor_cato_ignored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_legitimacy_base_add = 3
+}
+
+crb_flavor_elephant_parade = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_prestige_add = 15
+	interest_group_ig_armed_forces_approval_add = 2
+	country_expenses_add = 1
+}
+
+crb_flavor_elephants_refused = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	country_military_tech_research_speed_mult = 0.05
+	interest_group_ig_armed_forces_approval_add = -1
+}
+
+crb_flavor_salammbo_welcomed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 15
+}
+
+crb_flavor_salammbo_rejected = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	interest_group_ig_intelligentsia_approval_add = 2
+}
+
+crb_flavor_shipwreck_museum = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 10
+	interest_group_ig_intelligentsia_approval_add = 1
+}
+
+crb_flavor_shipwreck_sold = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_minting_add = 1
+}
+
+crb_flavor_council_restored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_legitimacy_base_add = 5
+	interest_group_ig_armed_forces_approval_add = -2
+}
+
+crb_flavor_council_rejected = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_ig_armed_forces_approval_add = 2
+	country_legitimacy_base_add = -3
+}
+
+crb_flavor_melqart_grand = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	interest_group_ig_devout_approval_add = 2
+	state_standard_of_living_add = 1
+	country_expenses_add = 1
+}
+
+crb_flavor_melqart_modest = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	interest_group_ig_devout_approval_add = 1
+}
+
+crb_flavor_tin_route = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	interest_group_ig_industrialists_approval_add = 2
+	building_port_throughput_add = 0.1
+}
+
+crb_flavor_tin_route_refused = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_ig_landowners_approval_add = 1
+}
+
+crb_flavor_oath_sworn = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_ig_armed_forces_approval_add = 2
+	unit_morale_loss_mult = -0.1
+}
+
+crb_flavor_oath_refused = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_legitimacy_base_add = 3
+}
+
+crb_flavor_salt_history = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	interest_group_ig_intelligentsia_approval_add = 2
+	country_society_tech_research_speed_mult = 0.05
+}
+
+crb_flavor_salt_legend = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	interest_group_ig_devout_approval_add = 1
+}
+
+crb_flavor_prize_shared = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_minting_add = 1
+}
+
+crb_flavor_prize_released = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_prestige_add = 10
+}
