@@ -64,3 +64,22 @@ crb_plantation_levels = {
 		add = this.level
 	}
 }
+
+# 本国信仰伊斯兰教（逊尼派、什叶派、伊巴德派）的人口占比
+crb_islam_share = {
+	value = 0
+	every_scope_pop = {
+		limit = {
+			OR = {
+				has_pop_religion = sunni
+				has_pop_religion = shiite
+				has_pop_religion = ibadi
+			}
+		}
+		add = total_size
+	}
+	if = {
+		limit = { total_population > 0 }
+		divide = total_population
+	}
+}

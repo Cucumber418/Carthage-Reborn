@@ -255,3 +255,47 @@ crb_hannibal_returned = {
 	interest_group_ig_armed_forces_approval_add = 3
 	interest_group_ig_petty_bourgeoisie_approval_add = 3
 }
+
+# ============================================================
+# 第 N 次布匿战争
+# ============================================================
+
+crb_punic_war_mobilization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+crb_senate_war_pledge = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_war_support_casualties_mult = -0.25
+	country_war_support_battles_decrease_mult = -0.25
+}
+
+crb_punic_war_victory = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 25
+}
+
+# ============================================================
+# 两千年的复仇路
+# ============================================================
+
+crb_revenge_loyalty = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_legitimacy_base_add = 5
+}
+
+crb_revenge_complete = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 50
+	country_legitimacy_base_add = 10
+}
+
+# ============================================================
+# 皈依伊斯兰教
+# ============================================================
+
+crb_converted_to_islam = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_legitimacy_base_add = -10
+}

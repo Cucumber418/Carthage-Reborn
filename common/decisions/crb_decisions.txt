@@ -1,0 +1,289 @@
+﻿# 两千年的复仇路：四个阶段的决议，以及阶段完成后的商站决议
+# 每个阶段的决议在下一阶段的土地拿下后，变为对应的商站决议
+
+crb_cross_pyrenees_decision = {
+	is_shown = {
+		has_journal_entry = je_crb_revenge_road
+		NOT = { has_variable = crb_revenge_stage1_taken }
+	}
+
+	possible = {
+		crb_is_carthage_trigger = yes
+	}
+
+	when_taken = {
+		set_variable = crb_revenge_stage1_taken
+		trigger_event = { id = crb_revenge.1 popup = yes }
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}
+
+crb_cross_gaul_decision = {
+	is_shown = {
+		has_journal_entry = je_crb_revenge_road
+		has_variable = crb_revenge_stage1_taken
+		NOT = { has_variable = crb_revenge_stage2_taken }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = crb_revenge_stage1_lands_tt
+			crb_controls_region_trigger = { REGION = STATE_CATALONIA }
+			crb_controls_region_trigger = { REGION = STATE_VALENCIA }
+			crb_controls_region_trigger = { REGION = STATE_MURCIA }
+			crb_controls_region_trigger = { REGION = STATE_UPPER_ANDALUSIA }
+			crb_controls_region_trigger = { REGION = STATE_LOWER_ANDALUSIA }
+		}
+	}
+
+	when_taken = {
+		set_variable = crb_revenge_stage2_taken
+		trigger_event = { id = crb_revenge.2 popup = yes }
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}
+
+crb_found_gaul_post_decision = {
+	is_shown = {
+		has_variable = crb_revenge_stage2_taken
+		NOT = { has_variable = crb_gaul_post_founded }
+	}
+
+	possible = {
+		is_at_war = no
+		custom_tooltip = {
+			text = crb_revenge_stage2_lands_tt
+			crb_controls_region_trigger = { REGION = STATE_LANGUEDOC }
+			crb_controls_region_trigger = { REGION = STATE_PROVENCE }
+			crb_controls_region_trigger = { REGION = STATE_RHONE }
+		}
+		NOT = { exists = c:GLT }
+	}
+
+	when_taken = {
+		set_variable = crb_gaul_post_founded
+		crb_create_puppet_GLT_effect = yes
+	}
+
+	ai_chance = {
+		value = 50
+	}
+}
+
+crb_cross_alps_decision = {
+	is_shown = {
+		has_variable = crb_revenge_stage2_taken
+		NOT = { has_variable = crb_revenge_stage3_taken }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = crb_revenge_stage2_lands_tt
+			crb_controls_region_trigger = { REGION = STATE_LANGUEDOC }
+			crb_controls_region_trigger = { REGION = STATE_PROVENCE }
+			crb_controls_region_trigger = { REGION = STATE_RHONE }
+		}
+	}
+
+	when_taken = {
+		set_variable = crb_revenge_stage3_taken
+		trigger_event = { id = crb_revenge.3 popup = yes }
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}
+
+crb_found_alpine_post_decision = {
+	is_shown = {
+		has_variable = crb_revenge_stage3_taken
+		NOT = { has_variable = crb_alpine_post_founded }
+	}
+
+	possible = {
+		is_at_war = no
+		custom_tooltip = {
+			text = crb_revenge_stage3_lands_tt
+			crb_controls_region_trigger = { REGION = STATE_WEST_SWITZERLAND }
+			crb_controls_region_trigger = { REGION = STATE_EAST_SWITZERLAND }
+			crb_controls_region_trigger = { REGION = STATE_SAVOY }
+			crb_controls_region_trigger = { REGION = STATE_PIEDMONT }
+			crb_controls_region_trigger = { REGION = STATE_LOMBARDY }
+			crb_controls_region_trigger = { REGION = STATE_VENETIA }
+		}
+		NOT = { exists = c:SNT }
+	}
+
+	when_taken = {
+		set_variable = crb_alpine_post_founded
+		crb_create_puppet_SNT_effect = yes
+	}
+
+	ai_chance = {
+		value = 50
+	}
+}
+
+crb_revenge_begins_decision = {
+	is_shown = {
+		has_variable = crb_revenge_stage3_taken
+		NOT = { has_variable = crb_revenge_stage4_taken }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = crb_revenge_stage3_lands_tt
+			crb_controls_region_trigger = { REGION = STATE_WEST_SWITZERLAND }
+			crb_controls_region_trigger = { REGION = STATE_EAST_SWITZERLAND }
+			crb_controls_region_trigger = { REGION = STATE_SAVOY }
+			crb_controls_region_trigger = { REGION = STATE_PIEDMONT }
+			crb_controls_region_trigger = { REGION = STATE_LOMBARDY }
+			crb_controls_region_trigger = { REGION = STATE_VENETIA }
+		}
+	}
+
+	when_taken = {
+		set_variable = crb_revenge_stage4_taken
+		trigger_event = { id = crb_revenge.4 popup = yes }
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}
+
+crb_handle_rome_decision = {
+	is_shown = {
+		has_variable = crb_revenge_stage4_taken
+		NOT = { has_variable = crb_rome_handled }
+	}
+
+	possible = {
+		is_at_war = no
+		custom_tooltip = {
+			text = crb_revenge_stage4_lands_tt
+			crb_controls_region_trigger = { REGION = STATE_EMILIA }
+			crb_controls_region_trigger = { REGION = STATE_ROMAGNA }
+			crb_controls_region_trigger = { REGION = STATE_TUSCANY }
+			crb_controls_region_trigger = { REGION = STATE_UMBRIA }
+			crb_controls_region_trigger = { REGION = STATE_LAZIO }
+			crb_controls_region_trigger = { REGION = STATE_ABRUZZO }
+			crb_controls_region_trigger = { REGION = STATE_CAMPANIA }
+			crb_controls_region_trigger = { REGION = STATE_APULIA }
+			crb_controls_region_trigger = { REGION = STATE_CALABRIA }
+			crb_controls_region_trigger = { REGION = STATE_SARDINIA }
+		}
+	}
+
+	when_taken = {
+		set_variable = crb_rome_handled
+		trigger_event = { id = crb_revenge.5 popup = yes }
+	}
+
+	ai_chance = {
+		value = 50
+	}
+}
+
+# 扩张商站：建立新迦太基后解锁
+crb_expand_trading_posts_decision = {
+	is_shown = {
+		crb_is_carthage_trigger = yes
+		has_variable = crb_hannibal_new_carthage_done
+	}
+
+	possible = {
+		is_at_war = no
+		custom_tooltip = {
+			text = crb_can_expand_trading_posts_tt
+			crb_can_expand_trading_posts_trigger = yes
+		}
+	}
+
+	when_taken = {
+		custom_tooltip = crb_expand_trading_posts_effect_tt
+		hidden_effect = {
+			crb_expand_trading_posts_effect = yes
+		}
+	}
+
+	ai_chance = {
+		value = 10
+	}
+}
+
+# 皈依伊斯兰教：伊斯兰教人口超过 40% 时出现在决议面板，不弹提示
+crb_convert_to_islam_decision = {
+	is_shown = {
+		crb_is_carthage_trigger = yes
+		NOT = { country_has_state_religion = rel:sunni }
+		NOT = { country_has_state_religion = rel:shiite }
+		NOT = { country_has_state_religion = rel:ibadi }
+		crb_islam_share > 0.4
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = crb_islam_share_tt
+			crb_islam_share > 0.4
+		}
+	}
+
+	when_taken = {
+		if = {
+			limit = {
+				religion_percent_country = { target = rel:sunni value >= 0.2 }
+			}
+			set_state_religion = rel:sunni
+		}
+		else_if = {
+			limit = {
+				religion_percent_country = { target = rel:shiite value >= 0.2 }
+			}
+			set_state_religion = rel:shiite
+		}
+		else = {
+			set_state_religion = rel:ibadi
+		}
+		ruler ?= {
+			change_character_religion = root.religion
+		}
+		heir ?= {
+			change_character_religion = root.religion
+		}
+		# 效果参照原版国家集团的"强制改宗"，对本国使用
+		capital = {
+			convert_population = {
+				target = root.religion
+				value = 0.05
+			}
+		}
+		every_scope_state = {
+			limit = { is_capital = no }
+			convert_population = {
+				target = root.religion
+				value = 0.02
+			}
+		}
+		state_religion_switch_effect = yes
+		add_modifier = {
+			name = crb_converted_to_islam
+			days = normal_modifier_time
+		}
+		add_radicals = {
+			value = medium_radicals
+			religion = rel:crb_tanit
+		}
+	}
+
+	ai_chance = {
+		value = 10
+	}
+}

@@ -214,3 +214,116 @@ crb_debug.7 = {
 		default_option = yes
 	}
 }
+
+crb_debug.8 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.8.t
+	desc = crb_debug.8.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		set_variable = crb_hannibal_new_carthage_done
+	}
+
+	option = {
+		name = crb_debug.8.a
+		default_option = yes
+	}
+}
+
+crb_debug.9 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.9.t
+	desc = crb_debug.9.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		if = {
+			limit = { NOT = { has_variable = crb_punic_war_number } }
+			set_variable = {
+				name = crb_punic_war_number
+				value = 4
+			}
+		}
+		add_journal_entry = { type = je_crb_punic_war }
+	}
+
+	option = {
+		name = crb_debug.9.a
+		default_option = yes
+	}
+}
+
+crb_debug.10 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.10.t
+	desc = crb_debug.10.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		every_scope_state = {
+			convert_population = {
+				target = rel:sunni
+				value = 0.5
+			}
+		}
+	}
+
+	option = {
+		name = crb_debug.10.a
+		default_option = yes
+	}
+}
+
+crb_debug.11 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.11.t
+	desc = crb_debug.11.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		set_variable = crb_hanno_barca_concluded
+		crb_barca_victory_effect = yes
+	}
+
+	option = {
+		name = crb_debug.11.a
+		default_option = yes
+	}
+}

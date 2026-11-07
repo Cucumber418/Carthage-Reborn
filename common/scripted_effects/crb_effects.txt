@@ -672,3 +672,238 @@ crb_hannibal_stability_effect = {
 		value = small_radicals
 	}
 }
+
+# ============================================================
+# 两千年的复仇路：商站
+# ============================================================
+
+# 建立 GLT（作用域：迦太基）
+crb_create_puppet_GLT_effect = {
+	random_scope_state = {
+		limit = {
+			is_capital = no
+			crb_is_gaul_post_state_trigger = yes
+		}
+		save_scope_as = crb_puppet_first_state
+	}
+	if = {
+		limit = { exists = scope:crb_puppet_first_state }
+		create_country = {
+			tag = GLT
+			origin = root
+			state = scope:crb_puppet_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+				activate_law = law_type:law_mercantilism
+				activate_law = law_type:law_landed_voting
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				crb_is_gaul_post_state_trigger = yes
+			}
+			set_state_owner = c:GLT
+		}
+		create_diplomatic_pact = {
+			country = c:GLT
+			type = puppet
+		}
+	}
+}
+
+# 建立 SNT（作用域：迦太基）
+crb_create_puppet_SNT_effect = {
+	random_scope_state = {
+		limit = {
+			is_capital = no
+			crb_is_alpine_post_state_trigger = yes
+		}
+		save_scope_as = crb_puppet_first_state
+	}
+	if = {
+		limit = { exists = scope:crb_puppet_first_state }
+		create_country = {
+			tag = SNT
+			origin = root
+			state = scope:crb_puppet_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+				activate_law = law_type:law_protectionism
+				activate_law = law_type:law_national_militia
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				crb_is_alpine_post_state_trigger = yes
+			}
+			set_state_owner = c:SNT
+		}
+		create_diplomatic_pact = {
+			country = c:SNT
+			type = puppet
+		}
+	}
+}
+
+# 建立 IOP（作用域：迦太基）
+crb_create_puppet_IOP_effect = {
+	random_scope_state = {
+		limit = {
+			is_capital = no
+			crb_is_south_italy_state_trigger = yes
+		}
+		save_scope_as = crb_puppet_first_state
+	}
+	if = {
+		limit = { exists = scope:crb_puppet_first_state }
+		create_country = {
+			tag = IOP
+			origin = root
+			state = scope:crb_puppet_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+				activate_law = law_type:law_free_trade
+				activate_law = law_type:law_wealth_voting
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				crb_is_south_italy_state_trigger = yes
+			}
+			set_state_owner = c:IOP
+		}
+		create_diplomatic_pact = {
+			country = c:IOP
+			type = puppet
+		}
+	}
+}
+
+# 建立 RPR（作用域：迦太基）
+crb_create_puppet_RPR_effect = {
+	random_scope_state = {
+		limit = {
+			is_capital = no
+			crb_is_south_italy_state_trigger = yes
+		}
+		save_scope_as = crb_puppet_first_state
+	}
+	if = {
+		limit = { exists = scope:crb_puppet_first_state }
+		create_country = {
+			tag = RPR
+			origin = root
+			state = scope:crb_puppet_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+				activate_law = law_type:law_oligarchy
+				activate_law = law_type:law_secret_police
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				crb_is_south_italy_state_trigger = yes
+			}
+			set_state_owner = c:RPR
+		}
+		create_diplomatic_pact = {
+			country = c:RPR
+			type = personal_union
+		}
+	}
+}
+
+# 扩张商站：把迦太基在各商站地区的州交给对应的商站（作用域：迦太基）
+crb_expand_trading_posts_effect = {
+	if = {
+		limit = { exists = c:IBT }
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				crb_is_spanish_mainland_state_trigger = yes
+			}
+			set_state_owner = c:IBT
+		}
+	}
+	if = {
+		limit = { exists = c:GLT }
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				crb_is_gaul_post_state_trigger = yes
+			}
+			set_state_owner = c:GLT
+		}
+	}
+	if = {
+		limit = { exists = c:SNT }
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				crb_is_alpine_post_state_trigger = yes
+			}
+			set_state_owner = c:SNT
+		}
+	}
+	if = {
+		limit = { exists = c:IOP }
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				crb_is_south_italy_state_trigger = yes
+			}
+			set_state_owner = c:IOP
+		}
+	}
+	if = {
+		limit = { exists = c:RPR }
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				crb_is_south_italy_state_trigger = yes
+			}
+			set_state_owner = c:RPR
+		}
+	}
+}
+
+# 是否有可以交给商站的州（作用域：迦太基）
+
+# ============================================================
+# 第 N 次布匿战争
+# ============================================================
+
+# 开战时检查（作用域：迦太基）
+crb_punic_war_check_effect = {
+	if = {
+		limit = {
+			NOT = { has_journal_entry = je_crb_punic_war }
+			is_at_war = yes
+			NOT = { owns_entire_state_region = STATE_SICILY }
+			crb_at_war_with_sicily_holder_trigger = yes
+		}
+		if = {
+			limit = { NOT = { has_variable = crb_punic_war_number } }
+			set_variable = {
+				name = crb_punic_war_number
+				value = 4
+			}
+		}
+		add_journal_entry = { type = je_crb_punic_war }
+	}
+}
+
+crb_punic_war_advance_number_effect = {
+	change_variable = {
+		name = crb_punic_war_number
+		add = 1
+	}
+}

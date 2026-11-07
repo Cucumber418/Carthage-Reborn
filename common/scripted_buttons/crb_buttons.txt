@@ -111,3 +111,78 @@ crb_salt_marsh_button = {
 		}
 	}
 }
+
+# 第 N 次布匿战争：动员公民
+crb_punic_war_mobilize_button = {
+	name = "crb_punic_war_mobilize_button"
+	desc = "crb_punic_war_mobilize_button_desc"
+
+	visible = {
+		has_journal_entry = je_crb_punic_war
+	}
+
+	possible = {
+		is_at_war = yes
+		custom_tooltip = {
+			text = crb_punic_war_mobilize_cooldown_tt
+			NOT = { has_modifier = crb_punic_war_mobilization }
+		}
+	}
+
+	ai_chance = {
+		value = 50
+	}
+
+	effect = {
+		every_scope_war = {
+			add_war_war_support = {
+				target = root
+				value = 10
+			}
+		}
+		add_modifier = {
+			name = crb_punic_war_mobilization
+			multiplier = money_amount_multiplier_small
+			days = very_short_modifier_time
+		}
+	}
+}
+
+# 第 N 次布匿战争：元老院的承诺
+crb_punic_war_pledge_button = {
+	name = "crb_punic_war_pledge_button"
+	desc = "crb_punic_war_pledge_button_desc"
+
+	visible = {
+		has_journal_entry = je_crb_punic_war
+	}
+
+	possible = {
+		is_at_war = yes
+		custom_tooltip = {
+			text = crb_punic_war_pledge_cooldown_tt
+			NOT = { has_variable = crb_punic_war_pledge_cooldown }
+		}
+	}
+
+	ai_chance = {
+		value = 50
+	}
+
+	effect = {
+		add_modifier = {
+			name = crb_senate_war_pledge
+			days = very_short_modifier_time
+		}
+		add_modifier = {
+			name = crb_hb_conceded_to_assembly
+			days = very_short_modifier_time
+		}
+		hidden_effect = {
+			set_variable = {
+				name = crb_punic_war_pledge_cooldown
+				days = 730
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+﻿# "第 N 次布匿战争"中的序号（作用域：国家）
+crb_punic_war_ordinal = {
+	type = country
+
+	text = {
+		trigger = { var:crb_punic_war_number ?= 4 }
+		localization_key = crb_ordinal_4
+	}
+	text = {
+		trigger = { var:crb_punic_war_number ?= 5 }
+		localization_key = crb_ordinal_5
+	}
+	text = {
+		trigger = { var:crb_punic_war_number ?= 6 }
+		localization_key = crb_ordinal_6
+	}
+	text = {
+		trigger = { var:crb_punic_war_number ?= 7 }
+		localization_key = crb_ordinal_7
+	}
+	text = {
+		trigger = { var:crb_punic_war_number ?= 8 }
+		localization_key = crb_ordinal_8
+	}
+	text = {
+		trigger = { var:crb_punic_war_number ?= 9 }
+		localization_key = crb_ordinal_9
+	}
+	text = {
+		trigger = { var:crb_punic_war_number ?= 10 }
+		localization_key = crb_ordinal_10
+	}
+	text = {
+		trigger = { var:crb_punic_war_number ?= 11 }
+		localization_key = crb_ordinal_11
+	}
+	text = {
+		trigger = { var:crb_punic_war_number ?= 12 }
+		localization_key = crb_ordinal_12
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = crb_ordinal_many
+	}
+}

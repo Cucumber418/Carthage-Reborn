@@ -42,6 +42,8 @@ crb_monthly_pulse_country = {
 		# 历史地名：新拥有的地区改名，失去的地区恢复原名
 		crb_apply_punic_state_names_effect = yes
 		crb_reset_lost_punic_state_names_effect = yes
+		# 第 N 次布匿战争
+		crb_punic_war_check_effect = yes
 		# 受认可后移除"迦太基仍未毁灭"
 		if = {
 			limit = {

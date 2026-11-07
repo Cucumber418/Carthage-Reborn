@@ -55,3 +55,98 @@ crb_is_spanish_mainland_state_trigger = {
 		state_region = s:STATE_BASQUE_COUNTRY
 	}
 }
+
+# 迦太基或其傀儡国、商站控制了整个地区（作用域：任意；参数 REGION 为地区代码）
+crb_controls_region_trigger = {
+	s:$REGION$ = {
+		any_scope_state = {
+			count = all
+			owner ?= { crb_uses_punic_names_trigger = yes }
+		}
+	}
+}
+
+# 各商站的地区范围（作用域：州）
+crb_is_gaul_post_state_trigger = {
+	OR = {
+		state_region = s:STATE_ILE_DE_FRANCE
+		state_region = s:STATE_PROVENCE
+		state_region = s:STATE_NORMANDY
+		state_region = s:STATE_LANGUEDOC
+		state_region = s:STATE_RHONE
+		state_region = s:STATE_PICARDY
+		state_region = s:STATE_ALSACE_LORRAINE
+		state_region = s:STATE_POITOU
+		state_region = s:STATE_GUYENNE
+		state_region = s:STATE_AUVERGNE_LIMOUSIN
+		state_region = s:STATE_BRITTANY
+		state_region = s:STATE_BURGUNDY
+		state_region = s:STATE_CHAMPAGNE
+		state_region = s:STATE_FRANCHE_COMTE
+		state_region = s:STATE_LORRAINE
+		state_region = s:STATE_AQUITAINE
+		state_region = s:STATE_ORLEANS
+		state_region = s:STATE_MAINE_ANJOU
+		state_region = s:STATE_FRENCH_LOW_COUNTRIES
+	}
+}
+
+crb_is_alpine_post_state_trigger = {
+	OR = {
+		state_region = s:STATE_WEST_SWITZERLAND
+		state_region = s:STATE_EAST_SWITZERLAND
+		state_region = s:STATE_SAVOY
+		state_region = s:STATE_PIEDMONT
+		state_region = s:STATE_LOMBARDY
+		state_region = s:STATE_VENETIA
+	}
+}
+
+crb_is_south_italy_state_trigger = {
+	OR = {
+		state_region = s:STATE_LAZIO
+		state_region = s:STATE_ABRUZZO
+		state_region = s:STATE_CAMPANIA
+		state_region = s:STATE_APULIA
+		state_region = s:STATE_CALABRIA
+	}
+}
+
+# 正在与持有西西里土地的国家交战（作用域：国家）
+crb_at_war_with_sicily_holder_trigger = {
+	any_country = {
+		has_war_with = root
+		any_scope_state = {
+			state_region = s:STATE_SICILY
+		}
+	}
+}
+
+# 本国伊斯兰教人口占比（作用域：国家）——见 script_values
+
+crb_can_expand_trading_posts_trigger = {
+	any_scope_state = {
+		is_capital = no
+		OR = {
+			AND = {
+				crb_is_spanish_mainland_state_trigger = yes
+				exists = c:IBT
+			}
+			AND = {
+				crb_is_gaul_post_state_trigger = yes
+				exists = c:GLT
+			}
+			AND = {
+				crb_is_alpine_post_state_trigger = yes
+				exists = c:SNT
+			}
+			AND = {
+				crb_is_south_italy_state_trigger = yes
+				OR = {
+					exists = c:IOP
+					exists = c:RPR
+				}
+			}
+		}
+	}
+}

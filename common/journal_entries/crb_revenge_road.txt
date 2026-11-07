@@ -1,0 +1,98 @@
+﻿# 两千年的复仇路（巴卡派路线）
+# 通过决议推进：翻过比利牛斯！、越过高卢！、翻过阿尔卑斯！、复仇开始！
+je_crb_revenge_road = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_crb_carthage
+
+	activation_description = {
+		always = yes
+	}
+
+	is_shown_in_lobby = {
+		c:TUN ?= THIS
+	}
+
+	is_shown_when_inactive = {
+		crb_is_carthage_trigger = yes
+		has_variable = crb_hannibal_new_carthage_done
+		NOT = { has_variable = crb_revenge_concluded }
+	}
+
+	possible = {
+		crb_is_carthage_trigger = yes
+		has_variable = crb_hannibal_new_carthage_done
+		NOT = { has_variable = crb_revenge_concluded }
+	}
+
+	immediate = {
+		trigger_event = { id = crb_revenge.0 popup = yes }
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = crb_revenge_status_4
+				trigger = { has_variable = crb_revenge_stage4_taken }
+			}
+			triggered_desc = {
+				desc = crb_revenge_status_3
+				trigger = { has_variable = crb_revenge_stage3_taken }
+			}
+			triggered_desc = {
+				desc = crb_revenge_status_2
+				trigger = { has_variable = crb_revenge_stage2_taken }
+			}
+			triggered_desc = {
+				desc = crb_revenge_status_1
+				trigger = { has_variable = crb_revenge_stage1_taken }
+			}
+			triggered_desc = {
+				desc = crb_revenge_status_0
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	# 复仇完成：拿下罗马并结束战争
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			has_variable = crb_revenge_stage4_taken
+			custom_tooltip = {
+				text = crb_revenge_rome_taken_tt
+				crb_controls_region_trigger = { REGION = STATE_LAZIO }
+			}
+			is_at_war = no
+		}
+		effect = {
+			set_variable = crb_revenge_concluded
+			add_modifier = {
+				name = crb_revenge_complete
+				days = stupidly_long_modifier_time
+			}
+			add_loyalists = {
+				value = medium_radicals
+			}
+			trigger_event = { id = crb_revenge.9 popup = yes }
+		}
+	}
+
+	outcome = {
+		flags = { hidden invalid_outcome }
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			NOT = { crb_is_carthage_trigger = yes }
+		}
+		effect = {
+			set_variable = crb_revenge_concluded
+		}
+	}
+
+	weight = 1000
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

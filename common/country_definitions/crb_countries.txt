@@ -36,3 +36,39 @@ IBT = { # 伊比利亚商站
 	cultures = { crb_punic spanish }
 	capital = STATE_MURCIA
 }
+
+# ============================================================
+# "两千年的复仇路"中可以建立的商站
+# ============================================================
+
+GLT = { # 高卢商站
+	color = rgb{ 120 70 140 }
+	country_type = recognized
+	tier = principality
+	cultures = { crb_punic occitan }
+	capital = STATE_PROVENCE
+}
+
+SNT = { # 雪山商站
+	color = rgb{ 170 150 200 }
+	country_type = recognized
+	tier = principality
+	cultures = { crb_punic north_italian }
+	capital = STATE_PIEDMONT
+}
+
+IOP = { # 伊奥尼亚商站
+	color = rgb{ 130 40 90 }
+	country_type = recognized
+	tier = principality
+	cultures = { crb_punic south_italian }
+	capital = STATE_APULIA
+}
+
+RPR = { # 罗马行省
+	color = rgb{ 90 20 60 }
+	country_type = recognized
+	tier = kingdom
+	cultures = { south_italian }
+	capital = STATE_LAZIO
+}

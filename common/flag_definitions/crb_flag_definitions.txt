@@ -73,3 +73,35 @@ IBT = {
 		priority = 1
 	}
 }
+
+GLT = {
+	flag_definition = {
+		coa = crb_GLT
+		subject_canton = crb_GLT
+		priority = 1
+	}
+}
+
+SNT = {
+	flag_definition = {
+		coa = crb_SNT
+		subject_canton = crb_SNT
+		priority = 1
+	}
+}
+
+IOP = {
+	flag_definition = {
+		coa = crb_IOP
+		subject_canton = crb_IOP
+		priority = 1
+	}
+}
+
+RPR = {
+	flag_definition = {
+		coa = crb_RPR
+		subject_canton = crb_RPR
+		priority = 1
+	}
+}
