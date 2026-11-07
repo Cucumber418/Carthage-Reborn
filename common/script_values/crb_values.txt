@@ -53,3 +53,14 @@ crb_hb_royalist_agitator_chance = {
 		max = 50
 	}
 }
+
+# 本国拥有的种植园总等级（海内外所有地区）
+crb_plantation_levels = {
+	value = 0
+	every_scope_building = {
+		limit = {
+			is_building_group = bg_plantations
+		}
+		add = this.level
+	}
+}

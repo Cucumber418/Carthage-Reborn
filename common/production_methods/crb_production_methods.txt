@@ -1,0 +1,25 @@
+﻿# U 型港：数值参照原版奇观（如自由女神像：威望 +75）
+pm_default_building_crb_cothon = {
+	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+
+	is_hidden_when_unavailable = yes
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_prestige_add = 50
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			building_port_throughput_add = 0.25
+			state_infrastructure_add = 10
+		}
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_bureaucrats_add = 100
+		}
+	}
+}

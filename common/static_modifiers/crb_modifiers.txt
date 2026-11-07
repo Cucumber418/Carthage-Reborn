@@ -179,3 +179,40 @@ crb_hb_king_rumor_investigated = {
 	interest_group_ig_armed_forces_approval_add = -2
 	country_legitimacy_base_add = 5
 }
+
+# ============================================================
+# 迦太基文化复兴
+# ============================================================
+
+crb_revived_plantations = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	building_group_bg_plantations_throughput_add = 0.1
+}
+
+# 治理盐碱地：每周支出（乘以资金倍数）
+crb_salt_reclamation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+crb_salt_reclaimed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 10
+}
+
+crb_tanit_triumphant = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_ig_devout_approval_add = 2
+	country_legitimacy_base_add = 5
+}
+
+crb_cothon_rebuilt = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 10
+}
+
+crb_punic_revival = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 15
+	state_assimilation_mult = 0.2
+}

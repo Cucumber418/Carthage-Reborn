@@ -1,0 +1,35 @@
+﻿# U 型港：以古迦太基的圆形军港"科同"为原型
+# 没有专门的三维模型，地图上不显示建筑外观；图标借用原版港口图标
+building_crb_cothon = {
+	building_group = bg_monuments
+	icon = "gfx/interface/icons/building_icons/building_port.dds"
+	expandable = no
+	downsizeable = no
+	unique = yes
+
+	entity_not_constructed = { }
+	entity_under_construction = { }
+	entity_constructed = { }
+
+	production_method_groups = {
+		pmg_base_building_crb_cothon
+	}
+
+	unlocking_technologies = {
+		reinforced_concrete
+	}
+
+	required_construction = construction_cost_monument
+
+	potential = {
+		state_region = s:STATE_TUNISIA
+		owner ?= {
+			crb_is_carthage_trigger = yes
+			has_variable = crb_cothon_unlocked
+		}
+	}
+
+	ai_value = 10000
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+}

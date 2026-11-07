@@ -1,0 +1,189 @@
+﻿namespace = crb_revival
+
+# 日志"迦太基文化复兴"的事件
+
+crb_revival.1 = {
+	type = country_event
+	placement = root
+
+	title = crb_revival.1.t
+	desc = crb_revival.1.d
+	flavor = crb_revival.1.f
+
+	event_image = {
+		video = "ip4_colonial_exploitation_going_well"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_cultural_revival 触发
+	}
+
+	option = {
+		name = crb_revival.1.a
+		default_option = yes
+		add_modifier = {
+			name = crb_revived_plantations
+		}
+	}
+}
+
+crb_revival.2 = {
+	type = country_event
+	placement = root
+
+	title = crb_revival.2.t
+	desc = crb_revival.2.d
+	flavor = crb_revival.2.f
+
+	event_image = {
+		video = "africa_prosperous_farm"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_cultural_revival 触发
+	}
+
+	option = {
+		name = crb_revival.2.a
+		default_option = yes
+		s:STATE_TUNISIA = {
+			add_arable_land = 50
+		}
+		add_modifier = {
+			name = crb_salt_reclaimed
+			days = long_modifier_time
+		}
+	}
+}
+
+crb_revival.3 = {
+	type = country_event
+	placement = root
+
+	title = crb_revival.3.t
+	desc = crb_revival.3.d
+	flavor = crb_revival.3.f
+
+	event_image = {
+		video = "africa_animism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_cultural_revival 触发
+	}
+
+	option = {
+		name = crb_revival.3.a
+		default_option = yes
+		add_modifier = {
+			name = crb_tanit_triumphant
+			days = long_modifier_time
+		}
+	}
+}
+
+crb_revival.4 = {
+	type = country_event
+	placement = root
+
+	title = crb_revival.4.t
+	desc = crb_revival.4.d
+	flavor = crb_revival.4.f
+
+	event_image = {
+		video = "ep2_active_shipyard"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_cultural_revival 触发
+	}
+
+	option = {
+		name = crb_revival.4.a
+		default_option = yes
+		add_modifier = {
+			name = crb_cothon_rebuilt
+			days = long_modifier_time
+		}
+	}
+}
+
+crb_revival.5 = {
+	type = country_event
+	placement = root
+
+	title = crb_revival.5.t
+	desc = crb_revival.5.d
+	flavor = crb_revival.5.f
+
+	event_image = {
+		video = "middleeast_engineer_blueprint"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_cultural_revival 触发
+	}
+
+	option = {
+		name = crb_revival.5.a
+		default_option = yes
+	}
+}
+
+crb_revival.6 = {
+	type = country_event
+	placement = root
+
+	title = crb_revival.6.t
+	desc = crb_revival.6.d
+	flavor = crb_revival.6.f
+
+	event_image = {
+		video = "unspecific_world_fair"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_cultural_revival 触发
+	}
+
+	option = {
+		name = crb_revival.6.a
+		default_option = yes
+	}
+}

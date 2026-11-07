@@ -71,3 +71,43 @@ crb_hb_concede_assembly_button = {
 		}
 	}
 }
+
+# 迦太基文化复兴：开始治理盐碱地
+crb_salt_marsh_button = {
+	name = "crb_salt_marsh_button"
+	desc = "crb_salt_marsh_button_desc"
+
+	visible = {
+		has_journal_entry = je_crb_cultural_revival
+		NOT = { has_variable = crb_revival_salt_done }
+		NOT = { has_modifier = crb_salt_reclamation }
+	}
+
+	possible = {
+		has_technology_researched = intensive_agriculture
+		custom_tooltip = {
+			text = crb_owns_carthage_tt
+			any_scope_state = {
+				state_region = s:STATE_TUNISIA
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 50
+	}
+
+	effect = {
+		add_modifier = {
+			name = crb_salt_reclamation
+			multiplier = money_amount_multiplier_medium
+		}
+		if = {
+			limit = { NOT = { has_variable = crb_salt_years } }
+			set_variable = {
+				name = crb_salt_years
+				value = 0
+			}
+		}
+	}
+}
