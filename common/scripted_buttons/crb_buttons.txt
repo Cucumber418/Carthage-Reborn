@@ -134,10 +134,14 @@ crb_punic_war_mobilize_button = {
 	}
 
 	effect = {
-		every_scope_war = {
-			add_war_war_support = {
-				target = root
-				value = 10
+		# 战争支持度在脚本里以 1 = 100% 计，0.1 即 +10%
+		custom_tooltip = {
+			text = crb_punic_war_mobilize_support_tt
+			every_scope_war = {
+				add_war_war_support = {
+					target = root
+					value = 0.1
+				}
 			}
 		}
 		add_modifier = {
