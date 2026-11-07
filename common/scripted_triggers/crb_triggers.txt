@@ -37,7 +37,7 @@ crb_uses_punic_names_trigger = {
 	}
 }
 
-# 地区是否属于西班牙本土（作用域：州）
+# 地区是否属于西班牙本土（作用域：地块）
 crb_is_spanish_mainland_state_trigger = {
 	OR = {
 		state_region = s:STATE_MURCIA
@@ -66,7 +66,7 @@ crb_controls_region_trigger = {
 	}
 }
 
-# 各商站的地区范围（作用域：州）
+# 各商站的地区范围（作用域：地块）
 crb_is_gaul_post_state_trigger = {
 	OR = {
 		state_region = s:STATE_ILE_DE_FRANCE
@@ -151,7 +151,7 @@ crb_can_expand_trading_posts_trigger = {
 	}
 }
 
-# 的黎波里商站、行省的地区（作用域：州）
+# 的黎波里商站、行省的地区（作用域：地块）
 crb_is_tripoli_post_state_trigger = {
 	OR = {
 		state_region = s:STATE_TRIPOLI
@@ -160,7 +160,7 @@ crb_is_tripoli_post_state_trigger = {
 	}
 }
 
-# 努米底亚商站、行省的地区（作用域：州）
+# 努米底亚商站、行省的地区（作用域：地块）
 crb_is_numidia_post_state_trigger = {
 	OR = {
 		state_region = s:STATE_ALGIERS

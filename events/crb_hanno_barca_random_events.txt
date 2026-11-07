@@ -40,9 +40,14 @@ crb_hanno_barca_random.10 = {
 	option = {
 		name = crb_hanno_barca_random.10.b
 		crb_hb_hanno_gain_small = yes
+		# 发放一次性赏金
+		add_modifier = {
+			name = crb_hb_veterans_paid_expense
+			multiplier = money_amount_multiplier_small
+			months = 12
+		}
 		add_modifier = {
 			name = crb_hb_veterans_paid
-			multiplier = money_amount_multiplier_small
 			days = short_modifier_time
 		}
 	}

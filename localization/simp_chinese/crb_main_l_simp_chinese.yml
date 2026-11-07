@@ -66,3 +66,12 @@
  crb_name_Magonid: "马戈尼德"
  crb_name_Hannonid: "汉诺尼德"
  crb_name_Gisconid: "吉斯戈尼德"
+
+
+ # 迦太基利益集团介绍
+ crb_ig_baal_hasadeh_desc: "拥有广阔庄园、橄榄园和谷地地产的显贵家族。他们掌握乡间土地与传统秩序，是共和国旧贵族和元老院的根基。"
+ crb_ig_votaries_desc: "祭司、神庙侍从以及依附于圣所的群体。他们主持塔尼特与诸神的祭仪，守护宗教传统，并将神庙的权威视为共和国公共生活的根基。"
+ crb_ig_baal_oniyah_desc: "经营商船、船坞和远洋贸易的航海家族。他们凭借海上航线、港口和海外商站积累财富，关心航运安全与贸易特权。"
+ crb_ig_soperim_desc: "受过教育的书记官、学者与文书官僚。他们掌握账册、法律和外交文书，维系城市行政与商业契约，主张以知识和制度治理共和国。"
+ ig_trait_crb_elephant_corps: "战象兵团"
+ ig_trait_crb_elephant_corps_desc: "当军队利益集团达到忠诚（+10）支持度时，迦太基的战象兵团为全军带来 +20% 进攻。"

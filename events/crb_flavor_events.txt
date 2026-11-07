@@ -81,9 +81,14 @@ crb_flavor.2 = {
 	option = {
 		name = crb_flavor.2.a
 		default_option = yes
+		# 一次性项目开支，避免长期重复扣除同一笔费用
+		add_modifier = {
+			name = crb_flavor_punic_letters_expense
+			multiplier = money_amount_multiplier_very_small
+			months = 60
+		}
 		add_modifier = {
 			name = crb_flavor_punic_letters
-			multiplier = money_amount_multiplier_small
 			days = normal_modifier_time
 		}
 	}
@@ -116,7 +121,7 @@ crb_flavor.3 = {
 
 	duration = 3
 
-	cooldown = { days = normal_modifier_time }
+	cooldown = { days = 1825 }
 
 	trigger = {
 		# 由 on_action crb_flavor_events 触发
@@ -127,19 +132,25 @@ crb_flavor.3 = {
 	option = {
 		name = crb_flavor.3.a
 		default_option = yes
+		# 一次性项目开支，避免长期重复扣除同一笔费用
+		add_modifier = {
+			name = crb_flavor_tyrian_purple_expense
+			multiplier = money_amount_multiplier_small
+			months = 60
+		}
 		add_modifier = {
 			name = crb_flavor_tyrian_purple
-			multiplier = money_amount_multiplier_small
 			days = normal_modifier_time
 		}
 	}
 
 	option = {
 		name = crb_flavor.3.b
+		# 五年出口特许收入：按原版持续税收收入修正结算
 		add_modifier = {
-			name = crb_flavor_purple_sold
+			name = crb_flavor_tyrian_export_income
 			multiplier = money_amount_multiplier_small
-			days = short_modifier_time
+			months = 60
 		}
 	}
 }
@@ -163,7 +174,7 @@ crb_flavor.4 = {
 
 	duration = 3
 
-	cooldown = { days = normal_modifier_time }
+	cooldown = { days = 1825 }
 
 	trigger = {
 		# 由 on_action crb_flavor_events 触发
@@ -174,6 +185,11 @@ crb_flavor.4 = {
 		name = crb_flavor.4.a
 		default_option = yes
 		add_modifier = {
+			name = crb_flavor_horse_palm_coins_expense
+			multiplier = money_amount_multiplier_very_small
+			months = 60
+		}
+		add_modifier = {
 			name = crb_flavor_horse_palm_coins
 			days = normal_modifier_time
 		}
@@ -181,10 +197,11 @@ crb_flavor.4 = {
 
 	option = {
 		name = crb_flavor.4.b
+		# 一次性变现收入，而非持续铸币
 		add_modifier = {
-			name = crb_flavor_hoard_melted
-			multiplier = money_amount_multiplier_small
-			days = short_modifier_time
+			name = crb_flavor_coin_melting_income
+			multiplier = money_amount_multiplier_very_small
+			months = 36
 		}
 	}
 }
@@ -222,6 +239,12 @@ crb_flavor.5 = {
 	option = {
 		name = crb_flavor.5.a
 		default_option = yes
+		# 一次性项目开支，避免长期重复扣除同一笔费用
+		add_modifier = {
+			name = crb_flavor_mago_distributed_expense
+			multiplier = money_amount_multiplier_small
+			months = 60
+		}
 		add_modifier = {
 			name = crb_flavor_mago_distributed
 			days = normal_modifier_time
@@ -230,10 +253,11 @@ crb_flavor.5 = {
 
 	option = {
 		name = crb_flavor.5.b
+		# 五年翻译与出版版税
 		add_modifier = {
-			name = crb_flavor_mago_sold
+			name = crb_flavor_mago_rights_income
 			multiplier = money_amount_multiplier_small
-			days = short_modifier_time
+			months = 60
 		}
 	}
 }
@@ -314,7 +338,7 @@ crb_flavor.7 = {
 		name = crb_flavor.7.a
 		default_option = yes
 		add_loyalists = {
-			value = medium_radicals
+			value = small_radicals
 		}
 		add_modifier = {
 			name = crb_flavor_cato_answered
@@ -361,9 +385,14 @@ crb_flavor.8 = {
 	option = {
 		name = crb_flavor.8.a
 		default_option = yes
+		# 一次性项目开支，避免长期重复扣除同一笔费用
+		add_modifier = {
+			name = crb_flavor_elephant_parade_expense
+			multiplier = money_amount_multiplier_medium
+			months = 12
+		}
 		add_modifier = {
 			name = crb_flavor_elephant_parade
-			multiplier = money_amount_multiplier_medium
 			days = short_modifier_time
 		}
 	}
@@ -452,7 +481,7 @@ crb_flavor.10 = {
 
 	duration = 3
 
-	cooldown = { days = normal_modifier_time }
+	cooldown = { days = 1825 }
 
 	trigger = {
 		# 由 on_action crb_flavor_events 触发
@@ -463,6 +492,12 @@ crb_flavor.10 = {
 	option = {
 		name = crb_flavor.10.a
 		default_option = yes
+		# 一次性项目开支，避免长期重复扣除同一笔费用
+		add_modifier = {
+			name = crb_flavor_shipwreck_museum_expense
+			multiplier = money_amount_multiplier_medium
+			months = 60
+		}
 		add_modifier = {
 			name = crb_flavor_shipwreck_museum
 			days = normal_modifier_time
@@ -471,10 +506,11 @@ crb_flavor.10 = {
 
 	option = {
 		name = crb_flavor.10.b
+		# 五年打捞与展出特许收入
 		add_modifier = {
-			name = crb_flavor_shipwreck_sold
-			multiplier = money_amount_multiplier_small
-			days = short_modifier_time
+			name = crb_flavor_shipwreck_rights_income
+			multiplier = money_amount_multiplier_medium
+			months = 60
 		}
 	}
 }
@@ -554,9 +590,15 @@ crb_flavor.12 = {
 	option = {
 		name = crb_flavor.12.a
 		default_option = yes
+		add_loyalists = { value = small_radicals }
+		# 一次性项目开支，避免长期重复扣除同一笔费用
+		add_modifier = {
+			name = crb_flavor_melqart_grand_expense
+			multiplier = money_amount_multiplier_medium
+			months = 12
+		}
 		add_modifier = {
 			name = crb_flavor_melqart_grand
-			multiplier = money_amount_multiplier_medium
 			days = short_modifier_time
 		}
 	}
@@ -739,23 +781,29 @@ crb_flavor.16 = {
 
 	duration = 3
 
-	cooldown = { days = normal_modifier_time }
+	cooldown = { days = 1095 }
 
 	trigger = {
 		# 由 on_action crb_flavor_events 触发
 		crb_is_carthage_trigger = yes
 		has_modifier = crb_carthago_non_deleta
+		NOT = { has_variable = crb_flavor_16_fired }
+	}
+
+	immediate = {
+		set_variable = crb_flavor_16_fired
 	}
 
 	option = {
 		name = crb_flavor.16.a
 		default_option = yes
+		# 三年私掠收益；恶名反映列强对持续私掠的反应
 		add_modifier = {
-			name = crb_flavor_prize_shared
+			name = crb_flavor_privateering_income
 			multiplier = money_amount_multiplier_medium
-			days = short_modifier_time
+			months = 36
 		}
-		change_infamy = 3
+		change_infamy = 5
 	}
 
 	option = {

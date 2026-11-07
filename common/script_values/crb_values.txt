@@ -22,7 +22,8 @@ crb_hb_clout_balance = {
 		}
 		subtract = this.ig_clout
 	}
-	multiply = 1
+	# 政治力量差距对每月增长的贡献（20% 差距约等于 +0.3 /月）
+	multiply = 1.5
 }
 
 # 君主制倾向鼓动者每年出现的概率（百分比）
@@ -33,7 +34,7 @@ crb_hb_royalist_agitator_chance = {
 		limit = {
 			exists = ig:ig_armed_forces
 			scope:journal_entry ?= {
-				"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 50
+				"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 65
 			}
 		}
 		add = ig:ig_armed_forces.ig_clout
@@ -41,7 +42,7 @@ crb_hb_royalist_agitator_chance = {
 		if = {
 			limit = {
 				scope:journal_entry ?= {
-					"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 75
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 85
 				}
 			}
 			multiply = 2

@@ -15,12 +15,14 @@ je_crb_hannibal_returns = {
 	is_shown_when_inactive = {
 		crb_is_carthage_trigger = yes
 		has_variable = crb_barca_victory
+		has_variable = crb_hanno_barca_concluded
 		NOT = { has_variable = crb_hannibal_concluded }
 	}
 
 	possible = {
 		crb_is_carthage_trigger = yes
 		has_variable = crb_barca_victory
+		has_variable = crb_hanno_barca_concluded
 		NOT = { has_variable = crb_hannibal_concluded }
 	}
 

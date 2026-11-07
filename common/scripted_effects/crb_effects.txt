@@ -131,9 +131,8 @@ crb_hanno_victory_effect = {
 }
 
 crb_hanno_barca_cleanup_effect = {
-	remove_variable = crb_hb_stalemate_months
+	remove_variable = crb_hb_elapsed_months
 	remove_variable = crb_hb_button_cooldown
-	remove_variable = crb_hb_triumph
 }
 
 # ============================================================
@@ -1032,6 +1031,7 @@ crb_punic_war_check_effect = {
 	if = {
 		limit = {
 			crb_is_carthage_trigger = yes
+			# 无须先完成汉诺派与巴卡派斗争；与西西里持有者进入外交博弈即可开启
 			NOT = { has_journal_entry = je_crb_punic_war }
 			NOT = { owns_entire_state_region = STATE_SICILY }
 			crb_at_war_with_sicily_holder_trigger = yes
