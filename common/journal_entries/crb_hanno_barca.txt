@@ -79,6 +79,18 @@ je_crb_hanno_barca = {
 	}
 
 	on_monthly_pulse = {
+		# 随机事件：平均每 5 个月左右一个，每个事件 5 年内只出现一次
+		random_events = {
+			160 = 0
+			5 = crb_hanno_barca_random.10
+			5 = crb_hanno_barca_random.11
+			5 = crb_hanno_barca_random.12
+			5 = crb_hanno_barca_random.13
+			5 = crb_hanno_barca_random.14
+			5 = crb_hanno_barca_random.15
+			5 = crb_hanno_barca_random.16
+			5 = crb_hanno_barca_random.17
+		}
 		effect = {
 			# 僵持计数：双方力量都在 30% 到 70% 之间时累计，否则清零
 			if = {

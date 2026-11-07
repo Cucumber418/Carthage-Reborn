@@ -134,3 +134,43 @@ crb_hanno_barca_cleanup_effect = {
 	remove_variable = crb_hb_stalemate_months
 	remove_variable = crb_hb_button_cooldown
 }
+
+# ============================================================
+# 汉诺派与巴卡派：随机事件用的进度变化
+# 作用域：国家
+# ============================================================
+crb_hb_barca_gain_small = {
+	custom_tooltip = {
+		text = crb_hb_barca_gain_small_tt
+		je:je_crb_hanno_barca ?= {
+			add_progress = { value = 5 name = crb_hanno_barca_progress_bar }
+		}
+	}
+}
+
+crb_hb_barca_gain_medium = {
+	custom_tooltip = {
+		text = crb_hb_barca_gain_medium_tt
+		je:je_crb_hanno_barca ?= {
+			add_progress = { value = 8 name = crb_hanno_barca_progress_bar }
+		}
+	}
+}
+
+crb_hb_hanno_gain_small = {
+	custom_tooltip = {
+		text = crb_hb_hanno_gain_small_tt
+		je:je_crb_hanno_barca ?= {
+			add_progress = { value = -5 name = crb_hanno_barca_progress_bar }
+		}
+	}
+}
+
+crb_hb_hanno_gain_medium = {
+	custom_tooltip = {
+		text = crb_hb_hanno_gain_medium_tt
+		je:je_crb_hanno_barca ?= {
+			add_progress = { value = -8 name = crb_hanno_barca_progress_bar }
+		}
+	}
+}

@@ -1,0 +1,368 @@
+﻿namespace = crb_hanno_barca_random
+
+# 日志"汉诺派与巴卡派"进行中的随机事件
+# 每个事件两个选项，分别偏向巴卡派和汉诺派
+
+crb_hanno_barca_random.10 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca_random.10.t
+	desc = crb_hanno_barca_random.10.d
+	flavor = crb_hanno_barca_random.10.f
+
+	event_image = {
+		video = "middleeast_middleclass_cafe"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		has_journal_entry = je_crb_hanno_barca
+	}
+
+	option = {
+		name = crb_hanno_barca_random.10.a
+		default_option = yes
+		crb_hb_barca_gain_medium = yes
+		add_modifier = {
+			name = crb_hb_veterans_enfranchised
+			days = short_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_hanno_barca_random.10.b
+		crb_hb_hanno_gain_small = yes
+		add_modifier = {
+			name = crb_hb_veterans_paid
+			multiplier = money_amount_multiplier_small
+			days = short_modifier_time
+		}
+	}
+}
+
+crb_hanno_barca_random.11 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca_random.11.t
+	desc = crb_hanno_barca_random.11.d
+	flavor = crb_hanno_barca_random.11.f
+
+	event_image = {
+		video = "southamerica_aristocrats"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		has_journal_entry = je_crb_hanno_barca
+	}
+
+	option = {
+		name = crb_hanno_barca_random.11.a
+		default_option = yes
+		crb_hb_hanno_gain_medium = yes
+		add_modifier = {
+			name = crb_hb_senate_banquet_attended
+			days = short_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_hanno_barca_random.11.b
+		crb_hb_barca_gain_small = yes
+		add_modifier = {
+			name = crb_hb_senate_banquet_declined
+			days = short_modifier_time
+		}
+	}
+}
+
+crb_hanno_barca_random.12 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca_random.12.t
+	desc = crb_hanno_barca_random.12.d
+	flavor = crb_hanno_barca_random.12.f
+
+	event_image = {
+		video = "ip3_agitator_reading_manifesto"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		has_journal_entry = je_crb_hanno_barca
+	}
+
+	option = {
+		name = crb_hanno_barca_random.12.a
+		default_option = yes
+		crb_hb_barca_gain_small = yes
+		add_modifier = {
+			name = crb_hb_orator_tolerated
+			days = short_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_hanno_barca_random.12.b
+		crb_hb_hanno_gain_small = yes
+		add_modifier = {
+			name = crb_hb_orator_dispersed
+			days = short_modifier_time
+		}
+		add_radicals = {
+			value = small_radicals
+			interest_group = ig:ig_petty_bourgeoisie
+		}
+	}
+}
+
+crb_hanno_barca_random.13 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca_random.13.t
+	desc = crb_hanno_barca_random.13.d
+	flavor = crb_hanno_barca_random.13.f
+
+	event_image = {
+		video = "ep2_active_shipyard"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		has_journal_entry = je_crb_hanno_barca
+	}
+
+	option = {
+		name = crb_hanno_barca_random.13.a
+		default_option = yes
+		crb_hb_barca_gain_small = yes
+		add_modifier = {
+			name = crb_hb_army_first
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_hanno_barca_random.13.b
+		crb_hb_hanno_gain_small = yes
+		add_modifier = {
+			name = crb_hb_trade_first
+			days = normal_modifier_time
+		}
+	}
+}
+
+crb_hanno_barca_random.14 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca_random.14.t
+	desc = crb_hanno_barca_random.14.d
+	flavor = crb_hanno_barca_random.14.f
+
+	event_image = {
+		video = "africa_animism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		has_journal_entry = je_crb_hanno_barca
+	}
+
+	option = {
+		name = crb_hanno_barca_random.14.a
+		default_option = yes
+		crb_hb_barca_gain_small = yes
+		add_modifier = {
+			name = crb_hb_omen_of_victory
+			days = short_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_hanno_barca_random.14.b
+		crb_hb_hanno_gain_small = yes
+		add_modifier = {
+			name = crb_hb_omen_of_caution
+			days = short_modifier_time
+		}
+	}
+}
+
+crb_hanno_barca_random.15 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca_random.15.t
+	desc = crb_hanno_barca_random.15.d
+	flavor = crb_hanno_barca_random.15.f
+
+	event_image = {
+		video = "ip2_unruly_soldiers"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		has_journal_entry = je_crb_hanno_barca
+	}
+
+	option = {
+		name = crb_hanno_barca_random.15.a
+		default_option = yes
+		crb_hb_barca_gain_medium = yes
+		add_modifier = {
+			name = crb_hb_soldiers_paid_by_nobles
+			days = short_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_hanno_barca_random.15.b
+		crb_hb_hanno_gain_small = yes
+		add_modifier = {
+			name = crb_hb_soldiers_unpaid
+			days = short_modifier_time
+		}
+		add_radicals = {
+			value = small_radicals
+			interest_group = ig:ig_armed_forces
+		}
+	}
+}
+
+crb_hanno_barca_random.16 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca_random.16.t
+	desc = crb_hanno_barca_random.16.d
+	flavor = crb_hanno_barca_random.16.f
+
+	event_image = {
+		video = "ip2_cross_cultural_festival"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		has_journal_entry = je_crb_hanno_barca
+	}
+
+	option = {
+		name = crb_hanno_barca_random.16.a
+		default_option = yes
+		crb_hb_barca_gain_small = yes
+		add_modifier = {
+			name = crb_hb_open_citizenship
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_hanno_barca_random.16.b
+		crb_hb_hanno_gain_small = yes
+		add_modifier = {
+			name = crb_hb_closed_citizenship
+			days = normal_modifier_time
+		}
+	}
+}
+
+crb_hanno_barca_random.17 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca_random.17.t
+	desc = crb_hanno_barca_random.17.d
+	flavor = crb_hanno_barca_random.17.f
+
+	event_image = {
+		video = "votp_conspiring"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	duration = 3
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		has_journal_entry = je_crb_hanno_barca
+		je:je_crb_hanno_barca ?= {
+			"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 60
+		}
+	}
+
+	option = {
+		name = crb_hanno_barca_random.17.a
+		default_option = yes
+		crb_hb_barca_gain_medium = yes
+		add_modifier = {
+			name = crb_hb_king_rumor_tolerated
+			days = short_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_hanno_barca_random.17.b
+		crb_hb_hanno_gain_small = yes
+		add_modifier = {
+			name = crb_hb_king_rumor_investigated
+			days = short_modifier_time
+		}
+	}
+}

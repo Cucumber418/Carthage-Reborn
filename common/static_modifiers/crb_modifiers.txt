@@ -75,3 +75,101 @@ crb_hb_hanno_betrayed = {
 	interest_group_ig_industrialists_approval_add = -3
 	interest_group_ig_devout_approval_add = -4
 }
+
+# ============================================================
+# 汉诺派与巴卡派：随机事件
+# ============================================================
+
+crb_hb_veterans_enfranchised = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_ig_armed_forces_approval_add = 3
+	interest_group_ig_landowners_approval_add = -2
+}
+
+crb_hb_veterans_paid = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+crb_hb_senate_banquet_attended = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_ig_landowners_approval_add = 2
+	interest_group_ig_industrialists_approval_add = 2
+}
+
+crb_hb_senate_banquet_declined = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	interest_group_ig_petty_bourgeoisie_approval_add = 2
+	interest_group_ig_landowners_approval_add = -2
+}
+
+crb_hb_orator_tolerated = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	interest_group_ig_petty_bourgeoisie_approval_add = 2
+	interest_group_ig_landowners_approval_add = -1
+}
+
+crb_hb_orator_dispersed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	interest_group_ig_petty_bourgeoisie_approval_add = -2
+	interest_group_ig_landowners_approval_add = 1
+}
+
+crb_hb_army_first = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_ig_armed_forces_approval_add = 2
+	interest_group_ig_industrialists_approval_add = -2
+}
+
+crb_hb_trade_first = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	interest_group_ig_industrialists_approval_add = 3
+	interest_group_ig_armed_forces_approval_add = -2
+}
+
+crb_hb_omen_of_victory = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_ig_armed_forces_approval_add = 2
+	interest_group_ig_devout_approval_add = -1
+}
+
+crb_hb_omen_of_caution = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_ig_devout_approval_add = 3
+}
+
+crb_hb_soldiers_paid_by_nobles = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_ig_armed_forces_approval_add = 3
+	interest_group_ig_landowners_approval_add = -3
+}
+
+crb_hb_soldiers_unpaid = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	interest_group_ig_armed_forces_approval_add = -3
+}
+
+crb_hb_open_citizenship = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	interest_group_ig_petty_bourgeoisie_approval_add = 2
+	interest_group_ig_rural_folk_approval_add = 2
+	interest_group_ig_landowners_approval_add = -1
+}
+
+crb_hb_closed_citizenship = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_ig_landowners_approval_add = 2
+	interest_group_ig_rural_folk_approval_add = -2
+}
+
+crb_hb_king_rumor_tolerated = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_ig_armed_forces_approval_add = 2
+	country_legitimacy_base_add = -5
+}
+
+crb_hb_king_rumor_investigated = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	interest_group_ig_armed_forces_approval_add = -2
+	country_legitimacy_base_add = 5
+}
