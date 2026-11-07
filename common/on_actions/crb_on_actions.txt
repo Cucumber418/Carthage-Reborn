@@ -41,6 +41,9 @@ crb_on_game_started = {
 		c:TUN ?= {
 			crb_convert_starting_pops_effect = yes
 			crb_update_ig_names_effect = yes
+			ig:ig_armed_forces ?= {
+				set_ig_trait = ig_trait:ig_trait_crb_elephant_corps
+			}
 			crb_apply_punic_state_names_effect = yes
 			trigger_event = {
 				id = crb_carthage.1

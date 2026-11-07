@@ -169,62 +169,62 @@ crb_flavor_prize_released = {
 
 crb_flavor_tyrian_export_income = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	country_tax_income_add = 75
+	country_tax_income_add = 1
 }
 
 crb_flavor_mago_rights_income = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	country_tax_income_add = 75
+	country_tax_income_add = 1
 }
 
 crb_flavor_shipwreck_rights_income = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	country_tax_income_add = 100
+	country_tax_income_add = 1
 }
 
 crb_flavor_privateering_income = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	country_tax_income_add = 125
+	country_tax_income_add = 1
 }
 
 
 # 商业事件：持续税收收入与项目支出（均显示在预算的额外收入/额外支出中）
 crb_flavor_coin_melting_income = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
-	country_tax_income_add = 25
+	country_tax_income_add = 1
 }
 
 crb_flavor_punic_letters_expense = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	country_expenses_add = 10
+	country_expenses_add = 1
 }
 
 crb_flavor_tyrian_purple_expense = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	country_expenses_add = 14
+	country_expenses_add = 1
 }
 
 crb_flavor_horse_palm_coins_expense = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	country_expenses_add = 6
+	country_expenses_add = 1
 }
 
 crb_flavor_mago_distributed_expense = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	country_expenses_add = 12
+	country_expenses_add = 1
 }
 
 crb_flavor_elephant_parade_expense = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	country_expenses_add = 77
+	country_expenses_add = 1
 }
 
 crb_flavor_shipwreck_museum_expense = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	country_expenses_add = 19
+	country_expenses_add = 1
 }
 
 crb_flavor_melqart_grand_expense = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	country_expenses_add = 58
+	country_expenses_add = 1
 }

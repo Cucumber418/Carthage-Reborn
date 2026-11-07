@@ -135,9 +135,9 @@ crb_hanno_barca_progress_bar = {
 			}
 		}
 		progress_condition = {
-			limit = { has_law_or_variant = law_type:law_mercantilism }
+			limit = { has_law_or_variant = law_type:law_protectionism }
 			add = {
-				desc = "crb_hb_barca_mercantilism"
+				desc = "crb_hb_barca_protectionism"
 				value = 0.15
 			}
 		}
@@ -212,9 +212,9 @@ crb_hanno_barca_progress_bar = {
 			}
 		}
 		progress_condition = {
-			limit = { has_law_or_variant = law_type:law_protectionism }
+			limit = { has_law_or_variant = law_type:law_mercantilism }
 			add = {
-				desc = "crb_hb_hanno_protectionism"
+				desc = "crb_hb_hanno_mercantilism"
 				value = -0.1
 			}
 		}

@@ -43,6 +43,7 @@ crb_hanno_barca_random.10 = {
 		# 发放一次性赏金
 		add_modifier = {
 			name = crb_hb_veterans_paid_expense
+			multiplier = money_amount_multiplier_small
 			months = 12
 		}
 		add_modifier = {

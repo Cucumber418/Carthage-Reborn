@@ -1,0 +1,13 @@
+﻿# 迦太基的塔尼特神庙与祭司阶层
+POPS = {
+	s:STATE_TUNISIA = {
+		region_state:TUN = {
+			create_pop = {
+				pop_type = clergymen
+				culture = crb_punic
+				religion = crb_tanit
+				size = 60000
+			}
+		}
+	}
+}

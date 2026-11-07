@@ -1031,8 +1031,7 @@ crb_punic_war_check_effect = {
 	if = {
 		limit = {
 			crb_is_carthage_trigger = yes
-			# 第一次布匿战争日志只能在派系斗争结束后开启
-			has_variable = crb_hanno_barca_concluded
+			# 无须先完成汉诺派与巴卡派斗争；与西西里持有者进入外交博弈即可开启
 			NOT = { has_journal_entry = je_crb_punic_war }
 			NOT = { owns_entire_state_region = STATE_SICILY }
 			crb_at_war_with_sicily_holder_trigger = yes

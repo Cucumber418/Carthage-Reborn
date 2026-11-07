@@ -31,8 +31,8 @@ ideology_crb_hannonist = {
 	}
 
 	lawgroup_trade_policy = {
-		law_protectionism = strongly_approve
-		law_mercantilism = disapprove
+		law_mercantilism = strongly_approve
+		law_protectionism = disapprove
 		law_free_trade = neutral
 		law_isolationism = disapprove
 	}
@@ -104,8 +104,8 @@ ideology_crb_barcid = {
 	}
 
 	lawgroup_trade_policy = {
-		law_protectionism = disapprove
-		law_mercantilism = strongly_approve
+		law_protectionism = strongly_approve
+		law_mercantilism = disapprove
 		law_free_trade = neutral
 		law_isolationism = strongly_disapprove
 	}

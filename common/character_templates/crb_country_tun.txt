@@ -10,7 +10,7 @@ crb_TUN_hamilcar_gisconid = {
 	culture = cu:crb_punic
 	religion = rel:crb_tanit
 	interest_group = ig_landowners
-	ideology = ideology_jingoist_leader
+	ideology = ideology_crb_hannonist
 	home_region = STATE_TUNISIA
 	traits = {
 		ambitious
@@ -79,7 +79,7 @@ crb_TUN_himilco_shipowner = {
 	culture = cu:crb_punic
 	religion = rel:crb_tanit
 	interest_group = ig_industrialists
-	ideology = ideology_protectionist
+	ideology = ideology_crb_hannonist
 	home_region = STATE_TUNISIA
 	traits = {
 		meticulous
