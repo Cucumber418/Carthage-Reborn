@@ -1,16 +1,16 @@
-﻿# 文化遗产：腓尼基
+﻿# 文化遗产：腓尼基（归入原版的中东文化组）
 heritage_crb_phoenician = {
 	type = heritage
-	trait_group = heritage_group_crb_phoenician
+	trait_group = heritage_group_middle_eastern
 }
 
-# 语言：布匿语
+# 语言：布匿语（归入原版的闪米特语族，与阿拉伯语、希伯来语同组）
 language_crb_punic = {
 	type = language
-	trait_group = language_group_crb_canaanite
+	trait_group = language_group_semitic
 }
 
-# 宗教遗产：迦南多神信仰
+# 宗教遗产：迦南诸神
 heritage_crb_canaanite_pantheon = {
 	type = heritage
 	trait_group = heritage_group_crb_canaanite_religion

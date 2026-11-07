@@ -1,0 +1,49 @@
+﻿# 双执政官对应的政府类型
+# 文件名以 00_ 开头，保证比原版 03_parliamentary_republics.txt 先加载，先于通用的议会共和制政府类型被匹配
+# 格式参照原版 gov_parliamentary_oligarchy、gov_parliamentary_democracy
+
+# 未开放选举时：元老院寡头统治
+gov_crb_sufetes_oligarchy = {
+	transfer_of_power = dictatorial
+
+	male_ruler = "RULER_TITLE_CRB_SUFETE"
+	female_ruler = "RULER_TITLE_CRB_SUFETE"
+
+	possible = {
+		has_law_or_variant = law_type:law_crb_dual_sufetes
+		NOT = { has_law = law_type:law_parliamentary_republic }
+		country_has_voting_franchise = no
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}
+
+# 开放选举后：公民大会恢复权力
+gov_crb_sufetes_assembly = {
+	transfer_of_power = parliamentary_elective
+	new_leader_on_reform_government = yes
+
+	male_ruler = "RULER_TITLE_CRB_SUFETE"
+	female_ruler = "RULER_TITLE_CRB_SUFETE"
+
+	possible = {
+		has_law_or_variant = law_type:law_crb_dual_sufetes
+		NOT = { has_law = law_type:law_parliamentary_republic }
+		country_has_voting_franchise = yes
+		NOT = {
+			has_law_or_variant = law_type:law_single_party_state
+		}
+	}
+
+	on_government_type_change = {
+		change_to_parliamentary_elective = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_parliamentary_elective = yes
+	}
+}

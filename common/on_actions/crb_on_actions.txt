@@ -15,6 +15,9 @@ on_monthly_pulse_country = {
 # 开局：人口转换 + 利益集团改名
 crb_on_game_started = {
 	effect = {
+		s:STATE_TUNISIA = {
+			add_homeland = cu:crb_punic
+		}
 		c:TUN ?= {
 			crb_convert_starting_pops_effect = yes
 			crb_update_ig_names_effect = yes

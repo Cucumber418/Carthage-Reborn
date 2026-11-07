@@ -1,13 +1,5 @@
-﻿# 文化组
-heritage_group_crb_phoenician = {
-	type = heritage
-}
-
-language_group_crb_canaanite = {
-	type = language
-}
-
-# 宗教组
+﻿# 宗教遗产组：迦南信仰
+# 文化遗产和语言直接使用原版的组（中东文化组、闪米特语族），与原版的文化亲缘关系保持一致
 heritage_group_crb_canaanite_religion = {
 	type = heritage
 }

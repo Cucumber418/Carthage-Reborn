@@ -1,4 +1,5 @@
 ﻿l_simp_chinese:
  # 覆盖本体突尼斯的国名
- TUN:0 "布匿"
- TUN_ADJ:0 "布匿"
+ TUN: "布匿"
+ TUN_ADJ: "布匿"
+ dyn_c_tunisia: "布匿"

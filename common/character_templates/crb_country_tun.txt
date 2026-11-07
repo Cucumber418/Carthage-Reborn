@@ -1,0 +1,53 @@
+﻿# 布匿开局人物（格式照搬原版 country_tun.txt）
+
+crb_TUN_hamilcar_gisconid = {
+	# 国家元首：保守主战派元老，暂时掌控政权
+	first_name = crb_name_Hamilcar
+	last_name = crb_name_Gisconid
+	historical = yes
+	age = 61
+	ruler = yes
+	culture = cu:crb_punic
+	religion = rel:crb_tanit
+	interest_group = ig_landowners
+	ideology = ideology_jingoist_leader
+	home_region = STATE_TUNISIA
+	traits = {
+		ambitious
+	}
+}
+
+crb_TUN_hanno_hannonid = {
+	# 田主领袖：汉诺派元老
+	first_name = crb_name_Hanno
+	last_name = crb_name_Hannonid
+	historical = yes
+	age = 56
+	ig_leader = yes
+	culture = cu:crb_punic
+	religion = rel:crb_tanit
+	interest_group = ig_landowners
+	ideology = ideology_traditionalist
+	home_region = STATE_TUNISIA
+	traits = {
+		reserved
+	}
+}
+
+crb_TUN_hasdrubal_barca = {
+	# 军队领袖：巴卡家族的年轻将领
+	first_name = crb_name_Hasdrubal
+	last_name = crb_name_Barca
+	historical = yes
+	age = 34
+	ig_leader = yes
+	is_general = yes
+	culture = cu:crb_punic
+	religion = rel:crb_tanit
+	interest_group = ig_armed_forces
+	ideology = ideology_jingoist_leader
+	home_region = STATE_TUNISIA
+	traits = {
+		ambitious
+	}
+}

@@ -1,0 +1,33 @@
+﻿# 布匿文化、塔尼特多神教需要的修正类型（格式照搬原版 10、11、99 号文件）
+
+state_crb_punic_standard_of_living_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+country_crb_punic_cultural_acceptance_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+country_fervor_target_crb_punic_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+state_crb_tanit_standard_of_living_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}

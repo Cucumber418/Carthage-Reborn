@@ -76,7 +76,7 @@ crb_update_ig_names_effect = {
 	# 奉神者
 	if = {
 		limit = {
-			has_state_religion = rel:crb_tanit
+			country_has_state_religion = rel:crb_tanit
 			NOT = { has_variable = crb_votaries_name }
 		}
 		set_variable = crb_votaries_name
@@ -87,7 +87,7 @@ crb_update_ig_names_effect = {
 	}
 	else_if = {
 		limit = {
-			NOT = { has_state_religion = rel:crb_tanit }
+			NOT = { country_has_state_religion = rel:crb_tanit }
 			has_variable = crb_votaries_name
 		}
 		remove_variable = crb_votaries_name

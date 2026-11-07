@@ -1,15 +1,13 @@
-﻿# 与本体同名，整体覆盖本体突尼斯的开局设定
-
-COUNTRIES = {
+﻿COUNTRIES = {
 	c:TUN ?= {
 		effect_starting_technology_tier_4_tech = yes
 		effect_starting_politics_traditional = yes
+		activate_law = law_type:law_slave_trade
 
-		# 国教：塔尼特多神教
 		set_state_religion = rel:crb_tanit
 
-		# 政体：双执政官（新法律制作中，暂用议会共和制占位）
-		activate_law = law_type:law_parliamentary_republic
+		# 政体：双执政官
+		activate_law = law_type:law_crb_dual_sufetes
 
 		# 汉诺派元老掌权时的法律
 		activate_law = law_type:law_oligarchy
