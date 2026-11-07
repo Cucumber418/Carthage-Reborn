@@ -1058,6 +1058,7 @@ crb_punic_war_advance_number_effect = {
 
 crb_create_puppet_TRP_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_TRP_tt
+	custom_tooltip = crb_create_puppet_TRP_religion_tt
 	hidden_effect = {
 		crb_create_puppet_TRP_effect = yes
 	}
@@ -1065,6 +1066,7 @@ crb_create_puppet_TRP_with_tooltip_effect = {
 
 crb_create_puppet_NUM_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_NUM_tt
+	custom_tooltip = crb_create_puppet_NUM_religion_tt
 	hidden_effect = {
 		crb_create_puppet_NUM_effect = yes
 	}
@@ -1072,6 +1074,8 @@ crb_create_puppet_NUM_with_tooltip_effect = {
 
 crb_create_puppet_IBT_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_IBT_tt
+	custom_tooltip = crb_create_puppet_IBT_religion_tt
+	custom_tooltip = crb_create_puppet_IBT_law_mercantilism_tt
 	hidden_effect = {
 		crb_create_puppet_IBT_effect = yes
 	}
@@ -1079,6 +1083,9 @@ crb_create_puppet_IBT_with_tooltip_effect = {
 
 crb_create_puppet_GLT_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_GLT_tt
+	custom_tooltip = crb_create_puppet_GLT_religion_tt
+	custom_tooltip = crb_create_puppet_GLT_law_mercantilism_tt
+	custom_tooltip = crb_create_puppet_GLT_law_landed_voting_tt
 	hidden_effect = {
 		crb_create_puppet_GLT_effect = yes
 	}
@@ -1086,6 +1093,9 @@ crb_create_puppet_GLT_with_tooltip_effect = {
 
 crb_create_puppet_SNT_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_SNT_tt
+	custom_tooltip = crb_create_puppet_SNT_religion_tt
+	custom_tooltip = crb_create_puppet_SNT_law_protectionism_tt
+	custom_tooltip = crb_create_puppet_SNT_law_national_militia_tt
 	hidden_effect = {
 		crb_create_puppet_SNT_effect = yes
 	}
@@ -1093,6 +1103,9 @@ crb_create_puppet_SNT_with_tooltip_effect = {
 
 crb_create_puppet_IOP_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_IOP_tt
+	custom_tooltip = crb_create_puppet_IOP_religion_tt
+	custom_tooltip = crb_create_puppet_IOP_law_free_trade_tt
+	custom_tooltip = crb_create_puppet_IOP_law_wealth_voting_tt
 	hidden_effect = {
 		crb_create_puppet_IOP_effect = yes
 	}
@@ -1100,6 +1113,9 @@ crb_create_puppet_IOP_with_tooltip_effect = {
 
 crb_create_puppet_RPR_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_RPR_tt
+	custom_tooltip = crb_create_puppet_RPR_religion_tt
+	custom_tooltip = crb_create_puppet_RPR_law_oligarchy_tt
+	custom_tooltip = crb_create_puppet_RPR_law_secret_police_tt
 	hidden_effect = {
 		crb_create_puppet_RPR_effect = yes
 	}
@@ -1164,6 +1180,12 @@ crb_create_province_TRP_effect = {
 
 crb_create_province_TRP_with_tooltip_effect = {
 	custom_tooltip = crb_create_province_TRP_tt
+	custom_tooltip = crb_create_province_TRP_religion_tt
+	custom_tooltip = crb_create_province_TRP_law_oligarchy_tt
+	custom_tooltip = crb_create_province_TRP_law_appointed_bureaucrats_tt
+	custom_tooltip = crb_create_province_TRP_law_secret_police_tt
+	custom_tooltip = crb_create_province_TRP_law_mercantilism_tt
+	custom_tooltip = crb_create_province_TRP_law_state_religion_tt
 	hidden_effect = {
 		crb_create_province_TRP_effect = yes
 	}
@@ -1223,6 +1245,12 @@ crb_create_province_NUM_effect = {
 
 crb_create_province_NUM_with_tooltip_effect = {
 	custom_tooltip = crb_create_province_NUM_tt
+	custom_tooltip = crb_create_province_NUM_religion_tt
+	custom_tooltip = crb_create_province_NUM_law_oligarchy_tt
+	custom_tooltip = crb_create_province_NUM_law_appointed_bureaucrats_tt
+	custom_tooltip = crb_create_province_NUM_law_secret_police_tt
+	custom_tooltip = crb_create_province_NUM_law_mercantilism_tt
+	custom_tooltip = crb_create_province_NUM_law_state_religion_tt
 	hidden_effect = {
 		crb_create_province_NUM_effect = yes
 	}
@@ -1302,6 +1330,12 @@ crb_create_province_IBT_effect = {
 
 crb_create_province_IBT_with_tooltip_effect = {
 	custom_tooltip = crb_create_province_IBT_tt
+	custom_tooltip = crb_create_province_IBT_religion_tt
+	custom_tooltip = crb_create_province_IBT_law_oligarchy_tt
+	custom_tooltip = crb_create_province_IBT_law_appointed_bureaucrats_tt
+	custom_tooltip = crb_create_province_IBT_law_secret_police_tt
+	custom_tooltip = crb_create_province_IBT_law_mercantilism_tt
+	custom_tooltip = crb_create_province_IBT_law_state_religion_tt
 	hidden_effect = {
 		crb_create_province_IBT_effect = yes
 	}
@@ -1353,6 +1387,12 @@ crb_create_province_GLT_effect = {
 
 crb_create_province_GLT_with_tooltip_effect = {
 	custom_tooltip = crb_create_province_GLT_tt
+	custom_tooltip = crb_create_province_GLT_religion_tt
+	custom_tooltip = crb_create_province_GLT_law_oligarchy_tt
+	custom_tooltip = crb_create_province_GLT_law_appointed_bureaucrats_tt
+	custom_tooltip = crb_create_province_GLT_law_secret_police_tt
+	custom_tooltip = crb_create_province_GLT_law_mercantilism_tt
+	custom_tooltip = crb_create_province_GLT_law_state_religion_tt
 	hidden_effect = {
 		crb_create_province_GLT_effect = yes
 	}
@@ -1404,6 +1444,12 @@ crb_create_province_SNT_effect = {
 
 crb_create_province_SNT_with_tooltip_effect = {
 	custom_tooltip = crb_create_province_SNT_tt
+	custom_tooltip = crb_create_province_SNT_religion_tt
+	custom_tooltip = crb_create_province_SNT_law_oligarchy_tt
+	custom_tooltip = crb_create_province_SNT_law_appointed_bureaucrats_tt
+	custom_tooltip = crb_create_province_SNT_law_secret_police_tt
+	custom_tooltip = crb_create_province_SNT_law_mercantilism_tt
+	custom_tooltip = crb_create_province_SNT_law_state_religion_tt
 	hidden_effect = {
 		crb_create_province_SNT_effect = yes
 	}

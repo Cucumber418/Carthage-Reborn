@@ -96,13 +96,6 @@
  ############################################################
  # 商站
  ############################################################
- crb_create_puppet_TRP_tt: "把迦太基在#b 的黎波里#!、#b 昔兰尼加#!、#b 费赞#!的州组建为傀儡国#b 的黎波里#!，国教为塔尼特多神教"
- crb_create_puppet_NUM_tt: "把迦太基在#b 阿尔及尔#!、#b 君士坦丁#!、#b 奥兰#!的州组建为傀儡国#b 努米底亚#!，国教为塔尼特多神教"
- crb_create_puppet_IBT_tt: "把迦太基在西班牙本土的州组建为傀儡国#b 伊比利亚商站#!，国教为塔尼特多神教，预设[GetLawType('law_mercantilism').GetName]"
- crb_create_puppet_GLT_tt: "把迦太基在法国的州组建为傀儡国#b 高卢商站#!，国教为塔尼特多神教，预设[GetLawType('law_mercantilism').GetName]、[GetLawType('law_landed_voting').GetName]"
- crb_create_puppet_SNT_tt: "把迦太基在瑞士、萨伏依、皮埃蒙特、伦巴第、威尼西亚的州组建为傀儡国#b 雪山商站#!，国教为塔尼特多神教，预设[GetLawType('law_protectionism').GetName]、[GetLawType('law_national_militia').GetName]"
- crb_create_puppet_IOP_tt: "把迦太基在拉齐奥、阿布鲁佐、坎帕尼亚、阿普利亚、卡拉布里亚的州组建为傀儡国#b 伊奥尼亚商站#!，国教为塔尼特多神教，预设[GetLawType('law_free_trade').GetName]、[GetLawType('law_wealth_voting').GetName]"
- crb_create_puppet_RPR_tt: "把迦太基在拉齐奥、阿布鲁佐、坎帕尼亚、阿普利亚、卡拉布里亚的州组建为#b 罗马行省#!，与迦太基结为[concept_personal_union]，国教为塔尼特多神教，预设[GetLawType('law_oligarchy').GetName]、[GetLawType('law_secret_police').GetName]"
  crb_carthaginian_protection: "迦太基的庇护"
  crb_carthaginian_hegemony: "迦太基的霸权"
  GLT: "高卢商站"
