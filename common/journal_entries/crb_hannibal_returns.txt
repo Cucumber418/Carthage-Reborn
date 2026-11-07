@@ -15,6 +15,7 @@ je_crb_hannibal_returns = {
 	is_shown_when_inactive = {
 		crb_is_carthage_trigger = yes
 		has_variable = crb_barca_victory
+		NOT = { has_variable = crb_hanno_victory }
 		has_variable = crb_hanno_barca_concluded
 		NOT = { has_variable = crb_hannibal_concluded }
 	}
@@ -22,6 +23,7 @@ je_crb_hannibal_returns = {
 	possible = {
 		crb_is_carthage_trigger = yes
 		has_variable = crb_barca_victory
+		NOT = { has_variable = crb_hanno_victory }
 		has_variable = crb_hanno_barca_concluded
 		NOT = { has_variable = crb_hannibal_concluded }
 	}
@@ -29,7 +31,10 @@ je_crb_hannibal_returns = {
 	immediate = {
 		# 宣称在开场事件的选项中获得，这样玩家可以在选项上看到
 		if = {
-			limit = { NOT = { has_variable = crb_hannibal_intro_shown } }
+			limit = {
+				NOT = { has_variable = crb_hanno_victory }
+				NOT = { has_variable = crb_hannibal_intro_shown }
+			}
 			set_variable = crb_hannibal_intro_shown
 			trigger_event = { id = crb_hannibal.0 popup = yes }
 		}
@@ -159,6 +164,18 @@ je_crb_hannibal_returns = {
 		conclusion_desc = je_standard_failure_conclusion_desc
 		trigger = {
 			NOT = { crb_is_carthage_trigger = yes }
+		}
+		effect = {
+			set_variable = crb_hannibal_concluded
+		}
+	}
+
+	# 防御性校验：若汉诺派胜利标记存在，立即使这条巴卡派专属日志失效
+	outcome = {
+		flags = { hidden invalid_outcome }
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			has_variable = crb_hanno_victory
 		}
 		effect = {
 			set_variable = crb_hannibal_concluded

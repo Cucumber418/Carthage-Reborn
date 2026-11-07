@@ -35,6 +35,9 @@ je_crb_hanno_barca = {
 	}
 
 	immediate = {
+		# 新一轮派系斗争开始前清除可能残留的上次胜利标记
+		remove_variable = crb_barca_victory
+		remove_variable = crb_hanno_victory
 		ig:ig_landowners ?= { save_scope_as = crb_hb_landowners }
 		ig:ig_industrialists ?= { save_scope_as = crb_hb_industrialists }
 		ig:ig_devout ?= { save_scope_as = crb_hb_devout }

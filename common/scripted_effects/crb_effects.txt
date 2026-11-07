@@ -113,6 +113,8 @@ crb_update_ig_names_effect = {
 # 作用域：国家
 # ============================================================
 crb_barca_victory_effect = {
+	# 两派胜利标记互斥，防止旧存档/残留变量误开启另一条路线
+	remove_variable = crb_hanno_victory
 	set_variable = crb_barca_victory
 	add_modifier = {
 		name = crb_popular_assembly_restored
@@ -122,6 +124,8 @@ crb_barca_victory_effect = {
 }
 
 crb_hanno_victory_effect = {
+	# 汉诺派获胜时清除巴卡派标记，确保不会开启汉尼拔再临
+	remove_variable = crb_barca_victory
 	set_variable = crb_hanno_victory
 	add_modifier = {
 		name = crb_senate_peace
