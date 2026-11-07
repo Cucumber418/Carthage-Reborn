@@ -1,0 +1,191 @@
+﻿namespace = crb_hanno_barca
+
+# 日志开始
+crb_hanno_barca.1 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca.1.t
+	desc = crb_hanno_barca.1.d
+	flavor = crb_hanno_barca.1.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hanno_barca 触发
+	}
+
+	option = {
+		name = crb_hanno_barca.1.a
+		default_option = yes
+	}
+}
+
+# 巴卡派获胜
+crb_hanno_barca.2 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca.2.t
+	desc = crb_hanno_barca.2.d
+	flavor = crb_hanno_barca.2.f
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hanno_barca 触发
+	}
+
+	option = {
+		name = crb_hanno_barca.2.a
+		default_option = yes
+	}
+}
+
+# 汉诺派获胜
+crb_hanno_barca.3 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca.3.t
+	desc = crb_hanno_barca.3.d
+	flavor = crb_hanno_barca.3.f
+
+	event_image = {
+		video = "middleeast_upperclass_party"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hanno_barca 触发
+	}
+
+	option = {
+		name = crb_hanno_barca.3.a
+		default_option = yes
+	}
+}
+
+# 僵持十年，被迫选边
+crb_hanno_barca.4 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca.4.t
+	desc = crb_hanno_barca.4.d
+	flavor = crb_hanno_barca.4.f
+
+	event_image = {
+		video = "middleeast_courtroom_upheaval"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hanno_barca 触发
+	}
+
+	# 倒向巴卡派
+	option = {
+		name = crb_hanno_barca.4.a
+		default_option = yes
+		crb_barca_victory_effect = yes
+		add_modifier = {
+			name = crb_hb_hanno_betrayed
+			days = normal_modifier_time
+		}
+		add_radicals = {
+			value = small_radicals
+			interest_group = ig:ig_landowners
+		}
+	}
+
+	# 倒向汉诺派
+	option = {
+		name = crb_hanno_barca.4.b
+		crb_hanno_victory_effect = yes
+		add_modifier = {
+			name = crb_hb_barca_betrayed
+			days = normal_modifier_time
+		}
+		add_radicals = {
+			value = small_radicals
+			interest_group = ig:ig_petty_bourgeoisie
+		}
+	}
+}
+
+# 君主制倾向的鼓动者出现
+crb_hanno_barca.5 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_barca.5.t
+	desc = crb_hanno_barca.5.d
+	flavor = crb_hanno_barca.5.f
+
+	event_image = {
+		video = "votp_agitator_speaking"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hanno_barca 每年随机触发
+	}
+
+	immediate = {
+		create_character = {
+			is_agitator = yes
+			culture = cu:crb_punic
+			religion = rel:crb_tanit
+			interest_group = ig_armed_forces
+			ideology = ideology:ideology_royalist
+			traits = {
+				demagogue
+			}
+			save_scope_as = crb_royalist_agitator
+			on_created = {
+				set_temporary_event_immortality = { DURATION = 3 }
+			}
+		}
+	}
+
+	after = {
+		revoke_temporary_event_immortality = { CHARACTER = scope:crb_royalist_agitator }
+	}
+
+	option = {
+		name = crb_hanno_barca.5.a
+		default_option = yes
+	}
+}

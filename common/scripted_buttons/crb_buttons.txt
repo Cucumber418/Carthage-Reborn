@@ -1,0 +1,73 @@
+﻿# 汉诺派与巴卡派：向元老院让步
+crb_hb_concede_senate_button = {
+	name = "crb_hb_concede_senate_button"
+	desc = "crb_hb_concede_senate_button_desc"
+
+	visible = {
+		has_journal_entry = je_crb_hanno_barca
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = crb_hb_button_cooldown_tt
+			NOT = { has_variable = crb_hb_button_cooldown }
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		je:je_crb_hanno_barca ?= {
+			add_progress = { value = -8 name = crb_hanno_barca_progress_bar }
+		}
+		add_modifier = {
+			name = crb_hb_conceded_to_senate
+			days = short_modifier_time
+		}
+		hidden_effect = {
+			set_variable = {
+				name = crb_hb_button_cooldown
+				days = 730
+			}
+		}
+	}
+}
+
+# 汉诺派与巴卡派：向公民大会让步
+crb_hb_concede_assembly_button = {
+	name = "crb_hb_concede_assembly_button"
+	desc = "crb_hb_concede_assembly_button_desc"
+
+	visible = {
+		has_journal_entry = je_crb_hanno_barca
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = crb_hb_button_cooldown_tt
+			NOT = { has_variable = crb_hb_button_cooldown }
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		je:je_crb_hanno_barca ?= {
+			add_progress = { value = 8 name = crb_hanno_barca_progress_bar }
+		}
+		add_modifier = {
+			name = crb_hb_conceded_to_assembly
+			days = short_modifier_time
+		}
+		hidden_effect = {
+			set_variable = {
+				name = crb_hb_button_cooldown
+				days = 730
+			}
+		}
+	}
+}

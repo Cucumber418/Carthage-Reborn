@@ -1,0 +1,77 @@
+﻿# ============================================================
+# 开局
+# ============================================================
+
+# 迦太基仍未毁灭：持续到国家受认可为止
+crb_carthago_non_deleta = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_piracy_income_add = 0.5
+	character_piracy_goods_capacity_mult = 0.2
+	country_prestige_add = 15
+	unit_morale_recovery_mult = 0.1
+}
+
+crb_senate_will_guard = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_ig_landowners_approval_add = 2
+}
+
+crb_people_will_rebuild = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	interest_group_ig_petty_bourgeoisie_approval_add = 2
+}
+
+# ============================================================
+# 汉诺派与巴卡派
+# ============================================================
+
+# 按钮：向元老院让步，巴卡派支持者不满
+crb_hb_conceded_to_senate = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	interest_group_ig_armed_forces_approval_add = -2
+	interest_group_ig_petty_bourgeoisie_approval_add = -2
+	interest_group_ig_rural_folk_approval_add = -2
+}
+
+# 按钮：向公民大会让步，汉诺派支持者不满
+crb_hb_conceded_to_assembly = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	interest_group_ig_landowners_approval_add = -2
+	interest_group_ig_industrialists_approval_add = -2
+	interest_group_ig_devout_approval_add = -2
+}
+
+# 巴卡派获胜
+crb_popular_assembly_restored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	country_legitimacy_base_add = 10
+	interest_group_ig_armed_forces_pol_str_mult = 0.1
+	interest_group_ig_armed_forces_approval_add = 3
+	interest_group_ig_petty_bourgeoisie_approval_add = 3
+	interest_group_ig_rural_folk_approval_add = 2
+}
+
+# 汉诺派获胜
+crb_senate_peace = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_legitimacy_base_add = 10
+	country_improve_relations_speed_mult = 0.25
+	interest_group_ig_landowners_approval_add = 3
+	interest_group_ig_industrialists_approval_add = 2
+	interest_group_ig_devout_approval_add = 3
+}
+
+# 僵持后被迫选边：被抛弃的一派
+crb_hb_barca_betrayed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	interest_group_ig_armed_forces_approval_add = -4
+	interest_group_ig_petty_bourgeoisie_approval_add = -4
+	interest_group_ig_rural_folk_approval_add = -3
+}
+
+crb_hb_hanno_betrayed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	interest_group_ig_landowners_approval_add = -4
+	interest_group_ig_industrialists_approval_add = -3
+	interest_group_ig_devout_approval_add = -4
+}

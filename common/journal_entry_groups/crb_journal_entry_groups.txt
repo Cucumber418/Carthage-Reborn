@@ -1,0 +1,8 @@
+﻿# 迦太基专属日志分组
+# 1.15 起每个分组都必须配插图（1108x200），暂时借用原版插图，之后再换
+je_group_crb_carthage = {
+	context = country
+	updates_strategic_region_stances = yes
+	illustration = "gfx/interface/illustrations/journal/je_group_illu_historical_content.dds"
+	themed = yes
+}

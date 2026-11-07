@@ -1,0 +1,55 @@
+﻿# 巴卡派支持者（军队、小市民、乡村民众）与汉诺派支持者（田主、船主、奉神者）的政治力量之差
+# 正数偏向巴卡派，负数偏向汉诺派
+crb_hb_clout_balance = {
+	value = 0
+	every_interest_group = {
+		limit = {
+			OR = {
+				is_interest_group_type = ig_armed_forces
+				is_interest_group_type = ig_petty_bourgeoisie
+				is_interest_group_type = ig_rural_folk
+			}
+		}
+		add = this.ig_clout
+	}
+	every_interest_group = {
+		limit = {
+			OR = {
+				is_interest_group_type = ig_landowners
+				is_interest_group_type = ig_industrialists
+				is_interest_group_type = ig_devout
+			}
+		}
+		subtract = this.ig_clout
+	}
+	multiply = 1.5
+}
+
+# 君主制倾向鼓动者每年出现的概率（百分比）
+# 巴卡派越占优、军队政治力量越强，概率越高
+crb_hb_royalist_agitator_chance = {
+	value = 0
+	if = {
+		limit = {
+			exists = ig:ig_armed_forces
+			scope:journal_entry ?= {
+				"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 50
+			}
+		}
+		add = ig:ig_armed_forces.ig_clout
+		multiply = 100
+		if = {
+			limit = {
+				scope:journal_entry ?= {
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 75
+				}
+			}
+			multiply = 2
+		}
+		if = {
+			limit = { is_at_war = yes }
+			multiply = 1.5
+		}
+		max = 50
+	}
+}

@@ -107,3 +107,30 @@ crb_update_ig_names_effect = {
 		}
 	}
 }
+
+# ============================================================
+# 汉诺派与巴卡派：结局效果
+# 作用域：国家
+# ============================================================
+crb_barca_victory_effect = {
+	set_variable = crb_barca_victory
+	add_modifier = {
+		name = crb_popular_assembly_restored
+		days = long_modifier_time
+	}
+	# 日志"汉尼拔再临"会检查 crb_barca_victory 变量
+}
+
+crb_hanno_victory_effect = {
+	set_variable = crb_hanno_victory
+	add_modifier = {
+		name = crb_senate_peace
+		days = long_modifier_time
+	}
+	# 日志"汉诺航海记"会检查 crb_hanno_victory 变量
+}
+
+crb_hanno_barca_cleanup_effect = {
+	remove_variable = crb_hb_stalemate_months
+	remove_variable = crb_hb_button_cooldown
+}

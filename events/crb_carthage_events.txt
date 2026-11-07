@@ -1,0 +1,76 @@
+﻿namespace = crb_carthage
+
+# 开局：迦太基仍未毁灭……
+crb_carthage.1 = {
+	type = country_event
+	placement = root
+
+	title = crb_carthage.1.t
+	desc = crb_carthage.1.d
+	flavor = crb_carthage.1.f
+
+	event_image = {
+		video = "votp_french_algeria"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由 crb_on_game_started 触发
+	}
+
+	immediate = {
+		s:STATE_TRIPOLI ?= {
+			add_claim = root
+		}
+		s:STATE_CONSTANTINE ?= {
+			add_claim = root
+		}
+		add_modifier = {
+			name = crb_carthago_non_deleta
+		}
+	}
+
+	option = {
+		name = crb_carthage.1.a
+		default_option = yes
+		show_as_tooltip = {
+			s:STATE_TRIPOLI ?= {
+				add_claim = root
+			}
+			s:STATE_CONSTANTINE ?= {
+				add_claim = root
+			}
+			add_modifier = {
+				name = crb_carthago_non_deleta
+			}
+		}
+		add_modifier = {
+			name = crb_senate_will_guard
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = crb_carthage.1.b
+		show_as_tooltip = {
+			s:STATE_TRIPOLI ?= {
+				add_claim = root
+			}
+			s:STATE_CONSTANTINE ?= {
+				add_claim = root
+			}
+			add_modifier = {
+				name = crb_carthago_non_deleta
+			}
+		}
+		add_modifier = {
+			name = crb_people_will_rebuild
+			days = normal_modifier_time
+		}
+	}
+}

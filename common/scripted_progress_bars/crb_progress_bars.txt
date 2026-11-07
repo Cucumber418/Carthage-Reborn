@@ -1,0 +1,92 @@
+﻿# 汉诺派与巴卡派：0 为汉诺派完全获胜，100 为巴卡派完全获胜
+crb_hanno_barca_progress_bar = {
+	name = "crb_hanno_barca_bar"
+	desc = "crb_hanno_barca_bar_desc"
+	second_desc = "crb_hanno_barca_bar_desc_2"
+
+	progress_texture = "gfx/interface/progressbar/progressbar_bad.dds"
+	background_texture = "gfx/interface/progressbar/progressbar_white.dds"
+	glow_texture = "gfx/interface/progressbar/progressbar_bad_glow.dds"
+	glow_line_texture = "gfx/interface/progressbar/progressbar_bad_glow_line.dds"
+	marker = yes
+
+	start_value = 40
+	min_value = 0
+	max_value = 100
+
+	monthly_progress = {
+		# 巴卡派
+		progress_condition = {
+			limit = { has_law_or_variant = law_type:law_wealth_voting }
+			add = {
+				desc = "crb_hb_barca_wealth_voting"
+				value = 0.15
+			}
+		}
+		progress_condition = {
+			limit = { has_law_or_variant = law_type:law_elected_bureaucrats }
+			add = {
+				desc = "crb_hb_barca_elected_bureaucrats"
+				value = 0.1
+			}
+		}
+		progress_condition = {
+			limit = { has_law_or_variant = law_type:law_mercantilism }
+			add = {
+				desc = "crb_hb_barca_mercantilism"
+				value = 0.1
+			}
+		}
+		progress_condition = {
+			limit = { is_at_war = yes }
+			add = {
+				desc = "crb_hb_barca_at_war"
+				value = 0.3
+			}
+		}
+		progress_condition = {
+			limit = { crb_hb_clout_balance > 0 }
+			add = {
+				desc = "crb_hb_barca_clout"
+				value = crb_hb_clout_balance
+			}
+		}
+
+		# 汉诺派
+		progress_condition = {
+			limit = { has_law_or_variant = law_type:law_oligarchy }
+			add = {
+				desc = "crb_hb_hanno_oligarchy"
+				value = -0.15
+			}
+		}
+		progress_condition = {
+			limit = { has_law_or_variant = law_type:law_hereditary_bureaucrats }
+			add = {
+				desc = "crb_hb_hanno_hereditary_bureaucrats"
+				value = -0.1
+			}
+		}
+		progress_condition = {
+			limit = { has_law_or_variant = law_type:law_protectionism }
+			add = {
+				desc = "crb_hb_hanno_protectionism"
+				value = -0.1
+			}
+		}
+		progress_condition = {
+			limit = { is_at_war = no }
+			add = {
+				desc = "crb_hb_hanno_at_peace"
+				value = -0.05
+			}
+		}
+		progress_condition = {
+			limit = { crb_hb_clout_balance < 0 }
+			add = {
+				desc = "crb_hb_hanno_clout"
+				value = crb_hb_clout_balance
+			}
+		}
+	}
+}

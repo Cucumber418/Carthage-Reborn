@@ -12,7 +12,7 @@ on_monthly_pulse_country = {
 	}
 }
 
-# 开局：人口转换 + 利益集团改名
+# 开局：家园、人口转换、利益集团改名、开局事件
 crb_on_game_started = {
 	effect = {
 		s:STATE_TUNISIA = {
@@ -21,11 +21,15 @@ crb_on_game_started = {
 		c:TUN ?= {
 			crb_convert_starting_pops_effect = yes
 			crb_update_ig_names_effect = yes
+			trigger_event = {
+				id = crb_carthage.1
+				popup = yes
+			}
 		}
 	}
 }
 
-# 每月：检查利益集团名称是否需要切换（受认可、国教变化）
+# 每月：检查利益集团名称是否需要切换（受认可、国教变化），受认可后移除开局修正
 crb_monthly_pulse_country = {
 	trigger = {
 		exists = c:TUN
@@ -33,5 +37,13 @@ crb_monthly_pulse_country = {
 	}
 	effect = {
 		crb_update_ig_names_effect = yes
+		# 受认可后移除"迦太基仍未毁灭"
+		if = {
+			limit = {
+				has_modifier = crb_carthago_non_deleta
+				NOT = { is_country_type = unrecognized }
+			}
+			remove_modifier = crb_carthago_non_deleta
+		}
 	}
 }
