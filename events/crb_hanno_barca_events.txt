@@ -85,7 +85,7 @@ crb_hanno_barca.3 = {
 	option = {
 		name = crb_hanno_barca.3.a
 		default_option = yes
-		crb_hanno_victory_effect = yes
+		# 胜利标记已在派系斗争结局时设置，此处只确认事件
 	}
 }
 

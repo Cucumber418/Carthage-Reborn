@@ -174,7 +174,11 @@ je_crb_hanno_barca = {
 		effect = {
 			set_variable = crb_hanno_barca_concluded
 			show_as_tooltip = { crb_hanno_victory_effect = yes }
-			hidden_effect = { crb_hanno_barca_cleanup_effect = yes }
+			hidden_effect = {
+				# 在胜利结局结算时立即锁定汉诺派胜利，不能等玩家关闭后续弹窗才设置
+				crb_hanno_victory_effect = yes
+				crb_hanno_barca_cleanup_effect = yes
+			}
 			trigger_event = {
 				id = crb_hanno_barca.3
 				popup = yes
