@@ -55,7 +55,8 @@ crb_revenge.1 = {
 	option = {
 		name = crb_revenge.1.a
 		default_option = yes
-		change_infamy = 10
+		# 宣称本身带来少量恶名，实际征服仍需另付外交代价
+		change_infamy = 2
 		s:STATE_CATALONIA = { add_claim = root }
 		s:STATE_VALENCIA = { add_claim = root }
 		s:STATE_MURCIA = { add_claim = root }
@@ -100,7 +101,8 @@ crb_revenge.2 = {
 	option = {
 		name = crb_revenge.2.a
 		default_option = yes
-		change_infamy = 15
+		# 宣称本身带来少量恶名，实际征服仍需另付外交代价
+		change_infamy = 3
 		s:STATE_LANGUEDOC = { add_claim = root }
 		s:STATE_PROVENCE = { add_claim = root }
 		s:STATE_RHONE = { add_claim = root }
@@ -143,7 +145,8 @@ crb_revenge.3 = {
 	option = {
 		name = crb_revenge.3.a
 		default_option = yes
-		change_infamy = 20
+		# 宣称本身带来少量恶名，实际征服仍需另付外交代价
+		change_infamy = 5
 		s:STATE_WEST_SWITZERLAND = { add_claim = root }
 		s:STATE_EAST_SWITZERLAND = { add_claim = root }
 		s:STATE_SAVOY = { add_claim = root }
@@ -189,7 +192,8 @@ crb_revenge.4 = {
 	option = {
 		name = crb_revenge.4.a
 		default_option = yes
-		change_infamy = 25
+		# 宣称本身带来少量恶名，实际征服仍需另付外交代价
+		change_infamy = 7
 		s:STATE_EMILIA = { add_claim = root }
 		s:STATE_ROMAGNA = { add_claim = root }
 		s:STATE_TUSCANY = { add_claim = root }

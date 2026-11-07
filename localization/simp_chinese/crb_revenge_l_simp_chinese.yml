@@ -19,7 +19,7 @@
  crb_punic_war_mobilize_button: "动员公民"
  crb_punic_war_mobilize_button_desc: "在广场上宣读战争的理由，号召公民为迦太基而战。"
  crb_punic_war_mobilize_cooldown_tt: "近一年内未曾动员公民"
- crb_punic_war_mobilize_support_tt: "我们在所有战争中的[concept_war_support]增加#v 10%#!"
+ crb_punic_war_mobilize_support_tt: "我们在所有战争中的[concept_war_support]增加#v 5#!点"
  crb_punic_war_pledge_button: "元老院的承诺"
  crb_punic_war_pledge_button_desc: "元老院公开承诺，这一次绝不会像当年那样抛弃前线的将军。"
  crb_punic_war_pledge_cooldown_tt: "近两年内元老院未曾作出承诺"

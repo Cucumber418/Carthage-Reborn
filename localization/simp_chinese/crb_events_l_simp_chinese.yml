@@ -26,13 +26,22 @@
 
  crb_hb_claims_taken_tt: "拥有#b 的黎波里塔尼亚#!或#b 君士坦丁#!的任意土地"
 
- crb_hb_status_stalemate: "两派势均力敌。如果这种局面持续#v 4#!年，[ROOT.GetCountry.GetName]将不得不在两派之间作出抉择。"
+ crb_hb_status_stalemate: "两派势均力敌。如果这种局面持续#v 3#!年，[ROOT.GetCountry.GetName]将不得不在两派之间作出抉择。"
  crb_hb_status_barca_leading: "#b 巴卡派#!正在占据上风。"
  crb_hb_status_hanno_leading: "#b 汉诺派#!正在占据上风。"
 
  crb_hanno_barca_bar: "汉诺派与巴卡派"
  crb_hanno_barca_bar_desc: "巴卡派：#v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#!"
  crb_hanno_barca_bar_desc_2: "汉诺派：[Divide_CFixedPoint(Subtract_CFixedPoint(ScriptedProgressBar.GetMaxValue, JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)), Subtract_CFixedPoint(ScriptedProgressBar.GetMaxValue, ScriptedProgressBar.GetMinValue))|v%]"
+
+ crb_hb_momentum_barca_early: "巴卡派：初现优势"
+ crb_hb_momentum_barca_growing: "巴卡派：拥护者渐增"
+ crb_hb_momentum_barca_dominant: "巴卡派：势不可挡"
+ crb_hb_momentum_barca_final: "巴卡派：胜利在望"
+ crb_hb_momentum_hanno_early: "汉诺派：初现优势"
+ crb_hb_momentum_hanno_growing: "汉诺派：拥护者渐增"
+ crb_hb_momentum_hanno_dominant: "汉诺派：势不可挡"
+ crb_hb_momentum_hanno_final: "汉诺派：胜利在望"
 
  crb_hb_barca_wealth_voting: "已颁布[GetLawType('law_wealth_voting').GetName]"
  crb_hb_barca_elected_bureaucrats: "已颁布[GetLawType('law_elected_bureaucrats').GetName]"
@@ -61,13 +70,13 @@
  crb_hb_stalemate: "僵持条件：\n"
  crb_hb_stalemate_effect_header: "当两派僵持不下时：\n$EFFECT$"
  crb_hb_stalemate_conclusion_desc: "$concept_journal_entry$以两派僵持结束"
- crb_hb_stalemate_tt: "两派的力量都保持在#v 30%#!到#v 70%#!之间，持续#v 4#!年"
+ crb_hb_stalemate_tt: "两派的力量都保持在#v 30%#!到#v 70%#!之间，持续#v 3#!年"
 
  crb_hb_concede_senate_button: "向元老院让步"
  crb_hb_concede_senate_button_desc: "满足元老们的要求，以换取他们对政府的支持。"
  crb_hb_concede_assembly_button: "向公民大会让步"
  crb_hb_concede_assembly_button_desc: "满足公民与军人的要求，以换取他们对政府的支持。"
- crb_hb_button_cooldown_tt: "近两年内未曾向任何一派让步"
+ crb_hb_button_cooldown_tt: "近一年内未曾向任何一派让步"
 
  crb_hb_conceded_to_senate: "向元老院让步"
  crb_hb_conceded_to_assembly: "向公民大会让步"
@@ -97,7 +106,7 @@
  crb_hanno_barca.3.a: "审慎是共和国的美德。"
 
  crb_hanno_barca.4.t: "共和国的抉择"
- crb_hanno_barca.4.d: "整整四年，元老院与公民大会互不相让，任何一项重大决定都要在争吵中拖延数月。外国使节嘲笑说，迦太基有两个政府，却没有一个能做主。\n\n苏菲特们已经无法继续在两派之间周旋。[ROOT.GetCountry.GetName]必须作出选择，而被抛弃的一方绝不会轻易接受这个结果。"
+ crb_hanno_barca.4.d: "整整三年，元老院与公民大会互不相让，任何一项重大决定都要在争吵中拖延数月。外国使节嘲笑说，迦太基有两个政府，却没有一个能做主。\n\n苏菲特们已经无法继续在两派之间周旋。[ROOT.GetCountry.GetName]必须作出选择，而被抛弃的一方绝不会轻易接受这个结果。"
  crb_hanno_barca.4.f: "“迦太基人被认为拥有一套优良的政体……民众始终忠于这一政体，从未发生过值得一提的内乱，也从未出现过僭主。”\n\n——亚里士多德，#italic 《政治学》#!"
  crb_hanno_barca.4.a: "站在公民大会一边。"
  crb_hanno_barca.4.b: "站在元老院一边。"

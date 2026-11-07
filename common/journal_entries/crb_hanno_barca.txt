@@ -88,9 +88,9 @@ je_crb_hanno_barca = {
 	}
 
 	on_monthly_pulse = {
-		# 随机事件：平均每 5 个月左右一个，每个事件 5 年内只出现一次
+		# 随机事件：平均每 4 个月左右一个，同事件保留冷却
 		random_events = {
-			160 = 0
+			120 = 0
 			5 = crb_hanno_barca_random.10
 			5 = crb_hanno_barca_random.11
 			5 = crb_hanno_barca_random.12
@@ -196,7 +196,7 @@ je_crb_hanno_barca = {
 		}
 	}
 
-	# 僵持 4 年：弹出事件，由玩家选择倒向哪一派
+	# 僵持 3 年：弹出事件，由玩家选择倒向哪一派
 	outcome = {
 		header = crb_hb_stalemate
 		effect_header = crb_hb_stalemate_effect_header
@@ -206,7 +206,7 @@ je_crb_hanno_barca = {
 			custom_tooltip = {
 				text = crb_hb_stalemate_tt
 				has_variable = crb_hb_stalemate_months
-				var:crb_hb_stalemate_months >= 48
+				var:crb_hb_stalemate_months >= 36
 			}
 		}
 		effect = {
