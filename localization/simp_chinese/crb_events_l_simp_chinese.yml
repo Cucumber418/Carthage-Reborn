@@ -3,7 +3,7 @@
  # 开局事件：迦太基仍未毁灭……
  ############################################################
  crb_carthage.1.t: "迦太基仍未毁灭……"
- crb_carthage.1.d: "一千九百八十一年前，罗马人焚毁了迦太基，在废墟上犁地撒盐，宣告这座城市永远不复存在。然而在突尼斯的海岸与村庄里，布匿的语言、神祇和姓氏从未完全消失。\n\n如今，一群自称汉诺与巴卡后裔的元老在旧城废墟旁重开元老院，宣布迦太基重生。列强对此置若罔闻，邻国则虎视眈眈。在这片曾被诅咒的土地上，新生的[ROOT.GetCountry.GetName]必须向世界证明，迦太基仍未毁灭。"
+ crb_carthage.1.d: "一千九百八十一年前，罗马人焚毁了迦太基，在废墟上犁地撒盐，宣告这座城市永远不复存在。然而在突尼斯的海岸与村庄里，布匿的语言、神祇和姓氏从未完全消失。\n\n如今，一群自称汉诺与巴卡后裔的元老在旧城废墟旁重开元老院，宣布迦太基重生。列强对此置若罔闻，邻国则虎视眈眈。共和国必须首先夺回君士坦丁或的黎波里；无论哪一处先被收复，都会迫使元老院与公民大会公开争夺迦太基的未来。在这片曾被诅咒的土地上，新生的[ROOT.GetCountry.GetName]必须向世界证明，迦太基仍未毁灭。"
  crb_carthage.1.f: "“此外，我认为迦太基必须被毁灭。”\n\n——马尔库斯·波尔基乌斯·加图"
  crb_carthage.1.a: "元老院将守护迦太基。"
  crb_carthage.1.b: "人民将重建迦太基。"
@@ -21,12 +21,12 @@
  je_group_crb_carthage: "迦太基"
 
  je_crb_hanno_barca: "汉诺派与巴卡派"
- je_crb_hanno_barca_lobby: "打下开局宣称的土地后，元老院中的汉诺派与依靠军队和民众的巴卡派之间将爆发一场争斗。巴卡派主张向海外开拓，汉诺派则希望守住田地和商路。"
- je_crb_hanno_barca_reason: "古迦太基的政治长期被两大派系所左右：以汉诺家族为首的元老们主张守住阿非利加的田地与海上的商路，避免与强国交战；以巴卡家族为首的将领们则依靠军队和民众，要求向海外开拓。两千年后，这场争论在重生的迦太基再度上演。\n$TOOLTIP_DELIMITER$\n@information!#b 汉诺派#!由[GetInterestGroupVariant('ig_landowners',GetPlayer).GetName]、[GetInterestGroupVariant('ig_industrialists',GetPlayer).GetName]和[GetInterestGroupVariant('ig_devout',GetPlayer).GetName]组成。他们希望维持现状，支持[GetLawType('law_oligarchy').GetName]、[GetLawType('law_hereditary_bureaucrats').GetName]和[GetLawType('law_protectionism').GetName]。\n\n#b 巴卡派#!由[GetInterestGroupVariant('ig_armed_forces',GetPlayer).GetName]、[GetInterestGroupVariant('ig_petty_bourgeoisie',GetPlayer).GetName]和[GetInterestGroupVariant('ig_rural_folk',GetPlayer).GetName]组成。他们要求复兴公民大会，支持[GetLawType('law_wealth_voting').GetName]、[GetLawType('law_elected_bureaucrats').GetName]和[GetLawType('law_mercantilism').GetName]。必要时，他们甚至愿意迎立一位民族的君主，以恢复布匿战争之前的疆域。"
+ je_crb_hanno_barca_lobby: "夺取君士坦丁或的黎波里后，元老院中的汉诺派与依靠军队和民众的巴卡派之间将爆发一场争斗。巴卡派主张向海外开拓，汉诺派则希望守住田地和商路。"
+ je_crb_hanno_barca_reason: "古迦太基的政治长期被两大派系所左右：以汉诺家族为首的元老们主张守住阿非利加的田地与海上的商路，避免与强国交战；以巴卡家族为首的将领们则依靠军队和民众，要求向海外开拓。两千年后，这场争论在重生的迦太基再度上演。\n$TOOLTIP_DELIMITER$\n@information!#b 汉诺派#!由[GetInterestGroupVariant('ig_landowners',GetPlayer).GetName]、[GetInterestGroupVariant('ig_industrialists',GetPlayer).GetName]和[GetInterestGroupVariant('ig_devout',GetPlayer).GetName]组成。他们希望维持现状，支持[GetLawType('law_oligarchy').GetName]、[GetLawType('law_hereditary_bureaucrats').GetName]和[GetLawType('law_mercantilism').GetName]。\n\n#b 巴卡派#!由[GetInterestGroupVariant('ig_armed_forces',GetPlayer).GetName]、[GetInterestGroupVariant('ig_petty_bourgeoisie',GetPlayer).GetName]和[GetInterestGroupVariant('ig_rural_folk',GetPlayer).GetName]组成。他们要求复兴公民大会，支持[GetLawType('law_wealth_voting').GetName]、[GetLawType('law_elected_bureaucrats').GetName]和[GetLawType('law_protectionism').GetName]。必要时，他们甚至愿意迎立一位民族的君主，以恢复布匿战争之前的疆域。"
 
- crb_hb_claims_taken_tt: "拥有#b 的黎波里塔尼亚#!或#b 君士坦丁#!的任意土地"
+ crb_hb_claims_taken_tt: "占领#b 君士坦丁#!或#b 的黎波里#!的领土"
 
- crb_hb_status_stalemate: "两派势均力敌。如果这种局面持续#v 4#!年，[ROOT.GetCountry.GetName]将不得不在两派之间作出抉择。"
+ crb_hb_status_stalemate: "两派暂未形成决定性优势。派系斗争将在启动满#v 3#!年时进入最终阶段。"
  crb_hb_status_barca_leading: "#b 巴卡派#!正在占据上风。"
  crb_hb_status_hanno_leading: "#b 汉诺派#!正在占据上风。"
 
@@ -34,9 +34,18 @@
  crb_hanno_barca_bar_desc: "巴卡派：#v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#!"
  crb_hanno_barca_bar_desc_2: "汉诺派：[Divide_CFixedPoint(Subtract_CFixedPoint(ScriptedProgressBar.GetMaxValue, JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)), Subtract_CFixedPoint(ScriptedProgressBar.GetMaxValue, ScriptedProgressBar.GetMinValue))|v%]"
 
+ crb_hb_momentum_barca_early: "巴卡派：初现优势"
+ crb_hb_momentum_barca_growing: "巴卡派：拥护者渐增"
+ crb_hb_momentum_barca_dominant: "巴卡派：势不可挡"
+ crb_hb_momentum_barca_final: "巴卡派：胜利在望"
+ crb_hb_momentum_hanno_early: "汉诺派：初现优势"
+ crb_hb_momentum_hanno_growing: "汉诺派：拥护者渐增"
+ crb_hb_momentum_hanno_dominant: "汉诺派：势不可挡"
+ crb_hb_momentum_hanno_final: "汉诺派：胜利在望"
+
  crb_hb_barca_wealth_voting: "已颁布[GetLawType('law_wealth_voting').GetName]"
  crb_hb_barca_elected_bureaucrats: "已颁布[GetLawType('law_elected_bureaucrats').GetName]"
- crb_hb_barca_mercantilism: "已颁布[GetLawType('law_mercantilism').GetName]"
+ crb_hb_barca_protectionism: "已颁布[GetLawType('law_protectionism').GetName]"
  crb_hb_barca_at_war: "处于战争中"
  crb_hb_barca_clout: "巴卡派的支持者拥有更大的[concept_clout]"
  crb_hb_barca_triumph: "凯旋的余威"
@@ -47,7 +56,7 @@
  crb_hb_hanno_ruler: "[concept_ruler]是[GetIdeology('ideology_crb_hannonist').GetName]"
  crb_hb_hanno_oligarchy: "已颁布[GetLawType('law_oligarchy').GetName]"
  crb_hb_hanno_hereditary_bureaucrats: "已颁布[GetLawType('law_hereditary_bureaucrats').GetName]"
- crb_hb_hanno_protectionism: "已颁布[GetLawType('law_protectionism').GetName]"
+ crb_hb_hanno_mercantilism: "已颁布[GetLawType('law_mercantilism').GetName]"
  crb_hb_hanno_clout: "汉诺派的支持者拥有更大的[concept_clout]"
 
  crb_hb_barca_victory: "#b 巴卡派#!胜利条件：\n"
@@ -58,16 +67,16 @@
  crb_hb_hanno_victory_effect_header: "当#b 汉诺派#!胜利时：\n$EFFECT$"
  crb_hb_hanno_victory_conclusion_desc: "$concept_journal_entry$以#b 汉诺派#!胜利结束"
  crb_hb_hanno_victory_bar_tt: "#b 汉诺派#!的力量达到#v 100%#!"
- crb_hb_stalemate: "僵持条件：\n"
- crb_hb_stalemate_effect_header: "当两派僵持不下时：\n$EFFECT$"
- crb_hb_stalemate_conclusion_desc: "$concept_journal_entry$以两派僵持结束"
- crb_hb_stalemate_tt: "两派的力量都保持在#v 30%#!到#v 70%#!之间，持续#v 4#!年"
+ crb_hb_stalemate: "三年期限届满：\n"
+ crb_hb_stalemate_effect_header: "派系斗争启动满三年时：\n$EFFECT$"
+ crb_hb_stalemate_conclusion_desc: "$concept_journal_entry$在三年期限届满后结束"
+ crb_hb_stalemate_tt: "派系斗争已持续#v 3#!年，仍未提前决出胜负"
 
  crb_hb_concede_senate_button: "向元老院让步"
  crb_hb_concede_senate_button_desc: "满足元老们的要求，以换取他们对政府的支持。"
  crb_hb_concede_assembly_button: "向公民大会让步"
  crb_hb_concede_assembly_button_desc: "满足公民与军人的要求，以换取他们对政府的支持。"
- crb_hb_button_cooldown_tt: "近两年内未曾向任何一派让步"
+ crb_hb_button_cooldown_tt: "近一年内未曾向任何一派让步"
 
  crb_hb_conceded_to_senate: "向元老院让步"
  crb_hb_conceded_to_assembly: "向公民大会让步"
@@ -97,7 +106,7 @@
  crb_hanno_barca.3.a: "审慎是共和国的美德。"
 
  crb_hanno_barca.4.t: "共和国的抉择"
- crb_hanno_barca.4.d: "整整四年，元老院与公民大会互不相让，任何一项重大决定都要在争吵中拖延数月。外国使节嘲笑说，迦太基有两个政府，却没有一个能做主。\n\n苏菲特们已经无法继续在两派之间周旋。[ROOT.GetCountry.GetName]必须作出选择，而被抛弃的一方绝不会轻易接受这个结果。"
+ crb_hanno_barca.4.d: "派系斗争已经持续三年，元老院与公民大会仍未形成足以结束争端的多数。外国使节嘲笑说，迦太基有两个政府，却没有一个能做主。\n\n如果一派已经取得明显优势，胜负将由局势决定；如果两派仍势均力敌，苏菲特们就必须作出最后抉择，而被抛弃的一方绝不会轻易接受这个结果。"
  crb_hanno_barca.4.f: "“迦太基人被认为拥有一套优良的政体……民众始终忠于这一政体，从未发生过值得一提的内乱，也从未出现过僭主。”\n\n——亚里士多德，#italic 《政治学》#!"
  crb_hanno_barca.4.a: "站在公民大会一边。"
  crb_hanno_barca.4.b: "站在元老院一边。"
@@ -106,3 +115,6 @@
  crb_hanno_barca.5.d: "军营里流传着一种说法：古迦太基人也曾有过自己的国王，而真正的复兴需要一位能够统率全体布匿人的君主。\n\n一位名叫[SCOPE.sCharacter('crb_royalist_agitator').GetFullName]的军官正在士兵和公民中间宣扬这种主张。他的演说吸引了越来越多的听众。"
  crb_hanno_barca.5.f: "共和国给了我们议事厅，可议事厅从来没有为我们赢下过一场战争。"
  crb_hanno_barca.5.a: "让他说吧。"
+
+ crb_hb_veterans_paid_expense: "补发老兵赏金"
+ crb_hb_veterans_paid_expense_desc: "每周额外政府支出 +58，持续 12 个月。"

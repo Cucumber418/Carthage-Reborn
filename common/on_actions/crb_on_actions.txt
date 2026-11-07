@@ -6,7 +6,7 @@ on_game_started = {
 	}
 }
 
-# 地区易手、新建地区时：在原版动态地名之后套用迦太基历史地名（根作用域：州）
+# 地区易手、新建地区时：在原版动态地名之后套用迦太基历史地名（根作用域：地块）
 on_state_owner_change = {
 	on_actions = {
 		crb_on_state_changed
@@ -41,6 +41,9 @@ crb_on_game_started = {
 		c:TUN ?= {
 			crb_convert_starting_pops_effect = yes
 			crb_update_ig_names_effect = yes
+			ig:ig_armed_forces ?= {
+				set_ig_trait = ig_trait:ig_trait_crb_elephant_corps
+			}
 			crb_apply_punic_state_names_effect = yes
 			trigger_event = {
 				id = crb_carthage.1

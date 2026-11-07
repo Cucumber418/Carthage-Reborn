@@ -27,6 +27,8 @@ crb_hannibal.0 = {
 	option = {
 		name = crb_hannibal.0.a
 		default_option = yes
+		# 大规模恢复祖先领土宣称会引起列强警惕
+		change_infamy = 10
 		s:STATE_TRIPOLI = { add_claim = root }
 		s:STATE_LIBYA = { add_claim = root }
 		s:STATE_ALGIERS = { add_claim = root }
@@ -123,6 +125,7 @@ crb_hannibal.2 = {
 		}
 		crb_create_puppet_NUM_with_tooltip_effect = yes
 		crb_hannibal_entry_reward_effect = yes
+		change_infamy = 5
 		s:STATE_FEZ = { add_claim = root }
 		s:STATE_MARRAKECH = { add_claim = root }
 		s:STATE_AL_RIF = { add_claim = root }
@@ -134,9 +137,10 @@ crb_hannibal.2 = {
 		trigger = {
 			NOT = { exists = c:NUM }
 		}
-		change_infamy = 15
+		change_infamy = 10
 		crb_create_province_NUM_with_tooltip_effect = yes
 		crb_hannibal_entry_reward_effect = yes
+		change_infamy = 5
 		s:STATE_FEZ = { add_claim = root }
 		s:STATE_MARRAKECH = { add_claim = root }
 		s:STATE_AL_RIF = { add_claim = root }
@@ -148,6 +152,7 @@ crb_hannibal.2 = {
 		default_option = yes
 		crb_hannibal_stability_effect = yes
 		crb_hannibal_entry_reward_effect = yes
+		change_infamy = 5
 		s:STATE_FEZ = { add_claim = root }
 		s:STATE_MARRAKECH = { add_claim = root }
 		s:STATE_AL_RIF = { add_claim = root }

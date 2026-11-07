@@ -1,0 +1,6 @@
+﻿# 迦太基军队利益集团特质：达到忠诚支持度时生效
+ig_trait_crb_elephant_corps = {
+	icon = "gfx/interface/icons/ig_trait_icons/patriotic_fervor.dds"
+	min_approval = loyal
+	modifier = { unit_offense_mult = 0.2 }
+}

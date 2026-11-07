@@ -1,5 +1,5 @@
 ﻿# 汉诺派与巴卡派：0 为汉诺派完全获胜，100 为巴卡派完全获胜
-# 节奏：日志开始后大约 5 年决出胜负
+# 节奏：进度事件与年度让步按钮推动局势；通常 2-3 年决出胜负，36 个月为最终期限
 crb_hanno_barca_progress_bar = {
 	name = "crb_hanno_barca_bar"
 	desc = "crb_hanno_barca_bar_desc"
@@ -11,11 +11,114 @@ crb_hanno_barca_progress_bar = {
 	glow_line_texture = "gfx/interface/progressbar/progressbar_bad_glow_line.dds"
 	marker = yes
 
-	start_value = 60
+	start_value = 55
 	min_value = 0
 	max_value = 100
 
 	monthly_progress = {
+		# 派系惯性：均衡区间(45%-55%)没有自发漂移；领先后逐级加速。
+		progress_condition = {
+			limit = {
+				je:je_crb_hanno_barca ?= {
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 55
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" < 70
+				}
+			}
+			add = {
+				desc = "crb_hb_momentum_barca_early"
+				value = 0.55
+			}
+		}
+
+		progress_condition = {
+			limit = {
+				je:je_crb_hanno_barca ?= {
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 70
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" < 85
+				}
+			}
+			add = {
+				desc = "crb_hb_momentum_barca_growing"
+				value = 1.1
+			}
+		}
+
+		progress_condition = {
+			limit = {
+				je:je_crb_hanno_barca ?= {
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 85
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" < 95
+				}
+			}
+			add = {
+				desc = "crb_hb_momentum_barca_dominant"
+				value = 1.8
+			}
+		}
+
+		progress_condition = {
+			limit = {
+				je:je_crb_hanno_barca ?= {
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 95
+				}
+			}
+			add = {
+				desc = "crb_hb_momentum_barca_final"
+				value = 2.7
+			}
+		}
+
+		progress_condition = {
+			limit = {
+				je:je_crb_hanno_barca ?= {
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 30
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" < 45
+				}
+			}
+			add = {
+				desc = "crb_hb_momentum_hanno_early"
+				value = -0.55
+			}
+		}
+
+		progress_condition = {
+			limit = {
+				je:je_crb_hanno_barca ?= {
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 15
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" < 30
+				}
+			}
+			add = {
+				desc = "crb_hb_momentum_hanno_growing"
+				value = -1.1
+			}
+		}
+
+		progress_condition = {
+			limit = {
+				je:je_crb_hanno_barca ?= {
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 5
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" < 15
+				}
+			}
+			add = {
+				desc = "crb_hb_momentum_hanno_dominant"
+				value = -1.8
+			}
+		}
+
+		progress_condition = {
+			limit = {
+				je:je_crb_hanno_barca ?= {
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" < 5
+				}
+			}
+			add = {
+				desc = "crb_hb_momentum_hanno_final"
+				value = -2.7
+			}
+		}
+
 		# 巴卡派
 		progress_condition = {
 			limit = { has_law_or_variant = law_type:law_wealth_voting }
@@ -32,9 +135,9 @@ crb_hanno_barca_progress_bar = {
 			}
 		}
 		progress_condition = {
-			limit = { has_law_or_variant = law_type:law_mercantilism }
+			limit = { has_law_or_variant = law_type:law_protectionism }
 			add = {
-				desc = "crb_hb_barca_mercantilism"
+				desc = "crb_hb_barca_protectionism"
 				value = 0.15
 			}
 		}
@@ -43,13 +146,6 @@ crb_hanno_barca_progress_bar = {
 			add = {
 				desc = "crb_hb_barca_at_war"
 				value = 0.6
-			}
-		}
-		progress_condition = {
-			limit = { has_variable = crb_hb_triumph }
-			add = {
-				desc = "crb_hb_barca_triumph"
-				value = 0.5
 			}
 		}
 		progress_condition = {
@@ -116,9 +212,9 @@ crb_hanno_barca_progress_bar = {
 			}
 		}
 		progress_condition = {
-			limit = { has_law_or_variant = law_type:law_protectionism }
+			limit = { has_law_or_variant = law_type:law_mercantilism }
 			add = {
-				desc = "crb_hb_hanno_protectionism"
+				desc = "crb_hb_hanno_mercantilism"
 				value = -0.1
 			}
 		}

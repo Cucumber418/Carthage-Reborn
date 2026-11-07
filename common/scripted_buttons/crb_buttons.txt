@@ -29,7 +29,7 @@ crb_hb_concede_senate_button = {
 		hidden_effect = {
 			set_variable = {
 				name = crb_hb_button_cooldown
-				days = 730
+				days = 365
 			}
 		}
 	}
@@ -66,7 +66,7 @@ crb_hb_concede_assembly_button = {
 		hidden_effect = {
 			set_variable = {
 				name = crb_hb_button_cooldown
-				days = 730
+				days = 365
 			}
 		}
 	}
@@ -134,13 +134,13 @@ crb_punic_war_mobilize_button = {
 	}
 
 	effect = {
-		# 战争支持度在脚本里以 1 = 100% 计，0.1 即 +10%
+		# 当前战争支持度按点数计算；适中的 +5，不再误用旧版 0-1 比例
 		custom_tooltip = {
 			text = crb_punic_war_mobilize_support_tt
 			every_scope_war = {
 				add_war_war_support = {
 					target = root
-					value = 0.1
+					value = 5
 				}
 			}
 		}

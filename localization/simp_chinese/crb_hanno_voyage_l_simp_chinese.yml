@@ -10,7 +10,7 @@
  crb_hv_status_war: "迦太基正处于战争中。只有连续#v 120#!个月不处于战争中，才能完成#b 长久的和平#!。"
  crb_hv_status_default: "沿着汉诺的航路，前往非洲的大西洋海岸。"
  crb_hv_lixus_tt: "#b 重返利克苏斯#!：在[GetStateRegion('STATE_FEZ').GetName]拥有土地"
- crb_hv_kerne_tt: "#b 刻尔涅商站#!：在[GetStateRegion('STATE_WEST_SAHARA').GetName]拥有一个建有[GetBuildingType('building_port').GetName]的州"
+ crb_hv_kerne_tt: "#b 刻尔涅商站#!：在[GetStateRegion('STATE_WEST_SAHARA').GetName]拥有一个建有[GetBuildingType('building_port').GetName]的地块"
  crb_hv_chretes_tt: "#b 克雷特斯之河#!：在[GetStateRegion('STATE_SENEGAL').GetName]拥有土地"
  crb_hv_chariot_tt: "#b 抵达诸神之车#!：在[GetStateRegion('STATE_SOUTH_CAMEROON').GetName]拥有土地"
  crb_hv_peace_tt: "#b 长久的和平#!：连续#v 10#!年不处于战争中"

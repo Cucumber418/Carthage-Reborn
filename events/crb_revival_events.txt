@@ -59,7 +59,7 @@ crb_revival.2 = {
 		name = crb_revival.2.a
 		default_option = yes
 		s:STATE_TUNISIA = {
-			add_arable_land = 50
+			add_arable_land = 8
 		}
 		add_modifier = {
 			name = crb_salt_reclaimed
