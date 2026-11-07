@@ -237,7 +237,7 @@ crb_hannibal_stability = {
 	country_prestige_mult = 0.05
 }
 
-# 州修正：加快整合
+# 地块修正：加快整合
 crb_rapid_integration = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
 	state_incorporation_speed_mult = 1
