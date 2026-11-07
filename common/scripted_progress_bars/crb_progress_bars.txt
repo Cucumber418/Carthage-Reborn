@@ -11,7 +11,7 @@ crb_hanno_barca_progress_bar = {
 	glow_line_texture = "gfx/interface/progressbar/progressbar_bad_glow_line.dds"
 	marker = yes
 
-	start_value = 50
+	start_value = 55
 	min_value = 0
 	max_value = 100
 
