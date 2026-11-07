@@ -1,0 +1,136 @@
+﻿namespace = crb_debug
+
+# 测试用事件：在控制台输入 event crb_debug.1 等命令触发
+# 正式发布前删除本文件和对应的本地化
+
+crb_debug.1 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.1.t
+	desc = crb_debug.1.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		add_journal_entry = { type = je_crb_hanno_barca }
+	}
+
+	option = {
+		name = crb_debug.1.a
+		default_option = yes
+	}
+}
+
+crb_debug.2 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.2.t
+	desc = crb_debug.2.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		set_country_type = recognized
+	}
+
+	option = {
+		name = crb_debug.2.a
+		default_option = yes
+	}
+}
+
+crb_debug.3 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.3.t
+	desc = crb_debug.3.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		je:je_crb_hanno_barca ?= {
+			add_progress = { value = 25 name = crb_hanno_barca_progress_bar }
+		}
+	}
+
+	option = {
+		name = crb_debug.3.a
+		default_option = yes
+	}
+}
+
+crb_debug.4 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.4.t
+	desc = crb_debug.4.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		je:je_crb_hanno_barca ?= {
+			add_progress = { value = -25 name = crb_hanno_barca_progress_bar }
+		}
+	}
+
+	option = {
+		name = crb_debug.4.a
+		default_option = yes
+	}
+}
+
+crb_debug.5 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.5.t
+	desc = crb_debug.5.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		set_variable = {
+			name = crb_hb_stalemate_months
+			value = 47
+		}
+	}
+
+	option = {
+		name = crb_debug.5.a
+		default_option = yes
+	}
+}
