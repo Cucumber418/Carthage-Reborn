@@ -22,7 +22,7 @@
 
  je_crb_hanno_barca: "汉诺派与巴卡派"
  je_crb_hanno_barca_lobby: "夺取君士坦丁或的黎波里后，元老院中的汉诺派与依靠军队和民众的巴卡派之间将爆发一场争斗。巴卡派主张向海外开拓，汉诺派则希望守住田地和商路。"
- je_crb_hanno_barca_reason: "古迦太基的政治长期被两大派系所左右：以汉诺家族为首的元老们主张守住阿非利加的田地与海上的商路，避免与强国交战；以巴卡家族为首的将领们则依靠军队和民众，要求向海外开拓。两千年后，这场争论在重生的迦太基再度上演。\n$TOOLTIP_DELIMITER$\n@information!#b 汉诺派#!由[GetInterestGroupVariant('ig_landowners',GetPlayer).GetName]、[GetInterestGroupVariant('ig_industrialists',GetPlayer).GetName]和[GetInterestGroupVariant('ig_devout',GetPlayer).GetName]组成。他们希望维持现状，支持[GetLawType('law_oligarchy').GetName]、[GetLawType('law_hereditary_bureaucrats').GetName]和[GetLawType('law_protectionism').GetName]。\n\n#b 巴卡派#!由[GetInterestGroupVariant('ig_armed_forces',GetPlayer).GetName]、[GetInterestGroupVariant('ig_petty_bourgeoisie',GetPlayer).GetName]和[GetInterestGroupVariant('ig_rural_folk',GetPlayer).GetName]组成。他们要求复兴公民大会，支持[GetLawType('law_wealth_voting').GetName]、[GetLawType('law_elected_bureaucrats').GetName]和[GetLawType('law_mercantilism').GetName]。必要时，他们甚至愿意迎立一位民族的君主，以恢复布匿战争之前的疆域。"
+ je_crb_hanno_barca_reason: "古迦太基的政治长期被两大派系所左右：以汉诺家族为首的元老们主张守住阿非利加的田地与海上的商路，避免与强国交战；以巴卡家族为首的将领们则依靠军队和民众，要求向海外开拓。两千年后，这场争论在重生的迦太基再度上演。\n$TOOLTIP_DELIMITER$\n@information!#b 汉诺派#!由[GetInterestGroupVariant('ig_landowners',GetPlayer).GetName]、[GetInterestGroupVariant('ig_industrialists',GetPlayer).GetName]和[GetInterestGroupVariant('ig_devout',GetPlayer).GetName]组成。他们希望维持现状，支持[GetLawType('law_oligarchy').GetName]、[GetLawType('law_hereditary_bureaucrats').GetName]和[GetLawType('law_mercantilism').GetName]。\n\n#b 巴卡派#!由[GetInterestGroupVariant('ig_armed_forces',GetPlayer).GetName]、[GetInterestGroupVariant('ig_petty_bourgeoisie',GetPlayer).GetName]和[GetInterestGroupVariant('ig_rural_folk',GetPlayer).GetName]组成。他们要求复兴公民大会，支持[GetLawType('law_wealth_voting').GetName]、[GetLawType('law_elected_bureaucrats').GetName]和[GetLawType('law_protectionism').GetName]。必要时，他们甚至愿意迎立一位民族的君主，以恢复布匿战争之前的疆域。"
 
  crb_hb_claims_taken_tt: "占领#b 君士坦丁#!或#b 的黎波里#!的领土"
 
@@ -45,7 +45,7 @@
 
  crb_hb_barca_wealth_voting: "已颁布[GetLawType('law_wealth_voting').GetName]"
  crb_hb_barca_elected_bureaucrats: "已颁布[GetLawType('law_elected_bureaucrats').GetName]"
- crb_hb_barca_mercantilism: "已颁布[GetLawType('law_mercantilism').GetName]"
+ crb_hb_barca_protectionism: "已颁布[GetLawType('law_protectionism').GetName]"
  crb_hb_barca_at_war: "处于战争中"
  crb_hb_barca_clout: "巴卡派的支持者拥有更大的[concept_clout]"
  crb_hb_barca_triumph: "凯旋的余威"
@@ -56,7 +56,7 @@
  crb_hb_hanno_ruler: "[concept_ruler]是[GetIdeology('ideology_crb_hannonist').GetName]"
  crb_hb_hanno_oligarchy: "已颁布[GetLawType('law_oligarchy').GetName]"
  crb_hb_hanno_hereditary_bureaucrats: "已颁布[GetLawType('law_hereditary_bureaucrats').GetName]"
- crb_hb_hanno_protectionism: "已颁布[GetLawType('law_protectionism').GetName]"
+ crb_hb_hanno_mercantilism: "已颁布[GetLawType('law_mercantilism').GetName]"
  crb_hb_hanno_clout: "汉诺派的支持者拥有更大的[concept_clout]"
 
  crb_hb_barca_victory: "#b 巴卡派#!胜利条件：\n"
