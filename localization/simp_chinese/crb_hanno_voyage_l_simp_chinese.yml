@@ -1,0 +1,58 @@
+﻿l_simp_chinese:
+ ############################################################
+ # 日志：汉诺航海记
+ ############################################################
+ je_crb_hanno_voyage: "汉诺航海记"
+ je_crb_hanno_voyage_lobby: "如果汉诺派赢得了两派之争，或者迦太基开始经营殖民地，迦太基人将沿着航海家汉诺的航路驶出赫拉克勒斯之柱，前往非洲的大西洋海岸。"
+ je_crb_hanno_voyage_reason: "两千多年前，迦太基人派航海家汉诺驶出赫拉克勒斯之柱，沿着非洲的大西洋海岸南下，沿途建立城市和商站。他回到迦太基之后，把这次航行的经过刻在了巴力·哈蒙神庙的石碑上。\n\n如今，元老们不愿与列强争夺地中海，转而把目光投向了大西洋。汉诺走过的航路还在那里。"
+ crb_hv_start_tt: "#b 汉诺派#!赢得两派之争，或颁布[GetLawType('law_colonial_resettlement').GetName]、[GetLawType('law_colonial_exploitation').GetName]"
+ crb_hv_status_peace: "迦太基已经连续#v [JournalEntry.GetCountry.MakeScope.Var('crb_hv_peace_months').GetValue|0]#!个月不处于战争中。连续#v 120#!个月不处于战争中，即可完成#b 元老院的和平#!。"
+ crb_hv_status_war: "迦太基正处于战争中。只有连续#v 120#!个月不处于战争中，才能完成#b 元老院的和平#!。"
+ crb_hv_status_default: "沿着汉诺的航路，前往非洲的大西洋海岸。"
+ crb_hv_lixus_tt: "#b 重返利克苏斯#!：在[GetStateRegion('STATE_FEZ').GetName]拥有土地"
+ crb_hv_kerne_tt: "#b 刻尔涅商站#!：在[GetStateRegion('STATE_WEST_SAHARA').GetName]拥有一个建有[GetBuildingType('building_port').GetName]的州"
+ crb_hv_chretes_tt: "#b 克雷特斯之河#!：在[GetStateRegion('STATE_SENEGAL').GetName]拥有土地"
+ crb_hv_chariot_tt: "#b 抵达诸神之车#!：在[GetStateRegion('STATE_SOUTH_CAMEROON').GetName]拥有土地"
+ crb_hv_peace_tt: "#b 元老院的和平#!：连续#v 10#!年不处于战争中"
+
+ crb_hanno_voyage.0.t: "汉诺航海记"
+ crb_hanno_voyage.0.d: "元老院的档案馆里保存着一份古老的抄本。据说它译自巴力·哈蒙神庙中的一块石碑，记录了航海家汉诺驶出赫拉克勒斯之柱、沿着非洲海岸南下的经过。\n\n今天，元老们把这份抄本重新拿了出来。与其在地中海上与列强争个高低，不如沿着汉诺的航路，去大西洋的海岸上寻找迦太基的未来。"
+ crb_hanno_voyage.0.f: "“迦太基人决定，让汉诺驶出赫拉克勒斯之柱，建立利比腓尼基人的城市。他带着六十艘五十桨船出发了。”\n\n——迦太基的汉诺，#italic 《航海记》#!"
+ crb_hanno_voyage.0.a: "扬帆起航。"
+
+ crb_hanno_voyage.1.t: "重返利克苏斯"
+ crb_hanno_voyage.1.d: "迦太基的旗帜再次出现在了利克苏斯河畔。古代的汉诺曾在这里停留，与河边的游牧民结为朋友，又从他们中间找到了熟悉南方海岸的向导。\n\n[GetInterestGroupVariant('ig_industrialists',GetPlayer).GetName]已经在河口租下了仓库，准备开辟通往南方的航线。"
+ crb_hanno_voyage.1.f: "“我们来到了一条大河，名叫利克苏斯河。游牧的利克苏斯人在河边放牧他们的牲畜。”\n\n——迦太基的汉诺，#italic 《航海记》#!"
+ crb_hanno_voyage.1.a: "南方的海岸在等待着我们。"
+
+ crb_hanno_voyage.2.t: "刻尔涅商站"
+ crb_hanno_voyage.2.d: "迦太基人在刻尔涅建起了一座港口。古代的汉诺在这里建立了他最远的一个商站，迦太基的商人用陶器和香水，从当地人手中换取象牙和兽皮。\n\n如今，港口里停满了来自迦太基的商船。殖民者们正沿着海岸向南方迁徙。"
+ crb_hanno_voyage.2.f: "“我们在一个小岛上安置了移民，称它为刻尔涅。”\n\n——迦太基的汉诺，#italic 《航海记》#!"
+ crb_hanno_voyage.2.a: "让更多的人来到刻尔涅。"
+
+ crb_hanno_voyage.3.t: "克雷特斯之河"
+ crb_hanno_voyage.3.d: "迦太基的勘探队沿着克雷特斯河逆流而上。他们带回来的报告与汉诺的记载如出一辙：河水宽阔，两岸是茂密的森林，河里到处是鳄鱼和河马。\n\n这条河的消息很快在迦太基传开了。"
+ crb_hanno_voyage.3.f: "“我们来到了另一条大河，河里满是鳄鱼和河马。”\n\n——迦太基的汉诺，#italic 《航海记》#!"
+ crb_hanno_voyage.3.a: "把这条河画到迦太基的地图上。"
+
+ crb_hanno_voyage.4.t: "诸神之车"
+ crb_hanno_voyage.4.d: "迦太基的船队抵达了汉诺航行的终点。夜里，水手们看见海岸上的高山喷出了火焰，火光一直映到海面上，与汉诺在两千多年前看到的景象一模一样。\n\n船长在日记里写道，汉诺所说的诸神之车，就是眼前这座火山。"
+ crb_hanno_voyage.4.f: "“夜里，我们看见一团比其他的火都高的火焰，似乎触到了星星。白天看去，那是一座极高的山，名叫诸神之车。”\n\n——迦太基的汉诺，#italic 《航海记》#!"
+ crb_hanno_voyage.4.a: "我们走完了汉诺的航路。"
+
+ crb_hanno_voyage.5.t: "元老院的和平"
+ crb_hanno_voyage.5.d: "迦太基已经整整十年没有卷入任何战争。元老们在议事厅里举行了一场宴会，庆祝这段难得的和平。\n\n一位年长的元老在祝酒时说，罗马人赢得了战争，迦太基人却懂得如何经营和平。商船、田庄和港口带来的财富，比任何一场胜仗都要长久。"
+ crb_hanno_voyage.5.f: "“战争只会给将军们带来荣耀，和平才会给迦太基带来财富。”"
+ crb_hanno_voyage.5.a: "愿和平长久。"
+
+ crb_hanno_voyage.6.t: "汉诺的航路"
+ crb_hanno_voyage.6.d: "从利克苏斯到诸神之车，汉诺两千多年前走过的航路，如今又一次挂满了迦太基的船帆。\n\n元老院决定，在巴力·哈蒙的神庙中立起一块新的石碑，与汉诺的石碑并排而立，记下这一次航行的经过。"
+ crb_hanno_voyage.6.f: "“迦太基的未来不在罗马，而在大海。”"
+ crb_hanno_voyage.6.a: "让后人记住这条航路。"
+
+ crb_hv_lixus: "利克苏斯的商路"
+ crb_hv_kerne: "刻尔涅商站"
+ crb_hv_chretes: "克雷特斯之河"
+ crb_hv_chariot: "诸神之车"
+ crb_hv_senate_peace: "元老院的和平"
+ crb_hanno_route: "汉诺的航路"

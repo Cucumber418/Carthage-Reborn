@@ -1,0 +1,187 @@
+﻿# 汉诺航海记（汉诺派路线）
+# 汉诺派获胜，或颁布了殖民安置、殖民剥削法律后开始
+je_crb_hanno_voyage = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_crb_carthage
+
+	activation_description = {
+		always = yes
+	}
+
+	is_shown_in_lobby = {
+		c:TUN ?= THIS
+	}
+
+	is_shown_when_inactive = {
+		crb_is_carthage_trigger = yes
+		NOT = { has_variable = crb_hanno_voyage_concluded }
+	}
+
+	possible = {
+		crb_is_carthage_trigger = yes
+		NOT = { has_variable = crb_hanno_voyage_concluded }
+		custom_tooltip = {
+			text = crb_hv_start_tt
+			OR = {
+				has_variable = crb_hanno_victory
+				has_variable = crb_hanno_voyage_started
+				has_law = law_type:law_colonial_resettlement
+				has_law = law_type:law_colonial_exploitation
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { has_variable = crb_hanno_voyage_started } }
+			set_variable = crb_hanno_voyage_started
+			set_variable = {
+				name = crb_hv_peace_months
+				value = 0
+			}
+			trigger_event = { id = crb_hanno_voyage.0 popup = yes }
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = crb_hv_status_peace
+				trigger = {
+					NOT = { has_variable = crb_hv_peace_done }
+					is_at_war = no
+				}
+			}
+			triggered_desc = {
+				desc = crb_hv_status_war
+				trigger = {
+					NOT = { has_variable = crb_hv_peace_done }
+				}
+			}
+			triggered_desc = {
+				desc = crb_hv_status_default
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			# 元老院的和平：连续 10 年不处于战争中
+			if = {
+				limit = { NOT = { has_variable = crb_hv_peace_done } }
+				if = {
+					limit = { is_at_war = yes }
+					set_variable = {
+						name = crb_hv_peace_months
+						value = 0
+					}
+				}
+				else = {
+					change_variable = {
+						name = crb_hv_peace_months
+						add = 1
+					}
+				}
+				if = {
+					limit = { var:crb_hv_peace_months >= 120 }
+					set_variable = crb_hv_peace_done
+					trigger_event = { id = crb_hanno_voyage.5 popup = yes }
+				}
+			}
+			# 重返利克苏斯
+			if = {
+				limit = {
+					NOT = { has_variable = crb_hv_lixus_done }
+					any_scope_state = { state_region = s:STATE_FEZ }
+				}
+				set_variable = crb_hv_lixus_done
+				trigger_event = { id = crb_hanno_voyage.1 popup = yes }
+			}
+			# 刻尔涅商站
+			if = {
+				limit = {
+					NOT = { has_variable = crb_hv_kerne_done }
+					any_scope_state = {
+						state_region = s:STATE_WEST_SAHARA
+						has_building = building_port
+					}
+				}
+				set_variable = crb_hv_kerne_done
+				trigger_event = { id = crb_hanno_voyage.2 popup = yes }
+			}
+			# 克雷特斯之河
+			if = {
+				limit = {
+					NOT = { has_variable = crb_hv_chretes_done }
+					any_scope_state = { state_region = s:STATE_SENEGAL }
+				}
+				set_variable = crb_hv_chretes_done
+				trigger_event = { id = crb_hanno_voyage.3 popup = yes }
+			}
+			# 抵达诸神之车
+			if = {
+				limit = {
+					NOT = { has_variable = crb_hv_chariot_done }
+					any_scope_state = { state_region = s:STATE_SOUTH_CAMEROON }
+				}
+				set_variable = crb_hv_chariot_done
+				trigger_event = { id = crb_hanno_voyage.4 popup = yes }
+			}
+		}
+	}
+
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				text = crb_hv_lixus_tt
+				has_variable = crb_hv_lixus_done
+			}
+			custom_tooltip = {
+				text = crb_hv_kerne_tt
+				has_variable = crb_hv_kerne_done
+			}
+			custom_tooltip = {
+				text = crb_hv_chretes_tt
+				has_variable = crb_hv_chretes_done
+			}
+			custom_tooltip = {
+				text = crb_hv_chariot_tt
+				has_variable = crb_hv_chariot_done
+			}
+			custom_tooltip = {
+				text = crb_hv_peace_tt
+				has_variable = crb_hv_peace_done
+			}
+		}
+		effect = {
+			set_variable = crb_hanno_voyage_concluded
+			show_as_tooltip = {
+				add_modifier = {
+					name = crb_hanno_route
+				}
+			}
+			trigger_event = { id = crb_hanno_voyage.6 popup = yes }
+		}
+	}
+
+	outcome = {
+		flags = { hidden invalid_outcome }
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			NOT = { crb_is_carthage_trigger = yes }
+		}
+		effect = {
+			set_variable = crb_hanno_voyage_concluded
+		}
+	}
+
+	weight = 900
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

@@ -359,3 +359,58 @@ crb_debug.12 = {
 		default_option = yes
 	}
 }
+
+# 开始"汉诺航海记"
+crb_debug.13 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.13.t
+	desc = crb_debug.13.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		set_variable = crb_hanno_voyage_started
+	}
+
+	option = {
+		name = crb_debug.13.a
+		default_option = yes
+	}
+}
+
+# "元老院的和平"计数调到快满，下个月完成
+crb_debug.14 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.14.t
+	desc = crb_debug.14.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		set_variable = {
+			name = crb_hv_peace_months
+			value = 119
+		}
+	}
+
+	option = {
+		name = crb_debug.14.a
+		default_option = yes
+	}
+}

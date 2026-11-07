@@ -1,0 +1,222 @@
+﻿namespace = crb_hanno_voyage
+
+# 日志"汉诺航海记"的事件
+
+crb_hanno_voyage.0 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_voyage.0.t
+	desc = crb_hanno_voyage.0.d
+	flavor = crb_hanno_voyage.0.f
+
+	event_image = {
+		video = "unspecific_steam_ship"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hanno_voyage 触发
+	}
+
+	option = {
+		name = crb_hanno_voyage.0.a
+		default_option = yes
+	}
+}
+
+crb_hanno_voyage.1 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_voyage.1.t
+	desc = crb_hanno_voyage.1.d
+	flavor = crb_hanno_voyage.1.f
+
+	event_image = {
+		video = "africa_desert_expedition"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hanno_voyage 触发
+	}
+
+	option = {
+		name = crb_hanno_voyage.1.a
+		default_option = yes
+		add_modifier = {
+			name = crb_hv_lixus
+			days = normal_modifier_time
+		}
+	}
+}
+
+crb_hanno_voyage.2 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_voyage.2.t
+	desc = crb_hanno_voyage.2.d
+	flavor = crb_hanno_voyage.2.f
+
+	event_image = {
+		video = "africa_construction_colony"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hanno_voyage 触发
+	}
+
+	option = {
+		name = crb_hanno_voyage.2.a
+		default_option = yes
+		add_modifier = {
+			name = crb_hv_kerne
+			days = long_modifier_time
+		}
+	}
+}
+
+crb_hanno_voyage.3 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_voyage.3.t
+	desc = crb_hanno_voyage.3.d
+	flavor = crb_hanno_voyage.3.f
+
+	event_image = {
+		video = "middleeast_jungle_expedition"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hanno_voyage 触发
+	}
+
+	option = {
+		name = crb_hanno_voyage.3.a
+		default_option = yes
+		add_modifier = {
+			name = crb_hv_chretes
+			days = normal_modifier_time
+		}
+	}
+}
+
+crb_hanno_voyage.4 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_voyage.4.t
+	desc = crb_hanno_voyage.4.d
+	flavor = crb_hanno_voyage.4.f
+
+	event_image = {
+		video = "unspecific_steam_ship"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hanno_voyage 触发
+	}
+
+	option = {
+		name = crb_hanno_voyage.4.a
+		default_option = yes
+		add_modifier = {
+			name = crb_hv_chariot
+			days = normal_modifier_time
+		}
+	}
+}
+
+crb_hanno_voyage.5 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_voyage.5.t
+	desc = crb_hanno_voyage.5.d
+	flavor = crb_hanno_voyage.5.f
+
+	event_image = {
+		video = "middleeast_upperclass_party"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hanno_voyage 触发
+	}
+
+	option = {
+		name = crb_hanno_voyage.5.a
+		default_option = yes
+		add_modifier = {
+			name = crb_hv_senate_peace
+			days = normal_modifier_time
+		}
+	}
+}
+
+crb_hanno_voyage.6 = {
+	type = country_event
+	placement = root
+
+	title = crb_hanno_voyage.6.t
+	desc = crb_hanno_voyage.6.d
+	flavor = crb_hanno_voyage.6.f
+
+	event_image = {
+		video = "unspecific_world_fair"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hanno_voyage 触发
+	}
+
+	option = {
+		name = crb_hanno_voyage.6.a
+		default_option = yes
+		add_modifier = {
+			name = crb_hanno_route
+		}
+	}
+}
