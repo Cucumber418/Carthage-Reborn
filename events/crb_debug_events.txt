@@ -386,7 +386,7 @@ crb_debug.13 = {
 	}
 }
 
-# "元老院的和平"计数调到快满，下个月完成
+# "长久的和平"计数调到快满，下个月完成
 crb_debug.14 = {
 	type = country_event
 	placement = root
