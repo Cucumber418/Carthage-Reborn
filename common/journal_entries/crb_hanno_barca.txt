@@ -56,8 +56,8 @@ je_crb_hanno_barca = {
 				desc = crb_hb_status_stalemate
 				trigger = {
 					scope:journal_entry ?= {
-						"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 30
-						"scripted_bar_progress(crb_hanno_barca_progress_bar)" <= 70
+						"scripted_bar_progress(crb_hanno_barca_progress_bar)" > 30
+						"scripted_bar_progress(crb_hanno_barca_progress_bar)" < 70
 					}
 				}
 			}
@@ -65,7 +65,7 @@ je_crb_hanno_barca = {
 				desc = crb_hb_status_barca_leading
 				trigger = {
 					scope:journal_entry ?= {
-						"scripted_bar_progress(crb_hanno_barca_progress_bar)" > 70
+						"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 70
 					}
 				}
 			}
