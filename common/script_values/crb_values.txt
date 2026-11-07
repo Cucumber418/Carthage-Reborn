@@ -22,7 +22,7 @@ crb_hb_clout_balance = {
 		}
 		subtract = this.ig_clout
 	}
-	multiply = 1.5
+	multiply = 2
 }
 
 # 君主制倾向鼓动者每年出现的概率（百分比）

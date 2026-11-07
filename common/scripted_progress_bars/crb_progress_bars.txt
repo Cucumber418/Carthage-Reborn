@@ -1,4 +1,5 @@
 ﻿# 汉诺派与巴卡派：0 为汉诺派完全获胜，100 为巴卡派完全获胜
+# 节奏：日志开始后大约 5 年决出胜负
 crb_hanno_barca_progress_bar = {
 	name = "crb_hanno_barca_bar"
 	desc = "crb_hanno_barca_bar_desc"
@@ -10,7 +11,7 @@ crb_hanno_barca_progress_bar = {
 	glow_line_texture = "gfx/interface/progressbar/progressbar_bad_glow_line.dds"
 	marker = yes
 
-	start_value = 40
+	start_value = 50
 	min_value = 0
 	max_value = 100
 
@@ -20,28 +21,28 @@ crb_hanno_barca_progress_bar = {
 			limit = { has_law_or_variant = law_type:law_wealth_voting }
 			add = {
 				desc = "crb_hb_barca_wealth_voting"
-				value = 0.15
+				value = 0.2
 			}
 		}
 		progress_condition = {
 			limit = { has_law_or_variant = law_type:law_elected_bureaucrats }
 			add = {
 				desc = "crb_hb_barca_elected_bureaucrats"
-				value = 0.1
+				value = 0.15
 			}
 		}
 		progress_condition = {
 			limit = { has_law_or_variant = law_type:law_mercantilism }
 			add = {
 				desc = "crb_hb_barca_mercantilism"
-				value = 0.1
+				value = 0.15
 			}
 		}
 		progress_condition = {
 			limit = { is_at_war = yes }
 			add = {
 				desc = "crb_hb_barca_at_war"
-				value = 0.3
+				value = 0.45
 			}
 		}
 		progress_condition = {
@@ -57,28 +58,28 @@ crb_hanno_barca_progress_bar = {
 			limit = { has_law_or_variant = law_type:law_oligarchy }
 			add = {
 				desc = "crb_hb_hanno_oligarchy"
-				value = -0.15
+				value = -0.2
 			}
 		}
 		progress_condition = {
 			limit = { has_law_or_variant = law_type:law_hereditary_bureaucrats }
 			add = {
 				desc = "crb_hb_hanno_hereditary_bureaucrats"
-				value = -0.1
+				value = -0.15
 			}
 		}
 		progress_condition = {
 			limit = { has_law_or_variant = law_type:law_protectionism }
 			add = {
 				desc = "crb_hb_hanno_protectionism"
-				value = -0.1
+				value = -0.15
 			}
 		}
 		progress_condition = {
 			limit = { is_at_war = no }
 			add = {
 				desc = "crb_hb_hanno_at_peace"
-				value = -0.05
+				value = -0.1
 			}
 		}
 		progress_condition = {

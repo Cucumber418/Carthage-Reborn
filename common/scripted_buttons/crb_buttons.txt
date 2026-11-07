@@ -20,7 +20,7 @@ crb_hb_concede_senate_button = {
 
 	effect = {
 		je:je_crb_hanno_barca ?= {
-			add_progress = { value = -8 name = crb_hanno_barca_progress_bar }
+			add_progress = { value = -10 name = crb_hanno_barca_progress_bar }
 		}
 		add_modifier = {
 			name = crb_hb_conceded_to_senate
@@ -57,7 +57,7 @@ crb_hb_concede_assembly_button = {
 
 	effect = {
 		je:je_crb_hanno_barca ?= {
-			add_progress = { value = 8 name = crb_hanno_barca_progress_bar }
+			add_progress = { value = 10 name = crb_hanno_barca_progress_bar }
 		}
 		add_modifier = {
 			name = crb_hb_conceded_to_assembly

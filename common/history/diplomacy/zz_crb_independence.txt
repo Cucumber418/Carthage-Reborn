@@ -1,0 +1,10 @@
+﻿# 布匿开局为独立国家（原版突尼斯是奥斯曼帝国的保护国）
+# 文件名以 zz_ 开头，保证在原版 00_subject_relationships.txt 之后执行
+DIPLOMACY = {
+	c:TUR ?= {
+		remove_diplomatic_pact = {
+			country = c:TUN
+			type = protectorate
+		}
+	}
+}
