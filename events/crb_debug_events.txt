@@ -134,3 +134,83 @@ crb_debug.5 = {
 		default_option = yes
 	}
 }
+
+crb_debug.6 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.6.t
+	desc = crb_debug.6.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		# 日志进行中：把进度条推到头，由日志自己触发结局
+		if = {
+			limit = { has_journal_entry = je_crb_hanno_barca }
+			je:je_crb_hanno_barca ?= {
+				add_progress = { value = 100 name = crb_hanno_barca_progress_bar }
+			}
+		}
+		# 日志没有开始：直接执行结局
+		else = {
+			set_variable = crb_hanno_barca_concluded
+			crb_barca_victory_effect = yes
+			trigger_event = {
+				id = crb_hanno_barca.2
+				popup = yes
+			}
+		}
+	}
+
+	option = {
+		name = crb_debug.6.a
+		default_option = yes
+	}
+}
+
+crb_debug.7 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.7.t
+	desc = crb_debug.7.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		# 日志进行中：把进度条推到头，由日志自己触发结局
+		if = {
+			limit = { has_journal_entry = je_crb_hanno_barca }
+			je:je_crb_hanno_barca ?= {
+				add_progress = { value = -100 name = crb_hanno_barca_progress_bar }
+			}
+		}
+		# 日志没有开始：直接执行结局
+		else = {
+			set_variable = crb_hanno_barca_concluded
+			crb_hanno_victory_effect = yes
+			trigger_event = {
+				id = crb_hanno_barca.3
+				popup = yes
+			}
+		}
+	}
+
+	option = {
+		name = crb_debug.7.a
+		default_option = yes
+	}
+}

@@ -51,3 +51,37 @@ crb_TUN_hasdrubal_barca = {
 		ambitious
 	}
 }
+
+crb_TUN_abdeshmun_high_priest = {
+	# 奉神者领袖：塔尼特神庙的大祭司
+	first_name = crb_name_Abdmelqart
+	last_name = crb_name_Abdeshmun
+	historical = yes
+	age = 64
+	ig_leader = yes
+	culture = cu:crb_punic
+	religion = rel:crb_tanit
+	interest_group = ig_devout
+	ideology = ideology_traditionalist
+	home_region = STATE_TUNISIA
+	traits = {
+		pious
+	}
+}
+
+crb_TUN_himilco_shipowner = {
+	# 船主领袖：在野的商船世家
+	first_name = crb_name_Himilco
+	last_name = crb_name_Magonid
+	historical = yes
+	age = 47
+	ig_leader = yes
+	culture = cu:crb_punic
+	religion = rel:crb_tanit
+	interest_group = ig_industrialists
+	ideology = ideology_protectionist
+	home_region = STATE_TUNISIA
+	traits = {
+		meticulous
+	}
+}

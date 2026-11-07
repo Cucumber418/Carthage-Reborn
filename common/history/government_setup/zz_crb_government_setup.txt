@@ -1,0 +1,10 @@
+﻿# 开局政府：田主与奉神者执政，船主、军队等在野
+GOVERNMENT_SETUP = {
+	c:TUN ?= {
+		try_form_government_with = {
+			value = 30
+			interest_group_type = ig_landowners
+			interest_group_type = ig_devout
+		}
+	}
+}

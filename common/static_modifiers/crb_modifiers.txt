@@ -11,6 +11,12 @@ crb_carthago_non_deleta = {
 	unit_morale_recovery_mult = 0.1
 }
 
+# 开局：塔尼特神庙重开，持续 10 年
+crb_tanit_temples_reopened = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_ig_devout_pol_str_mult = 0.3
+}
+
 crb_senate_will_guard = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	interest_group_ig_landowners_approval_add = 2

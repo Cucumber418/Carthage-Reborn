@@ -11,5 +11,13 @@
 		create_character = {
 			template = crb_TUN_hasdrubal_barca
 		}
+
+		create_character = {
+			template = crb_TUN_abdeshmun_high_priest
+		}
+
+		create_character = {
+			template = crb_TUN_himilco_shipowner
+		}
 	}
 }

@@ -6,6 +6,12 @@
 
 		set_state_religion = rel:crb_tanit
 
+		# 塔尼特神庙重开，奉神者在开局时拥有较大的政治力量
+		add_modifier = {
+			name = crb_tanit_temples_reopened
+			days = long_modifier_time
+		}
+
 		# 政体：双执政官
 		activate_law = law_type:law_crb_dual_sufetes
 
