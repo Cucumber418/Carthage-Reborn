@@ -117,7 +117,7 @@ crb_flavor.3 = {
 
 	duration = 3
 
-	cooldown = { days = normal_modifier_time }
+	cooldown = { days = 1825 }
 
 	trigger = {
 		# 由 on_action crb_flavor_events 触发
@@ -138,8 +138,11 @@ crb_flavor.3 = {
 
 	option = {
 		name = crb_flavor.3.b
-		# 一次性变现收入，而非持续铸币
-		add_treasury = 2500
+		# 五年出口特许收入：按原版持续税收收入修正结算
+		add_modifier = {
+			name = crb_flavor_tyrian_export_income
+			months = 60
+		}
 	}
 }
 
@@ -162,7 +165,7 @@ crb_flavor.4 = {
 
 	duration = 3
 
-	cooldown = { days = normal_modifier_time }
+	cooldown = { days = 1825 }
 
 	trigger = {
 		# 由 on_action crb_flavor_events 触发
@@ -229,8 +232,11 @@ crb_flavor.5 = {
 
 	option = {
 		name = crb_flavor.5.b
-		# 一次性变现收入，而非持续铸币
-		add_treasury = 3500
+		# 五年翻译与出版版税
+		add_modifier = {
+			name = crb_flavor_mago_rights_income
+			months = 60
+		}
 	}
 }
 
@@ -449,7 +455,7 @@ crb_flavor.10 = {
 
 	duration = 3
 
-	cooldown = { days = normal_modifier_time }
+	cooldown = { days = 1825 }
 
 	trigger = {
 		# 由 on_action crb_flavor_events 触发
@@ -470,8 +476,11 @@ crb_flavor.10 = {
 
 	option = {
 		name = crb_flavor.10.b
-		# 一次性变现收入，而非持续铸币
-		add_treasury = 4500
+		# 五年打捞与展出特许收入
+		add_modifier = {
+			name = crb_flavor_shipwreck_rights_income
+			months = 60
+		}
 	}
 }
 
@@ -737,19 +746,27 @@ crb_flavor.16 = {
 
 	duration = 3
 
-	cooldown = { days = normal_modifier_time }
+	cooldown = { days = 1095 }
 
 	trigger = {
 		# 由 on_action crb_flavor_events 触发
 		crb_is_carthage_trigger = yes
 		has_modifier = crb_carthago_non_deleta
+		NOT = { has_variable = crb_flavor_16_fired }
+	}
+
+	immediate = {
+		set_variable = crb_flavor_16_fired
 	}
 
 	option = {
 		name = crb_flavor.16.a
 		default_option = yes
-		# 一次性变现收入，而非持续铸币
-		add_treasury = 6000
+		# 三年私掠收益；恶名反映列强对持续私掠的反应
+		add_modifier = {
+			name = crb_flavor_privateering_income
+			months = 36
+		}
 		change_infamy = 2
 	}
 

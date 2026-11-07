@@ -34,7 +34,7 @@ crb_hb_royalist_agitator_chance = {
 		limit = {
 			exists = ig:ig_armed_forces
 			scope:journal_entry ?= {
-				"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 50
+				"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 65
 			}
 		}
 		add = ig:ig_armed_forces.ig_clout
@@ -42,7 +42,7 @@ crb_hb_royalist_agitator_chance = {
 		if = {
 			limit = {
 				scope:journal_entry ?= {
-					"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 75
+					"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 85
 				}
 			}
 			multiply = 2

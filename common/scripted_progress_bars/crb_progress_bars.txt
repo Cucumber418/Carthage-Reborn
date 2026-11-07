@@ -1,5 +1,5 @@
 ﻿# 汉诺派与巴卡派：0 为汉诺派完全获胜，100 为巴卡派完全获胜
-# 节奏：派系惯性与政治力量叠加，双方占优后加速，通常 2-4 年内决出胜负
+# 节奏：进度事件与年度让步按钮推动局势；通常 2-3 年决出胜负，36 个月为最终期限
 crb_hanno_barca_progress_bar = {
 	name = "crb_hanno_barca_bar"
 	desc = "crb_hanno_barca_bar_desc"
@@ -11,7 +11,7 @@ crb_hanno_barca_progress_bar = {
 	glow_line_texture = "gfx/interface/progressbar/progressbar_bad_glow_line.dds"
 	marker = yes
 
-	start_value = 60
+	start_value = 55
 	min_value = 0
 	max_value = 100
 
@@ -146,13 +146,6 @@ crb_hanno_barca_progress_bar = {
 			add = {
 				desc = "crb_hb_barca_at_war"
 				value = 0.6
-			}
-		}
-		progress_condition = {
-			limit = { has_variable = crb_hb_triumph }
-			add = {
-				desc = "crb_hb_barca_triumph"
-				value = 0.5
 			}
 		}
 		progress_condition = {

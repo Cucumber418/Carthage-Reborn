@@ -161,3 +161,28 @@ crb_flavor_prize_released = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
 	country_prestige_mult = 0.05
 }
+
+
+# ============================================================
+# 商业事件：持续税收收入（参照原版 country_tax_income_add + months）
+# ============================================================
+
+crb_flavor_tyrian_export_income = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_tax_income_add = 100
+}
+
+crb_flavor_mago_rights_income = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_tax_income_add = 100
+}
+
+crb_flavor_shipwreck_rights_income = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_tax_income_add = 150
+}
+
+crb_flavor_privateering_income = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_tax_income_add = 200
+}

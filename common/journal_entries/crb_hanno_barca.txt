@@ -15,6 +15,7 @@ je_crb_hanno_barca = {
 
 	is_shown_when_inactive = {
 		country_has_primary_culture = cu:crb_punic
+		owns_entire_state_region = STATE_CONSTANTINE
 		NOT = { has_variable = crb_hanno_barca_concluded }
 	}
 
@@ -23,12 +24,7 @@ je_crb_hanno_barca = {
 		NOT = { has_variable = crb_hanno_barca_concluded }
 		custom_tooltip = {
 			text = crb_hb_claims_taken_tt
-			any_scope_state = {
-				OR = {
-					state_region = s:STATE_TRIPOLI
-					state_region = s:STATE_CONSTANTINE
-				}
-			}
+			owns_entire_state_region = STATE_CONSTANTINE
 		}
 	}
 
@@ -40,13 +36,8 @@ je_crb_hanno_barca = {
 		ig:ig_petty_bourgeoisie ?= { save_scope_as = crb_hb_petty_bourgeoisie }
 		ig:ig_rural_folk ?= { save_scope_as = crb_hb_rural_folk }
 		set_variable = {
-			name = crb_hb_stalemate_months
+			name = crb_hb_elapsed_months
 			value = 0
-		}
-		# 凯旋的余威：日志开始后 2 年内巴卡派额外增长
-		set_variable = {
-			name = crb_hb_triumph
-			days = 730
 		}
 		trigger_event = {
 			id = crb_hanno_barca.1
@@ -101,24 +92,10 @@ je_crb_hanno_barca = {
 			5 = crb_hanno_barca_random.17
 		}
 		effect = {
-			# 僵持计数：双方力量都在 30% 到 70% 之间时累计，否则清零
-			if = {
-				limit = {
-					scope:journal_entry ?= {
-						"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 30
-						"scripted_bar_progress(crb_hanno_barca_progress_bar)" <= 70
-					}
-				}
-				change_variable = {
-					name = crb_hb_stalemate_months
-					add = 1
-				}
-			}
-			else = {
-				set_variable = {
-					name = crb_hb_stalemate_months
-					value = 0
-				}
+			# 总期限计数：无论进度如何，每月累计；第 36 个月进入最终结局
+			change_variable = {
+				name = crb_hb_elapsed_months
+				add = 1
 			}
 		}
 	}
@@ -196,7 +173,7 @@ je_crb_hanno_barca = {
 		}
 	}
 
-	# 僵持 3 年：弹出事件，由玩家选择倒向哪一派
+	# 三年期限：优势明显者直接胜出，仍势均力敌时由玩家作最后抉择
 	outcome = {
 		header = crb_hb_stalemate
 		effect_header = crb_hb_stalemate_effect_header
@@ -205,16 +182,40 @@ je_crb_hanno_barca = {
 		trigger = {
 			custom_tooltip = {
 				text = crb_hb_stalemate_tt
-				has_variable = crb_hb_stalemate_months
-				var:crb_hb_stalemate_months >= 36
+				has_variable = crb_hb_elapsed_months
+				var:crb_hb_elapsed_months >= 36
 			}
 		}
 		effect = {
 			set_variable = crb_hanno_barca_concluded
 			hidden_effect = { crb_hanno_barca_cleanup_effect = yes }
-			trigger_event = {
-				id = crb_hanno_barca.4
-				popup = yes
+			if = {
+				limit = {
+					scope:journal_entry ?= {
+						"scripted_bar_progress(crb_hanno_barca_progress_bar)" >= 70
+					}
+				}
+				trigger_event = {
+					id = crb_hanno_barca.2
+					popup = yes
+				}
+			}
+			else_if = {
+				limit = {
+					scope:journal_entry ?= {
+						"scripted_bar_progress(crb_hanno_barca_progress_bar)" <= 30
+					}
+				}
+				trigger_event = {
+					id = crb_hanno_barca.3
+					popup = yes
+				}
+			}
+			else = {
+				trigger_event = {
+					id = crb_hanno_barca.4
+					popup = yes
+				}
 			}
 		}
 	}

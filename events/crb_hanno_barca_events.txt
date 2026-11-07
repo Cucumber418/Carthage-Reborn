@@ -89,7 +89,7 @@ crb_hanno_barca.3 = {
 	}
 }
 
-# 僵持十年，被迫选边
+# 三年期限届满仍未决出胜负时，被迫选边
 crb_hanno_barca.4 = {
 	type = country_event
 	placement = root
