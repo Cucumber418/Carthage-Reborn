@@ -2,8 +2,10 @@
 
 维多利亚 3 模组。1836 年，突尼斯被一个刚刚复兴的布匿民族国家取代：保守而好战的元老们暂时掌握权力，国际社会尚未承认这个国家。它要在汉诺派与巴卡派的斗争中决定自己的道路，复兴布匿文化，并可能重建汉尼拔时代的版图。
 
+- 当前版本：1.0.0
 - 适用版本：1.15.*
 - 当前语言：简体中文（英文版之后统一补上）
+- 创意工坊介绍：[docs/workshop_description.txt](docs/workshop_description.txt)（Steam 的 BBCode 格式）
 - 模组前缀：`crb_`（所有新增的 key 都以此开头，避免和本体及其他模组冲突）
 
 ---
@@ -64,6 +66,7 @@
 | 奇观：U 型港 | ✅ 初版（暂无地图模型） |
 | 迦太基特色事件 | ✅ 初版（16 个） |
 | 傀儡国与商站（国家定义、法律、旗帜） | ✅ 初版（7 个） |
+| 创意工坊发布材料（预览图、介绍） | ✅ 1.0.0 |
 | 英文本地化 | ⬜ 最后统一补 |
 
 > 术语说明：按原版译名，"日志"指游戏里的 Journal（有进度和完成条件），"决议"指 Decisions（在决议面板里手动点击执行）。
@@ -453,32 +456,15 @@
 
 ## 测试命令
 
-先在 Steam 启动选项加 `-debug_mode`，游戏里按 `~` 打开控制台。命令最后的 `TUN` 是布匿的国家代码，不要漏掉。
+正式版不含测试事件。测试命令（`event crb_debug.1 TUN` 等）保存在 [`dev` 分支](https://github.com/Cucumber418/Carthage-Reborn/tree/dev)，开发新内容时切换到该分支测试。
+
+以下命令在正式版中仍然可用（需在 Steam 启动选项加 `-debug_mode`，按 `~` 打开控制台）：
 
 | 命令 | 作用 |
 | --- | --- |
-| `event crb_debug.1 TUN` | 强制开始"汉诺派与巴卡派" |
-| `event crb_debug.2 TUN` | 国家受认可（下个月国名变为"迦太基"） |
-| `event crb_debug.3 TUN` | 巴卡派力量 +25 |
-| `event crb_debug.4 TUN` | 汉诺派力量 +25 |
-| `event crb_debug.5 TUN` | 僵持计数调到快满，下个月触发僵持结局 |
-| `event crb_debug.6 TUN` | 巴卡派直接获胜 |
-| `event crb_debug.7 TUN` | 汉诺派直接获胜 |
-| `event crb_debug.8 TUN` | 解锁"两千年的复仇路"和"扩张商站" |
-| `event crb_debug.9 TUN` | 强制开始"第 N 次布匿战争" |
-| `event crb_debug.10 TUN` | 全国一半人口改信逊尼派，用来测试"皈依伊斯兰教" |
-| `event crb_debug.11 TUN` | 巴卡派获胜并开始"汉尼拔再临" |
-| `event crb_debug.12 TUN` | 开始"两千年的复仇路"，四个阶段视为已完成，显示全部组建商站、行省的按钮 |
-| `event crb_debug.13 TUN` | 开始"汉诺航海记" |
-| `event crb_debug.14 TUN` | "长久的和平"计数调到快满，下个月完成 |
 | `event crb_carthage.1 TUN` | 弹出开局事件 |
-| `event crb_hanno_barca_random.10 TUN` | 弹出两派之争的随机事件（编号 10 到 17） |
 | `event crb_flavor.1 TUN` | 弹出迦太基特色事件（编号 1 到 16） |
-| `own STATE_SICILY TUN` | 原版命令：把某个地区划给布匿，用来测试征服条件和历史地名 |
-
-常用的地区代码：的黎波里 `STATE_TRIPOLI`、昔兰尼加 `STATE_LIBYA`、阿尔及尔 `STATE_ALGIERS`、君士坦丁 `STATE_CONSTANTINE`、奥兰 `STATE_ORAN`、西西里 `STATE_SICILY`、巴利阿里 `STATE_BALEARIC_ISLANDS`、马耳他 `STATE_MALTA`、克里特 `STATE_CRETE`、塞浦路斯 `STATE_CYPRUS`、下安达卢西亚 `STATE_LOWER_ANDALUSIA`、穆尔西亚 `STATE_MURCIA`、巴伦西亚 `STATE_VALENCIA`、黎巴嫩 `STATE_LEBANON`、朗格多克 `STATE_LANGUEDOC`、普罗旺斯 `STATE_PROVENCE`、罗讷 `STATE_RHONE`、拉齐奥 `STATE_LAZIO`。完整列表见 [docs/historical_place_names.md](docs/historical_place_names.md)。
-
-测试用事件只在开发期间保留，正式发布前会删除。
+| `own STATE_SICILY TUN` | 原版命令：把某个地区划给布匿 |
 
 ---
 
@@ -498,7 +484,8 @@
 ```
 Carthage-Reborn/
 ├── .metadata/metadata.json                     模组信息（启动器读取）
-├── docs/                                       设计资料（地名对照表等，不进游戏）
+├── thumbnail.png                               创意工坊预览图
+├── docs/                                       设计资料、创意工坊介绍（不进游戏）
 ├── common/
 │   ├── buildings/                              奇观：U 型港
 │   ├── character_templates/                    开局人物模板
@@ -541,3 +528,11 @@ Carthage-Reborn/
 5. 以后有更新时，在 GitHub Desktop 点 **Fetch origin → Pull origin** 即可。
 
 报错日志位置：`文档\Paradox Interactive\Victoria 3\logs\error.log`
+
+## 七、发布到创意工坊
+
+1. 确认本地是 `main` 分支的最新版本（不含测试事件）。
+2. 启动游戏，在主菜单进入"模组"界面，找到"迦太基重生"，选择上传到 Steam 创意工坊。
+3. 预览图使用模组根目录的 `thumbnail.png`（512×512）。
+4. 上传完成后，在 Steam 的创意工坊页面点"编辑标题和描述"，把 [docs/workshop_description.txt](docs/workshop_description.txt) 的内容粘贴进去。
+5. 以后每次更新：先改 `.metadata/metadata.json` 里的版本号，再在游戏里重新上传，并在 Steam 页面写更新说明。
