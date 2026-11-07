@@ -197,7 +197,7 @@ crb_salt_reclamation = {
 
 crb_salt_reclaimed = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_prestige_add = 10
+	country_prestige_mult = 0.05
 }
 
 crb_tanit_triumphant = {
@@ -208,7 +208,7 @@ crb_tanit_triumphant = {
 
 crb_cothon_rebuilt = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_prestige_add = 10
+	country_prestige_mult = 0.05
 }
 
 crb_punic_revival = {
@@ -229,7 +229,7 @@ crb_hannibal_triumph = {
 
 crb_hannibal_stability = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_prestige_add = 10
+	country_prestige_mult = 0.05
 }
 
 # 州修正：加快整合
@@ -240,12 +240,12 @@ crb_rapid_integration = {
 
 crb_mediterranean_islands = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_prestige_add = 15
+	country_prestige_mult = 0.1
 }
 
 crb_ancestral_throne = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_prestige_add = 20
+	country_prestige_add = 10
 	country_legitimacy_base_add = 5
 }
 
@@ -273,7 +273,7 @@ crb_senate_war_pledge = {
 
 crb_punic_war_victory = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_prestige_add = 25
+	country_prestige_mult = 0.1
 }
 
 # ============================================================
@@ -287,7 +287,7 @@ crb_revenge_loyalty = {
 
 crb_revenge_complete = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_prestige_add = 50
+	country_prestige_add = 25
 	country_legitimacy_base_add = 10
 }
 
@@ -331,12 +331,12 @@ crb_hv_kerne = {
 
 crb_hv_chretes = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_prestige_add = 10
+	country_prestige_mult = 0.05
 }
 
 crb_hv_chariot = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_prestige_add = 20
+	country_prestige_mult = 0.1
 }
 
 crb_hv_senate_peace = {
@@ -349,6 +349,6 @@ crb_hanno_route = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
 	state_colony_growth_speed_mult = 0.15
 	building_port_throughput_add = 0.1
-	country_prestige_add = 25
+	country_prestige_add = 15
 }
 

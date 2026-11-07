@@ -417,7 +417,7 @@ crb_flavor.9 = {
 		}
 		change_relations = {
 			country = c:FRA
-			value = 20
+			value = 10
 		}
 	}
 
@@ -608,7 +608,7 @@ crb_flavor.13 = {
 		}
 		change_relations = {
 			country = c:GBR
-			value = 20
+			value = 10
 		}
 	}
 
