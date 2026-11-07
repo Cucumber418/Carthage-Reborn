@@ -15,7 +15,10 @@ je_crb_hanno_barca = {
 
 	is_shown_when_inactive = {
 		country_has_primary_culture = cu:crb_punic
-		any_scope_state = { state_region = s:STATE_CONSTANTINE }
+		OR = {
+			any_scope_state = { state_region = s:STATE_CONSTANTINE }
+			any_scope_state = { state_region = s:STATE_TRIPOLI }
+		}
 		NOT = { has_variable = crb_hanno_barca_concluded }
 	}
 
@@ -24,7 +27,10 @@ je_crb_hanno_barca = {
 		NOT = { has_variable = crb_hanno_barca_concluded }
 		custom_tooltip = {
 			text = crb_hb_claims_taken_tt
-			any_scope_state = { state_region = s:STATE_CONSTANTINE }
+			OR = {
+				any_scope_state = { state_region = s:STATE_CONSTANTINE }
+				any_scope_state = { state_region = s:STATE_TRIPOLI }
+			}
 		}
 	}
 

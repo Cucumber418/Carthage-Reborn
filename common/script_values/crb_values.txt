@@ -22,8 +22,8 @@ crb_hb_clout_balance = {
 		}
 		subtract = this.ig_clout
 	}
-	# 政治力量差距对每月增长的贡献（20% 差距约等于 +0.5 /月）
-	multiply = 2.5
+	# 政治力量差距对每月增长的贡献（20% 差距约等于 +0.3 /月）
+	multiply = 1.5
 }
 
 # 君主制倾向鼓动者每年出现的概率（百分比）

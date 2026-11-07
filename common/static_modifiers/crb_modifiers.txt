@@ -97,6 +97,11 @@ crb_hb_veterans_paid = {
 	interest_group_ig_armed_forces_approval_add = 1
 }
 
+crb_hb_veterans_paid_expense = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 58
+}
+
 crb_hb_senate_banquet_attended = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	interest_group_ig_landowners_approval_add = 2

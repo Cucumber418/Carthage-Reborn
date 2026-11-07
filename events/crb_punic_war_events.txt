@@ -63,7 +63,7 @@ crb_punic_war.2 = {
 
 	option = {
 		name = crb_punic_war.2.b
-		change_infamy = 4
+		change_infamy = 10
 		s:STATE_CORSICA = { add_claim = root }
 		s:STATE_SARDINIA = { add_claim = root }
 	}
