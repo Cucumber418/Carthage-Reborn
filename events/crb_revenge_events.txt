@@ -250,7 +250,12 @@ crb_revenge.5 = {
 		trigger = {
 			NOT = { exists = c:RPR }
 		}
+		change_infamy = 15
 		crb_create_puppet_RPR_with_tooltip_effect = yes
+	}
+
+	option = {
+		name = crb_revenge.5.c
 	}
 }
 
@@ -322,6 +327,10 @@ crb_revenge.6 = {
 		change_infamy = 15
 		crb_create_province_GLT_with_tooltip_effect = yes
 	}
+
+	option = {
+		name = crb_revenge.6.c
+	}
 }
 
 crb_revenge.7 = {
@@ -356,5 +365,126 @@ crb_revenge.7 = {
 		name = crb_revenge.7.b
 		change_infamy = 15
 		crb_create_province_SNT_with_tooltip_effect = yes
+	}
+
+	option = {
+		name = crb_revenge.7.c
+	}
+}
+
+crb_revenge.10 = {
+	type = country_event
+	placement = root
+
+	title = crb_revenge.10.t
+	desc = crb_revenge.10.d
+	flavor = crb_revenge.10.f
+
+	event_image = {
+		video = "africa_desert_expedition"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志按钮触发
+	}
+
+	option = {
+		name = crb_revenge.10.a
+		default_option = yes
+		crb_create_puppet_TRP_with_tooltip_effect = yes
+	}
+
+	option = {
+		name = crb_revenge.10.b
+		change_infamy = 10
+		crb_create_province_TRP_with_tooltip_effect = yes
+	}
+
+	option = {
+		name = crb_revenge.10.c
+	}
+}
+
+crb_revenge.11 = {
+	type = country_event
+	placement = root
+
+	title = crb_revenge.11.t
+	desc = crb_revenge.11.d
+	flavor = crb_revenge.11.f
+
+	event_image = {
+		video = "votp_french_algeria"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志按钮触发
+	}
+
+	option = {
+		name = crb_revenge.11.a
+		default_option = yes
+		crb_create_puppet_NUM_with_tooltip_effect = yes
+	}
+
+	option = {
+		name = crb_revenge.11.b
+		change_infamy = 15
+		crb_create_province_NUM_with_tooltip_effect = yes
+	}
+
+	option = {
+		name = crb_revenge.11.c
+	}
+}
+
+crb_revenge.12 = {
+	type = country_event
+	placement = root
+
+	title = crb_revenge.12.t
+	desc = crb_revenge.12.d
+	flavor = crb_revenge.12.f
+
+	event_image = {
+		video = "europenorthamerica_springtime_of_nations"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志按钮触发
+	}
+
+	option = {
+		name = crb_revenge.12.a
+		default_option = yes
+		crb_create_puppet_IBT_with_tooltip_effect = yes
+	}
+
+	option = {
+		name = crb_revenge.12.b
+		change_infamy = 15
+		crb_create_province_IBT_with_tooltip_effect = yes
+	}
+
+	option = {
+		name = crb_revenge.12.c
 	}
 }

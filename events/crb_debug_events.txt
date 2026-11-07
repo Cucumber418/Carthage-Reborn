@@ -325,3 +325,37 @@ crb_debug.11 = {
 		default_option = yes
 	}
 }
+
+# 复仇路各阶段视为已完成，显示全部组建商站、行省的按钮
+crb_debug.12 = {
+	type = country_event
+	placement = root
+
+	title = crb_debug.12.t
+	desc = crb_debug.12.d
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	immediate = {
+		set_variable = crb_hannibal_new_carthage_done
+		set_variable = crb_revenge_stage1_taken
+		set_variable = crb_revenge_stage2_taken
+		set_variable = crb_revenge_stage3_taken
+		set_variable = crb_revenge_stage4_taken
+		if = {
+			limit = { NOT = { has_journal_entry = je_crb_revenge_road } }
+			add_journal_entry = { type = je_crb_revenge_road }
+		}
+	}
+
+	option = {
+		name = crb_debug.12.a
+		default_option = yes
+	}
+}

@@ -1,5 +1,6 @@
 ﻿# 两千年的复仇路（巴卡派路线）
 # 通过日志里的按钮推进：翻过比利牛斯！、越过高卢！、翻过阿尔卑斯！、复仇开始！
+# 复仇完成后日志不关闭，继续用来组建商站、行省
 je_crb_revenge_road = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
@@ -31,14 +32,23 @@ je_crb_revenge_road = {
 
 	scripted_button = crb_revenge_stage1_button
 	scripted_button = crb_revenge_stage2_button
-	scripted_button = crb_found_gaul_post_button
 	scripted_button = crb_revenge_stage3_button
-	scripted_button = crb_found_alpine_post_button
 	scripted_button = crb_revenge_stage4_button
+
+	# 组建商站、行省：日志一直保留，玩家可以随时回来组建
+	scripted_button = crb_found_tripoli_post_button
+	scripted_button = crb_found_numidia_post_button
+	scripted_button = crb_found_iberia_post_button
+	scripted_button = crb_found_gaul_post_button
+	scripted_button = crb_found_alpine_post_button
 	scripted_button = crb_handle_rome_button
 
 	status_desc = {
 		first_valid = {
+			triggered_desc = {
+				desc = crb_revenge_status_5
+				trigger = { has_variable = crb_revenge_completed }
+			}
 			triggered_desc = {
 				desc = crb_revenge_status_4
 				trigger = { has_variable = crb_revenge_stage4_taken }
@@ -63,31 +73,19 @@ je_crb_revenge_road = {
 	}
 
 	# 复仇完成：拿下罗马并结束战争
-	outcome = {
-		header = je_standard_completion_header
-		effect_header = je_standard_on_completion_header
-		color = "gold_positive"
-		conclusion_desc = je_standard_completion_conclusion_desc
-		trigger = {
-			has_variable = crb_revenge_stage4_taken
-			custom_tooltip = {
-				text = crb_revenge_rome_taken_tt
-				crb_controls_region_trigger = { REGION = STATE_LAZIO }
-			}
-			is_at_war = no
-		}
+	# 日志不会因此关闭，之后仍可以在这里组建商站、行省
+	on_monthly_pulse = {
 		effect = {
-			set_variable = crb_revenge_concluded
-			show_as_tooltip = {
-				add_modifier = {
-					name = crb_revenge_complete
-					days = stupidly_long_modifier_time
+			if = {
+				limit = {
+					NOT = { has_variable = crb_revenge_completed }
+					has_variable = crb_revenge_stage4_taken
+					crb_controls_region_trigger = { REGION = STATE_LAZIO }
+					is_at_war = no
 				}
-				add_loyalists = {
-					value = medium_radicals
-				}
+				set_variable = crb_revenge_completed
+				trigger_event = { id = crb_revenge.9 popup = yes }
 			}
-			trigger_event = { id = crb_revenge.9 popup = yes }
 		}
 	}
 

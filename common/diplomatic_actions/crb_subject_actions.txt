@@ -26,8 +26,13 @@ crb_trading_post = {
 
 		subject_type = subject_type_crb_trading_post
 
+		# 商站：专门经商的傀儡国，享有贸易特权
 		second_modifier = {
 			country_law_enactment_imposition_success_add = 0.1
+			state_export_advantage_mult = 0.25
+			state_import_advantage_mult = 0.25
+			building_trade_center_throughput_add = 0.15
+			building_port_throughput_add = 0.15
 		}
 
 		actor_can_break = {

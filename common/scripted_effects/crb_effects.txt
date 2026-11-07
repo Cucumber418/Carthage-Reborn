@@ -621,6 +621,7 @@ crb_create_puppet_TRP_effect = {
 					name = crb_carthaginian_protection
 					days = very_long_modifier_time
 				}
+				crb_trading_post_laws_effect = yes
 			}
 		}
 		every_scope_state = {
@@ -671,6 +672,7 @@ crb_create_puppet_NUM_effect = {
 					name = crb_carthaginian_protection
 					days = very_long_modifier_time
 				}
+				crb_trading_post_laws_effect = yes
 			}
 		}
 		every_scope_state = {
@@ -731,7 +733,7 @@ crb_create_puppet_IBT_effect = {
 					name = crb_carthaginian_protection
 					days = very_long_modifier_time
 				}
-				activate_law = law_type:law_mercantilism
+				crb_trading_post_laws_effect = yes
 			}
 		}
 		every_scope_state = {
@@ -811,7 +813,7 @@ crb_create_puppet_GLT_effect = {
 					name = crb_carthaginian_protection
 					days = very_long_modifier_time
 				}
-				activate_law = law_type:law_mercantilism
+				crb_trading_post_laws_effect = yes
 				activate_law = law_type:law_landed_voting
 			}
 		}
@@ -855,7 +857,7 @@ crb_create_puppet_SNT_effect = {
 					name = crb_carthaginian_protection
 					days = very_long_modifier_time
 				}
-				activate_law = law_type:law_protectionism
+				crb_trading_post_laws_effect = yes
 				activate_law = law_type:law_national_militia
 			}
 		}
@@ -899,7 +901,7 @@ crb_create_puppet_IOP_effect = {
 					name = crb_carthaginian_protection
 					days = very_long_modifier_time
 				}
-				activate_law = law_type:law_free_trade
+				crb_trading_post_laws_effect = yes
 				activate_law = law_type:law_wealth_voting
 			}
 		}
@@ -921,7 +923,7 @@ crb_create_puppet_IOP_effect = {
 	}
 }
 
-# 建立 RPR（作用域：迦太基）
+# 建立罗马行省 RPR（作用域：迦太基）
 crb_create_puppet_RPR_effect = {
 	random_scope_state = {
 		limit = {
@@ -943,8 +945,8 @@ crb_create_puppet_RPR_effect = {
 					name = crb_carthaginian_protection
 					days = very_long_modifier_time
 				}
-				activate_law = law_type:law_oligarchy
-				activate_law = law_type:law_secret_police
+				set_variable = crb_province
+				crb_province_laws_effect = yes
 			}
 		}
 		every_scope_state = {
@@ -960,7 +962,7 @@ crb_create_puppet_RPR_effect = {
 		}
 		create_diplomatic_pact = {
 			country = c:RPR
-			type = personal_union
+			type = crb_province
 		}
 	}
 }
@@ -1059,6 +1061,8 @@ crb_punic_war_advance_number_effect = {
 crb_create_puppet_TRP_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_TRP_tt
 	custom_tooltip = crb_create_puppet_TRP_religion_tt
+	custom_tooltip = crb_create_puppet_TRP_law_free_trade_tt
+	custom_tooltip = crb_create_puppet_TRP_law_laissez_faire_tt
 	hidden_effect = {
 		crb_create_puppet_TRP_effect = yes
 	}
@@ -1067,6 +1071,8 @@ crb_create_puppet_TRP_with_tooltip_effect = {
 crb_create_puppet_NUM_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_NUM_tt
 	custom_tooltip = crb_create_puppet_NUM_religion_tt
+	custom_tooltip = crb_create_puppet_NUM_law_free_trade_tt
+	custom_tooltip = crb_create_puppet_NUM_law_laissez_faire_tt
 	hidden_effect = {
 		crb_create_puppet_NUM_effect = yes
 	}
@@ -1075,7 +1081,8 @@ crb_create_puppet_NUM_with_tooltip_effect = {
 crb_create_puppet_IBT_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_IBT_tt
 	custom_tooltip = crb_create_puppet_IBT_religion_tt
-	custom_tooltip = crb_create_puppet_IBT_law_mercantilism_tt
+	custom_tooltip = crb_create_puppet_IBT_law_free_trade_tt
+	custom_tooltip = crb_create_puppet_IBT_law_laissez_faire_tt
 	hidden_effect = {
 		crb_create_puppet_IBT_effect = yes
 	}
@@ -1084,7 +1091,8 @@ crb_create_puppet_IBT_with_tooltip_effect = {
 crb_create_puppet_GLT_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_GLT_tt
 	custom_tooltip = crb_create_puppet_GLT_religion_tt
-	custom_tooltip = crb_create_puppet_GLT_law_mercantilism_tt
+	custom_tooltip = crb_create_puppet_GLT_law_free_trade_tt
+	custom_tooltip = crb_create_puppet_GLT_law_laissez_faire_tt
 	custom_tooltip = crb_create_puppet_GLT_law_landed_voting_tt
 	hidden_effect = {
 		crb_create_puppet_GLT_effect = yes
@@ -1094,7 +1102,8 @@ crb_create_puppet_GLT_with_tooltip_effect = {
 crb_create_puppet_SNT_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_SNT_tt
 	custom_tooltip = crb_create_puppet_SNT_religion_tt
-	custom_tooltip = crb_create_puppet_SNT_law_protectionism_tt
+	custom_tooltip = crb_create_puppet_SNT_law_free_trade_tt
+	custom_tooltip = crb_create_puppet_SNT_law_laissez_faire_tt
 	custom_tooltip = crb_create_puppet_SNT_law_national_militia_tt
 	hidden_effect = {
 		crb_create_puppet_SNT_effect = yes
@@ -1105,6 +1114,7 @@ crb_create_puppet_IOP_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_IOP_tt
 	custom_tooltip = crb_create_puppet_IOP_religion_tt
 	custom_tooltip = crb_create_puppet_IOP_law_free_trade_tt
+	custom_tooltip = crb_create_puppet_IOP_law_laissez_faire_tt
 	custom_tooltip = crb_create_puppet_IOP_law_wealth_voting_tt
 	hidden_effect = {
 		crb_create_puppet_IOP_effect = yes
@@ -1115,7 +1125,10 @@ crb_create_puppet_RPR_with_tooltip_effect = {
 	custom_tooltip = crb_create_puppet_RPR_tt
 	custom_tooltip = crb_create_puppet_RPR_religion_tt
 	custom_tooltip = crb_create_puppet_RPR_law_oligarchy_tt
+	custom_tooltip = crb_create_puppet_RPR_law_appointed_bureaucrats_tt
 	custom_tooltip = crb_create_puppet_RPR_law_secret_police_tt
+	custom_tooltip = crb_create_puppet_RPR_law_mercantilism_tt
+	custom_tooltip = crb_create_puppet_RPR_law_state_religion_tt
 	hidden_effect = {
 		crb_create_puppet_RPR_effect = yes
 	}
@@ -1453,6 +1466,12 @@ crb_create_province_SNT_with_tooltip_effect = {
 	hidden_effect = {
 		crb_create_province_SNT_effect = yes
 	}
+}
+
+# 商站的法律：专门经商的傀儡国（作用域：新建的商站）
+crb_trading_post_laws_effect = {
+	activate_law = law_type:law_free_trade
+	activate_law = law_type:law_laissez_faire
 }
 
 # 行省的法律：由迦太基派出的总督治理（作用域：新建的行省）

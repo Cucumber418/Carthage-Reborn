@@ -150,3 +150,21 @@ crb_can_expand_trading_posts_trigger = {
 		}
 	}
 }
+
+# 的黎波里商站、行省的地区（作用域：州）
+crb_is_tripoli_post_state_trigger = {
+	OR = {
+		state_region = s:STATE_TRIPOLI
+		state_region = s:STATE_LIBYA
+		state_region = s:STATE_LIBYAN_DESERT
+	}
+}
+
+# 努米底亚商站、行省的地区（作用域：州）
+crb_is_numidia_post_state_trigger = {
+	OR = {
+		state_region = s:STATE_ALGIERS
+		state_region = s:STATE_CONSTANTINE
+		state_region = s:STATE_ORAN
+	}
+}
