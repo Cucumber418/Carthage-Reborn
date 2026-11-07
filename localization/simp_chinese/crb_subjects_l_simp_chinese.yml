@@ -48,20 +48,17 @@
  crb_province_laws_tt: "[GetLawType('law_oligarchy').GetName]、[GetLawType('law_appointed_bureaucrats').GetName]、[GetLawType('law_secret_police').GetName]、[GetLawType('law_mercantilism').GetName]、[GetLawType('law_state_religion').GetName]"
 
  ############################################################
- # 事件选项：重走罗马路
+ # 事件：高卢、阿尔卑斯的去留
  ############################################################
- crb_hannibal.1.c: "重走罗马路：设立的黎波里行省。"
- crb_hannibal.2.c: "重走罗马路：设立努米底亚行省。"
- crb_hannibal.6.c: "重走罗马路：设立伊比利亚行省。"
 
  crb_revenge.6.t: "高卢的未来"
  crb_revenge.6.d: "罗讷河两岸的土地已经归属迦太基。元老们提议照伊比利亚的先例，在这里建立一个由迦太基商人管理的商站。\n\n将军们却有不同的看法：两千年前，罗马人把高卢变成了行省，派总督治理，征收赋税。如今，迦太基为什么不能这样做？"
  crb_revenge.6.f: "“全高卢分为三部分。”\n\n——尤利乌斯·恺撒，#italic 《高卢战记》#!"
- crb_revenge.6.a: "建立高卢商站。"
- crb_revenge.6.b: "重走罗马路：设立高卢行省。"
+ crb_revenge.6.a: "照伊比利亚的先例，建立高卢商站。"
+ crb_revenge.6.b: "效仿罗马人，设立高卢行省。"
 
  crb_revenge.7.t: "雪山之地"
  crb_revenge.7.d: "阿尔卑斯山两侧的土地已经全部归属迦太基。这里的山口是通往意大利的门户，谁控制了它们，谁就控制了意大利北部。\n\n元老们主张交给商站管理，将军们则要求设立行省，派驻军队和总督。"
  crb_revenge.7.f: "“阿尔卑斯山不是罗马的城墙，而是罗马的城门。”"
- crb_revenge.7.a: "建立雪山商站。"
- crb_revenge.7.b: "重走罗马路：设立阿尔卑斯行省。"
+ crb_revenge.7.a: "交给雪山商站管理。"
+ crb_revenge.7.b: "效仿罗马人，设立阿尔卑斯行省。"
