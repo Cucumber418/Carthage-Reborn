@@ -27,7 +27,7 @@ crb_TUN_hanno_hannonid = {
 	culture = cu:crb_punic
 	religion = rel:crb_tanit
 	interest_group = ig_landowners
-	ideology = ideology_traditionalist
+	ideology = ideology_crb_hannonist
 	home_region = STATE_TUNISIA
 	traits = {
 		reserved
@@ -45,7 +45,7 @@ crb_TUN_hasdrubal_barca = {
 	culture = cu:crb_punic
 	religion = rel:crb_tanit
 	interest_group = ig_armed_forces
-	ideology = ideology_jingoist_leader
+	ideology = ideology_crb_barcid
 	home_region = STATE_TUNISIA
 	traits = {
 		ambitious

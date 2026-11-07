@@ -11,7 +11,7 @@ crb_hanno_barca_progress_bar = {
 	glow_line_texture = "gfx/interface/progressbar/progressbar_bad_glow_line.dds"
 	marker = yes
 
-	start_value = 50
+	start_value = 60
 	min_value = 0
 	max_value = 100
 
@@ -42,7 +42,54 @@ crb_hanno_barca_progress_bar = {
 			limit = { is_at_war = yes }
 			add = {
 				desc = "crb_hb_barca_at_war"
-				value = 0.45
+				value = 0.6
+			}
+		}
+		progress_condition = {
+			limit = { has_variable = crb_hb_triumph }
+			add = {
+				desc = "crb_hb_barca_triumph"
+				value = 0.5
+			}
+		}
+		progress_condition = {
+			limit = {
+				ig:ig_armed_forces ?= { ig_clout >= 0.2 }
+			}
+			add = {
+				desc = "crb_hb_barca_army_clout"
+				value = 0.2
+			}
+		}
+		progress_condition = {
+			limit = {
+				any_interest_group = {
+					is_in_government = yes
+					leader ?= {
+						OR = {
+							has_ideology = ideology:ideology_crb_barcid
+							has_ideology = ideology:ideology_crb_hannibalist
+						}
+					}
+				}
+			}
+			add = {
+				desc = "crb_hb_barca_leader_in_government"
+				value = 0.2
+			}
+		}
+		progress_condition = {
+			limit = {
+				ruler ?= {
+					OR = {
+						has_ideology = ideology:ideology_crb_barcid
+						has_ideology = ideology:ideology_crb_hannibalist
+					}
+				}
+			}
+			add = {
+				desc = "crb_hb_barca_ruler"
+				value = 0.3
 			}
 		}
 		progress_condition = {
@@ -58,28 +105,42 @@ crb_hanno_barca_progress_bar = {
 			limit = { has_law_or_variant = law_type:law_oligarchy }
 			add = {
 				desc = "crb_hb_hanno_oligarchy"
-				value = -0.2
+				value = -0.15
 			}
 		}
 		progress_condition = {
 			limit = { has_law_or_variant = law_type:law_hereditary_bureaucrats }
 			add = {
 				desc = "crb_hb_hanno_hereditary_bureaucrats"
-				value = -0.15
+				value = -0.1
 			}
 		}
 		progress_condition = {
 			limit = { has_law_or_variant = law_type:law_protectionism }
 			add = {
 				desc = "crb_hb_hanno_protectionism"
-				value = -0.15
+				value = -0.1
 			}
 		}
 		progress_condition = {
-			limit = { is_at_war = no }
+			limit = {
+				any_interest_group = {
+					is_in_government = yes
+					leader ?= { has_ideology = ideology:ideology_crb_hannonist }
+				}
+			}
 			add = {
-				desc = "crb_hb_hanno_at_peace"
-				value = -0.1
+				desc = "crb_hb_hanno_leader_in_government"
+				value = -0.2
+			}
+		}
+		progress_condition = {
+			limit = {
+				ruler ?= { has_ideology = ideology:ideology_crb_hannonist }
+			}
+			add = {
+				desc = "crb_hb_hanno_ruler"
+				value = -0.3
 			}
 		}
 		progress_condition = {

@@ -39,6 +39,11 @@ je_crb_hanno_barca = {
 			name = crb_hb_stalemate_months
 			value = 0
 		}
+		# 凯旋的余威：日志开始后 2 年内巴卡派额外增长
+		set_variable = {
+			name = crb_hb_triumph
+			days = 730
+		}
 		trigger_event = {
 			id = crb_hanno_barca.1
 			popup = yes
@@ -116,13 +121,13 @@ je_crb_hanno_barca = {
 
 	on_yearly_pulse = {
 		effect = {
-			# 巴卡派越强，越容易出现君主制倾向的鼓动者
+			# 巴卡派越强，越容易出现汉尼拔主义者鼓动者（君主制倾向）
 			if = {
 				limit = {
 					NOT = {
 						any_scope_character = {
 							has_role = character_role_agitator
-							has_ideology = ideology:ideology_royalist
+							has_ideology = ideology:ideology_crb_hannibalist
 						}
 					}
 				}

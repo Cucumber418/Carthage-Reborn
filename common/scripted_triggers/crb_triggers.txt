@@ -1,0 +1,29 @@
+﻿# 迦太基三种意识形态可以出现在哪些利益集团（作用域：利益集团）
+
+ideology_crb_hannonist_valid_trigger = {
+	OR = {
+		is_interest_group_type = ig_landowners
+		is_interest_group_type = ig_industrialists
+		is_interest_group_type = ig_devout
+	}
+}
+
+ideology_crb_barcid_valid_trigger = {
+	OR = {
+		is_interest_group_type = ig_armed_forces
+		is_interest_group_type = ig_petty_bourgeoisie
+		is_interest_group_type = ig_rural_folk
+	}
+}
+
+ideology_crb_hannibalist_valid_trigger = {
+	OR = {
+		is_interest_group_type = ig_armed_forces
+		is_interest_group_type = ig_petty_bourgeoisie
+	}
+}
+
+# 国家是否为迦太基（主流文化为布匿）
+crb_is_carthage_trigger = {
+	country_has_primary_culture = cu:crb_punic
+}

@@ -133,6 +133,7 @@ crb_hanno_victory_effect = {
 crb_hanno_barca_cleanup_effect = {
 	remove_variable = crb_hb_stalemate_months
 	remove_variable = crb_hb_button_cooldown
+	remove_variable = crb_hb_triumph
 }
 
 # ============================================================

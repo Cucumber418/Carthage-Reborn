@@ -169,7 +169,7 @@ crb_hanno_barca.5 = {
 			culture = cu:crb_punic
 			religion = rel:crb_tanit
 			interest_group = ig_armed_forces
-			ideology = ideology:ideology_royalist
+			ideology = ideology:ideology_crb_hannibalist
 			traits = {
 				demagogue
 			}
