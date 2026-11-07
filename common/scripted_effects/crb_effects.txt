@@ -143,7 +143,7 @@ crb_hb_barca_gain_small = {
 	custom_tooltip = {
 		text = crb_hb_barca_gain_small_tt
 		je:je_crb_hanno_barca ?= {
-			add_progress = { value = 5 name = crb_hanno_barca_progress_bar }
+			add_progress = { value = 8 name = crb_hanno_barca_progress_bar }
 		}
 	}
 }
@@ -152,7 +152,7 @@ crb_hb_barca_gain_medium = {
 	custom_tooltip = {
 		text = crb_hb_barca_gain_medium_tt
 		je:je_crb_hanno_barca ?= {
-			add_progress = { value = 8 name = crb_hanno_barca_progress_bar }
+			add_progress = { value = 12 name = crb_hanno_barca_progress_bar }
 		}
 	}
 }

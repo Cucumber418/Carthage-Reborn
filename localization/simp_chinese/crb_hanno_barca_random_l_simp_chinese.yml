@@ -2,10 +2,10 @@
  ############################################################
  # 汉诺派与巴卡派：进度变化提示
  ############################################################
- crb_hb_barca_gain_small_tt: "#b 巴卡派#!的力量#g 小幅#!增强"
- crb_hb_barca_gain_medium_tt: "#b 巴卡派#!的力量#g 明显#!增强"
- crb_hb_hanno_gain_small_tt: "#b 汉诺派#!的力量#g 小幅#!增强"
- crb_hb_hanno_gain_medium_tt: "#b 汉诺派#!的力量#g 明显#!增强"
+ crb_hb_barca_gain_small_tt: "#b 巴卡派#!的力量#g 增加 8 点#!"
+ crb_hb_barca_gain_medium_tt: "#b 巴卡派#!的力量#g 增加 12 点#!"
+ crb_hb_hanno_gain_small_tt: "#b 汉诺派#!的力量#g 增加 5 点#!"
+ crb_hb_hanno_gain_medium_tt: "#b 汉诺派#!的力量#g 增加 8 点#!"
 
  ############################################################
  # 随机事件

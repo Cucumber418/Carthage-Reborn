@@ -85,17 +85,17 @@ je_crb_hanno_barca = {
 	}
 
 	on_monthly_pulse = {
-		# 随机事件：平均每 4 个月左右一个，同事件保留冷却
+		# 随机事件：基础权重下约 40% 的月度触发率，平均约 2.5 个月一次；同事件保留年度冷却
 		random_events = {
 			120 = 0
-			5 = crb_hanno_barca_random.10
-			5 = crb_hanno_barca_random.11
-			5 = crb_hanno_barca_random.12
-			5 = crb_hanno_barca_random.13
-			5 = crb_hanno_barca_random.14
-			5 = crb_hanno_barca_random.15
-			5 = crb_hanno_barca_random.16
-			5 = crb_hanno_barca_random.17
+			10 = crb_hanno_barca_random.10
+			10 = crb_hanno_barca_random.11
+			10 = crb_hanno_barca_random.12
+			10 = crb_hanno_barca_random.13
+			10 = crb_hanno_barca_random.14
+			10 = crb_hanno_barca_random.15
+			10 = crb_hanno_barca_random.16
+			10 = crb_hanno_barca_random.17
 		}
 		effect = {
 			# 总期限计数：无论进度如何，每月累计；第 36 个月进入最终结局
