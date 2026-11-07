@@ -1,0 +1,51 @@
+﻿# 替换原版突尼斯的旗帜
+# 选举旗为默认；寡头、独裁（含君主制）、社会主义、无政府主义按政体切换
+REPLACE:TUN = {
+	flag_definition = {
+		coa = crb_TUN_republic
+		subject_canton = crb_TUN_republic
+		allow_overlord_canton = yes
+		overlord_canton_scale = { 0.402 0.402 }
+		priority = 1
+	}
+	flag_definition = {
+		coa = crb_TUN_oligarchy
+		subject_canton = crb_TUN_oligarchy
+		allow_overlord_canton = yes
+		overlord_canton_scale = { 0.402 0.402 }
+		priority = 10
+		trigger = {
+			coa_def_oligarchy_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = crb_TUN_dictatorship
+		subject_canton = crb_TUN_dictatorship
+		allow_overlord_canton = yes
+		overlord_canton_scale = { 0.402 0.402 }
+		priority = 20
+		trigger = {
+			OR = {
+				coa_def_dictatorship_flag_trigger = yes
+				coa_def_monarchy_flag_trigger = yes
+			}
+		}
+	}
+	flag_definition = {
+		coa = crb_TUN_communist
+		subject_canton = crb_TUN_communist
+		priority = 1500
+		trigger = {
+			coa_def_communist_flag_trigger = yes
+		}
+	}
+	flag_definition = {
+		coa = crb_TUN_anarchist
+		subject_canton = crb_TUN_anarchist
+		allow_overlord_canton = no
+		priority = 5000
+		trigger = {
+			coa_def_anarchy_flag_trigger = yes
+		}
+	}
+}

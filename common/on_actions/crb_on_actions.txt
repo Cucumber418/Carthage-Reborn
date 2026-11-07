@@ -21,6 +21,7 @@ crb_on_game_started = {
 		c:TUN ?= {
 			crb_convert_starting_pops_effect = yes
 			crb_update_ig_names_effect = yes
+			crb_apply_punic_state_names_effect = yes
 			trigger_event = {
 				id = crb_carthage.1
 				popup = yes
@@ -37,6 +38,9 @@ crb_monthly_pulse_country = {
 	}
 	effect = {
 		crb_update_ig_names_effect = yes
+		# 历史地名：新拥有的地区改名，失去的地区恢复原名
+		crb_apply_punic_state_names_effect = yes
+		crb_reset_lost_punic_state_names_effect = yes
 		# 受认可后移除"迦太基仍未毁灭"
 		if = {
 			limit = {

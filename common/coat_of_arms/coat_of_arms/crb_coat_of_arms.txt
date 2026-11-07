@@ -1,0 +1,213 @@
+﻿# 迦太基五面旗帜（设计稿见 README）
+# 塔尼特、巴力·哈蒙为自制纹章，桂冠、棕榈、圆、星沿用原版纹章
+
+crb_TUN_dictatorship = { # 独裁：金边紫旗，桂冠环绕巴力·哈蒙的日轮与新月
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.5 0.056 } scale = { 0.926 0.014 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.5 0.944 } scale = { 0.926 0.014 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.037 0.5 } scale = { 0.009 0.902 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.963 0.5 } scale = { 0.009 0.902 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.5 0.089 } scale = { 0.882 0.006 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.5 0.911 } scale = { 0.882 0.006 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.059 0.5 } scale = { 0.004 0.828 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.941 0.5 } scale = { 0.004 0.828 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.5 0.55 } scale = { 0.62 0.62 } }
+	}
+	colored_emblem = {
+		texture = "ce_circle.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.5 0.49 } scale = { 0.4 0.48 } }
+	}
+	colored_emblem = {
+		texture = "ce_circle.dds"
+		color1 = "crb_tyrian"
+		color2 = "crb_tyrian"
+		instance = { position = { 0.5 0.49 } scale = { 0.37 0.45 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.49 } scale = { 0.36 0.36 } }
+	}
+}
+
+crb_TUN_oligarchy = { # 寡头：紫白紫横条，塔尼特与两位苏菲特
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian"
+
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_cream"
+		color2 = "crb_cream"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 0.5 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.5 0.245 } scale = { 1.0 0.011 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.5 0.755 } scale = { 1.0 0.011 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_tyrian"
+		color2 = "crb_tyrian"
+		instance = { position = { 0.5 0.505 } scale = { 0.42 0.42 } }
+	}
+	colored_emblem = {
+		texture = "ce_circle.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.259 0.5 } scale = { 0.12 0.12 } }
+	}
+	colored_emblem = {
+		texture = "ce_circle.dds"
+		color1 = "crb_tyrian"
+		color2 = "crb_tyrian"
+		instance = { position = { 0.259 0.5 } scale = { 0.095 0.095 } }
+	}
+	colored_emblem = {
+		texture = "ce_circle.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.741 0.5 } scale = { 0.12 0.12 } }
+	}
+	colored_emblem = {
+		texture = "ce_circle.dds"
+		color1 = "crb_tyrian"
+		color2 = "crb_tyrian"
+		instance = { position = { 0.741 0.5 } scale = { 0.095 0.095 } }
+	}
+}
+
+crb_TUN_republic = { # 选举：紫、白、海蓝竖三色，中央棕榈
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian"
+
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_cream"
+		color2 = "crb_cream"
+		instance = { position = { 0.5 0.5 } scale = { 0.334 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_sea"
+		color2 = "crb_sea"
+		instance = { position = { 0.8335 0.5 } scale = { 0.333 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_palm_tree.dds"
+		color1 = "brown_light"
+		color2 = "green"
+		instance = { position = { 0.5 0.5 } scale = { 0.54 0.54 } }
+	}
+}
+
+crb_TUN_communist = { # 社会主义：红旗，紫色角框内金色塔尼特与星
+	pattern = "pattern_solid.tga"
+	color1 = "crb_red"
+
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian"
+		color2 = "crb_tyrian"
+		instance = { position = { 0.222 0.25 } scale = { 0.444 0.5 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.4455 0.255 } scale = { 0.007 0.51 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.2255 0.503 } scale = { 0.451 0.011 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.222 0.28 } scale = { 0.33 0.33 } }
+	}
+	colored_emblem = {
+		texture = "ce_star_05.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.356 0.1 } scale = { 0.1 0.1 } }
+	}
+}
+
+crb_TUN_anarchist = { # 无政府主义：黑紫斜分，白环中的塔尼特
+	pattern = "pattern_per_bend.dds"
+	color1 = "crb_black"
+	color2 = "crb_tyrian"
+
+	colored_emblem = {
+		texture = "ce_frame_circle.dds"
+		color1 = "crb_cream"
+		color2 = "crb_cream"
+		instance = { position = { 0.5 0.5 } scale = { 0.62 0.62 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_cream"
+		color2 = "crb_cream"
+		instance = { position = { 0.5 0.52 } scale = { 0.42 0.42 } }
+	}
+}
