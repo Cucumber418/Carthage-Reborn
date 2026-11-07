@@ -9,6 +9,7 @@ on_game_started = {
 on_monthly_pulse_country = {
 	on_actions = {
 		crb_monthly_pulse_country
+		crb_monthly_pulse_subject
 	}
 }
 
@@ -49,5 +50,15 @@ crb_monthly_pulse_country = {
 			}
 			remove_modifier = crb_carthago_non_deleta
 		}
+	}
+}
+
+# 每月：迦太基建立的傀儡国、商站也使用历史地名
+crb_monthly_pulse_subject = {
+	trigger = {
+		has_variable = crb_carthaginian_subject
+	}
+	effect = {
+		crb_apply_punic_state_names_effect = yes
 	}
 }

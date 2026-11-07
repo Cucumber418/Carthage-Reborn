@@ -1,0 +1,337 @@
+﻿namespace = crb_hannibal
+
+# 日志"汉尼拔再临"的事件
+
+crb_hannibal.0 = {
+	type = country_event
+	placement = root
+
+	title = crb_hannibal.0.t
+	desc = crb_hannibal.0.d
+	flavor = crb_hannibal.0.f
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hannibal_returns 触发
+	}
+
+	option = {
+		name = crb_hannibal.0.a
+		default_option = yes
+	}
+}
+
+crb_hannibal.1 = {
+	type = country_event
+	placement = root
+
+	title = crb_hannibal.1.t
+	desc = crb_hannibal.1.d
+	flavor = crb_hannibal.1.f
+
+	event_image = {
+		video = "africa_desert_expedition"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hannibal_returns 触发
+	}
+
+	option = {
+		name = crb_hannibal.1.a
+		trigger = {
+			NOT = { exists = c:TRP }
+		}
+		change_infamy = 10
+		crb_create_puppet_TRP_effect = yes
+		crb_hannibal_entry_reward_effect = yes
+	}
+
+	option = {
+		name = crb_hannibal.1.b
+		default_option = yes
+		crb_hannibal_stability_effect = yes
+		crb_hannibal_entry_reward_effect = yes
+	}
+}
+
+crb_hannibal.2 = {
+	type = country_event
+	placement = root
+
+	title = crb_hannibal.2.t
+	desc = crb_hannibal.2.d
+	flavor = crb_hannibal.2.f
+
+	event_image = {
+		video = "votp_french_algeria"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hannibal_returns 触发
+	}
+
+	option = {
+		name = crb_hannibal.2.a
+		trigger = {
+			NOT = { exists = c:NUM }
+		}
+		change_infamy = 15
+		crb_create_puppet_NUM_effect = yes
+		crb_hannibal_entry_reward_effect = yes
+		s:STATE_FEZ = { add_claim = root }
+		s:STATE_MARRAKECH = { add_claim = root }
+		s:STATE_AL_RIF = { add_claim = root }
+		s:STATE_INNER_MOROCCO = { add_claim = root }
+	}
+
+	option = {
+		name = crb_hannibal.2.b
+		default_option = yes
+		crb_hannibal_stability_effect = yes
+		crb_hannibal_entry_reward_effect = yes
+		s:STATE_FEZ = { add_claim = root }
+		s:STATE_MARRAKECH = { add_claim = root }
+		s:STATE_AL_RIF = { add_claim = root }
+		s:STATE_INNER_MOROCCO = { add_claim = root }
+	}
+}
+
+crb_hannibal.3 = {
+	type = country_event
+	placement = root
+
+	title = crb_hannibal.3.t
+	desc = crb_hannibal.3.d
+	flavor = crb_hannibal.3.f
+
+	event_image = {
+		video = "unspecific_naval_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hannibal_returns 触发
+	}
+
+	option = {
+		name = crb_hannibal.3.a
+		change_infamy = 5
+		every_scope_state = {
+			limit = { state_region = s:STATE_SICILY }
+			add_modifier = {
+				name = crb_rapid_integration
+				days = normal_modifier_time
+			}
+		}
+		crb_hannibal_entry_reward_effect = yes
+	}
+
+	option = {
+		name = crb_hannibal.3.b
+		default_option = yes
+		crb_hannibal_stability_effect = yes
+		crb_hannibal_entry_reward_effect = yes
+	}
+}
+
+crb_hannibal.4 = {
+	type = country_event
+	placement = root
+
+	title = crb_hannibal.4.t
+	desc = crb_hannibal.4.d
+	flavor = crb_hannibal.4.f
+
+	event_image = {
+		video = "unspecific_steam_ship"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hannibal_returns 触发
+	}
+
+	option = {
+		name = crb_hannibal.4.a
+		default_option = yes
+		add_modifier = {
+			name = crb_mediterranean_islands
+			days = long_modifier_time
+		}
+		crb_hannibal_entry_reward_effect = yes
+	}
+}
+
+crb_hannibal.5 = {
+	type = country_event
+	placement = root
+
+	title = crb_hannibal.5.t
+	desc = crb_hannibal.5.d
+	flavor = crb_hannibal.5.f
+
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hannibal_returns 触发
+	}
+
+	option = {
+		name = crb_hannibal.5.a
+		every_scope_state = {
+			limit = { state_region = s:STATE_LOWER_ANDALUSIA }
+			add_modifier = {
+				name = crb_rapid_integration
+				days = normal_modifier_time
+			}
+		}
+		crb_hannibal_entry_reward_effect = yes
+	}
+
+	option = {
+		name = crb_hannibal.5.b
+		default_option = yes
+		crb_hannibal_stability_effect = yes
+		crb_hannibal_entry_reward_effect = yes
+	}
+}
+
+crb_hannibal.6 = {
+	type = country_event
+	placement = root
+
+	title = crb_hannibal.6.t
+	desc = crb_hannibal.6.d
+	flavor = crb_hannibal.6.f
+
+	event_image = {
+		video = "europenorthamerica_springtime_of_nations"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hannibal_returns 触发
+	}
+
+	option = {
+		name = crb_hannibal.6.a
+		trigger = {
+			NOT = { exists = c:IBT }
+		}
+		change_infamy = 15
+		crb_create_puppet_IBT_effect = yes
+		crb_hannibal_entry_reward_effect = yes
+	}
+
+	option = {
+		name = crb_hannibal.6.b
+		default_option = yes
+		crb_hannibal_stability_effect = yes
+		crb_hannibal_entry_reward_effect = yes
+	}
+}
+
+crb_hannibal.7 = {
+	type = country_event
+	placement = root
+
+	title = crb_hannibal.7.t
+	desc = crb_hannibal.7.d
+	flavor = crb_hannibal.7.f
+
+	event_image = {
+		video = "middleeast_islam"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hannibal_returns 触发
+	}
+
+	option = {
+		name = crb_hannibal.7.a
+		default_option = yes
+		add_modifier = {
+			name = crb_ancestral_throne
+		}
+		crb_hannibal_entry_reward_effect = yes
+	}
+}
+
+crb_hannibal.8 = {
+	type = country_event
+	placement = root
+
+	title = crb_hannibal.8.t
+	desc = crb_hannibal.8.d
+	flavor = crb_hannibal.8.f
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+		# 由日志 je_crb_hannibal_returns 触发
+	}
+
+	option = {
+		name = crb_hannibal.8.a
+		default_option = yes
+	}
+}

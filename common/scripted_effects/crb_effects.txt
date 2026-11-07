@@ -188,7 +188,7 @@ crb_apply_punic_state_names_effect = {
 	if = {
 		limit = {
 			NOT = { has_game_rule = no_dynamic_naming }
-			crb_is_carthage_trigger = yes
+			crb_uses_punic_names_trigger = yes
 		}
 		every_scope_state = {
 			limit = { NOT = { has_variable = crb_punic_name } }
@@ -496,9 +496,179 @@ crb_reset_lost_punic_state_names_effect = {
 	every_state = {
 		limit = {
 			has_variable = crb_punic_name
-			NOT = { owner = { crb_is_carthage_trigger = yes } }
+			NOT = { owner = { crb_uses_punic_names_trigger = yes } }
 		}
 		reset_state_name = yes
 		remove_variable = crb_punic_name
+	}
+}
+
+# ============================================================
+# 汉尼拔再临
+# ============================================================
+
+# 建立傀儡国 TRP：把迦太基在这些地区的州交给新国家（作用域：迦太基）
+crb_create_puppet_TRP_effect = {
+	random_scope_state = {
+		limit = {
+			is_capital = no
+			OR = {
+				state_region = s:STATE_TRIPOLI
+				state_region = s:STATE_LIBYA
+				state_region = s:STATE_LIBYAN_DESERT
+			}
+		}
+		save_scope_as = crb_puppet_first_state
+	}
+	if = {
+		limit = { exists = scope:crb_puppet_first_state }
+		create_country = {
+			tag = TRP
+			origin = root
+			state = scope:crb_puppet_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				OR = {
+					state_region = s:STATE_TRIPOLI
+					state_region = s:STATE_LIBYA
+					state_region = s:STATE_LIBYAN_DESERT
+				}
+			}
+			set_state_owner = c:TRP
+		}
+		create_diplomatic_pact = {
+			country = c:TRP
+			type = puppet
+		}
+	}
+}
+
+# 建立傀儡国 NUM：把迦太基在这些地区的州交给新国家（作用域：迦太基）
+crb_create_puppet_NUM_effect = {
+	random_scope_state = {
+		limit = {
+			is_capital = no
+			OR = {
+				state_region = s:STATE_ALGIERS
+				state_region = s:STATE_CONSTANTINE
+				state_region = s:STATE_ORAN
+			}
+		}
+		save_scope_as = crb_puppet_first_state
+	}
+	if = {
+		limit = { exists = scope:crb_puppet_first_state }
+		create_country = {
+			tag = NUM
+			origin = root
+			state = scope:crb_puppet_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				OR = {
+					state_region = s:STATE_ALGIERS
+					state_region = s:STATE_CONSTANTINE
+					state_region = s:STATE_ORAN
+				}
+			}
+			set_state_owner = c:NUM
+		}
+		create_diplomatic_pact = {
+			country = c:NUM
+			type = puppet
+		}
+	}
+}
+
+# 建立傀儡国 IBT：把迦太基在这些地区的州交给新国家（作用域：迦太基）
+crb_create_puppet_IBT_effect = {
+	random_scope_state = {
+		limit = {
+			is_capital = no
+			OR = {
+				state_region = s:STATE_MURCIA
+				state_region = s:STATE_VALENCIA
+				state_region = s:STATE_CATALONIA
+				state_region = s:STATE_ARAGON
+				state_region = s:STATE_LOWER_ANDALUSIA
+				state_region = s:STATE_UPPER_ANDALUSIA
+				state_region = s:STATE_NEW_CASTILE
+				state_region = s:STATE_OLD_CASTILE
+				state_region = s:STATE_LEON
+				state_region = s:STATE_EXTREMADURA
+				state_region = s:STATE_GALICIA
+				state_region = s:STATE_ASTURIAS
+				state_region = s:STATE_BASQUE_COUNTRY
+			}
+		}
+		save_scope_as = crb_puppet_first_state
+	}
+	if = {
+		limit = { exists = scope:crb_puppet_first_state }
+		create_country = {
+			tag = IBT
+			origin = root
+			state = scope:crb_puppet_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+				activate_law = law_type:law_mercantilism
+			}
+		}
+		every_scope_state = {
+			limit = {
+				is_capital = no
+				OR = {
+					state_region = s:STATE_MURCIA
+					state_region = s:STATE_VALENCIA
+					state_region = s:STATE_CATALONIA
+					state_region = s:STATE_ARAGON
+					state_region = s:STATE_LOWER_ANDALUSIA
+					state_region = s:STATE_UPPER_ANDALUSIA
+					state_region = s:STATE_NEW_CASTILE
+					state_region = s:STATE_OLD_CASTILE
+					state_region = s:STATE_LEON
+					state_region = s:STATE_EXTREMADURA
+					state_region = s:STATE_GALICIA
+					state_region = s:STATE_ASTURIAS
+					state_region = s:STATE_BASQUE_COUNTRY
+				}
+			}
+			set_state_owner = c:IBT
+		}
+		create_diplomatic_pact = {
+			country = c:IBT
+			type = puppet
+		}
+	}
+}
+
+# 每完成一个条目：军队和小市民满意
+crb_hannibal_entry_reward_effect = {
+	add_modifier = {
+		name = crb_hannibal_triumph
+		days = normal_modifier_time
+	}
+}
+
+# 维持稳定：威望与效忠派
+crb_hannibal_stability_effect = {
+	add_modifier = {
+		name = crb_hannibal_stability
+		days = normal_modifier_time
+	}
+	add_loyalists = {
+		value = small_radicals
 	}
 }

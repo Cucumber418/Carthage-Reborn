@@ -49,3 +49,27 @@ REPLACE:TUN = {
 		}
 	}
 }
+
+TRP = {
+	flag_definition = {
+		coa = crb_TRP
+		subject_canton = crb_TRP
+		priority = 1
+	}
+}
+
+NUM = {
+	flag_definition = {
+		coa = crb_NUM
+		subject_canton = crb_NUM
+		priority = 1
+	}
+}
+
+IBT = {
+	flag_definition = {
+		coa = crb_IBT
+		subject_canton = crb_IBT
+		priority = 1
+	}
+}

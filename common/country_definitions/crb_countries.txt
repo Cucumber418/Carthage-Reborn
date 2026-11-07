@@ -8,3 +8,31 @@ REPLACE:TUN = {
 	cultures = { crb_punic }
 	capital = STATE_TUNISIA
 }
+
+# ============================================================
+# "汉尼拔再临"中可以建立的傀儡国
+# ============================================================
+
+TRP = { # 的黎波里
+	color = rgb{ 196 160 92 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { maghrebi }
+	capital = STATE_TRIPOLI
+}
+
+NUM = { # 努米底亚
+	color = rgb{ 46 110 70 }
+	country_type = unrecognized
+	tier = kingdom
+	cultures = { berber maghrebi }
+	capital = STATE_CONSTANTINE
+}
+
+IBT = { # 伊比利亚商站
+	color = rgb{ 150 60 120 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { crb_punic spanish }
+	capital = STATE_MURCIA
+}

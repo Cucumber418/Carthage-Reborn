@@ -211,3 +211,73 @@ crb_TUN_anarchist = { # 无政府主义：黑紫斜分，白环中的塔尼特
 		instance = { position = { 0.5 0.52 } scale = { 0.42 0.42 } }
 	}
 }
+
+# ============================================================
+# 傀儡国、商站
+# ============================================================
+
+crb_TRP = { # 的黎波里：沙色与紫色横条，塔尼特
+	pattern = "pattern_solid.tga"
+	color1 = "crb_sand"
+
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian"
+		color2 = "crb_tyrian"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 0.4 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_cream"
+		color2 = "crb_cream"
+		instance = { position = { 0.5 0.51 } scale = { 0.3 0.3 } }
+	}
+}
+
+crb_NUM = { # 努米底亚：绿底，紫色旗杆边，金色塔尼特
+	pattern = "pattern_solid.tga"
+	color1 = "crb_green"
+
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian"
+		color2 = "crb_tyrian"
+		instance = { position = { 0.15 0.5 } scale = { 0.3 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.3 0.5 } scale = { 0.012 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.65 0.51 } scale = { 0.42 0.42 } }
+	}
+}
+
+crb_IBT = { # 伊比利亚商站：红黄红横条，紫色旗杆边与塔尼特
+	pattern = "pattern_solid.tga"
+	color1 = "crb_red"
+
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 0.5 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian"
+		color2 = "crb_tyrian"
+		instance = { position = { 0.18 0.5 } scale = { 0.36 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_cream"
+		color2 = "crb_cream"
+		instance = { position = { 0.18 0.51 } scale = { 0.36 0.36 } }
+	}
+}

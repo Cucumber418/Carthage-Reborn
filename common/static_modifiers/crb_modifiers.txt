@@ -216,3 +216,42 @@ crb_punic_revival = {
 	country_prestige_add = 15
 	state_assimilation_mult = 0.2
 }
+
+# ============================================================
+# 汉尼拔再临
+# ============================================================
+
+crb_hannibal_triumph = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_ig_armed_forces_approval_add = 2
+	interest_group_ig_petty_bourgeoisie_approval_add = 2
+}
+
+crb_hannibal_stability = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 10
+}
+
+# 州修正：加快整合
+crb_rapid_integration = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	state_incorporation_speed_mult = 1
+}
+
+crb_mediterranean_islands = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 15
+}
+
+crb_ancestral_throne = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 20
+	country_legitimacy_base_add = 5
+}
+
+crb_hannibal_returned = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_add = 25
+	interest_group_ig_armed_forces_approval_add = 3
+	interest_group_ig_petty_bourgeoisie_approval_add = 3
+}

@@ -8,6 +8,10 @@ je_crb_cultural_revival = {
 		always = yes
 	}
 
+	is_shown_in_lobby = {
+		c:TUN ?= THIS
+	}
+
 	is_shown_when_inactive = {
 		crb_is_carthage_trigger = yes
 		NOT = { has_variable = crb_revival_concluded }

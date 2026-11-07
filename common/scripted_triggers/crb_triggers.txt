@@ -23,7 +23,35 @@ ideology_crb_hannibalist_valid_trigger = {
 	}
 }
 
-# 国家是否为迦太基（主流文化为布匿）
+# 国家是否为迦太基（主流文化为布匿，且不是迦太基建立的商站）
 crb_is_carthage_trigger = {
 	country_has_primary_culture = cu:crb_punic
+	NOT = { has_variable = crb_carthaginian_subject }
+}
+
+# 是否使用迦太基历史地名：迦太基本身，以及迦太基建立的傀儡国、商站
+crb_uses_punic_names_trigger = {
+	OR = {
+		crb_is_carthage_trigger = yes
+		has_variable = crb_carthaginian_subject
+	}
+}
+
+# 地区是否属于西班牙本土（作用域：州）
+crb_is_spanish_mainland_state_trigger = {
+	OR = {
+		state_region = s:STATE_MURCIA
+		state_region = s:STATE_VALENCIA
+		state_region = s:STATE_CATALONIA
+		state_region = s:STATE_ARAGON
+		state_region = s:STATE_LOWER_ANDALUSIA
+		state_region = s:STATE_UPPER_ANDALUSIA
+		state_region = s:STATE_NEW_CASTILE
+		state_region = s:STATE_OLD_CASTILE
+		state_region = s:STATE_LEON
+		state_region = s:STATE_EXTREMADURA
+		state_region = s:STATE_GALICIA
+		state_region = s:STATE_ASTURIAS
+		state_region = s:STATE_BASQUE_COUNTRY
+	}
 }
