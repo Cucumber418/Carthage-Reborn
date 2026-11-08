@@ -1,6 +1,8 @@
 ﻿# 建立"商站""行省"附庸关系用的外交行动（格式照搬原版 20_subject_puppet.txt）
 
 crb_trading_post = {
+	# 国家面板通过 DiplomaticActionType.GetTexture 读取；文字图标注册不会设置此贴图。
+	texture = "gfx/interface/icons/diplomatic_action_icons/crb_trading_post.dds"
 	groups= {
 		general # for breaking only
 	}
@@ -60,6 +62,7 @@ crb_trading_post = {
 }
 
 crb_province = {
+	texture = "gfx/interface/icons/diplomatic_action_icons/crb_province.dds"
 	groups= {
 		general # for breaking only
 	}

@@ -544,3 +544,10 @@
 - 69 项数据与场景测试通过；美术完整解码和透明度也已检查。尚未进行游戏内 UI、实际五年计时及总督接班实测。
 
 原版量级与语义参考：原版减免附庸缴款使用 `country_liberty_desire_add = -0.05`；原版外交脚本将它与宗主国的 `country_liberty_desire_of_subjects_add` 加入每周变化，再执行缩放和增长／下降乘数。可对照 [原版外交数值](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/script_values/00_diplomacy_values.txt) 与 [减免缴款行动](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/diplomatic_actions/33_subjects_decrease_payments.txt)。
+
+## 29. 1.1.4 公司徽记与国家面板图标
+
+- 四家公司的 `icon` 继续使用定制徽记；`background` 恢复之前的原版行业插图：港口造船、轻工业、农业、采矿。旧版生成的背景素材保留归档，不再由公司定义引用。
+- `crb_trading_post` 与 `crb_province` 外交行动显式设置 `texture`，分别指向已有的 256×256 船舶贸易与官署卷册 DDS。原先只有贴图文件和文字小图标注册，没有绑定外交行动贴图，国家面板读取关系图标时无法使用这些文件。
+- 对照 [原版国家面板](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/gui/country_panel.gui)，国家关系图标读取 `DiplomaticActionType.GetTexture`；`texture` 属性的格式参考 [原版划拨地区行动](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/diplomatic_actions/43_subjects_handle_states.txt)。公司界面分别读取 `CompanyType.GetIcon` 与 `GetBackground`，见 [原版公司面板](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/gui/company_panel.gui)。本次无需覆盖原版 GUI。
+- 新增回归检查，区分公司徽记和背景字段，并沿附庸类型 → 外交行动 → 关系贴图检查实际绑定。71 项检查通过；尚未在游戏内验证显示效果。已有存档可用，更新后需完全退出并重启游戏以重新载入定义与贴图。

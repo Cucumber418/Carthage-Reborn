@@ -1,7 +1,7 @@
 ﻿# 迦太基及其地中海贸易圈的特色公司
 company_crb_carthaginian_trade_house = {
 	icon = "gfx/interface/icons/company_icons/historical_company_icons/crb_carthaginian_trade_house.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/crb_carthaginian_trade_house.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_harbor_shipbuilding.dds"
 	flavored_company = yes
 	preferred_headquarters = { STATE_TUNISIA }
 	building_types = { building_trade_center building_port }
@@ -21,7 +21,7 @@ company_crb_carthaginian_trade_house = {
 }
 company_crb_tyrian_purple = {
 	icon = "gfx/interface/icons/company_icons/historical_company_icons/crb_tyrian_purple.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/crb_tyrian_purple.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
 	flavored_company = yes
 	preferred_headquarters = { STATE_LEBANON }
 	building_types = { building_dye_plantation building_textile_mills }
@@ -39,7 +39,7 @@ company_crb_tyrian_purple = {
 }
 company_crb_punic_wine = {
 	icon = "gfx/interface/icons/company_icons/historical_company_icons/crb_punic_wine.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/crb_punic_wine.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_rice.dds"
 	flavored_company = yes
 	preferred_headquarters = { STATE_TUNISIA }
 	building_types = { building_vineyard_plantation }
@@ -57,7 +57,7 @@ company_crb_punic_wine = {
 }
 company_crb_cyprus_copper = {
 	icon = "gfx/interface/icons/company_icons/historical_company_icons/crb_cyprus_copper.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/crb_cyprus_copper.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
 	flavored_company = yes
 	preferred_headquarters = { STATE_CYPRUS }
 	building_types = { building_copper_mine building_tooling_workshops }

@@ -1,5 +1,6 @@
 """Actual-script regressions; timing, UI and succession still need the game."""
 from pathlib import Path
+import json
 import struct
 import unittest
 from test_territories import Node,World,entries,get,load_scripts,parse
@@ -196,6 +197,37 @@ class GovernanceAndRouteTests(unittest.TestCase):
             self.assertNotIn('GetStateRegion',text)
 
 class ArtworkIntegrationTests(unittest.TestCase):
+    def test_country_panel_subject_pacts_bind_their_own_texture(self):
+        actions=parse((ROOT/'common/diplomatic_actions/crb_subject_actions.txt').read_text(encoding='utf-8-sig'))
+        subjects=parse((ROOT/'common/subject_types/crb_subject_types.txt').read_text(encoding='utf-8-sig'))
+        textures=[]
+        for subject in subjects:
+            with self.subTest(subject=subject.key):
+                action_key=get(subject.value,'diplomatic_action')
+                action=get(actions,action_key)
+                self.assertEqual(get(get(action,'pact'),'subject_type'),subject.key)
+                # Country panels use DiplomaticActionType.GetTexture, independently of texticons.
+                texture=get(action,'texture');self.assertIsInstance(texture,str)
+                texture=json.loads(texture)
+                self.assertTrue((ROOT/texture).is_file())
+                self.assertEqual(struct.unpack_from('<II',(ROOT/texture).read_bytes(),12),(256,256))
+                textures.append(texture)
+        self.assertEqual(len(set(textures)),2)
+    def test_companies_use_custom_emblems_and_original_industry_backgrounds(self):
+        companies=parse((ROOT/'common/company_types/crb_companies.txt').read_text(encoding='utf-8-sig'))
+        backgrounds={
+            'company_crb_carthaginian_trade_house':'comp_illu_harbor_shipbuilding.dds',
+            'company_crb_tyrian_purple':'comp_illu_manufacturing_light.dds',
+            'company_crb_punic_wine':'comp_illu_farm_rice.dds',
+            'company_crb_cyprus_copper':'comp_illu_mining.dds',
+        }
+        self.assertEqual({n.key for n in companies},set(backgrounds))
+        for company in companies:
+            with self.subTest(company=company.key):
+                emblem=json.loads(get(company.value,'icon'))
+                self.assertTrue(emblem.startswith('gfx/interface/icons/company_icons/historical_company_icons/crb_'))
+                self.assertTrue((ROOT/emblem).is_file())
+                self.assertEqual(json.loads(get(company.value,'background')),'gfx/interface/icons/company_icons/company_backgrounds/'+backgrounds[company.key])
     def test_icons_have_valid_dds_mips_and_texticon_registration(self):
         registry=parse((ROOT/'gui/crb_subject_texticons.gui').read_text(encoding='utf-8-sig'))
         self.assertEqual({get(n.value,'icon') for n in entries(registry,'texticon')},{'crb_trading_post','crb_province'})

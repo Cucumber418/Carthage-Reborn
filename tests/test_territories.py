@@ -457,7 +457,7 @@ class TerritoriesTests(unittest.TestCase):
         paths=[]
         for rel in ('common/company_types/crb_companies.txt','common/prestige_goods/crb_prestige_goods.txt'):
             paths+=re.findall(r'(?:icon|background|texture) = "(gfx/[^\"]*crb_[^\"]+\.dds)"',(ROOT/rel).read_text(encoding='utf-8-sig'))
-        self.assertEqual(len(paths),10)
+        self.assertEqual(len(paths),6)
         for rel in paths:
             with self.subTest(texture=rel):
                 b=(ROOT/rel).read_bytes();self.assertEqual(b[:4],b'DDS ')
