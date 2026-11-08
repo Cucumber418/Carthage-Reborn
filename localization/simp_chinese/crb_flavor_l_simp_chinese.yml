@@ -163,7 +163,7 @@
  crb_flavor_melqart_grand_expense_desc: "这笔支出用于梅尔卡特盛典。"
 
 # 统一事件财政修正的玩家可见名称；具体金额由 GDP 倍数计算。
-country_tax_income_add: "政府收入"
-country_tax_income_add_desc: "每周政府收入的加算值。"
-country_expenses_add: "政府支出"
-country_expenses_add_desc: "每周政府支出的加算值。"
+ country_tax_income_add: "政府收入"
+ country_tax_income_add_desc: "每周政府收入的加算值。"
+ country_expenses_add: "政府支出"
+ country_expenses_add_desc: "每周政府支出的加算值。"

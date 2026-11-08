@@ -333,10 +333,10 @@
 | crb_flavor_oath_sworn / refused | 立誓：军队 +2、士气损失 -0.1、改善关系速度 -0.1；拒绝：合法性 +5、军队 -1 |
 | crb_flavor_salt_history / legend | 尊重史料：知识分子 +2、奉神者 -1；保留传说：奉神者 +2、知识分子 -1 |
 | crb_flavor_prize_released | 威望乘数 +0.05 |
-| crb_flavor_tyrian_export_income | GDP small 档额外收入，持续 5 年 |
-| crb_flavor_mago_rights_income | GDP small 档额外收入，持续 5 年 |
-| crb_flavor_shipwreck_rights_income | GDP medium 档额外收入，持续 5 年 |
-| crb_flavor_privateering_income | GDP medium 档额外收入，持续 3 年 |
+| crb_flavor_tyrian_export_income | GDP small 档政府收入，持续 5 年 |
+| crb_flavor_mago_rights_income | GDP small 档政府收入，持续 5 年 |
+| crb_flavor_shipwreck_rights_income | GDP medium 档政府收入，持续 5 年 |
+| crb_flavor_privateering_income | GDP medium 档政府收入，持续 3 年 |
 | crb_revived_plantations | 种植园集团吞吐量 +0.1 |
 | crb_salt_reclamation | 政府支出 +1（乘数 money_amount_multiplier_medium） |
 | crb_salt_reclaimed | 威望乘数 +0.05 |
@@ -366,7 +366,7 @@
 ## 14. 当前数值中值得重点审查的地方
 
 1. **派系惯性可能造成滚雪球。** 进度超过 95 后仅惯性就 +2.7/月；政治力量差改为乘 1.5，法律、战争和统治者条件仍会叠加。起点为 50，玩家连续支持一派时，目标是在三年期限内决出胜负。
-2. **特色事件出现频率偏低但一次性金额较大。** 整体池每半年只有 35% 概率抽取，且部分事件有资格限制；出售文物收入为 2,500–6,000，投资支出为 1,500–5,000，应在开局经济中测试相对规模。
+2. **特色事件出现频率偏低。** 整体池每半年只有 35% 概率抽取，且部分事件有资格限制；事件中的资金效果均按 GDP 档位形成每周政府收入或政府支出，并持续指定期限，应在开局经济中测试其长期预算影响。
 3. **盐碱地项目周期较长。** 要求 intensive_agriculture，治理期 10 年，启动后政府支出修正为 +1，完成只增加 8 可耕地；需要检查玩家是否愿意为此长期承担成本。
 4. **复仇路线恶名较高。** 四阶段宣称分别为 +10、+15、+20、+25；创建行省仍额外增加 +10 或 +15。多阶段连续宣称会快速累积恶名，应视为一条高外交成本的扩张路线。
 5. **战争按钮的效果与成本需要实测。** 动员公民是每场战争 +5 战争支持度；其费用修正使用 small 金额乘数和 very_short_modifier_time。元老院承诺提供两个 -0.25 的战争支持度下降乘数，并有 730 天冷却。
