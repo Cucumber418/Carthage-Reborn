@@ -40,11 +40,9 @@ crb_hanno_barca_random.10 = {
 	option = {
 		name = crb_hanno_barca_random.10.b
 		crb_hb_hanno_gain_small = yes
-		# 老兵赏金：按生效时 GDP 计算每周政府支出，持续 12 个月
-		add_modifier = {
-			name = crb_hb_veterans_paid_expense
-			multiplier = money_amount_multiplier_small
-			months = 12
+		# 一次性发放赏金：按 GDP small 档周金额折算 52 周，保持原年度累计成本
+		add_treasury = {
+			value = crb_hb_veterans_bounty_cost
 		}
 		add_modifier = {
 			name = crb_hb_veterans_paid
