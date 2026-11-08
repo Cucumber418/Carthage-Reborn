@@ -1,0 +1,16 @@
+﻿BUILDINGS = {
+	s:STATE_TUNISIA = {
+		region_state:TUN = {
+			if = {
+				limit = { NOT = { has_building = building_naval_administration } }
+				create_building = {
+					building = building_naval_administration
+					level = 1
+					reserves = 1
+					activate_production_methods = { pm_simple_sailor_recruitment }
+					add_ownership = { country = { country = c:TUN levels = 1 } }
+				}
+			}
+		}
+	}
+}

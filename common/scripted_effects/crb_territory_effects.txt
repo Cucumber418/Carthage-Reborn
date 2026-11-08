@@ -1,0 +1,143 @@
+﻿# Country scope. Caller supplies TAG, CAN_FOUND, AREA, PROVINCE, LAWS and PACT.
+crb_create_territory_subject_effect = {
+	if = {
+		limit = {
+			is_at_war = no
+			$CAN_FOUND$ = yes
+		}
+		save_scope_as = crb_territory_origin
+		random_scope_state = {
+			limit = { is_capital = no $AREA$ = yes }
+			save_scope_as = crb_territory_first_state
+		}
+		create_country = {
+			tag = $TAG$
+			origin = scope:crb_territory_origin
+			state = scope:crb_territory_first_state
+			on_created = {
+				set_variable = crb_carthaginian_subject
+				set_state_religion = rel:crb_tanit
+				if = {
+					limit = { always = $PROVINCE$ }
+					set_variable = crb_province
+				}
+				add_modifier = {
+					name = crb_carthaginian_protection
+					days = very_long_modifier_time
+				}
+				$LAWS$ = yes
+			}
+		}
+		every_scope_state = {
+			limit = { is_capital = no $AREA$ = yes }
+			set_state_owner = c:$TAG$
+		}
+		if = {
+			limit = { NOT = { has_modifier = crb_carthaginian_hegemony } }
+			add_modifier = { name = crb_carthaginian_hegemony }
+		}
+		create_diplomatic_pact = { country = c:$TAG$ type = $PACT$ }
+		c:$TAG$ = { crb_apply_punic_state_names_effect = yes }
+	}
+}
+crb_gaul_trading_post_laws_effect = {
+	crb_trading_post_laws_effect = yes
+	activate_law = law_type:law_landed_voting
+}
+crb_alpine_trading_post_laws_effect = {
+	crb_trading_post_laws_effect = yes
+	activate_law = law_type:law_national_militia
+}
+crb_ionian_trading_post_laws_effect = {
+	crb_trading_post_laws_effect = yes
+	activate_law = law_type:law_wealth_voting
+}
+crb_try_unlock_territorial_journal_effect = {
+	if = {
+		limit = {
+			crb_is_carthage_trigger = yes
+			is_at_war = no
+			NOT = { has_variable = crb_territories_unlocked }
+			NOT = { has_variable = crb_territories_concluded }
+			NOT = { has_journal_entry = je_crb_territories }
+			crb_can_found_any_territory_trigger = yes
+		}
+		add_journal_entry = { type = je_crb_territories }
+	}
+}
+crb_check_french_border_effect = {
+	if = {
+		limit = {
+			crb_is_carthage_trigger = yes
+			NOT = { has_variable = crb_flavor_17_fired }
+			crb_borders_french_north_africa_trigger = yes
+		}
+		trigger_event = { id = crb_flavor.17 popup = yes }
+	}
+}
+
+crb_create_province_CPM_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = CPM
+		CAN_FOUND = crb_can_found_mauretania_trigger
+		AREA = crb_is_mauretania_province_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_province_CPE_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = CPE
+		CAN_FOUND = crb_can_found_egypt_trigger
+		AREA = crb_is_egypt_province_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_province_CPF_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = CPF
+		CAN_FOUND = crb_can_found_phoenicia_trigger
+		AREA = crb_is_phoenicia_province_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_province_CPS_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = CPS
+		CAN_FOUND = crb_can_found_syria_trigger
+		AREA = crb_is_syria_province_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_province_CPB_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = CPB
+		CAN_FOUND = crb_can_found_mesopotamia_trigger
+		AREA = crb_is_mesopotamia_province_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_province_CPA_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = CPA
+		CAN_FOUND = crb_can_found_arabia_trigger
+		AREA = crb_is_arabia_province_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}

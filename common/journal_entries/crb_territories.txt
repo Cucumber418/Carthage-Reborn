@@ -1,0 +1,48 @@
+﻿je_crb_territories = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	group = je_group_crb_carthage
+	activation_description = { always = yes }
+	is_shown_when_inactive = {
+		crb_is_carthage_trigger = yes
+		is_at_war = no
+		crb_can_found_any_territory_trigger = yes
+		NOT = { has_variable = crb_territories_concluded }
+	}
+	possible = {
+		crb_is_carthage_trigger = yes
+		NOT = { has_variable = crb_territories_concluded }
+		OR = {
+			has_variable = crb_territories_unlocked
+			AND = { is_at_war = no crb_can_found_any_territory_trigger = yes }
+		}
+	}
+	immediate = { set_variable = crb_territories_unlocked }
+	scripted_button = crb_found_tripoli_post_button
+	scripted_button = crb_found_numidia_post_button
+	scripted_button = crb_found_iberia_post_button
+	scripted_button = crb_found_gaul_post_button
+	scripted_button = crb_found_alpine_post_button
+	scripted_button = crb_handle_rome_button
+	scripted_button = crb_found_mauretania_province_button
+	scripted_button = crb_found_egypt_province_button
+	scripted_button = crb_found_phoenicia_province_button
+	scripted_button = crb_found_syria_province_button
+	scripted_button = crb_found_mesopotamia_province_button
+	scripted_button = crb_found_arabia_province_button
+	outcome = {
+		flags = { hidden invalid_outcome }
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = { NOT = { crb_is_carthage_trigger = yes } }
+		effect = { set_variable = crb_territories_concluded }
+	}
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = crb_territories_status
+				trigger = { always = yes }
+			}
+		}
+	}
+	weight = 1000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

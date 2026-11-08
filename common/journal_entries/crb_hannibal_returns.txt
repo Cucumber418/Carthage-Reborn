@@ -45,8 +45,8 @@ je_crb_hannibal_returns = {
 			if = {
 				limit = {
 					NOT = { has_variable = crb_hannibal_tripoli_done }
-					owns_entire_state_region = STATE_TRIPOLI
-					owns_entire_state_region = STATE_LIBYA
+					crb_controls_region_trigger = { REGION = STATE_TRIPOLI }
+					crb_controls_region_trigger = { REGION = STATE_LIBYA }
 				}
 				set_variable = crb_hannibal_tripoli_done
 				trigger_event = { id = crb_hannibal.1 popup = yes }
@@ -54,9 +54,9 @@ je_crb_hannibal_returns = {
 			if = {
 				limit = {
 					NOT = { has_variable = crb_hannibal_numidia_done }
-					owns_entire_state_region = STATE_ALGIERS
-					owns_entire_state_region = STATE_CONSTANTINE
-					owns_entire_state_region = STATE_ORAN
+					crb_controls_region_trigger = { REGION = STATE_ALGIERS }
+					crb_controls_region_trigger = { REGION = STATE_CONSTANTINE }
+					crb_controls_region_trigger = { REGION = STATE_ORAN }
 				}
 				set_variable = crb_hannibal_numidia_done
 				trigger_event = { id = crb_hannibal.2 popup = yes }
@@ -64,7 +64,7 @@ je_crb_hannibal_returns = {
 			if = {
 				limit = {
 					NOT = { has_variable = crb_hannibal_syracuse_done }
-					owns_entire_state_region = STATE_SICILY
+					crb_controls_region_trigger = { REGION = STATE_SICILY }
 				}
 				set_variable = crb_hannibal_syracuse_done
 				trigger_event = { id = crb_hannibal.3 popup = yes }
@@ -72,10 +72,10 @@ je_crb_hannibal_returns = {
 			if = {
 				limit = {
 					NOT = { has_variable = crb_hannibal_islands_done }
-					owns_entire_state_region = STATE_BALEARIC_ISLANDS
-					owns_entire_state_region = STATE_MALTA
-					owns_entire_state_region = STATE_CRETE
-					owns_entire_state_region = STATE_CYPRUS
+					crb_controls_region_trigger = { REGION = STATE_BALEARIC_ISLANDS }
+					crb_controls_region_trigger = { REGION = STATE_MALTA }
+					crb_controls_region_trigger = { REGION = STATE_CRETE }
+					crb_controls_region_trigger = { REGION = STATE_CYPRUS }
 				}
 				set_variable = crb_hannibal_islands_done
 				trigger_event = { id = crb_hannibal.4 popup = yes }
@@ -83,7 +83,7 @@ je_crb_hannibal_returns = {
 			if = {
 				limit = {
 					NOT = { has_variable = crb_hannibal_iberia_done }
-					owns_entire_state_region = STATE_LOWER_ANDALUSIA
+					crb_controls_region_trigger = { REGION = STATE_LOWER_ANDALUSIA }
 				}
 				set_variable = crb_hannibal_iberia_done
 				trigger_event = { id = crb_hannibal.5 popup = yes }
@@ -91,10 +91,7 @@ je_crb_hannibal_returns = {
 			if = {
 				limit = {
 					NOT = { has_variable = crb_hannibal_new_carthage_done }
-					any_scope_state = {
-						count >= 3
-						crb_is_spanish_mainland_state_trigger = yes
-					}
+					crb_controlled_iberian_states >= 3
 				}
 				set_variable = crb_hannibal_new_carthage_done
 				trigger_event = { id = crb_hannibal.6 popup = yes }
@@ -102,9 +99,13 @@ je_crb_hannibal_returns = {
 			if = {
 				limit = {
 					NOT = { has_variable = crb_hannibal_tyre_done }
-					any_scope_state = {
-						state_region = s:STATE_LEBANON
-					}
+					OR = {
+                        any_scope_state = { state_region = s:STATE_LEBANON }
+                        any_subject_or_below = {
+                            has_variable = crb_carthaginian_subject
+                            any_scope_state = { state_region = s:STATE_LEBANON }
+                        }
+                    }
 				}
 				set_variable = crb_hannibal_tyre_done
 				trigger_event = { id = crb_hannibal.7 popup = yes }

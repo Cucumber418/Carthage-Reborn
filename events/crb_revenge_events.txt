@@ -236,26 +236,26 @@ crb_revenge.5 = {
 
 	duration = 3
 
-	trigger = {
-		# 由日志或决议触发
-	}
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_rome_trigger = yes }
 
 	option = {
 		name = crb_revenge.5.a
 		default_option = yes
-		trigger = {
-			NOT = { exists = c:IOP }
+		trigger = { is_at_war = no crb_can_found_rome_trigger = yes }
+		if = {
+			limit = { is_at_war = no crb_can_found_rome_trigger = yes }
+			crb_create_puppet_IOP_with_tooltip_effect = yes
 		}
-		crb_create_puppet_IOP_with_tooltip_effect = yes
 	}
 
 	option = {
 		name = crb_revenge.5.b
-		trigger = {
-			NOT = { exists = c:RPR }
+		trigger = { is_at_war = no crb_can_found_rome_trigger = yes }
+		if = {
+			limit = { is_at_war = no crb_can_found_rome_trigger = yes }
+			change_infamy = 15
+			crb_create_puppet_RPR_with_tooltip_effect = yes
 		}
-		change_infamy = 15
-		crb_create_puppet_RPR_with_tooltip_effect = yes
 	}
 
 	option = {
@@ -316,20 +316,26 @@ crb_revenge.6 = {
 
 	duration = 3
 
-	trigger = {
-		# 由日志按钮触发
-	}
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_gaul_trigger = yes }
 
 	option = {
 		name = crb_revenge.6.a
 		default_option = yes
-		crb_create_puppet_GLT_with_tooltip_effect = yes
+		trigger = { is_at_war = no crb_can_found_gaul_trigger = yes }
+		if = {
+			limit = { is_at_war = no crb_can_found_gaul_trigger = yes }
+			crb_create_puppet_GLT_with_tooltip_effect = yes
+		}
 	}
 
 	option = {
 		name = crb_revenge.6.b
-		change_infamy = 15
-		crb_create_province_GLT_with_tooltip_effect = yes
+		trigger = { is_at_war = no crb_can_found_gaul_trigger = yes }
+		if = {
+			limit = { is_at_war = no crb_can_found_gaul_trigger = yes }
+			change_infamy = 15
+			crb_create_province_GLT_with_tooltip_effect = yes
+		}
 	}
 
 	option = {
@@ -355,20 +361,26 @@ crb_revenge.7 = {
 
 	duration = 3
 
-	trigger = {
-		# 由日志按钮触发
-	}
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_alpine_trigger = yes }
 
 	option = {
 		name = crb_revenge.7.a
 		default_option = yes
-		crb_create_puppet_SNT_with_tooltip_effect = yes
+		trigger = { is_at_war = no crb_can_found_alpine_trigger = yes }
+		if = {
+			limit = { is_at_war = no crb_can_found_alpine_trigger = yes }
+			crb_create_puppet_SNT_with_tooltip_effect = yes
+		}
 	}
 
 	option = {
 		name = crb_revenge.7.b
-		change_infamy = 15
-		crb_create_province_SNT_with_tooltip_effect = yes
+		trigger = { is_at_war = no crb_can_found_alpine_trigger = yes }
+		if = {
+			limit = { is_at_war = no crb_can_found_alpine_trigger = yes }
+			change_infamy = 15
+			crb_create_province_SNT_with_tooltip_effect = yes
+		}
 	}
 
 	option = {
@@ -394,20 +406,26 @@ crb_revenge.10 = {
 
 	duration = 3
 
-	trigger = {
-		# 由日志按钮触发
-	}
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_tripoli_trigger = yes }
 
 	option = {
 		name = crb_revenge.10.a
 		default_option = yes
-		crb_create_puppet_TRP_with_tooltip_effect = yes
+		trigger = { is_at_war = no crb_can_found_tripoli_trigger = yes }
+		if = {
+			limit = { is_at_war = no crb_can_found_tripoli_trigger = yes }
+			crb_create_puppet_TRP_with_tooltip_effect = yes
+		}
 	}
 
 	option = {
 		name = crb_revenge.10.b
-		change_infamy = 10
-		crb_create_province_TRP_with_tooltip_effect = yes
+		trigger = { is_at_war = no crb_can_found_tripoli_trigger = yes }
+		if = {
+			limit = { is_at_war = no crb_can_found_tripoli_trigger = yes }
+			change_infamy = 10
+			crb_create_province_TRP_with_tooltip_effect = yes
+		}
 	}
 
 	option = {
@@ -433,20 +451,26 @@ crb_revenge.11 = {
 
 	duration = 3
 
-	trigger = {
-		# 由日志按钮触发
-	}
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_numidia_trigger = yes }
 
 	option = {
 		name = crb_revenge.11.a
 		default_option = yes
-		crb_create_puppet_NUM_with_tooltip_effect = yes
+		trigger = { is_at_war = no crb_can_found_numidia_trigger = yes }
+		if = {
+			limit = { is_at_war = no crb_can_found_numidia_trigger = yes }
+			crb_create_puppet_NUM_with_tooltip_effect = yes
+		}
 	}
 
 	option = {
 		name = crb_revenge.11.b
-		change_infamy = 15
-		crb_create_province_NUM_with_tooltip_effect = yes
+		trigger = { is_at_war = no crb_can_found_numidia_trigger = yes }
+		if = {
+			limit = { is_at_war = no crb_can_found_numidia_trigger = yes }
+			change_infamy = 15
+			crb_create_province_NUM_with_tooltip_effect = yes
+		}
 	}
 
 	option = {
@@ -472,20 +496,26 @@ crb_revenge.12 = {
 
 	duration = 3
 
-	trigger = {
-		# 由日志按钮触发
-	}
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_iberia_trigger = yes }
 
 	option = {
 		name = crb_revenge.12.a
 		default_option = yes
-		crb_create_puppet_IBT_with_tooltip_effect = yes
+		trigger = { is_at_war = no crb_can_found_iberia_trigger = yes }
+		if = {
+			limit = { is_at_war = no crb_can_found_iberia_trigger = yes }
+			crb_create_puppet_IBT_with_tooltip_effect = yes
+		}
 	}
 
 	option = {
 		name = crb_revenge.12.b
-		change_infamy = 15
-		crb_create_province_IBT_with_tooltip_effect = yes
+		trigger = { is_at_war = no crb_can_found_iberia_trigger = yes }
+		if = {
+			limit = { is_at_war = no crb_can_found_iberia_trigger = yes }
+			change_infamy = 15
+			crb_create_province_IBT_with_tooltip_effect = yes
+		}
 	}
 
 	option = {

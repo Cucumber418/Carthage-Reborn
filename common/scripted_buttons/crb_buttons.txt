@@ -193,7 +193,7 @@ crb_punic_war_pledge_button = {
 
 # ============================================================
 # 两千年的复仇路：日志里的按钮
-# 每个阶段的按钮用掉后，下一阶段的土地拿下时，该位置变为对应的商站按钮
+# 商站与行省处置已独立移至“迦太基的领土”，本文件仅保留主线推进按钮。
 # ============================================================
 
 crb_revenge_stage1_button = {
@@ -250,34 +250,7 @@ crb_revenge_stage2_button = {
 	}
 }
 
-crb_found_gaul_post_button = {
-	name = "crb_found_gaul_post_button"
-	desc = "crb_found_gaul_post_button_desc"
 
-	visible = {
-		has_journal_entry = je_crb_revenge_road
-		has_variable = crb_revenge_stage2_taken
-		NOT = { exists = c:GLT }
-	}
-
-	possible = {
-		is_at_war = no
-		custom_tooltip = {
-			text = crb_revenge_stage2_lands_tt
-			crb_controls_region_trigger = { REGION = STATE_LANGUEDOC }
-			crb_controls_region_trigger = { REGION = STATE_PROVENCE }
-			crb_controls_region_trigger = { REGION = STATE_RHONE }
-		}
-	}
-
-	ai_chance = {
-		value = 50
-	}
-
-	effect = {
-		trigger_event = { id = crb_revenge.6 popup = yes }
-	}
-}
 
 crb_revenge_stage3_button = {
 	name = "crb_revenge_stage3_button"
@@ -308,37 +281,7 @@ crb_revenge_stage3_button = {
 	}
 }
 
-crb_found_alpine_post_button = {
-	name = "crb_found_alpine_post_button"
-	desc = "crb_found_alpine_post_button_desc"
 
-	visible = {
-		has_journal_entry = je_crb_revenge_road
-		has_variable = crb_revenge_stage3_taken
-		NOT = { exists = c:SNT }
-	}
-
-	possible = {
-		is_at_war = no
-		custom_tooltip = {
-			text = crb_revenge_stage3_lands_tt
-			crb_controls_region_trigger = { REGION = STATE_WEST_SWITZERLAND }
-			crb_controls_region_trigger = { REGION = STATE_EAST_SWITZERLAND }
-			crb_controls_region_trigger = { REGION = STATE_SAVOY }
-			crb_controls_region_trigger = { REGION = STATE_PIEDMONT }
-			crb_controls_region_trigger = { REGION = STATE_LOMBARDY }
-			crb_controls_region_trigger = { REGION = STATE_VENETIA }
-		}
-	}
-
-	ai_chance = {
-		value = 50
-	}
-
-	effect = {
-		trigger_event = { id = crb_revenge.7 popup = yes }
-	}
-}
 
 crb_revenge_stage4_button = {
 	name = "crb_revenge_stage4_button"
@@ -369,120 +312,5 @@ crb_revenge_stage4_button = {
 	effect = {
 		set_variable = crb_revenge_stage4_taken
 		trigger_event = { id = crb_revenge.4 popup = yes }
-	}
-}
-
-crb_handle_rome_button = {
-	name = "crb_handle_rome_button"
-	desc = "crb_handle_rome_button_desc"
-
-	visible = {
-		has_journal_entry = je_crb_revenge_road
-		has_variable = crb_revenge_stage4_taken
-		NOT = { exists = c:IOP }
-		NOT = { exists = c:RPR }
-	}
-
-	possible = {
-		is_at_war = no
-		custom_tooltip = {
-			text = crb_revenge_stage4_lands_tt
-			crb_controls_region_trigger = { REGION = STATE_EMILIA }
-			crb_controls_region_trigger = { REGION = STATE_ROMAGNA }
-			crb_controls_region_trigger = { REGION = STATE_TUSCANY }
-			crb_controls_region_trigger = { REGION = STATE_UMBRIA }
-			crb_controls_region_trigger = { REGION = STATE_LAZIO }
-			crb_controls_region_trigger = { REGION = STATE_ABRUZZO }
-			crb_controls_region_trigger = { REGION = STATE_CAMPANIA }
-			crb_controls_region_trigger = { REGION = STATE_APULIA }
-			crb_controls_region_trigger = { REGION = STATE_CALABRIA }
-			crb_controls_region_trigger = { REGION = STATE_SARDINIA }
-		}
-	}
-
-	ai_chance = {
-		value = 50
-	}
-
-	effect = {
-		trigger_event = { id = crb_revenge.5 popup = yes }
-	}
-}
-
-crb_found_tripoli_post_button = {
-	name = "crb_found_tripoli_post_button"
-	desc = "crb_found_tripoli_post_button_desc"
-
-	visible = {
-		has_journal_entry = je_crb_revenge_road
-		NOT = { exists = c:TRP }
-		any_scope_state = {
-			is_capital = no
-			crb_is_tripoli_post_state_trigger = yes
-		}
-	}
-
-	possible = {
-		is_at_war = no
-	}
-
-	ai_chance = {
-		value = 50
-	}
-
-	effect = {
-		trigger_event = { id = crb_revenge.10 popup = yes }
-	}
-}
-
-crb_found_numidia_post_button = {
-	name = "crb_found_numidia_post_button"
-	desc = "crb_found_numidia_post_button_desc"
-
-	visible = {
-		has_journal_entry = je_crb_revenge_road
-		NOT = { exists = c:NUM }
-		any_scope_state = {
-			is_capital = no
-			crb_is_numidia_post_state_trigger = yes
-		}
-	}
-
-	possible = {
-		is_at_war = no
-	}
-
-	ai_chance = {
-		value = 50
-	}
-
-	effect = {
-		trigger_event = { id = crb_revenge.11 popup = yes }
-	}
-}
-
-crb_found_iberia_post_button = {
-	name = "crb_found_iberia_post_button"
-	desc = "crb_found_iberia_post_button_desc"
-
-	visible = {
-		has_journal_entry = je_crb_revenge_road
-		NOT = { exists = c:IBT }
-		any_scope_state = {
-			is_capital = no
-			crb_is_spanish_mainland_state_trigger = yes
-		}
-	}
-
-	possible = {
-		is_at_war = no
-	}
-
-	ai_chance = {
-		value = 50
-	}
-
-	effect = {
-		trigger_event = { id = crb_revenge.12 popup = yes }
 	}
 }

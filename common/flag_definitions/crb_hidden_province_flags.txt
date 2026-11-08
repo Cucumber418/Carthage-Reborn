@@ -1,0 +1,23 @@
+﻿CPM = {
+	flag_definition = { coa = crb_CPM subject_canton = crb_CPM priority = 1 }
+}
+
+CPE = {
+	flag_definition = { coa = crb_CPE subject_canton = crb_CPE priority = 1 }
+}
+
+CPF = {
+	flag_definition = { coa = crb_CPF subject_canton = crb_CPF priority = 1 }
+}
+
+CPS = {
+	flag_definition = { coa = crb_CPS subject_canton = crb_CPS priority = 1 }
+}
+
+CPB = {
+	flag_definition = { coa = crb_CPB subject_canton = crb_CPB priority = 1 }
+}
+
+CPA = {
+	flag_definition = { coa = crb_CPA subject_canton = crb_CPA priority = 1 }
+}

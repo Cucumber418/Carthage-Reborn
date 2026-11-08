@@ -1,0 +1,31 @@
+﻿MILITARY_FORMATIONS = {
+	c:TUN ?= {
+		if = {
+			limit = { crb_is_carthage_trigger = yes }
+			if = {
+				limit = { NOT = { any_military_formation = { is_fleet = yes } } }
+				create_military_formation = {
+					type = fleet
+					hq_region = sr:region_north_africa
+					supply_hub = s:STATE_TUNISIA
+					name = crb_carthaginian_navy
+				}
+			}
+			random_military_formation = {
+				limit = { is_fleet = yes }
+				save_scope_as = crb_starting_fleet
+			}
+			while = {
+				limit = { NOT = { any_scope_ship = { count >= 3 always = yes } } }
+				create_ship = {
+					type = ship_type:ship_type_frigate
+					fleet = scope:crb_starting_fleet
+				}
+			}
+			while = {
+				limit = { any_scope_ship = { count > 3 always = yes } }
+				random_scope_ship = { kill_ship = yes }
+			}
+		}
+	}
+}

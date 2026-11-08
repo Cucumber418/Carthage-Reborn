@@ -5,7 +5,7 @@
 crb_expand_trading_posts_decision = {
 	is_shown = {
 		crb_is_carthage_trigger = yes
-		has_variable = crb_hannibal_new_carthage_done
+		has_variable = crb_territories_unlocked
 	}
 
 	possible = {

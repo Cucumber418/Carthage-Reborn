@@ -1,0 +1,53 @@
+﻿CPM = {
+	color = rgb { 80 40 65 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { berber maghrebi }
+	religion = crb_tanit
+	capital = STATE_FEZ
+}
+
+CPE = {
+	color = rgb { 92 49 75 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { misri }
+	religion = crb_tanit
+	capital = STATE_MIDDLE_EGYPT
+}
+
+CPF = {
+	color = rgb { 104 58 85 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { crb_punic mashriqi }
+	religion = crb_tanit
+	capital = STATE_LEBANON
+}
+
+CPS = {
+	color = rgb { 116 67 95 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { mashriqi }
+	religion = crb_tanit
+	capital = STATE_SYRIA
+}
+
+CPB = {
+	color = rgb { 128 76 105 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { mashriqi }
+	religion = crb_tanit
+	capital = STATE_BAGHDAD
+}
+
+CPA = {
+	color = rgb { 140 85 115 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { bedouin }
+	religion = crb_tanit
+	capital = STATE_HEDJAZ
+}

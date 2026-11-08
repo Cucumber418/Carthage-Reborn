@@ -1,0 +1,163 @@
+﻿namespace = crb_territories
+
+crb_territories.1 = {
+	type = country_event
+	placement = root
+	title = crb_territories.1.t
+	desc = crb_territories.1.d
+	flavor = crb_territories.1.f
+	duration = 3
+	event_image = { video = "europenorthamerica_capitalists_meeting" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_mauretania_trigger = yes }
+	option = {
+		name = crb_territories.1.a
+		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_mauretania_trigger = yes }
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_mauretania_trigger = yes }
+			change_infamy = 10
+			custom_tooltip = crb_found_hidden_province_effect_tt
+			hidden_effect = { crb_create_province_CPM_effect = yes }
+		}
+	}
+	option = {
+		name = crb_territories.1.b
+		default_option = yes
+	}
+}
+
+crb_territories.2 = {
+	type = country_event
+	placement = root
+	title = crb_territories.2.t
+	desc = crb_territories.2.d
+	flavor = crb_territories.2.f
+	duration = 3
+	event_image = { video = "europenorthamerica_capitalists_meeting" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_egypt_trigger = yes }
+	option = {
+		name = crb_territories.2.a
+		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_egypt_trigger = yes }
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_egypt_trigger = yes }
+			change_infamy = 15
+			custom_tooltip = crb_found_hidden_province_effect_tt
+			hidden_effect = { crb_create_province_CPE_effect = yes }
+		}
+	}
+	option = {
+		name = crb_territories.2.b
+		default_option = yes
+	}
+}
+
+crb_territories.3 = {
+	type = country_event
+	placement = root
+	title = crb_territories.3.t
+	desc = crb_territories.3.d
+	flavor = crb_territories.3.f
+	duration = 3
+	event_image = { video = "europenorthamerica_capitalists_meeting" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_phoenicia_trigger = yes }
+	option = {
+		name = crb_territories.3.a
+		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_phoenicia_trigger = yes }
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_phoenicia_trigger = yes }
+			change_infamy = 10
+			custom_tooltip = crb_found_hidden_province_effect_tt
+			hidden_effect = { crb_create_province_CPF_effect = yes }
+		}
+	}
+	option = {
+		name = crb_territories.3.b
+		default_option = yes
+	}
+}
+
+crb_territories.4 = {
+	type = country_event
+	placement = root
+	title = crb_territories.4.t
+	desc = crb_territories.4.d
+	flavor = crb_territories.4.f
+	duration = 3
+	event_image = { video = "europenorthamerica_capitalists_meeting" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_syria_trigger = yes }
+	option = {
+		name = crb_territories.4.a
+		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_syria_trigger = yes }
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_syria_trigger = yes }
+			change_infamy = 15
+			custom_tooltip = crb_found_hidden_province_effect_tt
+			hidden_effect = { crb_create_province_CPS_effect = yes }
+		}
+	}
+	option = {
+		name = crb_territories.4.b
+		default_option = yes
+	}
+}
+
+crb_territories.5 = {
+	type = country_event
+	placement = root
+	title = crb_territories.5.t
+	desc = crb_territories.5.d
+	flavor = crb_territories.5.f
+	duration = 3
+	event_image = { video = "europenorthamerica_capitalists_meeting" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_mesopotamia_trigger = yes }
+	option = {
+		name = crb_territories.5.a
+		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_mesopotamia_trigger = yes }
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_mesopotamia_trigger = yes }
+			change_infamy = 15
+			custom_tooltip = crb_found_hidden_province_effect_tt
+			hidden_effect = { crb_create_province_CPB_effect = yes }
+		}
+	}
+	option = {
+		name = crb_territories.5.b
+		default_option = yes
+	}
+}
+
+crb_territories.6 = {
+	type = country_event
+	placement = root
+	title = crb_territories.6.t
+	desc = crb_territories.6.d
+	flavor = crb_territories.6.f
+	duration = 3
+	event_image = { video = "europenorthamerica_capitalists_meeting" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_arabia_trigger = yes }
+	option = {
+		name = crb_territories.6.a
+		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_arabia_trigger = yes }
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_can_found_arabia_trigger = yes }
+			change_infamy = 15
+			custom_tooltip = crb_found_hidden_province_effect_tt
+			hidden_effect = { crb_create_province_CPA_effect = yes }
+		}
+	}
+	option = {
+		name = crb_territories.6.b
+		default_option = yes
+	}
+}

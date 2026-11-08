@@ -61,7 +61,15 @@ crb_controls_region_trigger = {
 	s:$REGION$ = {
 		any_scope_state = {
 			count = all
-			owner ?= { crb_uses_punic_names_trigger = yes }
+			owner ?= {
+				OR = {
+					crb_is_carthage_trigger = yes
+					AND = {
+						has_variable = crb_carthaginian_subject
+						overlord ?= { crb_is_carthage_trigger = yes }
+					}
+				}
+			}
 		}
 	}
 }
@@ -128,25 +136,110 @@ crb_can_expand_trading_posts_trigger = {
 	any_scope_state = {
 		is_capital = no
 		OR = {
-			AND = {
-				crb_is_spanish_mainland_state_trigger = yes
-				exists = c:IBT
+		AND = {
+			crb_is_tripoli_post_state_trigger = yes
+			exists = c:TRP
+			c:TRP ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
 			}
-			AND = {
-				crb_is_gaul_post_state_trigger = yes
-				exists = c:GLT
+		}
+		AND = {
+			crb_is_numidia_post_state_trigger = yes
+			exists = c:NUM
+			c:NUM ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
 			}
-			AND = {
-				crb_is_alpine_post_state_trigger = yes
-				exists = c:SNT
+		}
+		AND = {
+			crb_is_spanish_mainland_state_trigger = yes
+			exists = c:IBT
+			c:IBT ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
 			}
-			AND = {
-				crb_is_south_italy_state_trigger = yes
-				OR = {
-					exists = c:IOP
-					exists = c:RPR
-				}
+		}
+		AND = {
+			crb_is_gaul_post_state_trigger = yes
+			exists = c:GLT
+			c:GLT ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
 			}
+		}
+		AND = {
+			crb_is_alpine_post_state_trigger = yes
+			exists = c:SNT
+			c:SNT ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
+			}
+		}
+		AND = {
+			crb_is_south_italy_state_trigger = yes
+			exists = c:IOP
+			c:IOP ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
+			}
+		}
+		AND = {
+			crb_is_south_italy_state_trigger = yes
+			exists = c:RPR
+			c:RPR ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
+			}
+		}
+		AND = {
+			crb_is_mauretania_province_state_trigger = yes
+			exists = c:CPM
+			c:CPM ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
+			}
+		}
+		AND = {
+			crb_is_egypt_province_state_trigger = yes
+			exists = c:CPE
+			c:CPE ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
+			}
+		}
+		AND = {
+			crb_is_phoenicia_province_state_trigger = yes
+			exists = c:CPF
+			c:CPF ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
+			}
+		}
+		AND = {
+			crb_is_syria_province_state_trigger = yes
+			exists = c:CPS
+			c:CPS ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
+			}
+		}
+		AND = {
+			crb_is_mesopotamia_province_state_trigger = yes
+			exists = c:CPB
+			c:CPB ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
+			}
+		}
+		AND = {
+			crb_is_arabia_province_state_trigger = yes
+			exists = c:CPA
+			c:CPA ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject_of = root
+			}
+		}
 		}
 	}
 }

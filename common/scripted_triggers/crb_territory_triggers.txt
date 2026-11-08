@@ -1,0 +1,209 @@
+﻿crb_can_found_tripoli_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:TRP }
+	any_scope_state = {
+		is_capital = no
+		crb_is_tripoli_post_state_trigger = yes
+	}
+}
+
+crb_can_found_numidia_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:NUM }
+	any_scope_state = {
+		is_capital = no
+		crb_is_numidia_post_state_trigger = yes
+	}
+}
+
+crb_can_found_iberia_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:IBT }
+	any_scope_state = {
+		is_capital = no
+		crb_is_spanish_mainland_state_trigger = yes
+	}
+}
+
+crb_can_found_gaul_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:GLT }
+	any_scope_state = {
+		is_capital = no
+		crb_is_gaul_post_state_trigger = yes
+	}
+}
+
+crb_can_found_alpine_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:SNT }
+	any_scope_state = {
+		is_capital = no
+		crb_is_alpine_post_state_trigger = yes
+	}
+}
+
+crb_can_found_rome_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:IOP }
+	NOT = { exists = c:RPR }
+	any_scope_state = {
+		is_capital = no
+		crb_is_south_italy_state_trigger = yes
+	}
+}
+
+crb_is_mauretania_province_state_trigger = {
+	OR = {
+		state_region = s:STATE_FEZ
+		state_region = s:STATE_MARRAKECH
+		state_region = s:STATE_AL_RIF
+		state_region = s:STATE_INNER_MOROCCO
+	}
+}
+
+crb_can_found_mauretania_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:CPM }
+	any_scope_state = {
+		is_capital = no
+		crb_is_mauretania_province_state_trigger = yes
+	}
+}
+
+crb_is_egypt_province_state_trigger = {
+	OR = {
+		state_region = s:STATE_UPPER_EGYPT
+		state_region = s:STATE_MIDDLE_EGYPT
+		state_region = s:STATE_EGYPTIAN_DESERT
+		state_region = s:STATE_MATRUH
+		state_region = s:STATE_SINAI
+	}
+}
+
+crb_can_found_egypt_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:CPE }
+	any_scope_state = {
+		is_capital = no
+		crb_is_egypt_province_state_trigger = yes
+	}
+}
+
+crb_is_phoenicia_province_state_trigger = {
+	OR = {
+		state_region = s:STATE_LEBANON
+	}
+}
+
+crb_can_found_phoenicia_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:CPF }
+	any_scope_state = {
+		is_capital = no
+		crb_is_phoenicia_province_state_trigger = yes
+	}
+}
+
+crb_is_syria_province_state_trigger = {
+	OR = {
+		state_region = s:STATE_SYRIA
+		state_region = s:STATE_ALEPPO
+		state_region = s:STATE_DEIR_EZ_ZOR
+		state_region = s:STATE_PALESTINE
+		state_region = s:STATE_TRANSJORDAN
+	}
+}
+
+crb_can_found_syria_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:CPS }
+	any_scope_state = {
+		is_capital = no
+		crb_is_syria_province_state_trigger = yes
+	}
+}
+
+crb_is_mesopotamia_province_state_trigger = {
+	OR = {
+		state_region = s:STATE_MOSUL
+		state_region = s:STATE_BAGHDAD
+		state_region = s:STATE_BASRA
+	}
+}
+
+crb_can_found_mesopotamia_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:CPB }
+	any_scope_state = {
+		is_capital = no
+		crb_is_mesopotamia_province_state_trigger = yes
+	}
+}
+
+crb_is_arabia_province_state_trigger = {
+	OR = {
+		state_region = s:STATE_HAIL
+		state_region = s:STATE_HEDJAZ
+		state_region = s:STATE_YEMEN
+		state_region = s:STATE_OMAN
+		state_region = s:STATE_ABU_DHABI
+	}
+}
+
+crb_can_found_arabia_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:CPA }
+	any_scope_state = {
+		is_capital = no
+		crb_is_arabia_province_state_trigger = yes
+	}
+}
+
+crb_can_found_any_territory_trigger = {
+	OR = {
+		crb_can_found_tripoli_trigger = yes
+		crb_can_found_numidia_trigger = yes
+		crb_can_found_iberia_trigger = yes
+		crb_can_found_gaul_trigger = yes
+		crb_can_found_alpine_trigger = yes
+		crb_can_found_rome_trigger = yes
+		crb_can_found_mauretania_trigger = yes
+		crb_can_found_egypt_trigger = yes
+		crb_can_found_phoenicia_trigger = yes
+		crb_can_found_syria_trigger = yes
+		crb_can_found_mesopotamia_trigger = yes
+		crb_can_found_arabia_trigger = yes
+	}
+}
+
+# PREV is the French-owned state here. The land-only trigger excludes sea crossings.
+crb_borders_french_north_africa_trigger = {
+	exists = c:FRA
+	c:FRA = {
+		any_scope_state = {
+			crb_is_north_african_state_trigger = yes
+			c:TUN ?= { is_land_adjacent_to_state = prev }
+		}
+	}
+}
+# Keep the initial political story available after an early transfer to a subject.
+crb_initial_conquests_trigger = {
+	OR = {
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_CONSTANTINE
+				state_region = s:STATE_TRIPOLI
+			}
+		}
+		any_subject_or_below = {
+			has_variable = crb_carthaginian_subject
+			any_scope_state = {
+				OR = {
+					state_region = s:STATE_CONSTANTINE
+					state_region = s:STATE_TRIPOLI
+				}
+			}
+		}
+	}
+}

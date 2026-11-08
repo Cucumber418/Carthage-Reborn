@@ -2,10 +2,10 @@
 prestige_good_crb_tyrian_purple = {
 	base_good = dye
 	prestige_bonus = 0.1
-	texture = "gfx/interface/icons/goods_icons/prestige_goods/german_aniline_prestige.dds"
+	texture = "gfx/interface/icons/goods_icons/prestige_goods/crb_tyrian_purple.dds"
 }
 prestige_good_crb_punic_wine = {
 	base_good = wine
 	prestige_bonus = 0.1
-	texture = "gfx/interface/icons/goods_icons/prestige_goods/champagne_prestige.dds"
+	texture = "gfx/interface/icons/goods_icons/prestige_goods/crb_punic_wine.dds"
 }

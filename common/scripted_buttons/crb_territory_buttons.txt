@@ -1,0 +1,239 @@
+﻿crb_found_tripoli_post_button = {
+	name = crb_found_tripoli_post_button
+	desc = crb_found_tripoli_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_can_found_tripoli_trigger = yes
+	}
+	possible = {
+		is_at_war = no
+		crb_can_found_tripoli_trigger = yes
+	}
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { is_at_war = no crb_can_found_tripoli_trigger = yes }
+			trigger_event = { id = crb_revenge.10 popup = yes }
+		}
+	}
+}
+
+crb_found_numidia_post_button = {
+	name = crb_found_numidia_post_button
+	desc = crb_found_numidia_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_can_found_numidia_trigger = yes
+	}
+	possible = {
+		is_at_war = no
+		crb_can_found_numidia_trigger = yes
+	}
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { is_at_war = no crb_can_found_numidia_trigger = yes }
+			trigger_event = { id = crb_revenge.11 popup = yes }
+		}
+	}
+}
+
+crb_found_iberia_post_button = {
+	name = crb_found_iberia_post_button
+	desc = crb_found_iberia_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_can_found_iberia_trigger = yes
+	}
+	possible = {
+		is_at_war = no
+		crb_can_found_iberia_trigger = yes
+	}
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { is_at_war = no crb_can_found_iberia_trigger = yes }
+			trigger_event = { id = crb_revenge.12 popup = yes }
+		}
+	}
+}
+
+crb_found_gaul_post_button = {
+	name = crb_found_gaul_post_button
+	desc = crb_found_gaul_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_can_found_gaul_trigger = yes
+	}
+	possible = {
+		is_at_war = no
+		crb_can_found_gaul_trigger = yes
+	}
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { is_at_war = no crb_can_found_gaul_trigger = yes }
+			trigger_event = { id = crb_revenge.6 popup = yes }
+		}
+	}
+}
+
+crb_found_alpine_post_button = {
+	name = crb_found_alpine_post_button
+	desc = crb_found_alpine_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_can_found_alpine_trigger = yes
+	}
+	possible = {
+		is_at_war = no
+		crb_can_found_alpine_trigger = yes
+	}
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { is_at_war = no crb_can_found_alpine_trigger = yes }
+			trigger_event = { id = crb_revenge.7 popup = yes }
+		}
+	}
+}
+
+crb_handle_rome_button = {
+	name = crb_handle_rome_button
+	desc = crb_handle_rome_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_can_found_rome_trigger = yes
+	}
+	possible = {
+		is_at_war = no
+		crb_can_found_rome_trigger = yes
+	}
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { is_at_war = no crb_can_found_rome_trigger = yes }
+			trigger_event = { id = crb_revenge.5 popup = yes }
+		}
+	}
+}
+
+crb_found_mauretania_province_button = {
+	name = crb_found_mauretania_province_button
+	desc = crb_found_mauretania_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_can_found_mauretania_trigger = yes
+	}
+	possible = {
+		is_at_war = no
+		crb_can_found_mauretania_trigger = yes
+	}
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { is_at_war = no crb_can_found_mauretania_trigger = yes }
+			trigger_event = { id = crb_territories.1 popup = yes }
+		}
+	}
+}
+
+crb_found_egypt_province_button = {
+	name = crb_found_egypt_province_button
+	desc = crb_found_egypt_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_can_found_egypt_trigger = yes
+	}
+	possible = {
+		is_at_war = no
+		crb_can_found_egypt_trigger = yes
+	}
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { is_at_war = no crb_can_found_egypt_trigger = yes }
+			trigger_event = { id = crb_territories.2 popup = yes }
+		}
+	}
+}
+
+crb_found_phoenicia_province_button = {
+	name = crb_found_phoenicia_province_button
+	desc = crb_found_phoenicia_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_can_found_phoenicia_trigger = yes
+	}
+	possible = {
+		is_at_war = no
+		crb_can_found_phoenicia_trigger = yes
+	}
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { is_at_war = no crb_can_found_phoenicia_trigger = yes }
+			trigger_event = { id = crb_territories.3 popup = yes }
+		}
+	}
+}
+
+crb_found_syria_province_button = {
+	name = crb_found_syria_province_button
+	desc = crb_found_syria_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_can_found_syria_trigger = yes
+	}
+	possible = {
+		is_at_war = no
+		crb_can_found_syria_trigger = yes
+	}
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { is_at_war = no crb_can_found_syria_trigger = yes }
+			trigger_event = { id = crb_territories.4 popup = yes }
+		}
+	}
+}
+
+crb_found_mesopotamia_province_button = {
+	name = crb_found_mesopotamia_province_button
+	desc = crb_found_mesopotamia_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_can_found_mesopotamia_trigger = yes
+	}
+	possible = {
+		is_at_war = no
+		crb_can_found_mesopotamia_trigger = yes
+	}
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { is_at_war = no crb_can_found_mesopotamia_trigger = yes }
+			trigger_event = { id = crb_territories.5 popup = yes }
+		}
+	}
+}
+
+crb_found_arabia_province_button = {
+	name = crb_found_arabia_province_button
+	desc = crb_found_arabia_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_can_found_arabia_trigger = yes
+	}
+	possible = {
+		is_at_war = no
+		crb_can_found_arabia_trigger = yes
+	}
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { is_at_war = no crb_can_found_arabia_trigger = yes }
+			trigger_event = { id = crb_territories.6 popup = yes }
+		}
+	}
+}

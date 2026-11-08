@@ -1,0 +1,15 @@
+﻿# Number of directly or subject-administered Iberian states; only actual subjects are counted.
+crb_controlled_iberian_states = {
+	value = 0
+	every_scope_state = {
+		limit = { crb_is_spanish_mainland_state_trigger = yes }
+		add = 1
+	}
+	every_subject_or_below = {
+		limit = { has_variable = crb_carthaginian_subject }
+		every_scope_state = {
+			limit = { crb_is_spanish_mainland_state_trigger = yes }
+			add = 1
+		}
+	}
+}
