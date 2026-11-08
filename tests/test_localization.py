@@ -40,7 +40,7 @@ def ui_references(scripts):
             if not isinstance(n,Node):continue
             if n.key in fields and not (n.key=='name' and parent in ('set_variable','change_variable','add_progress')):add(custom_key(n.value),path)
             if isinstance(n.value,list):walk(n.value,path,n.key)
-    roots={'buildings','cultures','religions','discrimination_traits','discrimination_trait_groups','laws','government_types','ideologies','interest_group_traits','company_types','prestige_goods','production_methods','production_method_groups','static_modifiers','subject_types','diplomatic_actions','journal_entry_groups','journal_entries'}
+    roots={'buildings','cultures','religions','discrimination_traits','discrimination_trait_groups','laws','government_types','ideologies','interest_group_traits','company_types','prestige_goods','production_methods','production_method_groups','static_modifiers','subject_types','diplomatic_actions','journal_entry_groups','journal_entries','game_concepts'}
     for path,nodes in scripts.items():
         walk(nodes,path)
         parts=path.split('/')
@@ -49,6 +49,10 @@ def ui_references(scripts):
                 if isinstance(n,Node) and custom_key(n.key):
                     add(n.key,path)
                     if parts[1]=='journal_entries':add(n.key+'_reason',path)
+                    if parts[1]=='game_concepts':add(n.key+'_desc',path)
+                    if parts[1]=='subject_types':
+                        concept='concept_'+n.key.removeprefix('subject_type_')
+                        add(concept,path);add(concept+'_desc',path)
         if path.startswith('common/country_definitions/'):
             for n in nodes:
                 if isinstance(n,Node):
@@ -88,6 +92,25 @@ class LocalizationTests(unittest.TestCase):
             for key in re.findall(r'\$([A-Za-z_0-9.]+)(?:\|[^$]*)?\$',value):
                 if custom_key(key) and key not in self.values:missing.add(key)
         self.assertFalse(missing,str(sorted(missing)))
+    def test_subject_concepts_exist_and_resolve_without_duplicate_text_icons(self):
+        concepts={n.key:n.value for path,nodes in self.scripts.items() if path.startswith('common/game_concepts/') for n in nodes if isinstance(n,Node)}
+        def expand(key,seen=()):
+            self.assertNotIn(key,seen,'Circular localization reference')
+            return re.sub(r'\$([A-Za-z_0-9.]+)\$',lambda m:expand(m[1],seen+(key,)),self.values[key])
+        for path,nodes in self.scripts.items():
+            if not path.startswith('common/subject_types/'):continue
+            for n in nodes:
+                if not isinstance(n,Node):continue
+                concept='concept_'+n.key.removeprefix('subject_type_')
+                with self.subTest(subject=n.key):
+                    self.assertIn(concept,concepts)
+                    name=expand(concept);self.assertRegex(name,r'[\u4e00-\u9fff]')
+                    self.assertNotIn('@',name);self.assertNotIn('concept_',name)
+                    for key in (n.key,n.key+'_no_icon',get(n.value,'diplomatic_action')):
+                        self.assertEqual(expand(key),name)
+                    self.assertEqual(expand(concept+'_desc'),expand(n.key+'_desc'))
+                    texture=json.loads(get(concepts[concept],'texture'))
+                    self.assertTrue((ROOT/texture).is_file())
     def test_border_and_territory_wording_matches_current_rules(self):
         self.assertNotIn('迎面交锋',self.values['crb_flavor.17.d'])
         self.assertIn('非首都',self.values['crb_found_gaul_post_button_desc'])

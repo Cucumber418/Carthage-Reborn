@@ -1,0 +1,9 @@
+# 附庸类型的概念名按 subject_type_ 后缀生成，国家界面也会读取这些条目。
+# 概念标题不嵌入文字图标；贴图用于概念说明，国家关系图标由外交行动提供。
+concept_crb_trading_post = {
+	texture = "gfx/interface/icons/diplomatic_action_icons/crb_trading_post.dds"
+}
+
+concept_crb_province = {
+	texture = "gfx/interface/icons/diplomatic_action_icons/crb_province.dds"
+}
