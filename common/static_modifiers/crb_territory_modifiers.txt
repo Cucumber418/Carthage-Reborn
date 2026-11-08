@@ -1,0 +1,4 @@
+﻿# 仅记录领土交接期，不附加经济或政治数值。
+crb_territory_disposition_cooldown = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+}

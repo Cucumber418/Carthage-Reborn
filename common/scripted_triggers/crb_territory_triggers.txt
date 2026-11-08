@@ -1,4 +1,12 @@
-﻿crb_can_found_tripoli_trigger = {
+﻿# 所有领土处置共用的交接期。
+crb_territory_disposition_ready_trigger = {
+	custom_tooltip = {
+		text = crb_territory_disposition_ready_tt
+		NOT = { has_modifier = crb_territory_disposition_cooldown }
+	}
+}
+
+crb_can_found_tripoli_trigger = {
 	crb_is_carthage_trigger = yes
 	NOT = { exists = c:TRP }
 	any_scope_state = {

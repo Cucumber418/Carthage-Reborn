@@ -4,6 +4,8 @@
 		# 迦太基开局已掌握民族主义
 		add_technology_researched = nationalism
 		effect_starting_politics_traditional = yes
+		# 覆盖传统国家模板的经济法，开局实行经济干预。
+		activate_law = law_type:law_interventionism
 		activate_law = law_type:law_slave_trade
 
 		set_state_religion = rel:crb_tanit

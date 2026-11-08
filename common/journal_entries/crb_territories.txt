@@ -38,6 +38,10 @@
 	status_desc = {
 		first_valid = {
 			triggered_desc = {
+				desc = crb_territories_status_cooldown
+				trigger = { has_modifier = crb_territory_disposition_cooldown }
+			}
+			triggered_desc = {
 				desc = crb_territories_status
 				trigger = { always = yes }
 			}

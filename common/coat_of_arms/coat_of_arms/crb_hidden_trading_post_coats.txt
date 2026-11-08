@@ -1,0 +1,65 @@
+﻿crb_CPM_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_green"
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.5 } scale = { 0.6 0.6 } }
+	}
+}
+
+crb_CPE_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_sand"
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.5 } scale = { 0.6 0.6 } }
+	}
+}
+
+crb_CPF_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian"
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.5 } scale = { 0.6 0.6 } }
+	}
+}
+
+crb_CPS_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_cream"
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.5 } scale = { 0.6 0.6 } }
+	}
+}
+
+crb_CPB_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_sea"
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.5 } scale = { 0.6 0.6 } }
+	}
+}
+
+crb_CPA_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_red"
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.5 } scale = { 0.6 0.6 } }
+	}
+}

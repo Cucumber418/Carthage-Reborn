@@ -1,0 +1,17 @@
+﻿# 国家事件作用域；GDP 为年产值，结果为每周额外收入。
+# 在选择选项时取值，此后保持到修正到期。使用分步运算避免极小小数精度损失。
+crb_event_income_weekly_very_small = {
+	value = root.gdp
+	divide = 10000
+	multiply = 0.75 # 年 GDP 的 0.0075% / 周
+}
+crb_event_income_weekly_small = {
+	value = root.gdp
+	divide = 10000
+	multiply = 1.5 # 年 GDP 的 0.015% / 周
+}
+crb_event_income_weekly_medium = {
+	value = root.gdp
+	divide = 10000
+	multiply = 2.5 # 年 GDP 的 0.025% / 周
+}

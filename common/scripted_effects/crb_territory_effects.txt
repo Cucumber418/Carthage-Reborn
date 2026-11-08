@@ -3,6 +3,7 @@ crb_create_territory_subject_effect = {
 	if = {
 		limit = {
 			is_at_war = no
+			crb_territory_disposition_ready_trigger = yes
 			$CAN_FOUND$ = yes
 		}
 		save_scope_as = crb_territory_origin
@@ -25,7 +26,7 @@ crb_create_territory_subject_effect = {
 					name = crb_carthaginian_protection
 					days = very_long_modifier_time
 				}
-				$LAWS$ = yes
+				hidden_effect = { $LAWS$ = yes }
 			}
 		}
 		every_scope_state = {
@@ -38,6 +39,8 @@ crb_create_territory_subject_effect = {
 		}
 		create_diplomatic_pact = { country = c:$TAG$ type = $PACT$ }
 		c:$TAG$ = { crb_apply_punic_state_names_effect = yes }
+		# 成功建国并完成交接后才启动冷却；取消、失地或战争不消耗次数。
+		add_modifier = { name = crb_territory_disposition_cooldown months = 3 }
 	}
 }
 crb_gaul_trading_post_laws_effect = {
@@ -139,5 +142,71 @@ crb_create_province_CPA_effect = {
 		PROVINCE = yes
 		LAWS = crb_province_laws_effect
 		PACT = crb_province
+	}
+}
+
+crb_create_puppet_CPM_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = CPM
+		CAN_FOUND = crb_can_found_mauretania_trigger
+		AREA = crb_is_mauretania_province_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_puppet_CPE_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = CPE
+		CAN_FOUND = crb_can_found_egypt_trigger
+		AREA = crb_is_egypt_province_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_puppet_CPF_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = CPF
+		CAN_FOUND = crb_can_found_phoenicia_trigger
+		AREA = crb_is_phoenicia_province_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_puppet_CPS_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = CPS
+		CAN_FOUND = crb_can_found_syria_trigger
+		AREA = crb_is_syria_province_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_puppet_CPB_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = CPB
+		CAN_FOUND = crb_can_found_mesopotamia_trigger
+		AREA = crb_is_mesopotamia_province_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_puppet_CPA_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = CPA
+		CAN_FOUND = crb_can_found_arabia_trigger
+		AREA = crb_is_arabia_province_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
 	}
 }

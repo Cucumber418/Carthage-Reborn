@@ -6,13 +6,14 @@
 		crb_can_found_tripoli_trigger = yes
 	}
 	possible = {
+		crb_territory_disposition_ready_trigger = yes
 		is_at_war = no
 		crb_can_found_tripoli_trigger = yes
 	}
 	ai_chance = { value = 50 }
 	effect = {
 		if = {
-			limit = { is_at_war = no crb_can_found_tripoli_trigger = yes }
+			limit = { is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_tripoli_trigger = yes }
 			trigger_event = { id = crb_revenge.10 popup = yes }
 		}
 	}
@@ -26,13 +27,14 @@ crb_found_numidia_post_button = {
 		crb_can_found_numidia_trigger = yes
 	}
 	possible = {
+		crb_territory_disposition_ready_trigger = yes
 		is_at_war = no
 		crb_can_found_numidia_trigger = yes
 	}
 	ai_chance = { value = 50 }
 	effect = {
 		if = {
-			limit = { is_at_war = no crb_can_found_numidia_trigger = yes }
+			limit = { is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_numidia_trigger = yes }
 			trigger_event = { id = crb_revenge.11 popup = yes }
 		}
 	}
@@ -46,13 +48,14 @@ crb_found_iberia_post_button = {
 		crb_can_found_iberia_trigger = yes
 	}
 	possible = {
+		crb_territory_disposition_ready_trigger = yes
 		is_at_war = no
 		crb_can_found_iberia_trigger = yes
 	}
 	ai_chance = { value = 50 }
 	effect = {
 		if = {
-			limit = { is_at_war = no crb_can_found_iberia_trigger = yes }
+			limit = { is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_iberia_trigger = yes }
 			trigger_event = { id = crb_revenge.12 popup = yes }
 		}
 	}
@@ -66,13 +69,14 @@ crb_found_gaul_post_button = {
 		crb_can_found_gaul_trigger = yes
 	}
 	possible = {
+		crb_territory_disposition_ready_trigger = yes
 		is_at_war = no
 		crb_can_found_gaul_trigger = yes
 	}
 	ai_chance = { value = 50 }
 	effect = {
 		if = {
-			limit = { is_at_war = no crb_can_found_gaul_trigger = yes }
+			limit = { is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_gaul_trigger = yes }
 			trigger_event = { id = crb_revenge.6 popup = yes }
 		}
 	}
@@ -86,13 +90,14 @@ crb_found_alpine_post_button = {
 		crb_can_found_alpine_trigger = yes
 	}
 	possible = {
+		crb_territory_disposition_ready_trigger = yes
 		is_at_war = no
 		crb_can_found_alpine_trigger = yes
 	}
 	ai_chance = { value = 50 }
 	effect = {
 		if = {
-			limit = { is_at_war = no crb_can_found_alpine_trigger = yes }
+			limit = { is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_alpine_trigger = yes }
 			trigger_event = { id = crb_revenge.7 popup = yes }
 		}
 	}
@@ -106,13 +111,14 @@ crb_handle_rome_button = {
 		crb_can_found_rome_trigger = yes
 	}
 	possible = {
+		crb_territory_disposition_ready_trigger = yes
 		is_at_war = no
 		crb_can_found_rome_trigger = yes
 	}
 	ai_chance = { value = 50 }
 	effect = {
 		if = {
-			limit = { is_at_war = no crb_can_found_rome_trigger = yes }
+			limit = { is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_rome_trigger = yes }
 			trigger_event = { id = crb_revenge.5 popup = yes }
 		}
 	}
@@ -126,13 +132,14 @@ crb_found_mauretania_province_button = {
 		crb_can_found_mauretania_trigger = yes
 	}
 	possible = {
+		crb_territory_disposition_ready_trigger = yes
 		is_at_war = no
 		crb_can_found_mauretania_trigger = yes
 	}
 	ai_chance = { value = 50 }
 	effect = {
 		if = {
-			limit = { is_at_war = no crb_can_found_mauretania_trigger = yes }
+			limit = { is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_mauretania_trigger = yes }
 			trigger_event = { id = crb_territories.1 popup = yes }
 		}
 	}
@@ -146,13 +153,14 @@ crb_found_egypt_province_button = {
 		crb_can_found_egypt_trigger = yes
 	}
 	possible = {
+		crb_territory_disposition_ready_trigger = yes
 		is_at_war = no
 		crb_can_found_egypt_trigger = yes
 	}
 	ai_chance = { value = 50 }
 	effect = {
 		if = {
-			limit = { is_at_war = no crb_can_found_egypt_trigger = yes }
+			limit = { is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_egypt_trigger = yes }
 			trigger_event = { id = crb_territories.2 popup = yes }
 		}
 	}
@@ -166,13 +174,14 @@ crb_found_phoenicia_province_button = {
 		crb_can_found_phoenicia_trigger = yes
 	}
 	possible = {
+		crb_territory_disposition_ready_trigger = yes
 		is_at_war = no
 		crb_can_found_phoenicia_trigger = yes
 	}
 	ai_chance = { value = 50 }
 	effect = {
 		if = {
-			limit = { is_at_war = no crb_can_found_phoenicia_trigger = yes }
+			limit = { is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_phoenicia_trigger = yes }
 			trigger_event = { id = crb_territories.3 popup = yes }
 		}
 	}
@@ -186,13 +195,14 @@ crb_found_syria_province_button = {
 		crb_can_found_syria_trigger = yes
 	}
 	possible = {
+		crb_territory_disposition_ready_trigger = yes
 		is_at_war = no
 		crb_can_found_syria_trigger = yes
 	}
 	ai_chance = { value = 50 }
 	effect = {
 		if = {
-			limit = { is_at_war = no crb_can_found_syria_trigger = yes }
+			limit = { is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_syria_trigger = yes }
 			trigger_event = { id = crb_territories.4 popup = yes }
 		}
 	}
@@ -206,13 +216,14 @@ crb_found_mesopotamia_province_button = {
 		crb_can_found_mesopotamia_trigger = yes
 	}
 	possible = {
+		crb_territory_disposition_ready_trigger = yes
 		is_at_war = no
 		crb_can_found_mesopotamia_trigger = yes
 	}
 	ai_chance = { value = 50 }
 	effect = {
 		if = {
-			limit = { is_at_war = no crb_can_found_mesopotamia_trigger = yes }
+			limit = { is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_mesopotamia_trigger = yes }
 			trigger_event = { id = crb_territories.5 popup = yes }
 		}
 	}
@@ -226,13 +237,14 @@ crb_found_arabia_province_button = {
 		crb_can_found_arabia_trigger = yes
 	}
 	possible = {
+		crb_territory_disposition_ready_trigger = yes
 		is_at_war = no
 		crb_can_found_arabia_trigger = yes
 	}
 	ai_chance = { value = 50 }
 	effect = {
 		if = {
-			limit = { is_at_war = no crb_can_found_arabia_trigger = yes }
+			limit = { is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_arabia_trigger = yes }
 			trigger_event = { id = crb_territories.6 popup = yes }
 		}
 	}

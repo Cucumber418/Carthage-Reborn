@@ -89,3 +89,63 @@ SNT = {
 		}
 	}
 }
+
+CPM = {
+	dynamic_country_name = {
+		name = CPM_crb_trading_post
+		adjective = CPM_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject NOT = { has_variable = crb_province } } }
+	}
+}
+
+CPE = {
+	dynamic_country_name = {
+		name = CPE_crb_trading_post
+		adjective = CPE_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject NOT = { has_variable = crb_province } } }
+	}
+}
+
+CPF = {
+	dynamic_country_name = {
+		name = CPF_crb_trading_post
+		adjective = CPF_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject NOT = { has_variable = crb_province } } }
+	}
+}
+
+CPS = {
+	dynamic_country_name = {
+		name = CPS_crb_trading_post
+		adjective = CPS_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject NOT = { has_variable = crb_province } } }
+	}
+}
+
+CPB = {
+	dynamic_country_name = {
+		name = CPB_crb_trading_post
+		adjective = CPB_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject NOT = { has_variable = crb_province } } }
+	}
+}
+
+CPA = {
+	dynamic_country_name = {
+		name = CPA_crb_trading_post
+		adjective = CPA_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject NOT = { has_variable = crb_province } } }
+	}
+}

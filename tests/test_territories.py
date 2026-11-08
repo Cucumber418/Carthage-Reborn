@@ -88,6 +88,7 @@ class Country:
     laws: set = field(default_factory=set)
     pact: str = ''
     fleets: list = field(default_factory=list)
+    gdp: float = 1_000_000
 
 @dataclass
 class State:
@@ -167,6 +168,7 @@ class World:
         if k == 'OR': return any(self.condition(x,ctx) for x in v)
         if k == 'AND': return self.conditions(v,ctx)
         if k == 'NOT': return not self.conditions(v,ctx)
+        if k == 'custom_tooltip': return self.conditions([x for x in v if x.key not in ('text','subject')],ctx)
         if k == 'always': return v == 'yes'
         if k == 'exists': return self.resolve(v,ctx) is not None
         if k == 'country_has_primary_culture': return o.punic == (v=='cu:crb_punic')
@@ -206,8 +208,10 @@ class World:
     def value(self,nodes,ctx):
         result=0
         for n in nodes:
-            if n.key=='value':result=float(n.value)
+            if n.key=='value':result=ctx.root.gdp if n.value=='root.gdp' else float(n.value)
             elif n.key=='add':result+=float(n.value)
+            elif n.key=='multiply':result*=float(n.value)
+            elif n.key=='divide':result/=float(n.value)
             elif n.key.startswith('every_'):
                 for obj in self.items(n.key,ctx):
                     if self.conditions(get(n.value,'limit',[]),ctx.enter(obj)):
@@ -232,6 +236,7 @@ class World:
             elif k=='set_variable':o.variables.add(v)
             elif k=='set_state_religion':o.religion=v
             elif k=='add_modifier':o.modifiers.add(get(v,'name'))
+            elif k=='remove_modifier':o.modifiers.discard(v)
             elif k=='activate_law':o.laws.add(v)
             elif k=='change_infamy':o.infamy+=int(v)
             elif k=='create_country':
@@ -322,7 +327,9 @@ class TerritoriesTests(unittest.TestCase):
         s=self.w.land('STATE_BAGHDAD');self.execute('crb_create_province_CPB_effect')
         self.assertEqual(s.owner,'CPB');self.assertEqual(self.w.countries['CPB'].overlord,'TUN')
     def test_roman_options_exclude_each_other(self):
-        self.w.land('STATE_APULIA');self.execute('crb_create_puppet_IOP_effect');self.execute('crb_create_puppet_RPR_effect')
+        self.w.land('STATE_APULIA');self.execute('crb_create_puppet_IOP_effect')
+        self.w.countries['TUN'].modifiers.discard('crb_territory_disposition_cooldown')
+        self.execute('crb_create_puppet_RPR_effect')
         self.assertIn('IOP',self.w.countries);self.assertNotIn('RPR',self.w.countries)
     def test_pending_province_option_does_not_charge_if_war_starts(self):
         self.w.land('STATE_CONSTANTINE');self.w.countries['TUN'].war=True
