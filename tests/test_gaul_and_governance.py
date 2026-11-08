@@ -103,7 +103,7 @@ class IndividualExpansionTests(unittest.TestCase):
         buttons={n.key for n in self.scripts['common/scripted_buttons/crb_expansion_buttons.txt'] if isinstance(n,Node)}
         self.assertEqual(len(buttons),24)
         registered={n.value for n in entries(self.w.defs['je_crb_territories'],'scripted_button')}
-        self.assertTrue(buttons<=registered);self.assertEqual(len(registered),36)
+        self.assertTrue(buttons<=registered);self.assertEqual(len(registered),48)
         for p,ns in self.scripts.items():
             if p.startswith('common/journal_entries/'):
                 for n in ns:

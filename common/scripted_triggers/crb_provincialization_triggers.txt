@@ -1,0 +1,48 @@
+# Country scope: TAG is the existing post, FINAL_TAG is the province's tag.
+crb_is_provincializable_post_trigger = {
+	exists = c:$TAG$
+	c:$TAG$ ?= {
+		has_variable = crb_carthaginian_subject
+		NOT = { has_variable = crb_province }
+		is_subject_type = subject_type_crb_trading_post
+		overlord = { this = root }
+	}
+}
+
+crb_can_provincialize_territory_trigger = {
+	crb_is_carthage_trigger = yes
+	is_at_war = no
+	crb_territory_disposition_ready_trigger = yes
+	custom_tooltip = {
+		text = crb_provincialize_post_required_tt
+		crb_is_provincializable_post_trigger = { TAG = $TAG$ }
+	}
+	c:$TAG$ ?= { is_at_war = no }
+	custom_tooltip = {
+		text = crb_provincialize_destination_ready_tt
+		OR = {
+			NOT = { exists = c:$FINAL_TAG$ }
+			c:$TAG$ ?= { this = c:$FINAL_TAG$ }
+		}
+	}
+}
+
+# Legacy saves with existing subjects must retain access even without new direct land.
+crb_territory_journal_available_trigger = {
+	OR = {
+		crb_can_found_any_territory_trigger = yes
+		crb_is_actual_territory_subject_trigger = { TAG = TRP }
+		crb_is_actual_territory_subject_trigger = { TAG = NUM }
+		crb_is_actual_territory_subject_trigger = { TAG = IBT }
+		crb_is_actual_territory_subject_trigger = { TAG = GLT }
+		crb_is_actual_territory_subject_trigger = { TAG = SNT }
+		crb_is_actual_territory_subject_trigger = { TAG = IOP }
+		crb_is_actual_territory_subject_trigger = { TAG = CPM }
+		crb_is_actual_territory_subject_trigger = { TAG = CPE }
+		crb_is_actual_territory_subject_trigger = { TAG = CPF }
+		crb_is_actual_territory_subject_trigger = { TAG = CPS }
+		crb_is_actual_territory_subject_trigger = { TAG = CPB }
+		crb_is_actual_territory_subject_trigger = { TAG = CPA }
+		crb_is_actual_territory_subject_trigger = { TAG = RPR }
+	}
+}

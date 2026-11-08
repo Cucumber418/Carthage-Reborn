@@ -87,6 +87,7 @@ class Country:
     religion: str = ''
     laws: set = field(default_factory=set)
     pact: str = ''
+    liberty_desire: float = 0
     fleets: list = field(default_factory=list)
     gdp: float = 1_000_000
     treasury: float = 0
@@ -192,6 +193,7 @@ class World:
         if k == 'has_journal_entry': return v in o.journals
         if k == 'has_law': return v in o.laws
         if k == 'is_subject':return bool(o.overlord)==(v=='yes')
+        if k == 'is_subject_type':return bool(o.overlord) and get(self.defs[v],'diplomatic_action')==o.pact
         if k in ('this','root') and isinstance(v,str):return self.resolve(k,ctx) is self.resolve(v,ctx)
         if k == 'is_building_type':return o.kind==v
         if k == 'level':return self.compare(o.level,op,float(v))
@@ -291,6 +293,18 @@ class World:
             elif k=='set_state_owner':o.owner=self.resolve(v,ctx).tag
             elif k=='create_diplomatic_pact':
                 subject=self.resolve(get(v,'country'),ctx);subject.overlord=o.tag;subject.pact=get(v,'type')
+            elif k=='change_subject_type':
+                assert o.overlord
+                o.pact=get(self.defs[v],'diplomatic_action')
+            elif k=='change_tag':
+                assert v not in self.countries
+                old=o.tag;del self.countries[old];o.tag=v;self.countries[v]=o
+                for state in self.states:
+                    if state.owner==old:state.owner=v
+                for country in self.countries.values():
+                    if country.overlord==old:country.overlord=v
+                    for fleet in country.fleets:
+                        if fleet.owner==old:fleet.owner=v
             elif k=='create_military_formation':
                 fleet=Fleet(o.tag);o.fleets.append(fleet)
             elif k=='create_ship':

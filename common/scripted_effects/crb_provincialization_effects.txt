@@ -1,0 +1,24 @@
+# Country scope: convert an existing direct subject, preserving its country object.
+crb_provincialize_territory_effect = {
+	if = {
+		limit = { crb_can_provincialize_territory_trigger = { TAG = $TAG$ FINAL_TAG = $FINAL_TAG$ } }
+		change_infamy = $INFAMY$
+		custom_tooltip = crb_provincialize_territory_effect_tt
+		custom_tooltip = crb_territory_disposition_cooldown_effect_tt
+		hidden_effect = {
+			c:$TAG$ = {
+				# Native effect retains the current overlord and Liberty Desire.
+				change_subject_type = subject_type_crb_province
+				set_variable = crb_province
+				crb_apply_governor_rule_effect = yes
+				crb_province_laws_effect = yes
+				# Only Ionian Post changes tag: the same country becomes Roman Province.
+				if = {
+					limit = { NOT = { this = c:$FINAL_TAG$ } }
+					change_tag = $FINAL_TAG$
+				}
+			}
+			add_modifier = { name = crb_territory_disposition_cooldown months = 3 }
+		}
+	}
+}

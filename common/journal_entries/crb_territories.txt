@@ -5,7 +5,7 @@
 	is_shown_when_inactive = {
 		crb_is_carthage_trigger = yes
 		is_at_war = no
-		crb_can_found_any_territory_trigger = yes
+		crb_territory_journal_available_trigger = yes
 		NOT = { has_variable = crb_territories_concluded }
 	}
 	possible = {
@@ -13,7 +13,7 @@
 		NOT = { has_variable = crb_territories_concluded }
 		OR = {
 			has_variable = crb_territories_unlocked
-			AND = { is_at_war = no crb_can_found_any_territory_trigger = yes }
+			AND = { is_at_war = no crb_territory_journal_available_trigger = yes }
 		}
 	}
 	immediate = { set_variable = crb_territories_unlocked }
@@ -54,6 +54,19 @@
 	scripted_button = crb_expand_CPB_province_button
 	scripted_button = crb_expand_CPA_post_button
 	scripted_button = crb_expand_CPA_province_button
+	# 已有商站可以转为对应行省。
+	scripted_button = crb_provincialize_TRP_button
+	scripted_button = crb_provincialize_NUM_button
+	scripted_button = crb_provincialize_IBT_button
+	scripted_button = crb_provincialize_GLT_button
+	scripted_button = crb_provincialize_SNT_button
+	scripted_button = crb_provincialize_IOP_button
+	scripted_button = crb_provincialize_CPM_button
+	scripted_button = crb_provincialize_CPE_button
+	scripted_button = crb_provincialize_CPF_button
+	scripted_button = crb_provincialize_CPS_button
+	scripted_button = crb_provincialize_CPB_button
+	scripted_button = crb_provincialize_CPA_button
 	outcome = {
 		flags = { hidden invalid_outcome }
 		conclusion_desc = je_standard_failure_conclusion_desc

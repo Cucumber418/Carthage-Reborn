@@ -551,3 +551,14 @@
 - `crb_trading_post` 与 `crb_province` 外交行动显式设置 `texture`，分别指向已有的 256×256 船舶贸易与官署卷册 DDS。原先只有贴图文件和文字小图标注册，没有绑定外交行动贴图，国家面板读取关系图标时无法使用这些文件。
 - 对照 [原版国家面板](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/gui/country_panel.gui)，国家关系图标读取 `DiplomaticActionType.GetTexture`；`texture` 属性的格式参考 [原版划拨地区行动](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/diplomatic_actions/43_subjects_handle_states.txt)。公司界面分别读取 `CompanyType.GetIcon` 与 `GetBackground`，见 [原版公司面板](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/gui/company_panel.gui)。本次无需覆盖原版 GUI。
 - 新增回归检查，区分公司徽记和背景字段，并沿附庸类型 → 外交行动 → 关系贴图检查实际绑定。71 项检查通过；尚未在游戏内验证显示效果。已有存档可用，更新后需完全退出并重启游戏以重新载入定义与贴图。
+
+## 30. 1.1.6 商站行省化
+
+- 领土日志新增十二个“行省化”按钮，总计 48 个按钮（12 个成立、24 个形式扩张、12 个转换）。仅显示本国直接控制、仍为商站关系且尚未行省化的实际附庸；没有新的本国直辖土地也可转换。
+- 使用 `change_subject_type = subject_type_crb_province` 转换现有附庸，保留其当前自由欲，不解散并重建国家或外交关系。行省缴款 50%，商站缴款 30% 及四种贸易／港口特权由现有关系定义切换；地方治理调用既有总督制与行省法律效果。
+- 恶名逐一对齐直接成立对应行省：TRP、CPM、CPF 为 10；NUM、IBT、GLT、SNT、IOP、CPE、CPS、CPB、CPA 为 15。成功转换后在宗主国添加三个月共用交接修正。条件在实际执行前复查，失败不扣恶名、不改法律、不启动冷却。
+- 伊奥尼亚商站用原版 `change_tag = RPR` 在原国家对象上转为罗马行省；目标已被其他国家占用时禁止操作。其余十一处不改变国家代码，沿用既有的行省国名、旗帜与扩张按钮。
+- 领土日志的初次可用条件与月度补开入口增加既有实际附庸，兼容领土已全部交给商站／行省的旧档。新按钮含十二处独立中文说明，名称不嵌入文字图标。
+- 79 项静态与场景检查通过，新增场景覆盖资产及自由欲保留、战争、宗属变动、重复操作、罗马目标冲突、共享冷却、费用与旧档入口。仍需在游戏内验证类型转换、换标签及动态国名／旗帜刷新。
+
+原版 API 语义参考：[1.15 effects.log 的 `change_subject_type` 与 `change_tag`](https://github.com/Victoria-3-Modding-Co-op/Modding-Digests/blob/main/1.15.0/docs/effects.log)。

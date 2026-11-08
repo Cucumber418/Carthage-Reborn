@@ -1,0 +1,155 @@
+﻿crb_provincialize_TRP_button = {
+	name = crb_provincialize_TRP_button
+	desc = crb_provincialize_TRP_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = TRP }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = TRP FINAL_TAG = TRP } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = TRP FINAL_TAG = TRP INFAMY = 10 } }
+}
+
+crb_provincialize_NUM_button = {
+	name = crb_provincialize_NUM_button
+	desc = crb_provincialize_NUM_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = NUM }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = NUM FINAL_TAG = NUM } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = NUM FINAL_TAG = NUM INFAMY = 15 } }
+}
+
+crb_provincialize_IBT_button = {
+	name = crb_provincialize_IBT_button
+	desc = crb_provincialize_IBT_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = IBT }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = IBT FINAL_TAG = IBT } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = IBT FINAL_TAG = IBT INFAMY = 15 } }
+}
+
+crb_provincialize_GLT_button = {
+	name = crb_provincialize_GLT_button
+	desc = crb_provincialize_GLT_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = GLT }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = GLT FINAL_TAG = GLT } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = GLT FINAL_TAG = GLT INFAMY = 15 } }
+}
+
+crb_provincialize_SNT_button = {
+	name = crb_provincialize_SNT_button
+	desc = crb_provincialize_SNT_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = SNT }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = SNT FINAL_TAG = SNT } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = SNT FINAL_TAG = SNT INFAMY = 15 } }
+}
+
+crb_provincialize_IOP_button = {
+	name = crb_provincialize_IOP_button
+	desc = crb_provincialize_IOP_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = IOP }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = IOP FINAL_TAG = RPR } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = IOP FINAL_TAG = RPR INFAMY = 15 } }
+}
+
+crb_provincialize_CPM_button = {
+	name = crb_provincialize_CPM_button
+	desc = crb_provincialize_CPM_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = CPM }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = CPM FINAL_TAG = CPM } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = CPM FINAL_TAG = CPM INFAMY = 10 } }
+}
+
+crb_provincialize_CPE_button = {
+	name = crb_provincialize_CPE_button
+	desc = crb_provincialize_CPE_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = CPE }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = CPE FINAL_TAG = CPE } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = CPE FINAL_TAG = CPE INFAMY = 15 } }
+}
+
+crb_provincialize_CPF_button = {
+	name = crb_provincialize_CPF_button
+	desc = crb_provincialize_CPF_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = CPF }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = CPF FINAL_TAG = CPF } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = CPF FINAL_TAG = CPF INFAMY = 10 } }
+}
+
+crb_provincialize_CPS_button = {
+	name = crb_provincialize_CPS_button
+	desc = crb_provincialize_CPS_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = CPS }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = CPS FINAL_TAG = CPS } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = CPS FINAL_TAG = CPS INFAMY = 15 } }
+}
+
+crb_provincialize_CPB_button = {
+	name = crb_provincialize_CPB_button
+	desc = crb_provincialize_CPB_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = CPB }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = CPB FINAL_TAG = CPB } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = CPB FINAL_TAG = CPB INFAMY = 15 } }
+}
+
+crb_provincialize_CPA_button = {
+	name = crb_provincialize_CPA_button
+	desc = crb_provincialize_CPA_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = CPA }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = CPA FINAL_TAG = CPA } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = CPA FINAL_TAG = CPA INFAMY = 15 } }
+}

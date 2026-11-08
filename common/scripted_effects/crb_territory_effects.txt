@@ -66,7 +66,7 @@ crb_try_unlock_territorial_journal_effect = {
 			NOT = { has_variable = crb_territories_unlocked }
 			NOT = { has_variable = crb_territories_concluded }
 			NOT = { has_journal_entry = je_crb_territories }
-			crb_can_found_any_territory_trigger = yes
+			crb_territory_journal_available_trigger = yes
 		}
 		add_journal_entry = { type = je_crb_territories }
 	}
