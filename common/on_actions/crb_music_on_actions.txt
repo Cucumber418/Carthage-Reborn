@@ -1,0 +1,22 @@
+# 新游戏开始时，只有游玩迦太基的玩家会收到开局音乐请求。
+# 同名 on_action 的 on_actions 列表会与原版及模组其他文件合并。
+on_game_started = {
+	on_actions = { crb_on_game_started_music }
+}
+
+crb_on_game_started_music = {
+	effect = {
+		c:TUN ?= {
+			if = {
+				limit = {
+					is_player = yes
+					crb_is_carthage_trigger = yes
+				}
+				random = {
+					chance = 85
+					play_music_cue = crb_carthage_theme
+				}
+			}
+		}
+	}
+}

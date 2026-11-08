@@ -1,0 +1,29 @@
+# 迦太基特色背景音乐。Victoria 3 1.15 的 weight 在玩家国家作用域中计算。
+# 格式参考：https://github.com/Victoria-3-Modding-Co-op/Modding-Digests/blob/main/1.15.0/types/music.md
+crb_carthage_theme = {
+	music = "file:/music/crb_carthage.mp3"
+	pause_factor = 25
+	mood = yes
+	can_be_interrupted = yes
+
+	# 播放后至少经过三次其他音乐请求，避免高权重导致频繁重复。
+	calls = 3
+
+	# 其他国家也可以听到；加权模式下优先为迦太基播放。
+	is_valid = { always = yes }
+	weight = {
+		value = 1
+		if = {
+			limit = { crb_is_carthage_trigger = yes }
+			add = 499
+			# 新开局的首月进一步提高权重，作为开局点播未能生效时的补充。
+			if = {
+				limit = {
+					game_date >= 1836.1.1
+					game_date < 1836.2.1
+				}
+				add = 99500
+			}
+		}
+	}
+}
