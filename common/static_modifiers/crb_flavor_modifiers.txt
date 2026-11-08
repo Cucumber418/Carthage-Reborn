@@ -164,7 +164,7 @@ crb_flavor_prize_released = {
 
 
 # ============================================================
-# 商业事件：持续税收收入（参照原版 country_tax_income_add + months）
+# 商业事件：持续收入（采用原版预算收入修正与 GDP 倍数）
 # ============================================================
 
 crb_flavor_tyrian_export_income = {
@@ -188,7 +188,7 @@ crb_flavor_privateering_income = {
 }
 
 
-# 商业事件：持续税收收入与项目支出（均显示在预算的额外收入/额外支出中）
+# 商业事件：持续收入与项目支出（均显示在预算的额外收入/额外支出中）
 crb_flavor_coin_melting_income = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
 	country_tax_income_add = 1
@@ -227,4 +227,10 @@ crb_flavor_shipwreck_museum_expense = {
 crb_flavor_melqart_grand_expense = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	country_expenses_add = 1
+}
+
+# 北非战场上对法国作战后，古代布匿—高卢军事记忆激励全军
+crb_flavor_gallic_legacy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	unit_kill_rate_add = 0.1
 }

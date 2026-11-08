@@ -81,7 +81,7 @@ crb_flavor.2 = {
 	option = {
 		name = crb_flavor.2.a
 		default_option = yes
-		# 一次性项目开支，避免长期重复扣除同一笔费用
+		# 五年教育拨款：按生效时 GDP 缩放，持续期内每周计入支出
 		add_modifier = {
 			name = crb_flavor_punic_letters_expense
 			multiplier = money_amount_multiplier_very_small
@@ -132,7 +132,7 @@ crb_flavor.3 = {
 	option = {
 		name = crb_flavor.3.a
 		default_option = yes
-		# 一次性项目开支，避免长期重复扣除同一笔费用
+		# 五年染坊补贴：按生效时 GDP 缩放，持续期内每周计入支出
 		add_modifier = {
 			name = crb_flavor_tyrian_purple_expense
 			multiplier = money_amount_multiplier_small
@@ -146,7 +146,7 @@ crb_flavor.3 = {
 
 	option = {
 		name = crb_flavor.3.b
-		# 五年出口特许收入：按原版持续税收收入修正结算
+		# 五年出口特许收益：按原版 GDP 缩放收入修正结算
 		add_modifier = {
 			name = crb_flavor_tyrian_export_income
 			multiplier = money_amount_multiplier_small
@@ -197,7 +197,7 @@ crb_flavor.4 = {
 
 	option = {
 		name = crb_flavor.4.b
-		# 一次性变现收入，而非持续铸币
+		# 三年持续铸币收益：按生效时 GDP 缩放计入额外收入
 		add_modifier = {
 			name = crb_flavor_coin_melting_income
 			multiplier = money_amount_multiplier_very_small
@@ -239,7 +239,7 @@ crb_flavor.5 = {
 	option = {
 		name = crb_flavor.5.a
 		default_option = yes
-		# 一次性项目开支，避免长期重复扣除同一笔费用
+		# 五年农书翻译与分发拨款：按生效时 GDP 缩放，持续期内每周计入支出
 		add_modifier = {
 			name = crb_flavor_mago_distributed_expense
 			multiplier = money_amount_multiplier_small
@@ -385,7 +385,7 @@ crb_flavor.8 = {
 	option = {
 		name = crb_flavor.8.a
 		default_option = yes
-		# 一次性项目开支，避免长期重复扣除同一笔费用
+		# 一年战象阅兵与供养开支：按生效时 GDP 缩放，持续期内每周计入支出
 		add_modifier = {
 			name = crb_flavor_elephant_parade_expense
 			multiplier = money_amount_multiplier_medium
@@ -492,7 +492,7 @@ crb_flavor.10 = {
 	option = {
 		name = crb_flavor.10.a
 		default_option = yes
-		# 一次性项目开支，避免长期重复扣除同一笔费用
+		# 五年沉船打捞与博物馆拨款：按生效时 GDP 缩放，持续期内每周计入支出
 		add_modifier = {
 			name = crb_flavor_shipwreck_museum_expense
 			multiplier = money_amount_multiplier_medium
@@ -591,7 +591,7 @@ crb_flavor.12 = {
 		name = crb_flavor.12.a
 		default_option = yes
 		add_loyalists = { value = small_radicals }
-		# 一次性项目开支，避免长期重复扣除同一笔费用
+		# 一年梅尔卡特盛典开支：按生效时 GDP 缩放，持续期内每周计入支出
 		add_modifier = {
 			name = crb_flavor_melqart_grand_expense
 			multiplier = money_amount_multiplier_medium
@@ -810,6 +810,50 @@ crb_flavor.16 = {
 		name = crb_flavor.16.b
 		add_modifier = {
 			name = crb_flavor_prize_released
+			days = normal_modifier_time
+		}
+	}
+}
+
+# 高卢人？——迦太基首次在北非与法国陆战后触发，不进入半年随机事件池
+crb_flavor.17 = {
+	type = country_event
+	placement = root
+
+	title = crb_flavor.17.t
+	desc = crb_flavor.17.d
+	flavor = crb_flavor.17.f
+
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 3
+
+	trigger = {
+		crb_is_carthage_trigger = yes
+		scope:enemy_country ?= {
+			c:FRA ?= this
+		}
+		scope:state = {
+			crb_is_north_african_state_trigger = yes
+		}
+		NOT = { has_variable = crb_flavor_17_fired }
+	}
+
+	immediate = {
+		set_variable = crb_flavor_17_fired
+	}
+
+	option = {
+		name = crb_flavor.17.a
+		default_option = yes
+		add_modifier = {
+			name = crb_flavor_gallic_legacy
 			days = normal_modifier_time
 		}
 	}

@@ -139,3 +139,27 @@ crb_flavor_events = {
 		10 = crb_flavor.16
 	}
 }
+
+# 陆战结束时：迦太基首次在北非与法国交战，触发“高卢人？”
+# on_battle_ended 根作用域为交战国家之一；scope:enemy_country 与 scope:state 由原版传入
+on_battle_ended = {
+	on_actions = {
+		crb_on_battle_ended
+	}
+}
+
+crb_on_battle_ended = {
+	trigger = {
+		crb_is_carthage_trigger = yes
+		scope:enemy_country ?= {
+			c:FRA ?= this
+		}
+		scope:state = {
+			crb_is_north_african_state_trigger = yes
+		}
+		NOT = { has_variable = crb_flavor_17_fired }
+	}
+	events = {
+		crb_flavor.17
+	}
+}
