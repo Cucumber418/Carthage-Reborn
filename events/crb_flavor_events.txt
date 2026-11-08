@@ -815,10 +815,10 @@ crb_flavor.16 = {
 	}
 }
 
-# 高卢人？——迦太基首次在北非与法国陆战后触发，不进入半年随机事件池
+# 高卢人？——迦太基首次在北非与法国陆战结束后触发，不进入半年随机事件池
 crb_flavor.17 = {
 	type = country_event
-	placement = root
+	placement = ROOT
 
 	title = crb_flavor.17.t
 	desc = crb_flavor.17.d
@@ -834,19 +834,17 @@ crb_flavor.17 = {
 
 	duration = 3
 
+	fire_only_once = yes
+
 	trigger = {
+		# 由原版陆战结束 on_action 提供 ROOT、scope:enemy_country 与 scope:state
 		crb_is_carthage_trigger = yes
-		scope:enemy_country ?= {
+		scope:enemy_country = {
 			c:FRA ?= this
 		}
 		scope:state = {
 			crb_is_north_african_state_trigger = yes
 		}
-		NOT = { has_variable = crb_flavor_17_fired }
-	}
-
-	immediate = {
-		set_variable = crb_flavor_17_fired
 	}
 
 	option = {

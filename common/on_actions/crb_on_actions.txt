@@ -140,25 +140,35 @@ crb_flavor_events = {
 	}
 }
 
-# 陆战结束时：迦太基首次在北非与法国交战，触发“高卢人？”
-# on_battle_ended 根作用域为交战国家之一；scope:enemy_country 与 scope:state 由原版传入
-on_battle_ended = {
+# 参照原版 on_battle_won 的 events 调用方式，在陆战结束后检查法国与北非条件。
+# 失败战斗和一方无部队的战斗也触发检查，避免奖励取决于胜负。
+on_battle_won = {
 	on_actions = {
-		crb_on_battle_ended
+		crb_on_land_battle_ended
 	}
 }
 
-crb_on_battle_ended = {
-	trigger = {
-		crb_is_carthage_trigger = yes
-		scope:enemy_country ?= {
-			c:FRA ?= this
-		}
-		scope:state = {
-			crb_is_north_african_state_trigger = yes
-		}
-		NOT = { has_variable = crb_flavor_17_fired }
+on_battle_lost = {
+	on_actions = {
+		crb_on_land_battle_ended
 	}
+}
+
+on_empty_battle_won = {
+	on_actions = {
+		crb_on_land_battle_ended
+	}
+}
+
+on_empty_battle_lost = {
+	on_actions = {
+		crb_on_land_battle_ended
+	}
+}
+
+# 原版事件调用结构：on_action 使用 events 列表触发 country_event；
+# 具体条件与 fire_only_once 由 crb_flavor.17 自身判断。
+crb_on_land_battle_ended = {
 	events = {
 		crb_flavor.17
 	}

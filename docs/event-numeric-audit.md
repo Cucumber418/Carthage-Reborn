@@ -461,7 +461,7 @@
 - **事件频率：** 派系斗争期间的随机事件权重由“无事件 120、每个事件 5”调整为“无事件 120、每个事件 10”。在八个事件均可用时，月度基础触发率由 25% 提高至 40%，平均约每 2.5 个月出现一次；每个事件原有的年度冷却保留，避免同一事件连续刷屏。
 - **巴卡派事件增益：** 小幅支持由进度 +5 提高至 +8；中幅支持由 +8 提高至 +12。
 - **汉诺派事件增益：** 保持小幅 -5、中幅 -8，不额外强化汉诺派，给玩家通过选择支持巴卡派来扭转局势的空间。
-- **提示文本：** 事件选项 tooltip 显示实际增加的进度点数，避免“小幅/明显”与数值不对应。
+- **提示文本：** 巴卡派事件选项 tooltip 使用“小幅增加/大幅增加”，隐藏 +8/+12 的内部进度数值；实际进度变化不变。
 - **财政措辞：** 事件资金流的中文说明统一称为“额外收入”，不再采用税务类收入表述；脚本底层仍使用原版预算收入修正，不改变实际结算机制。
 
 
@@ -479,5 +479,12 @@
 - **收入/支出计算：** 继续采用原版事件常见写法：静态修正以 `country_tax_income_add = 1` 或 `country_expenses_add = 1` 为基数，在 `add_modifier` 时传入 `money_amount_multiplier_*`，并用 `months` 限定期限。原版倍数从修正生效时的 `root.gdp` 计算并取整，因此金额随当时经济体量变化，不是固定周金额；但在持续期内也不会每周重新计算。
 - **玩家可见措辞：** 收益说明改用“出口收益、版税、特许收益、战利品分成、铸币收益”等说法；支出说明明确为持续项目开支，不再出现“赋税收入”或“原版 small/medium 档”等脚本术语。
 - **支出注释纠正：** 教育拨款、染坊补贴、农书翻译、战象阅兵、沉船博物馆与梅尔卡特盛典均通过持续期内每周生效的预算修正结算，不是一次性付款；事件脚本注释已按实际机制修正。
-- **新事件 crb_flavor.17「高卢人？」：** 由原版 `on_battle_ended` 触发；要求迦太基与法国直接交战，且陆战发生在原版北非地区清单内。只触发一次，不进入半年随机事件池。
-- **战斗奖励：** 事件给予 `crb_flavor_gallic_legacy`，部队击杀率 `unit_kill_rate_add = 0.1`（+10%），持续 `normal_modifier_time`（原版 5 年）。
+- **新事件 crb_flavor.17「高卢人？」：** 参照原版战斗事件结构，通过 `on_battle_won`、`on_battle_lost`、`on_empty_battle_won`、`on_empty_battle_lost` 的 `on_actions` 子调用，以 `events = { crb_flavor.17 }` 触发；事件自身使用 `fire_only_once = yes`，并检查 ROOT 为迦太基、`scope:enemy_country` 为法国、`scope:state` 属于原版 `03_north_africa.txt`。只触发一次，不进入半年随机事件池。
+- **战斗奖励：** 事件给予 `crb_flavor_gallic_legacy`，部队击杀率 `unit_kill_rate_add = 0.1`（+10%），持续 `normal_modifier_time`。
+
+## 24. 原版战斗事件触发方式校正
+
+- **原版对照：** 原版 `on_battle_ended` 定义为空；战斗胜利事件通过 `on_battle_won` 的 `events = { event_id }` 调用。原版德克萨斯事件 `texan_war_of_independence.3` 使用 `fire_only_once = yes`，并在事件自身的 `trigger` 中读取 `scope:enemy_country` 等战斗作用域。
+- **本模组修正：** 不再使用 `on_battle_ended`。改为从 `on_battle_won`、`on_battle_lost`、`on_empty_battle_won`、`on_empty_battle_lost` 调用同一个子 on_action，由其 `events` 列表触发「高卢人？」。因此首次符合条件的陆战结束后，无论胜负均可触发。
+- **地区清单：** 北非触发器严格采用原版 `state_regions/03_north_africa.txt` 的 31 个地区，删除了不存在的 `STATE_LOWER_EGYPT`。
+- **巴卡派提示：** 小幅/大幅支持的内部进度仍分别为 +8/+12；玩家 tooltip 改为“小幅增加/大幅增加”，不再显示具体数值。

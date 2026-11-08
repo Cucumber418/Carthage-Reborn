@@ -172,7 +172,6 @@ crb_is_numidia_post_state_trigger = {
 # 是否为北非战场地块（作用域：地块；地区清单参照原版 03_north_africa.txt）
 crb_is_north_african_state_trigger = {
 	OR = {
-		state_region = s:STATE_LOWER_EGYPT
 		state_region = s:STATE_UPPER_EGYPT
 		state_region = s:STATE_MIDDLE_EGYPT
 		state_region = s:STATE_EGYPTIAN_DESERT
