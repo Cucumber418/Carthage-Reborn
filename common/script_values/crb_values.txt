@@ -85,8 +85,3 @@ crb_islam_share = {
 	}
 }
 
-# 老兵一次性赏金：以原版 GDP small 档周金额折算 52 周，保持原年度累计成本
-crb_hb_veterans_bounty_cost = {
-	value = money_amount_multiplier_small
-	multiply = -52
-}

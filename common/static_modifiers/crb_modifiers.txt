@@ -353,3 +353,8 @@ crb_hanno_route = {
 	country_prestige_add = 15
 }
 
+# 老兵赏金：持续一年的每周政府支出
+crb_hb_veterans_paid_expense = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}

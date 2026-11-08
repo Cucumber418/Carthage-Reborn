@@ -74,3 +74,5 @@
  crb_hb_king_rumor_tolerated: "容忍“国王”的流言"
  crb_hb_king_rumor_investigated: "追查“国王”的流言"
 
+crb_hb_veterans_paid_expense: "补发老兵赏金"
+ crb_hb_veterans_paid_expense_desc: "每周政府支出按生效时的 GDP 计算，持续 12 个月。"
