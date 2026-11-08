@@ -1,7 +1,7 @@
 {
   "name" : "迦太基重生 Carthage Reborn",
   "id" : "com.github.cucumber418.carthage-reborn",
-  "version" : "1.1.0",
+  "version" : "1.1.1",
   "supported_game_version" : "1.15.*",
   "short_description" : "突尼斯被复兴的布匿民族国家取代。在汉诺派与巴卡派之间作出选择，复兴布匿文化，重走汉尼拔或汉诺的道路。",
   "tags" : [ "Historical", "Gameplay" ],

@@ -1,0 +1,8 @@
+﻿l_simp_chinese:
+ ideology_crb_hannonist: "汉诺主义者"
+ ideology_crb_hannonist_desc: "#lore 这个领袖追随大汉诺的道路，主张由元老院治理共和国，守护阿非利加的田地和海上的商路，避免与强国交战。#!"
+ ideology_crb_barcid: "巴卡主义者"
+ ideology_crb_barcid_desc: "#lore 这个领袖追随巴卡家族的道路，主张复兴公民大会，让军人和公民掌握共和国，并向海外开拓迦太基的疆土。#!"
+ ideology_crb_hannibalist: "汉尼拔主义者"
+ ideology_crb_hannibalist_desc: "#lore 这个领袖相信，只有一位像汉尼拔那样统率全体布匿人的君主，才能恢复迦太基昔日的荣光。#!"
+ CRB_BARCA_VICTORY: "巴卡派获胜"
