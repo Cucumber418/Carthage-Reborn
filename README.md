@@ -490,6 +490,8 @@
 
 ## 测试命令
 
+完整的 [关键节点控制台测试指南](docs/console_testing.md) 包含领土成立、六个隐藏行省、法兰西接壤事件、两条主线、文化复兴、公司美术及音乐的命令与预期结果；另说明需要在 Script Runner 执行的代码。
+
 正式版不含测试事件。测试命令（`event crb_debug.1 TUN` 等）保存在 [`dev` 分支](https://github.com/Cucumber418/Carthage-Reborn/tree/dev)，开发新内容时切换到该分支测试。
 
 以下命令在正式版中仍然可用（需在 Steam 启动选项加 `-debug_mode`，按 `~` 打开控制台）：
