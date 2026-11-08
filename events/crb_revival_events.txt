@@ -118,9 +118,7 @@ crb_revival.4 = {
 
 	duration = 3
 
-	trigger = {
-		# 由日志 je_crb_cultural_revival 触发
-	}
+	trigger = { crb_has_completed_cothon_trigger = yes }
 
 	option = {
 		name = crb_revival.4.a

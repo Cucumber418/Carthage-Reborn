@@ -120,12 +120,13 @@ crb_barca_victory_effect = {
 		name = crb_popular_assembly_restored
 		days = long_modifier_time
 	}
-	# 日志"汉尼拔再临"会检查 crb_barca_victory 变量
+	crb_try_start_hannibal_route_effect = yes
 }
 
 crb_hanno_victory_effect = {
 	# 汉诺派获胜时清除巴卡派标记，确保不会开启汉尼拔再临
 	remove_variable = crb_barca_victory
+	remove_variable = crb_hannibal_route_open
 	set_variable = crb_hanno_victory
 	add_modifier = {
 		name = crb_senate_peace

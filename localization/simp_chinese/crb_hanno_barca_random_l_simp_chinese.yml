@@ -1,8 +1,8 @@
 ﻿l_simp_chinese:
  crb_hb_barca_gain_small_tt: "#b 巴卡派#!的力量#g 小幅增加#!"
  crb_hb_barca_gain_medium_tt: "#b 巴卡派#!的力量#g 大幅增加#!"
- crb_hb_hanno_gain_small_tt: "#b 汉诺派#!的力量#g 增加 5 点#!"
- crb_hb_hanno_gain_medium_tt: "#b 汉诺派#!的力量#g 增加 8 点#!"
+ crb_hb_hanno_gain_small_tt: "#b 汉诺派#!的力量#g 小幅增加#!"
+ crb_hb_hanno_gain_medium_tt: "#b 汉诺派#!的力量#g 大幅增加#!"
  crb_hanno_barca_random.10.t: "老兵的请愿"
  crb_hanno_barca_random.10.d: "一群从前线归来的老兵聚集在元老院门前。他们说，自己为迦太基流过血，却连在公民大会上发言的资格都没有。\n\n他们的代表把一份请愿书交给了苏菲特：要么让老兵成为完全的公民，要么至少兑现战前许诺的赏金。"
  crb_hanno_barca_random.10.f: "“我们在君士坦丁的城墙下没有问过谁是贵族，谁是平民。”"

@@ -1,0 +1,16 @@
+﻿texticon = {
+	icon = crb_trading_post
+	iconsize = {
+		offset = { 0 7 }
+		texture = "gfx/interface/icons/diplomatic_action_icons/crb_trading_post_15.dds"
+		fontsize = 22
+	}
+}
+texticon = {
+	icon = crb_province
+	iconsize = {
+		offset = { 0 7 }
+		texture = "gfx/interface/icons/diplomatic_action_icons/crb_province_15.dds"
+		fontsize = 22
+	}
+}

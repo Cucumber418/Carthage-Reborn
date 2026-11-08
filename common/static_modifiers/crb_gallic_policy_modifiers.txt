@@ -1,0 +1,7 @@
+﻿# 安抚与顺其自然只记录路线及到期日；击杀率沿用原 crb_flavor_gallic_legacy。
+crb_gallic_appeasement = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+}
+crb_gallic_nonintervention = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+}

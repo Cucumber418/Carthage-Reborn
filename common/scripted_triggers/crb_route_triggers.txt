@@ -1,0 +1,7 @@
+﻿crb_barca_route_eligible_trigger = {
+	crb_is_carthage_trigger = yes
+	has_variable = crb_barca_victory
+	has_variable = crb_hanno_barca_concluded
+	NOT = { has_variable = crb_hanno_victory }
+	NOT = { has_variable = crb_hannibal_concluded }
+}

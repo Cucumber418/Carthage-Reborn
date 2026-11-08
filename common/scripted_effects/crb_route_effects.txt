@@ -1,0 +1,10 @@
+﻿crb_try_start_hannibal_route_effect = {
+	if = {
+		limit = { crb_barca_route_eligible_trigger = yes }
+		set_variable = crb_hannibal_route_open
+		if = {
+			limit = { NOT = { has_journal_entry = je_crb_hannibal_returns } }
+			add_journal_entry = { type = je_crb_hannibal_returns }
+		}
+	}
+}

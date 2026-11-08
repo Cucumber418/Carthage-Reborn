@@ -308,14 +308,14 @@ crb_converted_to_islam = {
 # 加在傀儡国、商站身上，持续 20 年
 crb_carthaginian_protection = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_liberty_desire_add = -25
-	country_liberty_desire_increase_mult = -0.5
+	country_liberty_desire_add = -0.05
+	country_liberty_desire_increase_mult = -0.05
 }
 
 # 加在迦太基身上，永久
 crb_carthaginian_hegemony = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_liberty_desire_of_subjects_add = -10
+	country_liberty_desire_of_subjects_add = -0.02
 }
 
 # 汉诺航海记
@@ -352,4 +352,3 @@ crb_hanno_route = {
 	building_port_throughput_add = 0.1
 	country_prestige_add = 15
 }
-

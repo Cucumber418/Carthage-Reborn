@@ -1,0 +1,6 @@
+﻿crb_has_completed_cothon_trigger = {
+	any_scope_building = {
+		is_building_type = building_crb_cothon
+		level >= 1
+	}
+}

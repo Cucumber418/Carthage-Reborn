@@ -26,7 +26,10 @@ crb_create_territory_subject_effect = {
 					name = crb_carthaginian_protection
 					days = very_long_modifier_time
 				}
-				hidden_effect = { $LAWS$ = yes }
+				hidden_effect = {
+					crb_apply_governor_rule_effect = yes
+					$LAWS$ = yes
+				}
 			}
 		}
 		every_scope_state = {
@@ -71,9 +74,17 @@ crb_try_unlock_territorial_journal_effect = {
 crb_check_french_border_effect = {
 	if = {
 		limit = {
-			crb_is_carthage_trigger = yes
-			NOT = { has_variable = crb_flavor_17_fired }
-			crb_borders_french_north_africa_trigger = yes
+			OR = {
+				NOT = { crb_is_carthage_trigger = yes }
+				NOT = { crb_france_has_north_african_land_trigger = yes }
+			}
+		}
+		crb_stop_gallic_cycle_effect = yes
+	}
+	else_if = {
+		limit = {
+			crb_can_choose_gallic_policy_trigger = yes
+			NOT = { has_variable = crb_gallic_choice_pending }
 		}
 		trigger_event = { id = crb_flavor.17 popup = yes }
 	}

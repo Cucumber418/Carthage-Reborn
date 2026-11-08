@@ -76,9 +76,7 @@ je_crb_cultural_revival = {
 			if = {
 				limit = {
 					NOT = { has_variable = crb_revival_harbor_done }
-					any_scope_building = {
-						is_building_type = building_crb_cothon
-					}
+					crb_has_completed_cothon_trigger = yes
 				}
 				set_variable = crb_revival_harbor_done
 				trigger_event = { id = crb_revival.4 popup = yes }

@@ -1,0 +1,14 @@
+﻿# TAG 为已经存在且实际受迦太基统治的附庸。
+crb_is_actual_territory_subject_trigger = {
+	exists = c:$TAG$
+	c:$TAG$ ?= {
+		has_variable = crb_carthaginian_subject
+		is_subject_of = root
+	}
+}
+crb_can_expand_one_territory_trigger = {
+	crb_is_carthage_trigger = yes
+	is_at_war = no
+	crb_is_actual_territory_subject_trigger = { TAG = $TAG$ }
+	any_scope_state = { is_capital = no $AREA$ = yes }
+}

@@ -35,7 +35,8 @@ class DispositionTests(unittest.TestCase):
         for _,region,_ in REGIONS:self.w.land(region)
         self.execute('crb_try_unlock_territorial_journal_effect')
         self.w.countries['TUN'].modifiers.add(COOLDOWN)
-        buttons=entries(self.w.defs['je_crb_territories'],'scripted_button')
+        formation_keys={n.key for n in self.scripts['common/scripted_buttons/crb_territory_buttons.txt'] if isinstance(n,Node)}
+        buttons=[n for n in entries(self.w.defs['je_crb_territories'],'scripted_button') if n.value in formation_keys]
         self.assertEqual(len(buttons),12)
         for n in buttons:
             with self.subTest(button=n.value):

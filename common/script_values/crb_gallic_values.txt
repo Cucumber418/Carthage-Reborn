@@ -1,0 +1,5 @@
+﻿# 一次性赠款：选择时迦太基年 GDP 的 1%，法国收到完全相同的金额。
+crb_gallic_appeasement_payment = {
+	value = root.gdp
+	divide = 100
+}

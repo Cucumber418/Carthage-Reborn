@@ -1,0 +1,4 @@
+﻿crb_apply_governor_rule_effect = {
+	activate_law = law_type:law_crb_governor_rule
+	set_variable = crb_governor_rule_initialized
+}

@@ -215,3 +215,32 @@ crb_initial_conquests_trigger = {
 		}
 	}
 }
+
+crb_france_has_north_african_land_trigger = {
+	exists = c:FRA
+	c:FRA ?= {
+		any_scope_state = { crb_is_north_african_state_trigger = yes }
+	}
+}
+crb_gallic_policy_due_trigger = {
+	NOT = { has_modifier = crb_gallic_appeasement }
+	NOT = { has_modifier = crb_flavor_gallic_legacy }
+	NOT = { has_modifier = crb_gallic_nonintervention }
+}
+crb_can_choose_gallic_policy_trigger = {
+	crb_is_carthage_trigger = yes
+	crb_france_has_north_african_land_trigger = yes
+	OR = {
+		has_variable = crb_gallic_cycle_started
+		has_variable = crb_flavor_17_fired # 兼容旧档已经遇到过法国的记录
+		crb_borders_french_north_africa_trigger = yes
+	}
+	crb_gallic_policy_due_trigger = yes
+}
+crb_can_appease_france_trigger = {
+	crb_can_choose_gallic_policy_trigger = yes
+	custom_tooltip = {
+		text = crb_gallic_appeasement_peace_required_tt
+		NOT = { any_enemy_in_diplo_play = { this = c:FRA } }
+	}
+}

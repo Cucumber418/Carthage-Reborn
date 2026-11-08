@@ -89,6 +89,11 @@ class Country:
     pact: str = ''
     fleets: list = field(default_factory=list)
     gdp: float = 1_000_000
+    treasury: float = 0
+    relations: dict = field(default_factory=dict)
+    truces: dict = field(default_factory=dict)
+    diplomatic_enemies: set = field(default_factory=set)
+    modifier_months: dict = field(default_factory=dict)
 
 @dataclass
 class State:
@@ -111,6 +116,12 @@ class Region:
     name: str
 
 @dataclass
+class Building:
+    kind: str
+    level: int
+    state: object
+
+@dataclass
 class Context:
     obj: object
     prev: object = None
@@ -127,6 +138,7 @@ class World:
         self.states = [State('STATE_TUNISIA', 'TUN', True)]
         self.borders = []
         self.saved = {}; self.events = []; self.unlocked = 0
+        self.scheduled = []
     def ctx(self, tag='TUN'): return Context(self.countries[tag], root=self.countries[tag])
     def country(self, tag, **kw):
         self.countries[tag] = Country(tag, **kw); return self.countries[tag]
@@ -155,6 +167,9 @@ class World:
                     seen.add(owner); owner=self.countries[owner].overlord
                 return False
             return [c for c in self.countries.values() if subordinate(c)]
+        if key.endswith('scope_building'):
+            return [Building(kind,level,s) for s in self.states if s.owner==o.tag for kind,level in s.buildings.items()]
+        if key=='any_enemy_in_diplo_play':return [self.countries[tag] for tag in o.diplomatic_enemies if tag in self.countries]
         if key.endswith('military_formation'): return o.fleets
         if key.endswith('scope_ship'):
             return [s for f in o.fleets for s in f.ships] if isinstance(o, Country) else o.ships
@@ -175,6 +190,11 @@ class World:
         if k == 'has_variable': return v in o.variables
         if k == 'has_modifier': return v in o.modifiers
         if k == 'has_journal_entry': return v in o.journals
+        if k == 'has_law': return v in o.laws
+        if k == 'is_subject':return bool(o.overlord)==(v=='yes')
+        if k in ('this','root') and isinstance(v,str):return self.resolve(k,ctx) is self.resolve(v,ctx)
+        if k == 'is_building_type':return o.kind==v
+        if k == 'level':return self.compare(o.level,op,float(v))
         if k == 'is_at_war': return o.war == (v=='yes')
         if k == 'is_capital': return o.capital == (v=='yes')
         if k == 'is_fleet': return isinstance(o,Fleet) == (v=='yes')
@@ -205,10 +225,15 @@ class World:
         if target is None and (k.startswith(('c:','scope:')) or k=='overlord'):return False
         if target is not None:return self.conditions(v,ctx.enter(target))
         raise AssertionError(('Unknown condition',k,v))
+    def numeric(self,value,ctx):
+        if isinstance(value,list):return self.value(value,ctx)
+        if value=='root.gdp':return ctx.root.gdp
+        if value in self.defs:return self.value(self.defs[value],ctx)
+        return float(value)
     def value(self,nodes,ctx):
         result=0
         for n in nodes:
-            if n.key=='value':result=ctx.root.gdp if n.value=='root.gdp' else float(n.value)
+            if n.key=='value':result=self.numeric(n.value,ctx)
             elif n.key=='add':result+=float(n.value)
             elif n.key=='multiply':result*=float(n.value)
             elif n.key=='divide':result/=float(n.value)
@@ -219,10 +244,18 @@ class World:
             else:raise AssertionError(('Unknown value',n))
         return result
     def effect(self,nodes,ctx):
+        branch_taken=False
         for n in nodes:
             k,v=n.key,n.value;o=ctx.obj
             if k=='if':
-                if self.conditions(get(v,'limit'),ctx):self.effect([x for x in v if x.key!='limit'],ctx)
+                branch_taken=self.conditions(get(v,'limit'),ctx)
+                if branch_taken:self.effect([x for x in v if x.key!='limit'],ctx)
+            elif k=='else_if':
+                if not branch_taken and self.conditions(get(v,'limit'),ctx):
+                    branch_taken=True;self.effect([x for x in v if x.key!='limit'],ctx)
+            elif k=='else':
+                if not branch_taken:self.effect(v,ctx)
+                branch_taken=True
             elif k=='while':
                 for _ in range(64):
                     if not self.conditions(get(v,'limit'),ctx):break
@@ -234,9 +267,20 @@ class World:
                     self.effect([x for x in v if x.key!='limit'],ctx.enter(obj))
             elif k=='save_scope_as':self.saved[v]=o
             elif k=='set_variable':o.variables.add(v)
+            elif k=='remove_variable':o.variables.discard(v)
             elif k=='set_state_religion':o.religion=v
-            elif k=='add_modifier':o.modifiers.add(get(v,'name'))
-            elif k=='remove_modifier':o.modifiers.discard(v)
+            elif k=='add_modifier':
+                name=get(v,'name');o.modifiers.add(name)
+                if get(v,'months') is not None:o.modifier_months[name]=int(get(v,'months'))
+            elif k=='remove_modifier':o.modifiers.discard(v);o.modifier_months.pop(v,None)
+            elif k=='add_treasury':o.treasury+=self.numeric(v,ctx)
+            elif k=='change_relations':
+                target=self.resolve(get(v,'country'),ctx);amount=float(get(v,'value'))
+                relation=max(-100,min(100,o.relations.get(target.tag,0)+amount))
+                o.relations[target.tag]=relation;target.relations[o.tag]=relation
+            elif k=='create_bidirectional_truce':
+                target=self.resolve(get(v,'country'),ctx);months=int(get(v,'months'))
+                o.truces[target.tag]=months;target.truces[o.tag]=months
             elif k=='activate_law':o.laws.add(v)
             elif k=='change_infamy':o.infamy+=int(v)
             elif k=='create_country':
@@ -259,6 +303,8 @@ class World:
                 o.journals.add(key);self.unlocked+=1;self.effect(get(self.defs[key],'immediate',[]),ctx)
             elif k=='trigger_event':
                 key=get(v,'id');ev=self.defs[key]
+                if get(v,'months') is not None:
+                    self.scheduled.append((key,int(get(v,'months')),o.tag));continue
                 if self.conditions(get(ev,'trigger',[]),ctx):
                     self.events.append(key);self.effect(get(ev,'immediate',[]),ctx)
             elif k in ('custom_tooltip','show_as_tooltip'):continue
@@ -373,8 +419,10 @@ class TerritoriesTests(unittest.TestCase):
                 s=self.w.states[0];s.buildings={'building_naval_administration':original}
                 self.w.effect(state_nodes,self.w.ctx().enter(s));self.assertEqual(s.buildings['building_naval_administration'],1)
     def test_establishment_buttons_only_belong_to_territorial_journal(self):
-        journal=self.w.defs['je_crb_territories'];buttons={n.value for n in entries(journal,'scripted_button')}
+        journal=self.w.defs['je_crb_territories']
+        buttons={n.key for n in self.scripts['common/scripted_buttons/crb_territory_buttons.txt'] if isinstance(n,Node)}
         self.assertEqual(len(buttons),12)
+        self.assertTrue(buttons.issubset({n.value for n in entries(journal,'scripted_button')}))
         for path,ns in self.scripts.items():
             if not path.startswith('common/journal_entries/'):continue
             for n in ns:

@@ -24,6 +24,7 @@ crb_hannibal.0 = {
 		# 双重校验：只有巴卡派获胜、派系斗争结束且汉诺派未获胜时才能发放宣称
 		crb_is_carthage_trigger = yes
 		has_variable = crb_barca_victory
+		has_variable = crb_hannibal_route_open
 		has_variable = crb_hanno_barca_concluded
 		NOT = { has_variable = crb_hanno_victory }
 		NOT = { has_variable = crb_hannibal_concluded }

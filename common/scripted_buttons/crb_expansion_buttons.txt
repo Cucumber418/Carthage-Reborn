@@ -1,0 +1,383 @@
+﻿crb_expand_TRP_post_button = {
+	name = crb_expand_TRP_post_button
+	desc = crb_expand_TRP_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = TRP }
+		c:TRP ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = TRP AREA = crb_is_tripoli_post_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_TRP_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = TRP AREA = crb_is_tripoli_post_state_trigger } }
+	}
+}
+
+crb_expand_TRP_province_button = {
+	name = crb_expand_TRP_province_button
+	desc = crb_expand_TRP_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = TRP }
+		c:TRP ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = TRP AREA = crb_is_tripoli_post_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_TRP_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = TRP AREA = crb_is_tripoli_post_state_trigger } }
+	}
+}
+
+crb_expand_NUM_post_button = {
+	name = crb_expand_NUM_post_button
+	desc = crb_expand_NUM_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = NUM }
+		c:NUM ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = NUM AREA = crb_is_numidia_post_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_NUM_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = NUM AREA = crb_is_numidia_post_state_trigger } }
+	}
+}
+
+crb_expand_NUM_province_button = {
+	name = crb_expand_NUM_province_button
+	desc = crb_expand_NUM_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = NUM }
+		c:NUM ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = NUM AREA = crb_is_numidia_post_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_NUM_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = NUM AREA = crb_is_numidia_post_state_trigger } }
+	}
+}
+
+crb_expand_IBT_post_button = {
+	name = crb_expand_IBT_post_button
+	desc = crb_expand_IBT_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = IBT }
+		c:IBT ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = IBT AREA = crb_is_spanish_mainland_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_IBT_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = IBT AREA = crb_is_spanish_mainland_state_trigger } }
+	}
+}
+
+crb_expand_IBT_province_button = {
+	name = crb_expand_IBT_province_button
+	desc = crb_expand_IBT_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = IBT }
+		c:IBT ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = IBT AREA = crb_is_spanish_mainland_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_IBT_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = IBT AREA = crb_is_spanish_mainland_state_trigger } }
+	}
+}
+
+crb_expand_GLT_post_button = {
+	name = crb_expand_GLT_post_button
+	desc = crb_expand_GLT_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = GLT }
+		c:GLT ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = GLT AREA = crb_is_gaul_post_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_GLT_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = GLT AREA = crb_is_gaul_post_state_trigger } }
+	}
+}
+
+crb_expand_GLT_province_button = {
+	name = crb_expand_GLT_province_button
+	desc = crb_expand_GLT_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = GLT }
+		c:GLT ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = GLT AREA = crb_is_gaul_post_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_GLT_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = GLT AREA = crb_is_gaul_post_state_trigger } }
+	}
+}
+
+crb_expand_SNT_post_button = {
+	name = crb_expand_SNT_post_button
+	desc = crb_expand_SNT_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = SNT }
+		c:SNT ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = SNT AREA = crb_is_alpine_post_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_SNT_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = SNT AREA = crb_is_alpine_post_state_trigger } }
+	}
+}
+
+crb_expand_SNT_province_button = {
+	name = crb_expand_SNT_province_button
+	desc = crb_expand_SNT_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = SNT }
+		c:SNT ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = SNT AREA = crb_is_alpine_post_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_SNT_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = SNT AREA = crb_is_alpine_post_state_trigger } }
+	}
+}
+
+crb_expand_IOP_post_button = {
+	name = crb_expand_IOP_post_button
+	desc = crb_expand_IOP_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = IOP }
+		c:IOP ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = IOP AREA = crb_is_south_italy_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_IOP_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = IOP AREA = crb_is_south_italy_state_trigger } }
+	}
+}
+
+crb_expand_RPR_province_button = {
+	name = crb_expand_RPR_province_button
+	desc = crb_expand_RPR_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = RPR }
+		c:RPR ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = RPR AREA = crb_is_south_italy_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_RPR_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = RPR AREA = crb_is_south_italy_state_trigger } }
+	}
+}
+
+crb_expand_CPM_post_button = {
+	name = crb_expand_CPM_post_button
+	desc = crb_expand_CPM_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = CPM }
+		c:CPM ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = CPM AREA = crb_is_mauretania_province_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_CPM_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = CPM AREA = crb_is_mauretania_province_state_trigger } }
+	}
+}
+
+crb_expand_CPM_province_button = {
+	name = crb_expand_CPM_province_button
+	desc = crb_expand_CPM_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = CPM }
+		c:CPM ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = CPM AREA = crb_is_mauretania_province_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_CPM_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = CPM AREA = crb_is_mauretania_province_state_trigger } }
+	}
+}
+
+crb_expand_CPE_post_button = {
+	name = crb_expand_CPE_post_button
+	desc = crb_expand_CPE_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = CPE }
+		c:CPE ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = CPE AREA = crb_is_egypt_province_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_CPE_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = CPE AREA = crb_is_egypt_province_state_trigger } }
+	}
+}
+
+crb_expand_CPE_province_button = {
+	name = crb_expand_CPE_province_button
+	desc = crb_expand_CPE_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = CPE }
+		c:CPE ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = CPE AREA = crb_is_egypt_province_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_CPE_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = CPE AREA = crb_is_egypt_province_state_trigger } }
+	}
+}
+
+crb_expand_CPF_post_button = {
+	name = crb_expand_CPF_post_button
+	desc = crb_expand_CPF_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = CPF }
+		c:CPF ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = CPF AREA = crb_is_phoenicia_province_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_CPF_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = CPF AREA = crb_is_phoenicia_province_state_trigger } }
+	}
+}
+
+crb_expand_CPF_province_button = {
+	name = crb_expand_CPF_province_button
+	desc = crb_expand_CPF_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = CPF }
+		c:CPF ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = CPF AREA = crb_is_phoenicia_province_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_CPF_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = CPF AREA = crb_is_phoenicia_province_state_trigger } }
+	}
+}
+
+crb_expand_CPS_post_button = {
+	name = crb_expand_CPS_post_button
+	desc = crb_expand_CPS_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = CPS }
+		c:CPS ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = CPS AREA = crb_is_syria_province_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_CPS_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = CPS AREA = crb_is_syria_province_state_trigger } }
+	}
+}
+
+crb_expand_CPS_province_button = {
+	name = crb_expand_CPS_province_button
+	desc = crb_expand_CPS_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = CPS }
+		c:CPS ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = CPS AREA = crb_is_syria_province_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_CPS_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = CPS AREA = crb_is_syria_province_state_trigger } }
+	}
+}
+
+crb_expand_CPB_post_button = {
+	name = crb_expand_CPB_post_button
+	desc = crb_expand_CPB_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = CPB }
+		c:CPB ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = CPB AREA = crb_is_mesopotamia_province_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_CPB_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = CPB AREA = crb_is_mesopotamia_province_state_trigger } }
+	}
+}
+
+crb_expand_CPB_province_button = {
+	name = crb_expand_CPB_province_button
+	desc = crb_expand_CPB_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = CPB }
+		c:CPB ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = CPB AREA = crb_is_mesopotamia_province_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_CPB_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = CPB AREA = crb_is_mesopotamia_province_state_trigger } }
+	}
+}
+
+crb_expand_CPA_post_button = {
+	name = crb_expand_CPA_post_button
+	desc = crb_expand_CPA_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = CPA }
+		c:CPA ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = CPA AREA = crb_is_arabia_province_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_CPA_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = CPA AREA = crb_is_arabia_province_state_trigger } }
+	}
+}
+
+crb_expand_CPA_province_button = {
+	name = crb_expand_CPA_province_button
+	desc = crb_expand_CPA_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = CPA }
+		c:CPA ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = CPA AREA = crb_is_arabia_province_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_CPA_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = CPA AREA = crb_is_arabia_province_state_trigger } }
+	}
+}

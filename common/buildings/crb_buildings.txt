@@ -1,8 +1,8 @@
 ﻿# U 型港：以古迦太基的圆形军港"科同"为原型
-# 没有专门的三维模型，地图上不显示建筑外观；图标借用原版港口图标
+# 专属建筑图标；尚无专门的三维地图模型。
 building_crb_cothon = {
 	building_group = bg_monuments
-	icon = "gfx/interface/icons/building_icons/building_port.dds"
+	icon = "gfx/interface/icons/building_icons/building_crb_cothon.dds"
 	expandable = no
 	downsizeable = no
 	unique = yes

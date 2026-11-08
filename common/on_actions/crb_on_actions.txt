@@ -69,6 +69,8 @@ crb_monthly_pulse_country = {
 		crb_update_ig_names_effect = yes
 		crb_try_unlock_territorial_journal_effect = yes
 		crb_check_french_border_effect = yes
+		# 旧档补检：只有巴卡胜利结算能打开该路线，与殖民法律无关。
+		crb_try_start_hannibal_route_effect = yes
 		# 历史地名：每月重新套用一次，防止被原版动态地名覆盖
 		crb_apply_punic_state_names_effect = yes
 		# 第 N 次布匿战争
@@ -90,6 +92,15 @@ crb_monthly_pulse_subject = {
 		has_variable = crb_carthaginian_subject
 	}
 	effect = {
+		# 对旧档的实际迦太基附庸进行一次性总督制迁移。
+		if = {
+			limit = {
+				is_subject = yes
+				overlord ?= { crb_is_carthage_trigger = yes }
+				NOT = { has_variable = crb_governor_rule_initialized }
+			}
+			crb_apply_governor_rule_effect = yes
+		}
 		crb_apply_punic_state_names_effect = yes
 	}
 }

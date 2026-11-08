@@ -820,41 +820,52 @@ crb_flavor.16 = {
 	}
 }
 
-# 高卢人？——与法兰西在北非的土地形成陆地边界后触发，不进入半年随机事件池
+# 高卢人？——首次北非陆地接壤开启，每五年重选；法国退出北非时终止。
 crb_flavor.17 = {
 	type = country_event
 	placement = ROOT
-
 	title = crb_flavor.17.t
 	desc = crb_flavor.17.d
 	flavor = crb_flavor.17.f
-
-	event_image = {
-		video = "europenorthamerica_before_the_battle"
-	}
-
+	event_image = { video = "europenorthamerica_before_the_battle" }
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-
 	duration = 3
 
-	fire_only_once = yes
-
-trigger = {
-	crb_is_carthage_trigger = yes
-	NOT = { has_variable = crb_flavor_17_fired }
-	crb_borders_french_north_africa_trigger = yes
-}
-
-	immediate = { set_variable = crb_flavor_17_fired }
+	trigger = {
+		crb_can_choose_gallic_policy_trigger = yes
+		NOT = { has_variable = crb_gallic_choice_pending }
+	}
+	cancellation_trigger = {
+		OR = {
+			NOT = { crb_is_carthage_trigger = yes }
+			NOT = { crb_france_has_north_african_land_trigger = yes }
+		}
+	}
+	immediate = {
+		set_variable = crb_gallic_cycle_started
+		set_variable = crb_flavor_17_fired
+		set_variable = crb_gallic_choice_pending
+	}
 
 	option = {
 		name = crb_flavor.17.a
+		trigger = { crb_can_appease_france_trigger = yes }
+		show_as_unavailable = { always = yes }
+		custom_tooltip = crb_gallic_appeasement_effect_tt
+		crb_gallic_appease_france_effect = yes
+	}
+	option = {
+		name = crb_flavor.17.b
+		trigger = { crb_can_choose_gallic_policy_trigger = yes }
+		show_as_unavailable = { always = yes }
+		custom_tooltip = crb_gallic_confrontation_effect_tt
+		crb_gallic_confront_france_effect = yes
+	}
+	option = {
+		name = crb_flavor.17.c
 		default_option = yes
-		add_modifier = {
-			name = crb_flavor_gallic_legacy
-			days = normal_modifier_time
-		}
+		custom_tooltip = crb_gallic_nonintervention_effect_tt
+		crb_gallic_leave_france_effect = yes
 	}
 }
