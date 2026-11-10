@@ -1,4 +1,4 @@
-# Console and Language Checks — 1.2.0
+# Console and Language Checks — 1.2.1
 
 These scenarios are prepared from the scripts. They have not been run in a Victoria 3 process.
 
@@ -68,10 +68,15 @@ For the Roman case, establish the Ionian Trading Post and use **Provincialize Ro
 - Check restored map names and Hanno's matching target names: Mauretania, Cerne, Chretes, and Chariot of the Gods.
 - Check that Punic War titles use English ordinals such as **Fourth Punic War**.
 - Inspect long event bodies and territorial buttons for clipping.
+- Foundation tooltips should highlight the future country and overlord, link the Trading Post or Province concept, and emphasize 30% or 50% payments and the three-month handover. Check both the original regions and the six hidden regions.
 
 Restart in Simplified Chinese and check the same screens, then repeat with an existing save. Both languages should show the same mechanics and numbers, while names and prose follow the selected language.
 
 ## Events and Routes
+
+Large event text and quotations should tell the story. Check the Hannibal introduction and the four revenge-route events: their bodies must not state Infamy costs, while the relevant option effects retain the original 10/10/15/20/25 Infamy and claims. Historical dates and elapsed time within the story are legitimate narrative details.
+
+The Cothon planning event should describe the engineers' plans; the construction unlock is explained by the confirmation option's tooltip. Territorial event bodies should retain their local setting, with non-capital-state restrictions shown in the foundation tooltips instead.
 
 To inspect the opening event's English:
 

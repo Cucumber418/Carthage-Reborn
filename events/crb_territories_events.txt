@@ -16,7 +16,7 @@ crb_territories.1 = {
 		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_mauretania_trigger = yes }
 		if = {
 			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_mauretania_trigger = yes }
-			custom_tooltip = crb_found_hidden_trading_post_effect_tt
+			custom_tooltip = crb_create_puppet_CPM_tt
 			custom_tooltip = crb_create_puppet_CPM_effect_tt
 			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
 			hidden_effect = { crb_create_puppet_CPM_effect = yes }
@@ -28,7 +28,7 @@ crb_territories.1 = {
 		if = {
 			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_mauretania_trigger = yes }
 			change_infamy = 10
-			custom_tooltip = crb_found_hidden_province_effect_tt
+			custom_tooltip = crb_create_province_CPM_tt
 			custom_tooltip = crb_create_province_CPM_effect_tt
 			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
 			hidden_effect = { crb_create_province_CPM_effect = yes }
@@ -56,7 +56,7 @@ crb_territories.2 = {
 		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_egypt_trigger = yes }
 		if = {
 			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_egypt_trigger = yes }
-			custom_tooltip = crb_found_hidden_trading_post_effect_tt
+			custom_tooltip = crb_create_puppet_CPE_tt
 			custom_tooltip = crb_create_puppet_CPE_effect_tt
 			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
 			hidden_effect = { crb_create_puppet_CPE_effect = yes }
@@ -68,7 +68,7 @@ crb_territories.2 = {
 		if = {
 			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_egypt_trigger = yes }
 			change_infamy = 15
-			custom_tooltip = crb_found_hidden_province_effect_tt
+			custom_tooltip = crb_create_province_CPE_tt
 			custom_tooltip = crb_create_province_CPE_effect_tt
 			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
 			hidden_effect = { crb_create_province_CPE_effect = yes }
@@ -96,7 +96,7 @@ crb_territories.3 = {
 		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_phoenicia_trigger = yes }
 		if = {
 			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_phoenicia_trigger = yes }
-			custom_tooltip = crb_found_hidden_trading_post_effect_tt
+			custom_tooltip = crb_create_puppet_CPF_tt
 			custom_tooltip = crb_create_puppet_CPF_effect_tt
 			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
 			hidden_effect = { crb_create_puppet_CPF_effect = yes }
@@ -108,7 +108,7 @@ crb_territories.3 = {
 		if = {
 			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_phoenicia_trigger = yes }
 			change_infamy = 10
-			custom_tooltip = crb_found_hidden_province_effect_tt
+			custom_tooltip = crb_create_province_CPF_tt
 			custom_tooltip = crb_create_province_CPF_effect_tt
 			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
 			hidden_effect = { crb_create_province_CPF_effect = yes }
@@ -136,7 +136,7 @@ crb_territories.4 = {
 		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_syria_trigger = yes }
 		if = {
 			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_syria_trigger = yes }
-			custom_tooltip = crb_found_hidden_trading_post_effect_tt
+			custom_tooltip = crb_create_puppet_CPS_tt
 			custom_tooltip = crb_create_puppet_CPS_effect_tt
 			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
 			hidden_effect = { crb_create_puppet_CPS_effect = yes }
@@ -148,7 +148,7 @@ crb_territories.4 = {
 		if = {
 			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_syria_trigger = yes }
 			change_infamy = 15
-			custom_tooltip = crb_found_hidden_province_effect_tt
+			custom_tooltip = crb_create_province_CPS_tt
 			custom_tooltip = crb_create_province_CPS_effect_tt
 			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
 			hidden_effect = { crb_create_province_CPS_effect = yes }
@@ -176,7 +176,7 @@ crb_territories.5 = {
 		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_mesopotamia_trigger = yes }
 		if = {
 			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_mesopotamia_trigger = yes }
-			custom_tooltip = crb_found_hidden_trading_post_effect_tt
+			custom_tooltip = crb_create_puppet_CPB_tt
 			custom_tooltip = crb_create_puppet_CPB_effect_tt
 			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
 			hidden_effect = { crb_create_puppet_CPB_effect = yes }
@@ -188,7 +188,7 @@ crb_territories.5 = {
 		if = {
 			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_mesopotamia_trigger = yes }
 			change_infamy = 15
-			custom_tooltip = crb_found_hidden_province_effect_tt
+			custom_tooltip = crb_create_province_CPB_tt
 			custom_tooltip = crb_create_province_CPB_effect_tt
 			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
 			hidden_effect = { crb_create_province_CPB_effect = yes }
@@ -216,7 +216,7 @@ crb_territories.6 = {
 		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_arabia_trigger = yes }
 		if = {
 			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_arabia_trigger = yes }
-			custom_tooltip = crb_found_hidden_trading_post_effect_tt
+			custom_tooltip = crb_create_puppet_CPA_tt
 			custom_tooltip = crb_create_puppet_CPA_effect_tt
 			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
 			hidden_effect = { crb_create_puppet_CPA_effect = yes }
@@ -228,7 +228,7 @@ crb_territories.6 = {
 		if = {
 			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_arabia_trigger = yes }
 			change_infamy = 15
-			custom_tooltip = crb_found_hidden_province_effect_tt
+			custom_tooltip = crb_create_province_CPA_tt
 			custom_tooltip = crb_create_province_CPA_effect_tt
 			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
 			hidden_effect = { crb_create_province_CPA_effect = yes }

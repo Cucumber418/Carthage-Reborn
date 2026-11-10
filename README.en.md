@@ -4,7 +4,7 @@
 
 A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly restored Punic state. Conservative senators govern an unrecognized republic, but the army and the Popular Assembly have ambitions of their own. Choose between the Hannonids and the Barcids, revive Punic culture, and follow the routes of Hanno or Hannibal.
 
-- Version: **1.2.0**
+- Version: **1.2.1**
 - Victoria 3: **1.15.\***
 - Languages: **English and Simplified Chinese**, included in the same mod and selected by the game's language setting.
 - Content: 7 Journal Entries, 2 Decisions, 74 event definitions, 4 companies, 2 Prestige Goods, 13 possible subject countries across 12 regions, and an original Carthaginian music track.
@@ -14,7 +14,7 @@ A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly rest
 
 Set the game language to **English**, fully exit the game, and restart. The same mod and gameplay scripts serve both languages; a separate English Workshop subscription is unnecessary. Existing saves can be used.
 
-English covers all **1,088 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod.
+English covers all **1,101 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod.
 
 ## The Punic Republic
 
@@ -35,6 +35,8 @@ The starting navy is adjusted to three frigates, with one naval base level. New-
 - **Carthage's Territories** manages the creation, individual expansion, and provincialization of overseas possessions independently of the main political routes.
 
 Sixteen additional flavor events draw upon Carthaginian history, agriculture, religion, trade, literature, and privateering.
+
+Event bodies and flavor text describe the setting and its people. Mechanical costs, unlock notices, and territorial restrictions are explained by option effects and tooltips. Foundation tooltips highlight country names and key values, link to the subject-type concepts, and retain each region's narrative description.
 
 **Gauls?** first becomes eligible when Carthage shares a land border with French territory in North Africa. Thereafter, choose a policy every five years while France retains North African land:
 
@@ -105,6 +107,6 @@ Run the automated checks from the repository root:
 python -m unittest discover -s tests -v
 ```
 
-The 88 checks cover territorial safeguards, provincialization, recurring events, governance, route separation, building completion, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
+The 91 checks cover territorial safeguards, provincialization, recurring events, governance, route separation, building completion, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
 
 Known limitation: the automatic Hannonid result at the three-year deadline still lacks part of its victory effects. Reaching the Hannonid end of the progress bar, or choosing the Hannonids in the stalemate event, uses the complete victory path. This language update does not change that gameplay behavior.

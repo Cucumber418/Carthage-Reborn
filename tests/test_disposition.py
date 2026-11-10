@@ -143,7 +143,7 @@ class DispositionTests(unittest.TestCase):
                     keys.extend(x for x in visible if x.endswith('_effect_tt') and x!= 'crb_territory_disposition_cooldown_effect_tt')
         for event in EVENTS[6:]:
             for option in entries(self.w.defs[event],'option'):
-                keys.extend(n.value for n in walk(option.value) if n.key=='custom_tooltip' and isinstance(n.value,str) and n.value.startswith('crb_create_'))
+                keys.extend(n.value for n in walk(option.value) if n.key=='custom_tooltip' and isinstance(n.value,str) and n.value.startswith('crb_create_') and n.value.endswith('_effect_tt'))
         self.assertEqual(len(keys),24)
         for key in keys:
             with self.subTest(key=key):

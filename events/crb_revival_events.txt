@@ -155,6 +155,7 @@ crb_revival.5 = {
 	option = {
 		name = crb_revival.5.a
 		default_option = yes
+		custom_tooltip = crb_cothon_unlocked_tt
 	}
 }
 
