@@ -43,3 +43,63 @@ crb_punic_war_ordinal = {
 		localization_key = crb_ordinal_many
 	}
 }
+
+crb_hv_lixus_current_name = {
+    type = country
+    text = {
+        trigger = {
+            has_variable = crb_hv_lixus_state
+            exists = var:crb_hv_lixus_state
+        }
+        localization_key = crb_hv_lixus_owned_name
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = crb_hv_lixus_map_name
+    }
+}
+
+crb_hv_kerne_current_name = {
+    type = country
+    text = {
+        trigger = {
+            has_variable = crb_hv_kerne_state
+            exists = var:crb_hv_kerne_state
+        }
+        localization_key = crb_hv_kerne_owned_name
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = crb_hv_kerne_map_name
+    }
+}
+
+crb_hv_chretes_current_name = {
+    type = country
+    text = {
+        trigger = {
+            has_variable = crb_hv_chretes_state
+            exists = var:crb_hv_chretes_state
+        }
+        localization_key = crb_hv_chretes_owned_name
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = crb_hv_chretes_map_name
+    }
+}
+
+crb_hv_chariot_current_name = {
+    type = country
+    text = {
+        trigger = {
+            has_variable = crb_hv_chariot_state
+            exists = var:crb_hv_chariot_state
+        }
+        localization_key = crb_hv_chariot_owned_name
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = crb_hv_chariot_map_name
+    }
+}

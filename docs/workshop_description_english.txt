@@ -41,7 +41,7 @@ Each region has its own descriptions and foundation choices. Territorial adminis
 
 [h2]More Carthaginian Content[/h2]
 [list]
-[*]Four distinctive companies and two Prestige Goods, with custom emblems and goods icons.
+[*]The Carthaginian Trading House, with a custom emblem and vanilla harbor/shipbuilding background.
 [*]Dedicated trading post, province, and Cothon artwork.
 [*]Sixteen historical flavor events, with economic income rewards scaled to GDP.
 [*][b]Gauls?[/b]: a recurring five-year choice between gifts and a truce with France, confrontation, or non-intervention while France holds North African land.

@@ -72,8 +72,10 @@ class BilingualLocalizationTests(unittest.TestCase):
                 with self.subTest(key=key):self.assertEqual(expand(key),label)
             self.assertNotIn('@',self.en['concept_crb_'+kind])
         for target,region in [('lixus','FEZ'),('kerne','WEST_SAHARA'),('chretes','SENEGAL'),('chariot','SOUTH_CAMEROON')]:
-            key='crb_hv_'+target+'_tt';name=self.en['STATE_'+region+'_crb']
-            self.assertIn('$STATE_'+region+'_crb$',self.en[key]);self.assertIn(name,expand(key))
+            key='crb_hv_'+target+'_tt'
+            self.assertIn("GetCustom('crb_hv_"+target+"_current_name')",self.en[key])
+            self.assertIn('.GetState.GetName',self.en['crb_hv_'+target+'_owned_name'])
+            self.assertIn("GetStateRegion('STATE_"+region+"').GetLargestStateInRegion.GetName",self.en['crb_hv_'+target+'_map_name'])
         self.assertEqual(self.en['crb_ordinal_4'],'Fourth')
         self.assertEqual(self.en['crb_ordinal_12'],'Twelfth')
         self.assertEqual(self.en['crb_ordinal_many'],'Another')

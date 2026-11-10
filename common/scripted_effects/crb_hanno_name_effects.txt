@@ -1,0 +1,34 @@
+﻿# 国家作用域；保存现有地块对象，名称随地图实时读取。
+crb_refresh_hanno_target_state_effect = {
+    save_scope_as = crb_hv_target_country
+    remove_variable = $VARIABLE$
+    random_scope_state = {
+        limit = { state_region = s:$REGION$ }
+        save_scope_as = crb_hv_target_state
+        scope:crb_hv_target_country = {
+            set_variable = { name = $VARIABLE$ value = scope:crb_hv_target_state }
+        }
+    }
+    if = {
+        limit = { NOT = { has_variable = $VARIABLE$ } }
+        random_subject_or_below = {
+            limit = {
+                has_variable = crb_carthaginian_subject
+                any_scope_state = { state_region = s:$REGION$ }
+            }
+            random_scope_state = {
+                limit = { state_region = s:$REGION$ }
+                save_scope_as = crb_hv_target_state
+                scope:crb_hv_target_country = {
+                    set_variable = { name = $VARIABLE$ value = scope:crb_hv_target_state }
+                }
+            }
+        }
+    }
+}
+crb_refresh_hanno_target_names_effect = {
+    crb_refresh_hanno_target_state_effect = { REGION = STATE_FEZ VARIABLE = crb_hv_lixus_state }
+    crb_refresh_hanno_target_state_effect = { REGION = STATE_WEST_SAHARA VARIABLE = crb_hv_kerne_state }
+    crb_refresh_hanno_target_state_effect = { REGION = STATE_SENEGAL VARIABLE = crb_hv_chretes_state }
+    crb_refresh_hanno_target_state_effect = { REGION = STATE_SOUTH_CAMEROON VARIABLE = crb_hv_chariot_state }
+}

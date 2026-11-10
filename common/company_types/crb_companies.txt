@@ -1,4 +1,4 @@
-﻿# 迦太基及其地中海贸易圈的特色公司
+﻿# 迦太基商社
 company_crb_carthaginian_trade_house = {
 	icon = "gfx/interface/icons/company_icons/historical_company_icons/crb_carthaginian_trade_house.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_harbor_shipbuilding.dds"
@@ -17,58 +17,5 @@ company_crb_carthaginian_trade_house = {
 		building_trade_center = { level = 3 state_trigger = { state_region = s:STATE_TUNISIA } }
 		building_port = { level = 3 state_trigger = { state_region = s:STATE_TUNISIA } }
 	}
-	ai_weight = { value = 3 }
-}
-company_crb_tyrian_purple = {
-	icon = "gfx/interface/icons/company_icons/historical_company_icons/crb_tyrian_purple.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
-	flavored_company = yes
-	preferred_headquarters = { STATE_LEBANON }
-	building_types = { building_dye_plantation building_crb_lebanon_dye_plantation building_textile_mills }
-	extension_building_types = { building_silk_plantation }
-	possible_prestige_goods = { prestige_good_crb_tyrian_purple }
-	potential = { crb_is_carthage_trigger = yes }
-	possible = {
-		has_technology_researched = corporate_charters
-		any_scope_state = { state_region = s:STATE_LEBANON is_incorporated = yes any_scope_building = { OR = { is_building_type = building_dye_plantation is_building_type = building_crb_lebanon_dye_plantation is_building_type = building_textile_mills } level >= 3 } }
-	}
-	prosperity_modifier = { building_dye_plantation_throughput_add = 0.1 building_crb_lebanon_dye_plantation_throughput_add = 0.1 building_textile_mills_throughput_add = 0.1 }
-	ai_will_do = { crb_is_carthage_trigger = yes }
-	ai_construction_targets = { building_textile_mills = { level = 3 state_trigger = { state_region = s:STATE_LEBANON } } }
-	ai_weight = { value = 3 }
-}
-company_crb_punic_wine = {
-	icon = "gfx/interface/icons/company_icons/historical_company_icons/crb_punic_wine.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_rice.dds"
-	flavored_company = yes
-	preferred_headquarters = { STATE_TUNISIA }
-	building_types = { building_vineyard_plantation }
-	extension_building_types = { building_food_industry }
-	possible_prestige_goods = { prestige_good_crb_punic_wine }
-	potential = { crb_is_carthage_trigger = yes }
-	possible = {
-		has_technology_researched = corporate_charters
-		any_scope_state = { state_region = s:STATE_TUNISIA is_incorporated = yes any_scope_building = { is_building_type = building_vineyard_plantation level >= 3 } }
-	}
-	prosperity_modifier = { country_prestige_mult = 0.15 building_vineyard_plantation_throughput_add = 0.1 }
-	ai_will_do = { crb_is_carthage_trigger = yes }
-	ai_construction_targets = { building_vineyard_plantation = { level = 3 state_trigger = { state_region = s:STATE_TUNISIA } } }
-	ai_weight = { value = 3 }
-}
-company_crb_cyprus_copper = {
-	icon = "gfx/interface/icons/company_icons/historical_company_icons/crb_cyprus_copper.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
-	flavored_company = yes
-	preferred_headquarters = { STATE_CYPRUS }
-	building_types = { building_copper_mine building_tooling_workshops }
-	extension_building_types = { building_steel_mills }
-	potential = { crb_is_carthage_trigger = yes }
-	possible = {
-		has_technology_researched = corporate_charters
-		any_scope_state = { OR = { state_region = s:STATE_CYPRUS state_region = s:STATE_CONSTANTINE state_region = s:STATE_TUNISIA } is_incorporated = yes any_scope_building = { OR = { is_building_type = building_copper_mine is_building_type = building_tooling_workshops } level >= 3 } }
-	}
-	prosperity_modifier = { building_copper_mine_throughput_add = 0.1 country_production_tech_spread_mult = 0.05 }
-	ai_will_do = { crb_is_carthage_trigger = yes }
-	ai_construction_targets = { building_tooling_workshops = { level = 3 state_trigger = { OR = { state_region = s:STATE_CYPRUS state_region = s:STATE_CONSTANTINE state_region = s:STATE_TUNISIA } } } }
 	ai_weight = { value = 3 }
 }

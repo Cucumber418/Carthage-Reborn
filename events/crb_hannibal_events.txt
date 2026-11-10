@@ -27,29 +27,42 @@ crb_hannibal.0 = {
 		has_variable = crb_hannibal_route_open
 		has_variable = crb_hanno_barca_concluded
 		NOT = { has_variable = crb_hanno_victory }
-		NOT = { has_variable = crb_hannibal_concluded }
-	}
+        NOT = { has_variable = crb_hannibal_concluded }
+        NOT = { has_variable = crb_hannibal_intro_shown }
+        has_variable = crb_hannibal_intro_pending
+        has_journal_entry = je_crb_hannibal_returns
+    }
+
+    immediate = {
+        remove_variable = crb_hannibal_intro_pending
+        set_variable = crb_hannibal_route_started
+        set_variable = crb_hannibal_intro_shown
+    }
 
 	option = {
 		name = crb_hannibal.0.a
 		default_option = yes
-		# 大规模恢复祖先领土宣称会引起列强警惕
-		change_infamy = 10
-		s:STATE_TRIPOLI = { add_claim = root }
-		s:STATE_LIBYA = { add_claim = root }
-		s:STATE_ALGIERS = { add_claim = root }
-		s:STATE_CONSTANTINE = { add_claim = root }
-		s:STATE_ORAN = { add_claim = root }
-		s:STATE_SICILY = { add_claim = root }
-		s:STATE_BALEARIC_ISLANDS = { add_claim = root }
-		s:STATE_MALTA = { add_claim = root }
-		s:STATE_CRETE = { add_claim = root }
-		s:STATE_CYPRUS = { add_claim = root }
-		s:STATE_LOWER_ANDALUSIA = { add_claim = root }
-		s:STATE_MURCIA = { add_claim = root }
-		s:STATE_VALENCIA = { add_claim = root }
-		s:STATE_UPPER_ANDALUSIA = { add_claim = root }
-		s:STATE_LEBANON = { add_claim = root }
+        if = {
+            limit = { NOT = { has_variable = crb_hannibal_intro_rewards_granted } }
+            hidden_effect = { set_variable = crb_hannibal_intro_rewards_granted }
+			# 大规模恢复祖先领土宣称会引起列强警惕
+			change_infamy = 10
+			s:STATE_TRIPOLI = { add_claim = root }
+			s:STATE_LIBYA = { add_claim = root }
+			s:STATE_ALGIERS = { add_claim = root }
+			s:STATE_CONSTANTINE = { add_claim = root }
+			s:STATE_ORAN = { add_claim = root }
+			s:STATE_SICILY = { add_claim = root }
+			s:STATE_BALEARIC_ISLANDS = { add_claim = root }
+			s:STATE_MALTA = { add_claim = root }
+			s:STATE_CRETE = { add_claim = root }
+			s:STATE_CYPRUS = { add_claim = root }
+			s:STATE_LOWER_ANDALUSIA = { add_claim = root }
+			s:STATE_MURCIA = { add_claim = root }
+			s:STATE_VALENCIA = { add_claim = root }
+			s:STATE_UPPER_ANDALUSIA = { add_claim = root }
+			s:STATE_LEBANON = { add_claim = root }
+        }
 	}
 }
 
@@ -331,6 +344,13 @@ crb_hannibal.8 = {
 	trigger = {
 		# 由日志 je_crb_hannibal_returns 触发
 	}
+
+    immediate = {
+        remove_variable = crb_hannibal_intro_pending
+        set_variable = crb_hannibal_route_started
+        set_variable = crb_hannibal_intro_shown
+        set_variable = crb_hannibal_concluded
+    }
 
 	option = {
 		name = crb_hannibal.8.a

@@ -23,6 +23,7 @@ crb_on_state_changed = {
 	effect = {
 		crb_assign_punic_name_to_state_effect = yes
 		c:TUN ?= {
+			crb_refresh_hanno_target_names_effect = yes
 			crb_try_unlock_territorial_journal_effect = yes
 			crb_check_french_border_effect = yes
 		}
@@ -49,6 +50,7 @@ crb_on_game_started = {
 				set_ig_trait = ig_trait:ig_trait_crb_elephant_corps
 			}
 			crb_apply_punic_state_names_effect = yes
+			crb_refresh_hanno_target_names_effect = yes
 			crb_try_unlock_territorial_journal_effect = yes
 			crb_check_french_border_effect = yes
 			trigger_event = {
@@ -73,6 +75,7 @@ crb_monthly_pulse_country = {
 		crb_try_start_hannibal_route_effect = yes
 		# 历史地名：每月重新套用一次，防止被原版动态地名覆盖
 		crb_apply_punic_state_names_effect = yes
+		crb_refresh_hanno_target_names_effect = yes
 		# 第 N 次布匿战争
 		crb_punic_war_check_effect = yes
 		# 受认可后移除"迦太基仍未毁灭"

@@ -195,10 +195,13 @@ class GovernanceAndRouteTests(unittest.TestCase):
                 self.assertNotIn('crb_hannibal_route_open',tun.variables);self.assertNotIn('je_crb_hannibal_returns',tun.journals)
                 self.assertFalse(self.w.conditions(get(self.w.defs['je_crb_hannibal_returns'],'possible'),self.w.ctx()))
                 self.assertTrue(self.w.conditions(get(self.w.defs['je_crb_hanno_voyage'],'possible'),self.w.ctx()))
-    def test_voyage_uses_the_same_punic_names_as_the_map(self):
+    def test_voyage_uses_live_state_names_instead_of_fixed_punic_labels(self):
         for target,region in [('lixus','FEZ'),('kerne','WEST_SAHARA'),('chretes','SENEGAL'),('chariot','SOUTH_CAMEROON')]:
-            text=self.locales[f'crb_hv_{target}_tt'];self.assertIn(f'$STATE_{region}_crb$',text)
-            self.assertNotIn('GetStateRegion',text)
+            text=self.locales[f'crb_hv_{target}_tt']
+            self.assertIn(f"GetCustom('crb_hv_{target}_current_name')",text)
+            self.assertNotIn(f'$STATE_{region}_crb$',text)
+            self.assertIn('.GetState.GetName',self.locales[f'crb_hv_{target}_owned_name'])
+            self.assertIn(f"GetStateRegion('STATE_{region}').GetLargestStateInRegion.GetName",self.locales[f'crb_hv_{target}_map_name'])
 
 class ArtworkIntegrationTests(unittest.TestCase):
     def test_country_panel_subject_pacts_bind_their_own_texture(self):
@@ -221,9 +224,6 @@ class ArtworkIntegrationTests(unittest.TestCase):
         companies=parse((ROOT/'common/company_types/crb_companies.txt').read_text(encoding='utf-8-sig'))
         backgrounds={
             'company_crb_carthaginian_trade_house':'comp_illu_harbor_shipbuilding.dds',
-            'company_crb_tyrian_purple':'comp_illu_manufacturing_light.dds',
-            'company_crb_punic_wine':'comp_illu_farm_rice.dds',
-            'company_crb_cyprus_copper':'comp_illu_mining.dds',
         }
         self.assertEqual({n.key for n in companies},set(backgrounds))
         for company in companies:

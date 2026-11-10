@@ -5,3 +5,21 @@
 	NOT = { has_variable = crb_hanno_victory }
 	NOT = { has_variable = crb_hannibal_concluded }
 }
+
+# 国家层面永久记录；兼容旧版已经开启、推进或完成的日志。
+crb_hannibal_has_history_trigger = {
+    OR = {
+        has_variable = crb_hannibal_route_started
+        has_variable = crb_hannibal_intro_shown
+        has_variable = crb_hannibal_intro_rewards_granted
+        has_variable = crb_hannibal_concluded
+        has_variable = crb_hannibal_tripoli_done
+        has_variable = crb_hannibal_numidia_done
+        has_variable = crb_hannibal_syracuse_done
+        has_variable = crb_hannibal_islands_done
+        has_variable = crb_hannibal_iberia_done
+        has_variable = crb_hannibal_new_carthage_done
+        has_variable = crb_hannibal_tyre_done
+        has_modifier = crb_hannibal_returned
+    }
+}

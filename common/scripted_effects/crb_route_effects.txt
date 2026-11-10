@@ -1,10 +1,47 @@
-﻿crb_try_start_hannibal_route_effect = {
-	if = {
-		limit = { crb_barca_route_eligible_trigger = yes }
-		set_variable = crb_hannibal_route_open
-		if = {
-			limit = { NOT = { has_journal_entry = je_crb_hannibal_returns } }
-			add_journal_entry = { type = je_crb_hannibal_returns }
-		}
-	}
+﻿# 旧档的历史证据归并到国家永久标记，不重新播放开场事件。
+crb_preserve_hannibal_history_effect = {
+    if = {
+        limit = {
+            crb_is_carthage_trigger = yes
+            NOT = { has_variable = crb_hannibal_intro_pending }
+            OR = {
+                has_journal_entry = je_crb_hannibal_returns
+                crb_hannibal_has_history_trigger = yes
+            }
+        }
+        hidden_effect = {
+            set_variable = crb_hannibal_route_started
+            set_variable = crb_hannibal_intro_shown
+            if = {
+                limit = { has_journal_entry = je_crb_hannibal_returns }
+                set_variable = crb_hannibal_route_open
+            }
+            if = {
+                limit = { has_modifier = crb_hannibal_returned }
+                set_variable = crb_hannibal_concluded
+            }
+        }
+    }
+}
+
+# 开场事件只有这一个受永久标记保护的入口；日志自身不再播放开场。
+crb_try_start_hannibal_route_effect = {
+    crb_preserve_hannibal_history_effect = yes
+    if = {
+        limit = {
+            crb_barca_route_eligible_trigger = yes
+            NOT = { crb_hannibal_has_history_trigger = yes }
+            NOT = { has_journal_entry = je_crb_hannibal_returns }
+        }
+        hidden_effect = { set_variable = crb_hannibal_route_open }
+        if = {
+            limit = { NOT = { has_journal_entry = je_crb_hannibal_returns } }
+            add_journal_entry = { type = je_crb_hannibal_returns }
+        }
+        hidden_effect = {
+            set_variable = crb_hannibal_route_started
+            set_variable = crb_hannibal_intro_pending
+        }
+        trigger_event = { id = crb_hannibal.0 popup = yes }
+    }
 }

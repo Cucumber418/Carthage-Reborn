@@ -1,4 +1,4 @@
-# Console and Language Checks — 1.2.4
+# Console and Language Checks — 1.2.5
 
 These scenarios are prepared from the scripts. They have not been run in a Victoria 3 process.
 
@@ -62,10 +62,10 @@ For the Roman case, establish the Ionian Trading Post and use **Provincialize Ro
 
 - Check the country panel, subject list, relationship tooltip, and concept tooltip. The names must read **Trading Post** and **Province**, with their English descriptions.
 - The country relationship retains its graphical icon. Names and territorial buttons must not insert a second text icon.
-- Check Governor, Governorship, company names, Prestige Goods, modifiers, and event options.
+- Check Governor, Governorship, the Carthaginian Trading House name, modifiers, and event options.
 - No `crb_…`, `je_crb_…`, or `concept_crb_…` keys should appear as labels.
 - Check that dynamic names and values render correctly rather than appearing as raw `$…$` or `[…]` expressions.
-- Check restored map names and Hanno's matching target names: Mauretania, Cerne, Chretes, and Chariot of the Gods.
+- Check restored map names and Hanno's live target names before and after acquisition, including Mauretania, Cerne, Chretes, and Chariot of the Gods after the mod's renaming.
 - Check that Punic War titles use English ordinals such as **Fourth Punic War**.
 - Inspect long event bodies and territorial buttons for clipping.
 - Foundation tooltips should highlight the future country and overlord, link the Trading Post or Province concept, and emphasize 30% or 50% payments and the three-month handover. Check both the original regions and the six hidden regions.
@@ -111,7 +111,7 @@ The Cothon's completion event must wait until at least one building level is com
 research corporate_charters
 ```
 
-Meet the company's incorporated-state and building requirements, then establish it through the normal company interface. Check the custom emblem, vanilla industry background, and English names and descriptions.
+The mod adds only the Carthaginian Trading House. Own an incorporated Tunisia with at least three levels of Trade Centers or Ports, then establish the company through the normal interface. Check its custom emblem, vanilla harbor/shipbuilding background, English name, and prosperity bonuses (+10% Trade Advantage and +5% Trade Capacity). The other three custom companies, their two Prestige Goods, and the specialized Lebanese dye plantation have been removed.
 
 For a quick company preview in Script Runner:
 
@@ -139,12 +139,16 @@ The bilingual checks require matching keys and language files, valid UTF-8 BOM e
 
 Check Interest Group panels, event bodies, journal entries, and effect tooltips. Landholders, Shipowners, Votaries, and Scribes should show their current name without a generic type in parentheses. The same shared format applies to variants in other countries and in Chinese.
 
-## Lebanon's Dedicated Dye Capacity
+## Hannibal Opening Must Not Replay After Colonial Laws
 
-- In a new campaign, Lebanon should have **15 levels** of Lebanese Dye Plantation potential, with no free constructed levels. Its original **30 arable land** and coal, logging, and fishing potentials remain unchanged.
-- Use `own STATE_LEBANON TUN` to test construction. With spare arable land, check vanilla dye production methods, construction costs, workers, and output. Queuing or expanding beyond the regional 15-level resource cap must be blocked by the game's construction rules.
-- These plantations still use existing arable land; the regional resource cap and spare-land constraint both apply. Other crops gain no land. The specialized plantation must be unavailable in Syria, Aleppo, and other regions, while vanilla dye-growing regions retain their normal buildings and caps.
-- In a pre-update save, allow Lebanon's current owner's monthly check to run, or execute `crb_initialize_lebanon_dye_capacity_effect = yes` in the Effect Script Runner. Repeated calls, save reloads, split ownership, and ownership transfers must retain a total regional potential of 15.
-- Three levels of the new plantation should qualify for the Tyrian Purple Company without requiring three textile-mill levels, provided its other conditions are met. Check company prosperity, the Tyrian Purple event's throughput bonus, and Prestige Good output.
+Test a new campaign and a pre-update save. After a Barcid victory, accept the single opening and record the 10 Infamy and claims. Enact Colonial Exploitation: the Voyage of Hanno may activate, while the existing Hannibal journal must continue without another opening or Infamy charge. Repeat law changes and monthly checks. Old active journals and old progress must count as already started, even without the new markers; completed routes must stay closed.
 
-Automated checks cover authored initialization, migration, localization, and company integration; the game's combined resource/arable-land construction limits still require in-game testing.
+Repeated `crb_try_start_hannibal_route_effect = yes` calls in the Effect Script Runner are useful for inspecting the guard, but forcing event IDs does not replace the natural law-change test.
+
+## Live Voyage Target Names
+
+Check all four objective titles and conditions against the current map. Before acquisition they should use the existing names; after the mod renames the held states they should show Mauretania, Cerne, Chretes, and Chariot of the Gods. Disabling dynamic names or manually renaming a state must keep the journal consistent with the actual map.
+
+For split states, directly held land takes priority over a Carthaginian subject's land and then the largest current state in the region. Test subject transfers and loss of control. Existing saves refresh on the monthly check; `crb_refresh_hanno_target_names_effect = yes` in the Effect Script Runner refreshes the references immediately. Check both languages for raw keys, invalid State references, and clipping.
+
+The automated scenarios do not run Victoria 3's event or GUI engine.

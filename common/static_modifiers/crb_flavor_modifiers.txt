@@ -28,7 +28,6 @@ crb_flavor_tyrian_purple = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	country_prestige_mult = 0.05
 	building_dye_plantation_throughput_add = 0.1
-	building_crb_lebanon_dye_plantation_throughput_add = 0.1
 }
 
 

@@ -19,6 +19,7 @@ je_crb_hannibal_returns = {
 		NOT = { has_variable = crb_hanno_victory }
 		has_variable = crb_hanno_barca_concluded
 		NOT = { has_variable = crb_hannibal_concluded }
+		NOT = { crb_hannibal_has_history_trigger = yes }
 	}
 
 	possible = {
@@ -27,20 +28,13 @@ je_crb_hannibal_returns = {
 		has_variable = crb_hannibal_route_open
 		NOT = { has_variable = crb_hanno_victory }
 		has_variable = crb_hanno_barca_concluded
-		NOT = { has_variable = crb_hannibal_concluded }
-	}
+        NOT = { has_variable = crb_hannibal_concluded }
+        OR = {
+            has_journal_entry = je_crb_hannibal_returns
+            NOT = { crb_hannibal_has_history_trigger = yes }
+        }
+    }
 
-	immediate = {
-		# 宣称在开场事件的选项中获得，这样玩家可以在选项上看到
-		if = {
-			limit = {
-				NOT = { has_variable = crb_hanno_victory }
-				NOT = { has_variable = crb_hannibal_intro_shown }
-			}
-			set_variable = crb_hannibal_intro_shown
-			trigger_event = { id = crb_hannibal.0 popup = yes }
-		}
-	}
 
 	on_monthly_pulse = {
 		effect = {

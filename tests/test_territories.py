@@ -97,6 +97,7 @@ class Country:
     diplomatic_enemies: set = field(default_factory=set)
     modifier_months: dict = field(default_factory=dict)
     modifier_amounts: dict = field(default_factory=dict)
+    variable_values: dict = field(default_factory=dict)
 
 @dataclass
 class State:
@@ -104,6 +105,8 @@ class State:
     owner: str
     capital: bool = False
     buildings: dict = field(default_factory=dict)
+    name: str = ''
+    area: int = 1
 
 @dataclass
 class Fleet:
@@ -117,9 +120,6 @@ class Ship:
 @dataclass
 class Region:
     name: str
-    variables: set = field(default_factory=set)
-    resource_potential: dict = field(default_factory=dict)
-    arable_land: int = 0
 
 @dataclass
 class Building:
@@ -145,7 +145,7 @@ class World:
         self.borders = []
         self.saved = {}; self.events = []; self.unlocked = 0
         self.scheduled = []
-        self.regions = {}
+        self.claims = {}
     def ctx(self, tag='TUN'): return Context(self.countries[tag], root=self.countries[tag])
     def country(self, tag, **kw):
         self.countries[tag] = Country(tag, **kw); return self.countries[tag]
@@ -158,8 +158,12 @@ class World:
         if value == 'owner' and isinstance(ctx.obj, State): return self.countries[ctx.obj.owner]
         if value == 'overlord' and isinstance(ctx.obj, Country): return self.countries.get(ctx.obj.overlord)
         if value.startswith('c:'): return self.countries.get(value[2:])
-        if value.startswith('s:'): return self.regions.setdefault(value[2:],Region(value[2:]))
+        if value.startswith('s:'): return Region(value[2:])
         if value.startswith('scope:'): return self.saved.get(value[6:])
+        if value.startswith('var:'):
+            target=getattr(ctx.obj,'variable_values',{}).get(value[4:])
+            if isinstance(target,State) and not any(s is target for s in self.states):return None
+            return target
         return None
     def items(self, key, ctx):
         o = ctx.obj
@@ -275,15 +279,15 @@ class World:
                 for obj in eligible[:1] if k.startswith('random_') else eligible:
                     self.effect([x for x in v if x.key!='limit'],ctx.enter(obj))
             elif k=='save_scope_as':self.saved[v]=o
-            elif k=='set_variable':o.variables.add(v)
-            elif k=='remove_variable':o.variables.discard(v)
-            elif k=='add_resource_potential':
-                group=get(self.defs[v],'building_group')
-                o.resource_potential.setdefault(group,0)
-            elif k=='change_resource_potential':
-                group=get(self.defs[get(v,'type')],'building_group')
-                assert get(self.defs[group],'capped_by_resources')=='yes'
-                o.resource_potential[group]+=self.numeric(get(v,'amount'),ctx)
+            elif k=='set_variable':
+                if isinstance(v,list):
+                    name=get(v,'name');value=get(v,'value');o.variables.add(name)
+                    target=self.resolve(value,ctx)
+                    o.variable_values[name]=target if target is not None else self.numeric(value,ctx)
+                else:o.variables.add(v)
+            elif k=='remove_variable':o.variables.discard(v);o.variable_values.pop(v,None)
+            elif k=='set_state_name':o.name=v
+            elif k=='add_claim':self.claims.setdefault(o.name,set()).add(self.resolve(v,ctx).tag)
             elif k=='set_state_religion':o.religion=v
             elif k=='add_modifier':
                 name=get(v,'name');o.modifiers.add(name)
@@ -489,9 +493,10 @@ class TerritoriesTests(unittest.TestCase):
         self.assertTrue(self.w.conditions(subst(self.w.defs['crb_controls_region_trigger'],{'REGION':'STATE_CONSTANTINE'}),self.w.ctx()))
     def test_art_textures_have_expected_dds_headers_and_dimensions(self):
         paths=[]
-        for rel in ('common/company_types/crb_companies.txt','common/prestige_goods/crb_prestige_goods.txt'):
-            paths+=re.findall(r'(?:icon|background|texture) = "(gfx/[^\"]*crb_[^\"]+\.dds)"',(ROOT/rel).read_text(encoding='utf-8-sig'))
-        self.assertEqual(len(paths),6)
+        for folder in ('company_types','prestige_goods'):
+            for file in (ROOT/'common'/folder).glob('*.txt'):
+                paths+=re.findall(r'(?:icon|background|texture) = "(gfx/[^\"]*crb_[^\"]+\.dds)"',file.read_text(encoding='utf-8-sig'))
+        self.assertEqual(len(paths),1)
         for rel in paths:
             with self.subTest(texture=rel):
                 b=(ROOT/rel).read_bytes();self.assertEqual(b[:4],b'DDS ')

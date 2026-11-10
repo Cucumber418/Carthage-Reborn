@@ -33,6 +33,7 @@ je_crb_hanno_voyage = {
 	}
 
 	immediate = {
+		crb_refresh_hanno_target_names_effect = yes
 		if = {
 			limit = { NOT = { has_variable = crb_hanno_voyage_started } }
 			set_variable = crb_hanno_voyage_started

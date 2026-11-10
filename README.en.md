@@ -4,17 +4,17 @@
 
 A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly restored Punic state. Conservative senators govern an unrecognized republic, but the army and the Popular Assembly have ambitions of their own. Choose between the Hannonids and the Barcids, revive Punic culture, and follow the routes of Hanno or Hannibal.
 
-- Version: **1.2.4**
+- Version: **1.2.5**
 - Victoria 3: **1.15.\***
 - Languages: **English and Simplified Chinese**, included in the same mod and selected by the game's language setting.
-- Content: 7 Journal Entries, 2 Decisions, 74 event definitions, 4 companies, 2 Prestige Goods, 13 possible subject countries across 12 regions, and an original Carthaginian music track.
+- Content: 7 Journal Entries, 2 Decisions, 74 event definitions, 1 company, 13 possible subject countries across 12 regions, and an original Carthaginian music track.
 - Workshop descriptions: [English](docs/workshop_description_english.txt) / [Chinese](docs/workshop_description.txt).
 
 ## Language
 
 Set the game language to **English**, fully exit the game, and restart. The same mod and gameplay scripts serve both languages; a separate English Workshop subscription is unnecessary. Existing saves can be used.
 
-English covers all **1,105 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod. Interest Group variants display their current name alone, without an appended generic type in parentheses.
+English covers all **1,098 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod. Interest Group variants display their current name alone, without an appended generic type in parentheses.
 
 ## The Punic Republic
 
@@ -28,10 +28,10 @@ The starting navy is adjusted to three frigates, with one naval base level. New-
 
 - **The Hannonids and the Barcids** opens after Carthage or its actual subjects acquire land in Constantine or Tripoli. The Hannonids favor the Senate, African estates, and commerce. The Barcids favor the Popular Assembly and overseas expansion. The contest lasts up to three years, with concessions and political events influencing its outcome.
 - **Carthaginian Cultural Revival** restores plantations, reclaims the salted land over ten years, spreads the worship of Tanit, and rebuilds the **Cothon**. Its completion event requires a completed building level, rather than a newly placed construction site.
-- **Hannibal Returns** is the Barcid route to the pre-Punic-War dominions: Tripoli, Numidia, Sicily, the Mediterranean islands, Iberia, and Tyre. Its land objectives count Carthage's holdings and those of its actual subjects.
+- **Hannibal Returns** is the Barcid route to the pre-Punic-War dominions: Tripoli, Numidia, Sicily, the Mediterranean islands, Iberia, and Tyre. Its land objectives count Carthage's holdings and those of its actual subjects. The opening has a single guarded country-level entry point. Existing saves with an active journal, prior opening, progress, or completion are marked as already started; enacting colonial laws cannot replay the opening or charge its Infamy again.
 - **Punic War** journals accompany conflict with the rulers of Sicily. Their titles begin with the Fourth Punic War and advance with subsequent wars.
 - **Two Thousand Years of Vengeance** follows Hannibal from Iberia through Gaul and over the Alps toward Rome.
-- **The Voyage of Hanno** opens through the Hannonid route or colonial laws. Follow the Atlantic coast to Lixus, Cerne, the Chretes, and the Chariot of the Gods, and maintain ten consecutive years of peace. Target tooltips use the same restored names as the map.
+- **The Voyage of Hanno** opens through the Hannonid route or colonial laws. Follow the Atlantic coast to Lixus, Cerne, the Chretes, and the Chariot of the Gods, and maintain ten consecutive years of peace. Target titles and conditions use live map names: current foreign names before acquisition, then the actual renamed names afterward. Split states prefer directly held land, then a Carthaginian subject, and otherwise the largest current state in the region.
 - **Carthage's Territories** manages the creation, individual expansion, and provincialization of overseas possessions independently of the main political routes.
 
 Sixteen additional flavor events draw upon Carthaginian history, agriculture, religion, trade, literature, and privateering.
@@ -82,16 +82,11 @@ Each trading post has a **Provincialize** button in the territorial journal. Con
 
 Existing subjects each have their own expansion button. The **Expand the Trading Posts** Decision can still transfer eligible new territory to all actual subjects at once. The **Convert to Islam** Decision provides another course for the country's religion.
 
-## Companies, Art, and Music
+## Carthaginian Trading House, Art, and Music
 
-- **Carthaginian Trading House**: trade and shipping through Carthage.
-- **Tyrian Purple Company**: dyes and textiles, with Tyrian Purple as a Prestige Good.
-- **Punic Wine Company**: vineyards and wine, with Punic Wine as a Prestige Good.
-- **Cyprus Copper Company**: copper mining and tool manufacture.
+The mod adds one company: the **Carthaginian Trading House**, engaged in trade and shipping through Carthage. It requires Corporate Charters and at least three levels of Trade Centers or Ports in incorporated Tunisia. Its industries are Trade Centers and Ports, with Shipyards as an extension. Prosperity grants +10% Trade Advantage and +5% Trade Capacity.
 
-Companies require Corporate Charters and qualifying incorporated-state buildings. Each has a custom company emblem; company backgrounds retain vanilla industry illustrations. Prestige Goods, subject relationships, and the Cothon have dedicated artwork. PNG originals are retained in [docs/art](docs/art).
-
-Lebanon gains **Lebanese Dye Plantations**, capped by a dedicated regional resource potential of **15 levels**. They retain vanilla dye production methods, artwork, construction costs, and the normal arable-land constraint. Lebanon retains **30 arable land**, and its other crop and extraction capacities are unchanged. The Tyrian Purple Company recognizes these plantations for founding, operations, and prosperity bonuses. New campaigns initialize the resource automatically; existing saves receive it through the current owner's monthly check, without stacking after transfers or repeated checks.
+The company retains its custom emblem and vanilla harbor/shipbuilding background. Subject relationships and the Cothon retain their dedicated artwork; original art containing the retained Trading House remains archived in [docs/art](docs/art).
 
 The supplied track **Carthage** is integrated with Victoria 3's 1.15 music system. In **Weighted** mode it is heavily favored for Carthage, particularly at the start of 1836. A new Carthaginian game has an 85% chance to request it at startup; disabled tracks, cooldowns, and non-interruptible music can prevent immediate playback. Random and Least Played modes do not reproduce the intended weighting.
 
@@ -99,7 +94,7 @@ The supplied track **Carthage** is integrated with Victoria 3's 1.15 music syste
 
 Enable this mod in the Victoria 3 launcher. It replaces Tunisia and conflicts with other mods that replace the same country. Use the same Workshop item for both supported languages.
 
-For a local checkout, place the mod in the Victoria 3 mod directory and add it to a launcher playset. Pull updates from `main`, fully restart the game, and select the desired game language.
+For a local checkout, place the mod in the Victoria 3 mod directory and add it to a launcher playset. Pull updates from `main`, fully restart the game, and select the desired game language. Version 1.2.5 removes custom company, Prestige Good, and specialized building definitions; loading saves containing those objects has not been tested in the game.
 
 [English console and language checks](docs/console_testing.en.md) cover the main test points. The [Chinese test guide](docs/console_testing.md) contains the longer scenario reference.
 
@@ -109,6 +104,6 @@ Run the automated checks from the repository root:
 python -m unittest discover -s tests -v
 ```
 
-The 105 checks cover territorial safeguards, provincialization, recurring events, governance, route separation, building completion, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
+The 113 checks cover territorial safeguards, provincialization, recurring events, governance, route separation, building completion, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
 
-Known limitation: the automatic Hannonid result at the three-year deadline still lacks part of its victory effects. Reaching the Hannonid end of the progress bar, or choosing the Hannonids in the stalemate event, uses the complete victory path. This language update does not change that gameplay behavior.
+Known limitation: the automatic Hannonid result at the three-year deadline still lacks part of its victory effects. Reaching the Hannonid end of the progress bar, or choosing the Hannonids in the stalemate event, uses the complete victory path. This update does not change that deadline behavior.
