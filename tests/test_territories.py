@@ -117,6 +117,9 @@ class Ship:
 @dataclass
 class Region:
     name: str
+    variables: set = field(default_factory=set)
+    resource_potential: dict = field(default_factory=dict)
+    arable_land: int = 0
 
 @dataclass
 class Building:
@@ -142,6 +145,7 @@ class World:
         self.borders = []
         self.saved = {}; self.events = []; self.unlocked = 0
         self.scheduled = []
+        self.regions = {}
     def ctx(self, tag='TUN'): return Context(self.countries[tag], root=self.countries[tag])
     def country(self, tag, **kw):
         self.countries[tag] = Country(tag, **kw); return self.countries[tag]
@@ -154,7 +158,7 @@ class World:
         if value == 'owner' and isinstance(ctx.obj, State): return self.countries[ctx.obj.owner]
         if value == 'overlord' and isinstance(ctx.obj, Country): return self.countries.get(ctx.obj.overlord)
         if value.startswith('c:'): return self.countries.get(value[2:])
-        if value.startswith('s:'): return Region(value[2:])
+        if value.startswith('s:'): return self.regions.setdefault(value[2:],Region(value[2:]))
         if value.startswith('scope:'): return self.saved.get(value[6:])
         return None
     def items(self, key, ctx):
@@ -273,6 +277,13 @@ class World:
             elif k=='save_scope_as':self.saved[v]=o
             elif k=='set_variable':o.variables.add(v)
             elif k=='remove_variable':o.variables.discard(v)
+            elif k=='add_resource_potential':
+                group=get(self.defs[v],'building_group')
+                o.resource_potential.setdefault(group,0)
+            elif k=='change_resource_potential':
+                group=get(self.defs[get(v,'type')],'building_group')
+                assert get(self.defs[group],'capped_by_resources')=='yes'
+                o.resource_potential[group]+=self.numeric(get(v,'amount'),ctx)
             elif k=='set_state_religion':o.religion=v
             elif k=='add_modifier':
                 name=get(v,'name');o.modifiers.add(name)

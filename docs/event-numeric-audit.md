@@ -600,3 +600,12 @@
 - 中英文在 `replace/crb_ui_l_<language>.yml` 仅覆盖原版 `DATA_INTEREST_GROUP_VARIANT_NAME_FORMAT` 为 `$NAME$`。所有利益集团变体仅显示当前名称，不再附加通用类型；保留名称之外的原版图标和悬停信息，不覆盖 GUI 文件。
 - 两种语言各 17 个文件、1,100 个文本键；101 项静态与模拟脚本检查通过。检查改为验证原版可见效果的实际脚本展开及清理隔离，并继续覆盖持续付款、期限、GDP 取整和双语对应。另对本次实际脚本差异剥离显示容器后比较执行结构，确认机制一致。
 - 依据：[原版简体中文效果文本](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/localization/simp_chinese/effects_l_simp_chinese.yml)、[利益集团变体名称格式](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/localization/simp_chinese/customized_tooltips_l_simp_chinese.yml)、[原版事件的 hidden_effect 写法](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/events/british_raj_events.txt)。尚未在游戏内验证实际排版与刷新。
+
+## 35. 1.2.4 黎巴嫩十五级染料种植园
+
+- 用户明确选择染料单独限制十五级，其他作物上限不变。原版黎巴嫩没有染料种植潜力，且农业共用三十级耕地；因此不修改 `arable_land`，也不覆盖原版染料建筑或世界各地的染料资源。
+- 新建黎巴嫩专用的染料种植园与资源组。资源组继承 `bg_dye_plantations`，保留种植园属性及耕地使用，同时启用 `capped_by_resources = yes`；建筑仅能在黎巴嫩使用，图标、生产方式、科技门槛、雇佣与建设成本照用原版染料种植园。
+- 地区作用域下用 `add_resource_potential` 和 `change_resource_potential` 增加十五级资源，完成标记保存在地区。新开局直接补开；旧档由实际所有者月度检查补开。重复执行、多人分割所有权和地区易手不再加十五级。现有矿林渔资源与普通作物上限不变；耕地不足时仍需按原版农业规则腾出用地。
+- 推罗紫公司将专用建筑纳入主要产业和三级建筑成立条件，繁荣加成与推罗紫事件各对新建筑提供与原版染料种植园相同的 +10% 吞吐量。种植园组加成与原有生产方法通过继承继续适用。
+- 两种语言各 1,105 个键。105 项静态与模拟脚本检查通过，新增检查覆盖十五级补丁、旧档、地区持久标记、易手与分割防重、原资源及耕地不变、地区建筑限制和公司兼容。另对专用建筑与原版染料定义的生产字段进行对应核验。
+- 原版依据：[黎巴嫩地区数据](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/map_data/state_regions/08_middle_east.txt)、[染料种植园](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/buildings/04_plantations.txt)、[建筑组字段及继承](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/building_groups/00_building_groups.txt)、[资源潜力效果](https://github.com/Victoria-3-Modding-Co-op/Modding-Digests/blob/main/1.15.0/docs/effects.log)。尚无游戏内建造或资源分配实测。

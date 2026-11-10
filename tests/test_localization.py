@@ -43,7 +43,7 @@ def ui_references(scripts):
             if not isinstance(n,Node):continue
             if n.key in fields and not (n.key=='name' and parent in ('set_variable','change_variable','add_progress')):add(custom_key(n.value),path)
             if isinstance(n.value,list):walk(n.value,path,n.key)
-    roots={'buildings','cultures','religions','discrimination_traits','discrimination_trait_groups','laws','government_types','ideologies','interest_group_traits','company_types','prestige_goods','production_methods','production_method_groups','static_modifiers','subject_types','diplomatic_actions','journal_entry_groups','journal_entries','game_concepts'}
+    roots={'buildings','building_groups','cultures','religions','discrimination_traits','discrimination_trait_groups','laws','government_types','ideologies','interest_group_traits','company_types','prestige_goods','production_methods','production_method_groups','static_modifiers','subject_types','diplomatic_actions','journal_entry_groups','journal_entries','game_concepts'}
     for path,nodes in scripts.items():
         walk(nodes,path)
         parts=path.split('/')

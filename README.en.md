@@ -4,7 +4,7 @@
 
 A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly restored Punic state. Conservative senators govern an unrecognized republic, but the army and the Popular Assembly have ambitions of their own. Choose between the Hannonids and the Barcids, revive Punic culture, and follow the routes of Hanno or Hannibal.
 
-- Version: **1.2.3**
+- Version: **1.2.4**
 - Victoria 3: **1.15.\***
 - Languages: **English and Simplified Chinese**, included in the same mod and selected by the game's language setting.
 - Content: 7 Journal Entries, 2 Decisions, 74 event definitions, 4 companies, 2 Prestige Goods, 13 possible subject countries across 12 regions, and an original Carthaginian music track.
@@ -14,7 +14,7 @@ A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly rest
 
 Set the game language to **English**, fully exit the game, and restart. The same mod and gameplay scripts serve both languages; a separate English Workshop subscription is unnecessary. Existing saves can be used.
 
-English covers all **1,100 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod. Interest Group variants display their current name alone, without an appended generic type in parentheses.
+English covers all **1,105 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod. Interest Group variants display their current name alone, without an appended generic type in parentheses.
 
 ## The Punic Republic
 
@@ -91,6 +91,8 @@ Existing subjects each have their own expansion button. The **Expand the Trading
 
 Companies require Corporate Charters and qualifying incorporated-state buildings. Each has a custom company emblem; company backgrounds retain vanilla industry illustrations. Prestige Goods, subject relationships, and the Cothon have dedicated artwork. PNG originals are retained in [docs/art](docs/art).
 
+Lebanon gains **Lebanese Dye Plantations**, capped by a dedicated regional resource potential of **15 levels**. They retain vanilla dye production methods, artwork, construction costs, and the normal arable-land constraint. Lebanon retains **30 arable land**, and its other crop and extraction capacities are unchanged. The Tyrian Purple Company recognizes these plantations for founding, operations, and prosperity bonuses. New campaigns initialize the resource automatically; existing saves receive it through the current owner's monthly check, without stacking after transfers or repeated checks.
+
 The supplied track **Carthage** is integrated with Victoria 3's 1.15 music system. In **Weighted** mode it is heavily favored for Carthage, particularly at the start of 1836. A new Carthaginian game has an 85% chance to request it at startup; disabled tracks, cooldowns, and non-interruptible music can prevent immediate playback. Random and Least Played modes do not reproduce the intended weighting.
 
 ## Installation and Testing
@@ -107,6 +109,6 @@ Run the automated checks from the repository root:
 python -m unittest discover -s tests -v
 ```
 
-The 101 checks cover territorial safeguards, provincialization, recurring events, governance, route separation, building completion, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
+The 105 checks cover territorial safeguards, provincialization, recurring events, governance, route separation, building completion, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
 
 Known limitation: the automatic Hannonid result at the three-year deadline still lacks part of its victory effects. Reaching the Hannonid end of the progress bar, or choosing the Hannonids in the stalemate event, uses the complete victory path. This language update does not change that gameplay behavior.

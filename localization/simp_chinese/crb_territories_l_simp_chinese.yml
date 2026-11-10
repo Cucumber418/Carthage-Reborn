@@ -325,3 +325,8 @@
  crb_gallic_appeasement_expense_desc: "按约定持续向法兰西支付和解金。"
  crb_gallic_appeasement_income: "迦太基的和解金"
  crb_gallic_appeasement_income_desc: "迦太基为维系两国间的和平而支付的和解金。"
+ bg_crb_lebanon_dye_plantations: "黎巴嫩染料种植园"
+ building_crb_lebanon_dye_plantation: "黎巴嫩染料种植园"
+ building_crb_lebanon_dye_plantation_desc: "黎巴嫩的沿海田地向染坊供应染料作物，将当地的耕作与织物贸易联系在一起。"
+ building_crb_lebanon_dye_plantation_throughput_add: "$building_crb_lebanon_dye_plantation$建筑[concept_throughput]"
+ building_crb_lebanon_dye_plantation_throughput_add_desc: "对$building_crb_lebanon_dye_plantation$投入与产出的加成或减益。"

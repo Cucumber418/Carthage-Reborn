@@ -324,3 +324,8 @@
  crb_gallic_appeasement_expense_desc: "Regular payments to France under our agreement."
  crb_gallic_appeasement_income: "Carthaginian Conciliation Payments"
  crb_gallic_appeasement_income_desc: "Payments from Carthage to preserve peace between our countries."
+ bg_crb_lebanon_dye_plantations: "Lebanese Dye Plantations"
+ building_crb_lebanon_dye_plantation: "Lebanese Dye Plantations"
+ building_crb_lebanon_dye_plantation_desc: "Lebanon's coastal fields supply dye crops to local dye works, linking cultivation to the trade in textiles."
+ building_crb_lebanon_dye_plantation_throughput_add: "$building_crb_lebanon_dye_plantation$ building [concept_throughput]"
+ building_crb_lebanon_dye_plantation_throughput_add_desc: "A bonus or penalty to both input and output of $building_crb_lebanon_dye_plantation$."

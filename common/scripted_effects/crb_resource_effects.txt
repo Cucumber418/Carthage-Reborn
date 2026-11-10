@@ -1,0 +1,15 @@
+﻿# 世界或国家作用域均可调用；资源与标记绑定地区，而非任何一个所有者。
+# 新开局与旧档共用一次性补丁，不建造建筑，也不增加通用耕地。
+crb_initialize_lebanon_dye_capacity_effect = {
+	s:STATE_LEBANON = {
+		if = {
+			limit = { NOT = { has_variable = crb_lebanon_dye_capacity_initialized } }
+			add_resource_potential = building_crb_lebanon_dye_plantation
+			change_resource_potential = {
+				type = building_crb_lebanon_dye_plantation
+				amount = 15
+			}
+			set_variable = crb_lebanon_dye_capacity_initialized
+		}
+	}
+}

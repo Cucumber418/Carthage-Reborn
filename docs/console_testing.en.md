@@ -1,4 +1,4 @@
-# Console and Language Checks — 1.2.3
+# Console and Language Checks — 1.2.4
 
 These scenarios are prepared from the scripts. They have not been run in a Victoria 3 process.
 
@@ -138,3 +138,13 @@ The bilingual checks require matching keys and language files, valid UTF-8 BOM e
 ## Interest Group Names
 
 Check Interest Group panels, event bodies, journal entries, and effect tooltips. Landholders, Shipowners, Votaries, and Scribes should show their current name without a generic type in parentheses. The same shared format applies to variants in other countries and in Chinese.
+
+## Lebanon's Dedicated Dye Capacity
+
+- In a new campaign, Lebanon should have **15 levels** of Lebanese Dye Plantation potential, with no free constructed levels. Its original **30 arable land** and coal, logging, and fishing potentials remain unchanged.
+- Use `own STATE_LEBANON TUN` to test construction. With spare arable land, check vanilla dye production methods, construction costs, workers, and output. Queuing or expanding beyond the regional 15-level resource cap must be blocked by the game's construction rules.
+- These plantations still use existing arable land; the regional resource cap and spare-land constraint both apply. Other crops gain no land. The specialized plantation must be unavailable in Syria, Aleppo, and other regions, while vanilla dye-growing regions retain their normal buildings and caps.
+- In a pre-update save, allow Lebanon's current owner's monthly check to run, or execute `crb_initialize_lebanon_dye_capacity_effect = yes` in the Effect Script Runner. Repeated calls, save reloads, split ownership, and ownership transfers must retain a total regional potential of 15.
+- Three levels of the new plantation should qualify for the Tyrian Purple Company without requiring three textile-mill levels, provided its other conditions are met. Check company prosperity, the Tyrian Purple event's throughput bonus, and Prestige Good output.
+
+Automated checks cover authored initialization, migration, localization, and company integration; the game's combined resource/arable-land construction limits still require in-game testing.

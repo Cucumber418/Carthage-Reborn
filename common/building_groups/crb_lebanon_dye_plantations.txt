@@ -1,0 +1,9 @@
+﻿# 沿用染料种植园的农业属性，同时以独立资源潜力限制为十五级。
+# 原有耕地数量不变，原版染料种植园及其他州的资源也不覆盖。
+bg_crb_lebanon_dye_plantations = {
+	parent_group = bg_dye_plantations
+	default_building = building_crb_lebanon_dye_plantation
+	capped_by_resources = yes
+	discoverable_resource = no
+	depletable_resource = no
+}
