@@ -1,4 +1,4 @@
-# Console and Language Checks — 1.2.2
+# Console and Language Checks — 1.2.3
 
 These scenarios are prepared from the scripts. They have not been run in a Victoria 3 process.
 
@@ -101,7 +101,7 @@ For text inspection only:
 event crb_flavor.17 TUN
 ```
 
-Manual event calls do not validate the normal scheduling or border trigger. Hover over all three choices: the agreement shows only its actual weekly payment for five years, +20 relations and a five-year truce; confrontation shows only -50 relations and +10% Kill Rate for five years; non-intervention shows reconsideration in five years. No other policy removals or GDP formulas should appear. The payer and France must have opposite budget entries of exactly the same whole-unit weekly amount for 60 months, without an immediate Treasury transfer. The rate is 0.12% of the payer's GDP, rounded when chosen: 800–900K GDP gives 960–1,080 per week, fixed for the term. France leaving North Africa must clear both payment modifiers on the monthly check while preserving the existing truce. Old saves with the former one-time agreement start payments only on their next choice. Event monetary previews retain vanilla K/M abbreviations; check the small and large values and confirm income/expense colors and durations.
+Manual event calls do not validate the normal scheduling or border trigger. Hover over all three choices: the agreement shows only its actual weekly payment for five years, +20 relations and a five-year truce; confrontation shows only -50 relations and +10% Kill Rate for five years; non-intervention shows reconsideration in five years. Use the vanilla automatic effect list, country and value formatting, modifier breakdowns, and hover details. No hand-written paragraph should replace those effects; no other policy removals or GDP formulas should appear. The payer and France must have opposite budget entries of exactly the same whole-unit weekly amount for 60 months, without an immediate Treasury transfer. The rate is 0.12% of the payer's GDP, rounded when chosen: 800–900K GDP gives 960–1,080 per week, fixed for the term. France leaving North Africa must clear both payment modifiers on the monthly check while preserving the existing truce. Old saves with the former one-time agreement start payments only on their next choice. Event monetary previews retain vanilla K/M abbreviations; check the small and large values and confirm income/expense colors and durations.
 
 The Cothon's completion event must wait until at least one building level is complete. A level-zero construction site is insufficient.
 
@@ -134,3 +134,7 @@ python -m unittest discover -s tests -v
 ```
 
 The bilingual checks require matching keys and language files, valid UTF-8 BOM encoding, complete UI references, intact substitutions and formatting, equal visible numbers, and English values without untranslated Chinese.
+
+## Interest Group Names
+
+Check Interest Group panels, event bodies, journal entries, and effect tooltips. Landholders, Shipowners, Votaries, and Scribes should show their current name without a generic type in parentheses. The same shared format applies to variants in other countries and in Chinese.

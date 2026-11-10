@@ -591,3 +591,12 @@
 - 三档事件 GDP 比例周收入也按整数结算，无固定最低值。其他原版资金档位与老兵赏金成本不变。界面使用原版 `|D` 动态金额格式，大额保留 K／M 缩写；未覆盖原版全局金额格式或预算修正类型。
 - 双语各 1,115 个键，101 项静态与模拟脚本检查通过：选项提示隔离、九种到期路线切换、开局金额量级、分数 GDP 取整、两国金额和期限匹配、GDP 变化不重算、无一次性扣款、重复点击、法国退出时双边清理、十二处其他金额预览及老兵实际付款。
 - 原版依据：[脚本值取整](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/script_values/script_values.md)、[事件金额档位](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/script_values/event_values.txt)、[custom_tooltip 作用](https://github.com/Victoria-3-Modding-Co-op/Modding-Digests/blob/main/1.15.0/docs/effects.log)。仍需游戏内确认预算结算、金额缩写、字体及排版。
+
+## 34. 1.2.3 恢复原版效果提示与利益集团名称
+
+- 撤回 1.2.2 中十六处替代原版列表的自写金额／路线提示：十二个预算修正、老兵赏金及高卢人的三个选项恢复直接执行原版效果，由游戏生成国家名称、数值颜色、持续时间、细项和悬停说明。
+- 只在 `hidden_effect` 内执行旧付款／路线清理、内部变量和到期事件预约。安抚路线的空计时标记也隐藏，实际的付款、关系和停战效果仍自动显示；强硬与中立路线保留各自的原版修正提示。
+- 删除两种语言中已无引用的十六个替代提示，不恢复 GDP 公式。五年和解金仍为选择时年 GDP 的 0.12%／周并取整，开局 GDP 80–90 万对应每周 960–1,080；双方金额、期限、清理规则、其他收入奖励和费用均未改动。
+- 中英文在 `replace/crb_ui_l_<language>.yml` 仅覆盖原版 `DATA_INTEREST_GROUP_VARIANT_NAME_FORMAT` 为 `$NAME$`。所有利益集团变体仅显示当前名称，不再附加通用类型；保留名称之外的原版图标和悬停信息，不覆盖 GUI 文件。
+- 两种语言各 17 个文件、1,100 个文本键；101 项静态与模拟脚本检查通过。检查改为验证原版可见效果的实际脚本展开及清理隔离，并继续覆盖持续付款、期限、GDP 取整和双语对应。另对本次实际脚本差异剥离显示容器后比较执行结构，确认机制一致。
+- 依据：[原版简体中文效果文本](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/localization/simp_chinese/effects_l_simp_chinese.yml)、[利益集团变体名称格式](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/localization/simp_chinese/customized_tooltips_l_simp_chinese.yml)、[原版事件的 hidden_effect 写法](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/events/british_raj_events.txt)。尚未在游戏内验证实际排版与刷新。

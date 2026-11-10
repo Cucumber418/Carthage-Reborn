@@ -1,8 +1,7 @@
 """Option previews, real monetary effects, and recurring policy transitions."""
-import re
 import unittest
 from test_localization import load_localization
-from test_territories import Node,World,entries,get,load_scripts
+from test_territories import Node,World,entries,get,load_scripts,subst
 from test_gaul_and_governance import POLICIES,payload,walk
 
 
@@ -13,24 +12,35 @@ class EventMoneyTests(unittest.TestCase):
         cls.defs=World(cls.scripts).defs
         cls.locales={lang:load_localization(lang) for lang in ('simp_chinese','english')}
 
-    def test_gallic_choices_have_one_self_contained_visible_effect(self):
-        tips=('crb_gallic_appeasement_effect_tt','crb_gallic_confrontation_effect_tt','crb_gallic_nonintervention_effect_tt')
-        for option,tip in zip(entries(self.defs['crb_flavor.17'],'option'),tips):
-            effects=payload(option.value)
-            self.assertEqual([n.key for n in effects],['custom_tooltip'])
-            self.assertEqual(get(effects[0].value,'text'),tip)
-            for lang,values in self.locales.items():
-                with self.subTest(option=tip,language=lang):
-                    text=values[tip]
-                    self.assertNotRegex(text,r'移除|失去|不增加|无额外|循环结束|remove|lose|grants no|cycle ends')
-                    if tip==tips[0]:
-                        self.assertIn('crb_gallic_appeasement_payment',text)
-                        self.assertIn('+20',text);self.assertNotIn('10%',text)
-                        self.assertNotIn('crb_flavor_gallic_legacy',text)
-                    elif tip==tips[1]:
-                        self.assertIn('-50',text);self.assertIn('+10%',text)
-                        self.assertNotIn('@money!',text)
-                    else:self.assertNotRegex(text,r'@money!|%|[+-]\d')
+    def visible_effects(self,nodes):
+        """Expand actual scripted effects, respecting engine tooltip boundaries."""
+        native={'add_modifier','add_treasury','change_relations','create_bidirectional_truce'}
+        for n in nodes:
+            if n.key in ('hidden_effect','limit','trigger','show_as_unavailable','ai_chance'):continue
+            if n.key=='custom_tooltip' or n.key in native:yield n
+            elif n.key in self.defs and n.key.endswith('_effect'):
+                params={p.key:p.value for p in n.value} if isinstance(n.value,list) else {}
+                yield from self.visible_effects(subst(self.defs[n.key],params))
+            elif isinstance(n.value,list):yield from self.visible_effects(n.value)
+            else:yield n
+
+    def test_gallic_choices_use_native_effects_and_hide_only_internal_cleanup(self):
+        expected=(
+            (['change_relations','create_bidirectional_truce','add_modifier','add_modifier'],
+             {'crb_gallic_appeasement_expense','crb_gallic_appeasement_income'},'20'),
+            (['change_relations','add_modifier'],{'crb_flavor_gallic_legacy'},'-50'),
+            (['add_modifier'],{'crb_gallic_nonintervention'},None),
+        )
+        for option,(kinds,modifiers,relation) in zip(entries(self.defs['crb_flavor.17'],'option'),expected):
+            with self.subTest(option=get(option.value,'name')):
+                visible=list(self.visible_effects(payload(option.value)))
+                self.assertEqual([n.key for n in visible],kinds)
+                self.assertEqual({get(n.value,'name') for n in visible if n.key=='add_modifier'},modifiers)
+                if relation is not None:
+                    self.assertEqual(get(next(n.value for n in visible if n.key=='change_relations'),'value'),relation)
+                for n in visible:
+                    if n.key in ('add_modifier','create_bidirectional_truce'):
+                        self.assertEqual(get(n.value,'months'),'60')
 
     def test_changing_from_each_old_policy_still_cleans_up_and_schedules_once(self):
         for old in POLICIES:
@@ -99,42 +109,33 @@ class EventMoneyTests(unittest.TestCase):
             self.assertEqual(get(n.value,'multiplier'),'crb_gallic_appeasement_payment')
         self.assertFalse([n for n in walk(self.defs['crb_gallic_appease_france_effect']) if n.key=='add_treasury'])
 
-    def test_all_event_monetary_modifiers_preview_their_exact_value_and_duration(self):
+    def test_all_event_monetary_modifiers_use_native_tooltips_for_value_and_duration(self):
         count=0
-        for path,nodes in self.scripts.items():
-            if not path.startswith('events/'):continue
-            for tooltip in walk(nodes):
-                if tooltip.key!='custom_tooltip' or not isinstance(tooltip.value,list):continue
-                for modifier in entries(tooltip.value,'add_modifier'):
-                    value=get(modifier.value,'multiplier')
-                    if value is None:continue
+        for event,nodes in self.defs.items():
+            if not event.startswith('crb_flavor.') or not isinstance(nodes,list):continue
+            for option in entries(nodes,'option'):
+                for n in self.visible_effects(payload(option.value)):
+                    if n.key!='add_modifier' or get(n.value,'multiplier') is None:continue
+                    name=get(n.value,'name')
+                    if not name.startswith('crb_flavor_'):continue
                     count+=1
-                    name=get(modifier.value,'name');months=get(modifier.value,'months')
+                    self.assertIn(get(n.value,'months'),('12','36','60'))
                     for lang,values in self.locales.items():
                         with self.subTest(modifier=name,language=lang):
-                            text=values[get(tooltip.value,'text')]
-                            self.assertIn('$'+name+'$',text)
-                            self.assertIn("ScriptValue('"+value+"')|D]",text)
-                            self.assertIn(months,text)
-                            self.assertIn('#p' if name.endswith('_income') else '#n',text)
+                            self.assertIn(name,values)
+                            self.assertNotIn(name+'_effect_tt',values)
+        # These exact modifier/multiplier/duration nodes now drive the engine's
+        # built-in name, colored values, nested breakdown and duration display.
         self.assertEqual(count,12)
-        # No native decimal expense tooltip should leak out of a wrapper.
-        def visible(nodes):
-            for n in nodes:
-                if not isinstance(n,Node) or n.key in ('custom_tooltip','hidden_effect'):continue
-                yield n
-                if isinstance(n.value,list):yield from visible(n.value)
-        for n in visible(self.defs['crb_flavor.2']):
-            if n.key=='add_modifier':self.assertFalse(get(n.value,'name','').endswith('_expense'))
 
-    def test_veteran_payment_executes_inside_its_money_preview(self):
-        event=self.defs['crb_hanno_barca_random.10']
-        wrapper=next(n for n in walk(event) if n.key=='custom_tooltip' and isinstance(n.value,list) and get(n.value,'text')=='crb_hb_veterans_bounty_effect_tt')
+    def test_veteran_payment_executes_with_its_native_treasury_tooltip(self):
+        option=entries(self.defs['crb_hanno_barca_random.10'],'option')[1].value
+        payment=next(n for n in self.visible_effects(payload(option)) if n.key=='add_treasury')
         # Isolate this payment: the test harness does not model vanilla budgets.
         w=World(self.scripts);w.defs['crb_hb_veterans_bounty_cost']=[Node('value','=','-5200')]
-        w.effect([wrapper],w.ctx());self.assertEqual(w.countries['TUN'].treasury,-5200)
+        w.effect([payment],w.ctx());self.assertEqual(w.countries['TUN'].treasury,-5200)
         for values in self.locales.values():
-            self.assertIn("ScriptValue('crb_hb_veterans_bounty_cost')|D]",values['crb_hb_veterans_bounty_effect_tt'])
+            self.assertNotIn('crb_hb_veterans_bounty_effect_tt',values)
 
     def test_player_facing_localization_does_not_explain_money_formulas(self):
         for lang,values in self.locales.items():

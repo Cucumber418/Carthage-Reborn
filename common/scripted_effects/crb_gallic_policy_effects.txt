@@ -16,16 +16,20 @@ crb_stop_gallic_cycle_effect = {
 
 # 国家作用域；POLICY 为本轮五年路线。
 crb_start_gallic_policy_effect = {
-	crb_clear_gallic_payments_effect = yes
-	remove_modifier = crb_gallic_appeasement
-	remove_modifier = crb_flavor_gallic_legacy
-	remove_modifier = crb_gallic_nonintervention
-	remove_variable = crb_gallic_choice_pending
-	set_variable = crb_gallic_cycle_started
-	set_variable = crb_flavor_17_fired
+	hidden_effect = {
+		crb_clear_gallic_payments_effect = yes
+		remove_modifier = crb_gallic_appeasement
+		remove_modifier = crb_flavor_gallic_legacy
+		remove_modifier = crb_gallic_nonintervention
+		remove_variable = crb_gallic_choice_pending
+		set_variable = crb_gallic_cycle_started
+		set_variable = crb_flavor_17_fired
+	}
 	add_modifier = { name = $POLICY$ months = 60 }
-	# 预约到期弹窗；月度检查同时兼容旧档与条件变化。
-	trigger_event = { id = crb_flavor.17 months = 60 popup = yes }
+	hidden_effect = {
+		# 预约到期弹窗；月度检查同时兼容旧档与条件变化。
+		trigger_event = { id = crb_flavor.17 months = 60 popup = yes }
+	}
 }
 
 crb_gallic_appease_france_effect = {
@@ -33,7 +37,9 @@ crb_gallic_appease_france_effect = {
 		limit = { crb_can_appease_france_trigger = yes }
 		change_relations = { country = c:FRA value = 20 }
 		create_bidirectional_truce = { country = c:FRA months = 60 }
-		crb_start_gallic_policy_effect = { POLICY = crb_gallic_appeasement }
+		hidden_effect = {
+			crb_start_gallic_policy_effect = { POLICY = crb_gallic_appeasement }
+		}
 		# root 始终为付款的迦太基，双方锁定同一周金额并共同持续 60 个月。
 		add_modifier = {
 			name = crb_gallic_appeasement_expense

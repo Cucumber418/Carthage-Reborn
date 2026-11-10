@@ -90,4 +90,3 @@
  crb_hanno_barca.5.d: "A claim is spreading through the barracks: ancient Carthage once had kings of its own, and a true restoration demands a monarch capable of uniting the Punic people.\n\nAn officer named [SCOPE.sCharacter('crb_royalist_agitator').GetFullName] is advancing this cause among soldiers and citizens. His speeches draw ever larger audiences."
  crb_hanno_barca.5.f: "The republic gave us a debating chamber. The chamber has never won us a war."
  crb_hanno_barca.5.a: "Let him speak."
- crb_hb_veterans_bounty_effect_tt: "Treasury: @money!#n [ROOT.GetCountry.MakeScope.ScriptValue('crb_hb_veterans_bounty_cost')|D]#!."
