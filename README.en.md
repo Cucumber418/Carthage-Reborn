@@ -4,7 +4,7 @@
 
 A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly restored Punic state. Conservative senators govern an unrecognized republic, but the army and the Popular Assembly have ambitions of their own. Choose between the Hannonids and the Barcids, revive Punic culture, and follow the routes of Hanno or Hannibal.
 
-- Version: **1.2.1**
+- Version: **1.2.2**
 - Victoria 3: **1.15.\***
 - Languages: **English and Simplified Chinese**, included in the same mod and selected by the game's language setting.
 - Content: 7 Journal Entries, 2 Decisions, 74 event definitions, 4 companies, 2 Prestige Goods, 13 possible subject countries across 12 regions, and an original Carthaginian music track.
@@ -14,7 +14,7 @@ A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly rest
 
 Set the game language to **English**, fully exit the game, and restart. The same mod and gameplay scripts serve both languages; a separate English Workshop subscription is unnecessary. Existing saves can be used.
 
-English covers all **1,101 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod.
+English covers all **1,115 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod.
 
 ## The Punic Republic
 
@@ -40,11 +40,11 @@ Event bodies and flavor text describe the setting and its people. Mechanical cos
 
 **Gauls?** first becomes eligible when Carthage shares a land border with French territory in North Africa. Thereafter, choose a policy every five years while France retains North African land:
 
-1. Give France 1% of Carthage's annual GDP, improve relations by 20, and sign a mutual five-year truce.
+1. Pay France 0.12% of Carthage's annual GDP each week for five years, rounded when chosen; improve relations by 20 and sign a mutual five-year truce.
 2. Reduce relations by 50 and gain 10% Kill Rate for five years.
 3. Let events take their course and reconsider after five years.
 
-The gift cannot be selected while France is an enemy in a war or Diplomatic Play. The cycle ends when France leaves North Africa; an existing truce keeps its original term.
+The payment agreement cannot be selected while France is an enemy in a war or Diplomatic Play. The cycle ends when France leaves North Africa; an existing truce keeps its original term. Each choice shows only its own effects; cleanup of other policies stays hidden. Event money tooltips show the amount and duration without formulas. At a starting GDP of 800–900K, the agreement costs 960–1,080 per week. Both countries receive equal five-year budget modifiers, fixed for the term and removed together if France leaves North Africa. Existing saves already using the former one-time agreement incur no retroactive payments; the next choice uses the new scheme. Weekly payments and income rewards are rounded to whole units, while large amounts retain vanilla K/M abbreviations.
 
 ## Trading Posts and Provinces
 
@@ -107,6 +107,6 @@ Run the automated checks from the repository root:
 python -m unittest discover -s tests -v
 ```
 
-The 91 checks cover territorial safeguards, provincialization, recurring events, governance, route separation, building completion, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
+The 101 checks cover territorial safeguards, provincialization, recurring events, governance, route separation, building completion, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
 
 Known limitation: the automatic Hannonid result at the three-year deadline still lacks part of its victory effects. Reaching the Hannonid end of the progress bar, or choosing the Hannonids in the stalemate event, uses the complete victory path. This language update does not change that gameplay behavior.

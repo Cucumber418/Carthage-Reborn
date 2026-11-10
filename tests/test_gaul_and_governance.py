@@ -36,10 +36,14 @@ class GallicCycleTests(unittest.TestCase):
         self.assertFalse(self.w.conditions(get(first,'trigger'),self.w.ctx()))
         self.assertTrue(self.w.conditions(get(first,'show_as_unavailable'),self.w.ctx()))
         self.assertTrue(self.w.conditions(get(options[1].value,'trigger'),self.w.ctx()))
-    def test_gift_transfers_exactly_one_percent_of_payers_gdp_and_truce_is_bilateral(self):
+    def test_five_year_payments_use_payers_gdp_and_truce_is_bilateral(self):
         tun=self.w.countries['TUN'];fra=self.w.countries['FRA'];tun.gdp=2_000_000;tun.treasury=100_000;fra.treasury=500_000
         self.execute('crb_check_french_border_effect');self.choose('a')
-        self.assertEqual((tun.treasury,fra.treasury),(80_000,520_000))
+        self.assertEqual((tun.treasury,fra.treasury),(100_000,500_000))
+        self.assertEqual(tun.modifier_amounts['crb_gallic_appeasement_expense'],2400)
+        self.assertEqual(fra.modifier_amounts['crb_gallic_appeasement_income'],2400)
+        self.assertEqual(tun.modifier_months['crb_gallic_appeasement_expense'],60)
+        self.assertEqual(fra.modifier_months['crb_gallic_appeasement_income'],60)
         self.assertEqual((tun.truces['FRA'],fra.truces['TUN']),(60,60))
         self.assertEqual(tun.relations['FRA'],20)
         self.assertEqual(tun.modifiers.intersection(POLICIES),{'crb_gallic_appeasement'})

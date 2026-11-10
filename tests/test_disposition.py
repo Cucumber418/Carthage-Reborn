@@ -4,6 +4,7 @@ This uses the existing script harness. Modifier expiry and rendering still need
 the game engine; expiry is simulated by removing the marker after it expires.
 """
 import unittest
+import math
 from test_territories import Node, World, entries, get, load_scripts
 from test_localization import load_chinese
 
@@ -167,14 +168,15 @@ class DispositionTests(unittest.TestCase):
 class EventIncomeTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):cls.scripts=load_scripts()
-    def test_all_three_tiers_are_proportional_to_gdp_without_a_flat_minimum(self):
+    def test_all_three_tiers_round_gdp_rewards_without_a_flat_minimum(self):
         w=World(self.scripts)
         for tier,ratio in [('very_small',0.000075),('small',0.00015),('medium',0.00025)]:
-            for gdp in (0,50_000,2_000_000,100_000_000):
+            for gdp in (0,100,50_000,1_234_567.89,2_000_000,100_000_000):
                 with self.subTest(tier=tier,gdp=gdp):
                     w.countries['TUN'].gdp=gdp
                     result=w.value(w.defs['crb_event_income_weekly_'+tier],w.ctx())
-                    self.assertAlmostEqual(result,gdp*ratio)
+                    self.assertEqual(result,math.floor(round(gdp*ratio,6)+0.5))
+                    self.assertEqual(result,int(result))
     def test_every_positive_event_income_uses_gdp_and_preserves_its_duration(self):
         w=World(self.scripts)
         expected={
@@ -184,7 +186,7 @@ class EventIncomeTests(unittest.TestCase):
             'crb_flavor_privateering_income':('medium','36'),
             'crb_flavor_coin_melting_income':('very_small','36'),
         }
-        positive={key for key,nodes in w.defs.items() if isinstance(nodes,list) and get(nodes,'country_tax_income_add')=='1'}
+        positive={key for key,nodes in w.defs.items() if key.startswith('crb_flavor_') and isinstance(nodes,list) and get(nodes,'country_tax_income_add')=='1'}
         self.assertEqual(positive,set(expected))
         found={}
         for path,ns in self.scripts.items():

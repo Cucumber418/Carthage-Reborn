@@ -82,10 +82,13 @@ crb_flavor.2 = {
 		name = crb_flavor.2.a
 		default_option = yes
 		# 五年教育拨款：按生效时 GDP 缩放，持续期内每周计入支出
-		add_modifier = {
-			name = crb_flavor_punic_letters_expense
-			multiplier = money_amount_multiplier_very_small
-			months = 60
+		custom_tooltip = {
+			text = crb_flavor_punic_letters_expense_effect_tt
+			add_modifier = {
+				name = crb_flavor_punic_letters_expense
+				multiplier = money_amount_multiplier_very_small
+				months = 60
+			}
 		}
 		add_modifier = {
 			name = crb_flavor_punic_letters
@@ -133,10 +136,13 @@ crb_flavor.3 = {
 		name = crb_flavor.3.a
 		default_option = yes
 		# 五年染坊补贴：按生效时 GDP 缩放，持续期内每周计入支出
-		add_modifier = {
-			name = crb_flavor_tyrian_purple_expense
-			multiplier = money_amount_multiplier_small
-			months = 60
+		custom_tooltip = {
+			text = crb_flavor_tyrian_purple_expense_effect_tt
+			add_modifier = {
+				name = crb_flavor_tyrian_purple_expense
+				multiplier = money_amount_multiplier_small
+				months = 60
+			}
 		}
 		add_modifier = {
 			name = crb_flavor_tyrian_purple
@@ -147,11 +153,13 @@ crb_flavor.3 = {
 	option = {
 		name = crb_flavor.3.b
 		# 五年出口特许收益：按原版 GDP 缩放收入修正结算
-		custom_tooltip = crb_event_income_small_tt
-		add_modifier = {
-			name = crb_flavor_tyrian_export_income
-			multiplier = crb_event_income_weekly_small
-			months = 60
+		custom_tooltip = {
+			text = crb_flavor_tyrian_export_income_effect_tt
+			add_modifier = {
+				name = crb_flavor_tyrian_export_income
+				multiplier = crb_event_income_weekly_small
+				months = 60
+			}
 		}
 	}
 }
@@ -185,10 +193,13 @@ crb_flavor.4 = {
 	option = {
 		name = crb_flavor.4.a
 		default_option = yes
-		add_modifier = {
-			name = crb_flavor_horse_palm_coins_expense
-			multiplier = money_amount_multiplier_very_small
-			months = 60
+		custom_tooltip = {
+			text = crb_flavor_horse_palm_coins_expense_effect_tt
+			add_modifier = {
+				name = crb_flavor_horse_palm_coins_expense
+				multiplier = money_amount_multiplier_very_small
+				months = 60
+			}
 		}
 		add_modifier = {
 			name = crb_flavor_horse_palm_coins
@@ -199,11 +210,13 @@ crb_flavor.4 = {
 	option = {
 		name = crb_flavor.4.b
 		# 三年持续铸币收益：按生效时 GDP 缩放计入额外收入
-		custom_tooltip = crb_event_income_very_small_tt
-		add_modifier = {
-			name = crb_flavor_coin_melting_income
-			multiplier = crb_event_income_weekly_very_small
-			months = 36
+		custom_tooltip = {
+			text = crb_flavor_coin_melting_income_effect_tt
+			add_modifier = {
+				name = crb_flavor_coin_melting_income
+				multiplier = crb_event_income_weekly_very_small
+				months = 36
+			}
 		}
 	}
 }
@@ -242,10 +255,13 @@ crb_flavor.5 = {
 		name = crb_flavor.5.a
 		default_option = yes
 		# 五年农书翻译与分发拨款：按生效时 GDP 缩放，持续期内每周计入支出
-		add_modifier = {
-			name = crb_flavor_mago_distributed_expense
-			multiplier = money_amount_multiplier_small
-			months = 60
+		custom_tooltip = {
+			text = crb_flavor_mago_distributed_expense_effect_tt
+			add_modifier = {
+				name = crb_flavor_mago_distributed_expense
+				multiplier = money_amount_multiplier_small
+				months = 60
+			}
 		}
 		add_modifier = {
 			name = crb_flavor_mago_distributed
@@ -256,11 +272,13 @@ crb_flavor.5 = {
 	option = {
 		name = crb_flavor.5.b
 		# 五年翻译与出版版税
-		custom_tooltip = crb_event_income_small_tt
-		add_modifier = {
-			name = crb_flavor_mago_rights_income
-			multiplier = crb_event_income_weekly_small
-			months = 60
+		custom_tooltip = {
+			text = crb_flavor_mago_rights_income_effect_tt
+			add_modifier = {
+				name = crb_flavor_mago_rights_income
+				multiplier = crb_event_income_weekly_small
+				months = 60
+			}
 		}
 	}
 }
@@ -389,10 +407,13 @@ crb_flavor.8 = {
 		name = crb_flavor.8.a
 		default_option = yes
 		# 一年战象阅兵与供养开支：按生效时 GDP 缩放，持续期内每周计入支出
-		add_modifier = {
-			name = crb_flavor_elephant_parade_expense
-			multiplier = money_amount_multiplier_medium
-			months = 12
+		custom_tooltip = {
+			text = crb_flavor_elephant_parade_expense_effect_tt
+			add_modifier = {
+				name = crb_flavor_elephant_parade_expense
+				multiplier = money_amount_multiplier_medium
+				months = 12
+			}
 		}
 		add_modifier = {
 			name = crb_flavor_elephant_parade
@@ -496,10 +517,13 @@ crb_flavor.10 = {
 		name = crb_flavor.10.a
 		default_option = yes
 		# 五年沉船打捞与博物馆拨款：按生效时 GDP 缩放，持续期内每周计入支出
-		add_modifier = {
-			name = crb_flavor_shipwreck_museum_expense
-			multiplier = money_amount_multiplier_medium
-			months = 60
+		custom_tooltip = {
+			text = crb_flavor_shipwreck_museum_expense_effect_tt
+			add_modifier = {
+				name = crb_flavor_shipwreck_museum_expense
+				multiplier = money_amount_multiplier_medium
+				months = 60
+			}
 		}
 		add_modifier = {
 			name = crb_flavor_shipwreck_museum
@@ -510,11 +534,13 @@ crb_flavor.10 = {
 	option = {
 		name = crb_flavor.10.b
 		# 五年打捞与展出特许收入
-		custom_tooltip = crb_event_income_medium_tt
-		add_modifier = {
-			name = crb_flavor_shipwreck_rights_income
-			multiplier = crb_event_income_weekly_medium
-			months = 60
+		custom_tooltip = {
+			text = crb_flavor_shipwreck_rights_income_effect_tt
+			add_modifier = {
+				name = crb_flavor_shipwreck_rights_income
+				multiplier = crb_event_income_weekly_medium
+				months = 60
+			}
 		}
 	}
 }
@@ -596,10 +622,13 @@ crb_flavor.12 = {
 		default_option = yes
 		add_loyalists = { value = small_radicals }
 		# 一年梅尔卡特盛典开支：按生效时 GDP 缩放，持续期内每周计入支出
-		add_modifier = {
-			name = crb_flavor_melqart_grand_expense
-			multiplier = money_amount_multiplier_medium
-			months = 12
+		custom_tooltip = {
+			text = crb_flavor_melqart_grand_expense_effect_tt
+			add_modifier = {
+				name = crb_flavor_melqart_grand_expense
+				multiplier = money_amount_multiplier_medium
+				months = 12
+			}
 		}
 		add_modifier = {
 			name = crb_flavor_melqart_grand
@@ -802,11 +831,13 @@ crb_flavor.16 = {
 		name = crb_flavor.16.a
 		default_option = yes
 		# 三年私掠收益；恶名反映列强对持续私掠的反应
-		custom_tooltip = crb_event_income_medium_tt
-		add_modifier = {
-			name = crb_flavor_privateering_income
-			multiplier = crb_event_income_weekly_medium
-			months = 36
+		custom_tooltip = {
+			text = crb_flavor_privateering_income_effect_tt
+			add_modifier = {
+				name = crb_flavor_privateering_income
+				multiplier = crb_event_income_weekly_medium
+				months = 36
+			}
 		}
 		change_infamy = 5
 	}
@@ -852,20 +883,26 @@ crb_flavor.17 = {
 		name = crb_flavor.17.a
 		trigger = { crb_can_appease_france_trigger = yes }
 		show_as_unavailable = { always = yes }
-		custom_tooltip = crb_gallic_appeasement_effect_tt
-		crb_gallic_appease_france_effect = yes
+		custom_tooltip = {
+			text = crb_gallic_appeasement_effect_tt
+			crb_gallic_appease_france_effect = yes
+		}
 	}
 	option = {
 		name = crb_flavor.17.b
 		trigger = { crb_can_choose_gallic_policy_trigger = yes }
 		show_as_unavailable = { always = yes }
-		custom_tooltip = crb_gallic_confrontation_effect_tt
-		crb_gallic_confront_france_effect = yes
+		custom_tooltip = {
+			text = crb_gallic_confrontation_effect_tt
+			crb_gallic_confront_france_effect = yes
+		}
 	}
 	option = {
 		name = crb_flavor.17.c
 		default_option = yes
-		custom_tooltip = crb_gallic_nonintervention_effect_tt
-		crb_gallic_leave_france_effect = yes
+		custom_tooltip = {
+			text = crb_gallic_nonintervention_effect_tt
+			crb_gallic_leave_france_effect = yes
+		}
 	}
 }

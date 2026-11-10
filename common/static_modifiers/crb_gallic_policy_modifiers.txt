@@ -5,3 +5,13 @@ crb_gallic_appeasement = {
 crb_gallic_nonintervention = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 }
+
+# 金额与路线标记分开，旧档已签的一次性方案不追溯加收费用。
+crb_gallic_appeasement_expense = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+crb_gallic_appeasement_income = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_tax_income_add = 1
+}

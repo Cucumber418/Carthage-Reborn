@@ -4,6 +4,7 @@ Run: python -m unittest discover -s tests -v
 from dataclasses import dataclass, field
 from pathlib import Path
 import json
+import math
 import re
 import struct
 import unittest
@@ -95,6 +96,7 @@ class Country:
     truces: dict = field(default_factory=dict)
     diplomatic_enemies: set = field(default_factory=set)
     modifier_months: dict = field(default_factory=dict)
+    modifier_amounts: dict = field(default_factory=dict)
 
 @dataclass
 class State:
@@ -239,6 +241,7 @@ class World:
             elif n.key=='add':result+=float(n.value)
             elif n.key=='multiply':result*=float(n.value)
             elif n.key=='divide':result/=float(n.value)
+            elif n.key=='round' and n.value=='yes':result=math.floor(result+0.5) if result>=0 else math.ceil(result-0.5)
             elif n.key.startswith('every_'):
                 for obj in self.items(n.key,ctx):
                     if self.conditions(get(n.value,'limit',[]),ctx.enter(obj)):
@@ -274,7 +277,11 @@ class World:
             elif k=='add_modifier':
                 name=get(v,'name');o.modifiers.add(name)
                 if get(v,'months') is not None:o.modifier_months[name]=int(get(v,'months'))
-            elif k=='remove_modifier':o.modifiers.discard(v);o.modifier_months.pop(v,None)
+                multiplier=get(v,'multiplier')
+                # Only custom script values are modeled; vanilla budgets need the game.
+                if multiplier in self.defs:o.modifier_amounts[name]=self.numeric(multiplier,ctx)
+            elif k=='remove_modifier':
+                o.modifiers.discard(v);o.modifier_months.pop(v,None);o.modifier_amounts.pop(v,None)
             elif k=='add_treasury':o.treasury+=self.numeric(v,ctx)
             elif k=='change_relations':
                 target=self.resolve(get(v,'country'),ctx);amount=float(get(v,'value'))
@@ -321,8 +328,10 @@ class World:
                     self.scheduled.append((key,int(get(v,'months')),o.tag));continue
                 if self.conditions(get(ev,'trigger',[]),ctx):
                     self.events.append(key);self.effect(get(ev,'immediate',[]),ctx)
-            elif k in ('custom_tooltip','show_as_tooltip'):continue
             elif k=='hidden_effect':self.effect(v,ctx)
+            elif k=='custom_tooltip' and isinstance(v,list):
+                self.effect([x for x in v if x.key not in ('text','subject')],ctx)
+            elif k in ('custom_tooltip','show_as_tooltip'):continue
             elif k=='crb_apply_punic_state_names_effect':continue # cosmetic subsystem outside this harness
             elif k in self.defs and k.startswith('crb_'):
                 self.effect(subst(self.defs[k],{x.key:x.value for x in v}) if isinstance(v,list) else self.defs[k],ctx)

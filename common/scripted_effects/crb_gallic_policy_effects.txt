@@ -1,5 +1,11 @@
 ﻿# 两国的实际停战协议独立存在，法国退出北非时仍按签订期限履行。
+crb_clear_gallic_payments_effect = {
+	remove_modifier = crb_gallic_appeasement_expense
+	c:FRA ?= { remove_modifier = crb_gallic_appeasement_income }
+}
+
 crb_stop_gallic_cycle_effect = {
+	crb_clear_gallic_payments_effect = yes
 	remove_variable = crb_gallic_cycle_started
 	remove_variable = crb_gallic_choice_pending
 	remove_variable = crb_flavor_17_fired
@@ -10,6 +16,7 @@ crb_stop_gallic_cycle_effect = {
 
 # 国家作用域；POLICY 为本轮五年路线。
 crb_start_gallic_policy_effect = {
+	crb_clear_gallic_payments_effect = yes
 	remove_modifier = crb_gallic_appeasement
 	remove_modifier = crb_flavor_gallic_legacy
 	remove_modifier = crb_gallic_nonintervention
@@ -24,12 +31,22 @@ crb_start_gallic_policy_effect = {
 crb_gallic_appease_france_effect = {
 	if = {
 		limit = { crb_can_appease_france_trigger = yes }
-		# root 始终为出钱的迦太基，两国使用完全相同的一次性金额。
-		add_treasury = { value = crb_gallic_appeasement_payment multiply = -1 }
-		c:FRA = { add_treasury = crb_gallic_appeasement_payment }
 		change_relations = { country = c:FRA value = 20 }
 		create_bidirectional_truce = { country = c:FRA months = 60 }
 		crb_start_gallic_policy_effect = { POLICY = crb_gallic_appeasement }
+		# root 始终为付款的迦太基，双方锁定同一周金额并共同持续 60 个月。
+		add_modifier = {
+			name = crb_gallic_appeasement_expense
+			multiplier = crb_gallic_appeasement_payment
+			months = 60
+		}
+		c:FRA = {
+			add_modifier = {
+				name = crb_gallic_appeasement_income
+				multiplier = crb_gallic_appeasement_payment
+				months = 60
+			}
+		}
 	}
 }
 crb_gallic_confront_france_effect = {

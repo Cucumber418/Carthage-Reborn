@@ -1,5 +1,9 @@
-﻿# 一次性赠款：选择时迦太基年 GDP 的 1%，法国收到完全相同的金额。
+﻿# 金额四舍五入到整数；预览与结算共用同一脚本值。
+# 五年和解金：每周为选择时迦太基年 GDP 的 0.12%。
+# 开局 GDP 约 80–90 万时每周 960–1080；双方共用取整金额，五年内固定。
 crb_gallic_appeasement_payment = {
 	value = root.gdp
-	divide = 100
+	divide = 10000
+	multiply = 12
+	round = yes
 }

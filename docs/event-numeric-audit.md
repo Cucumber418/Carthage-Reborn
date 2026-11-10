@@ -580,3 +580,14 @@
 - 两种语言各 1,101 个键。91 项检查通过，包含所有事件正文与引语的玩法词检查、二十四条实际成立选项的提示绑定、U 型港解锁提示，以及原有双语和场景回归。
 - 脚本差异仅为显示提示的新增或引用替换；剔除这些提示后，事件与机制脚本结构保持一致，费用、宣称、法律、转交土地和冷却效果未改。
 - 提示格式参考 [原版外交效果文本](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/localization/english/effects_l_english.yml)与[受保护国行动文本](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/localization/english/diplomacy_l_english.yml)。尚未在游戏内验证字体层次、概念悬停与实际排版。
+
+## 33. 1.2.2 对法选项与事件金额显示
+
+- “高卢人？”的三条路线使用原版 `custom_tooltip = { text = ... <hidden effects> }`：只呈现本路线的付款／关系／停战、关系／击杀率或五年后再议。内部旧路线清理、标记和预约弹窗继续执行，其他路线的移除提示不展开。
+- 安抚由一次性转款改为五年预算支付：每周为选择时迦太基年 GDP 的 **0.12%**，`round = yes` 取整。用户提供的开局 GDP 约 80–90 万对应每周 **960–1,080**。本轮锁定，五年后重选才重新计算。
+- 迦太基的 `crb_gallic_appeasement_expense` 使用 `country_expenses_add = 1`，法国的 `crb_gallic_appeasement_income` 使用 `country_tax_income_add = 1`。两个 60 个月修正使用同一个 root 国家脚本金额；选择时不执行 `add_treasury`，关系仍一次性 +20，双向停战仍 60 个月。
+- 新路线开始前清理双方的旧付款修正；法国退出北非时共同移除付款与路线，原已签停战不取消。路线标记与支付修正分离，旧档已付的一次性方案不追溯加收；下一轮才使用持续付款。
+- 删除全部事件收益说明与修正描述中的 GDP 比例和计算过程。十二个持续收入／支出修正与一次性老兵赏金使用独立金额提示，保留名称、收支颜色和期限，避免原版支出提示的一位小数重复显示。
+- 三档事件 GDP 比例周收入也按整数结算，无固定最低值。其他原版资金档位与老兵赏金成本不变。界面使用原版 `|D` 动态金额格式，大额保留 K／M 缩写；未覆盖原版全局金额格式或预算修正类型。
+- 双语各 1,115 个键，101 项静态与模拟脚本检查通过：选项提示隔离、九种到期路线切换、开局金额量级、分数 GDP 取整、两国金额和期限匹配、GDP 变化不重算、无一次性扣款、重复点击、法国退出时双边清理、十二处其他金额预览及老兵实际付款。
+- 原版依据：[脚本值取整](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/script_values/script_values.md)、[事件金额档位](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/script_values/event_values.txt)、[custom_tooltip 作用](https://github.com/Victoria-3-Modding-Co-op/Modding-Digests/blob/main/1.15.0/docs/effects.log)。仍需游戏内确认预算结算、金额缩写、字体及排版。
