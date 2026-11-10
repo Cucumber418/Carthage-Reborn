@@ -1,0 +1,8 @@
+﻿l_english:
+ ideology_crb_hannonist: "Hannonist"
+ ideology_crb_hannonist_desc: "#lore This leader follows the path of Hanno the Great, favoring senatorial government, the defense of Africa's estates and maritime trade, and the avoidance of war with the great powers.#!"
+ ideology_crb_barcid: "Barcid"
+ ideology_crb_barcid_desc: "#lore This leader follows the path of the Barcid family, seeking to revive the Popular Assembly, place the republic in the hands of soldiers and citizens, and extend Carthaginian power overseas.#!"
+ ideology_crb_hannibalist: "Hannibalist"
+ ideology_crb_hannibalist_desc: "#lore This leader believes that only a monarch capable of uniting the Punic people, as Hannibal once did, can restore the glory of Carthage.#!"
+ CRB_BARCA_VICTORY: "Barcid Victory"

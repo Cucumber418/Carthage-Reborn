@@ -8,13 +8,13 @@ from test_territories import Node, get, entries, load_scripts
 ROOT=Path(__file__).resolve().parents[1]
 ENTRY=re.compile(r'^ ([A-Za-z_0-9.]+):(?:[0-9]+)?\s*(".*")\s*$')
 
-def load_chinese():
+def load_localization(language):
     values={};origins={}
-    for path in sorted((ROOT/'localization/simp_chinese').rglob('*.yml')):
+    for path in sorted((ROOT/'localization'/language).rglob('*.yml')):
         data=path.read_bytes()
         if not data.startswith(b'\xef\xbb\xbf'):raise AssertionError('Missing UTF-8 BOM: '+str(path))
         text=data.decode('utf-8-sig')
-        if text.splitlines()[0]!='l_simp_chinese:':raise AssertionError('Incorrect language header: '+str(path))
+        if text.splitlines()[0]!=f'l_{language}:':raise AssertionError('Incorrect language header: '+str(path))
         if '\ufffd' in text or '\ufeff' in text:raise AssertionError('Damaged or extra byte-order mark: '+str(path))
         for number,line in enumerate(text.splitlines()[1:],2):
             if not line.strip() or line.lstrip().startswith('#'):continue
@@ -24,6 +24,9 @@ def load_chinese():
             if key in values:raise AssertionError(f'Duplicate {key}: {origins[key]} and {path}')
             values[key]=json.loads(m[2]);origins[key]=path
     return values
+
+def load_chinese():
+    return load_localization('simp_chinese')
 
 def custom_key(value):
     if not isinstance(value,str):return None

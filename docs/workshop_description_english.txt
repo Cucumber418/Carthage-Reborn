@@ -1,0 +1,60 @@
+[h1]Carthage Reborn[/h1]
+
+Two thousand years after its destruction, Carthage rises again.
+
+In 1836, Tunisia is replaced by a restored Punic republic. Conservative senators hold power, the army dreams of Hannibal, and the great powers have yet to recognize the new state. Will Carthage prosper through African estates and overseas commerce, or march once more toward Rome?
+
+[h2]English and Simplified Chinese Included[/h2]
+Both languages are included in the same mod. Set your game language to English or Simplified Chinese and restart the game. The mod automatically uses the corresponding text.
+
+[h2]The Republic[/h2]
+[list]
+[*]Punic culture, Phoenician heritage, and the Cult of Tanit.
+[*]Dual Suffetes, a restored Senate, and the Popular Assembly.
+[*]Distinctive interest groups, characters, flags, and historical place names.
+[*]An independent, unrecognized Punic State that becomes Carthage after recognition.
+[/list]
+
+[h2]Choose Carthage's Future[/h2]
+[list]
+[*][b]The Hannonids and the Barcids[/b]: a three-year political struggle after the first conquests.
+[*][b]Carthaginian Cultural Revival[/b]: restore plantations, reclaim the salted land, revive the old gods, and rebuild the Cothon.
+[*][b]Hannibal Returns[/b]: recover the ancient dominions from Tripoli and Sicily to Iberia and Tyre.
+[*][b]Punic Wars[/b]: renew the struggle for Sicily, beginning with the Fourth Punic War.
+[*][b]Two Thousand Years of Vengeance[/b]: follow Hannibal across the Pyrenees and the Alps toward Rome.
+[*][b]The Voyage of Hanno[/b]: sail beyond the Pillars of Heracles and explore Africa's Atlantic coast.
+[/list]
+
+[h2]Trading Posts and Provinces[/h2]
+The independent journal [b]Carthage's Territories[/b] manages overseas possessions. A single directly owned non-capital holding in an eligible region is enough to choose its government.
+
+[list]
+[*][b]Trading Posts[/b] pay 30% of income and enjoy commercial privileges. Establishing one adds no Infamy.
+[*][b]Provinces[/b] pay 50% and receive a provincial administration, at a cost of 10 or 15 Infamy.
+[*]Both forms are governed by a non-hereditary governor appointed by Carthage.
+[*]Twelve regions include Tripoli, Numidia, Iberia, Gaul, the Alps, southern Italy, and six hidden regions in North Africa and the Middle East.
+[*]Expand each subject separately, or convert an existing trading post into a province while retaining its country and assets.
+[*]Foundations and provincial conversions share a three-month handover.
+[/list]
+
+Each region has its own descriptions and foundation choices. Territorial administration is independent of the main political and revenge routes.
+
+[h2]More Carthaginian Content[/h2]
+[list]
+[*]Four distinctive companies and two Prestige Goods, with custom emblems and goods icons.
+[*]Dedicated trading post, province, and Cothon artwork.
+[*]Sixteen historical flavor events, with economic income rewards scaled to GDP.
+[*][b]Gauls?[/b]: a recurring five-year choice between gifts and a truce with France, confrontation, or non-intervention while France holds North African land.
+[*]A starting navy of three frigates and one naval base level.
+[*]An original [b]Carthage[/b] music track, favored for Carthage in the music player's Weighted mode.
+[/list]
+
+[h2]Compatibility[/h2]
+[list]
+[*]Victoria 3 [b]1.15.*[/b].
+[*][b]English and Simplified Chinese[/b], selected by the game's language setting.
+[*]Replaces Tunisia (TUN); incompatible with other mods replacing the same country.
+[*]A new game is recommended for the complete starting setup.
+[/list]
+
+Source and documentation: https://github.com/Cucumber418/Carthage-Reborn
