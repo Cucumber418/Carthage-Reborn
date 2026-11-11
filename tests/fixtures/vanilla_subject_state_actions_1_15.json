@@ -1,0 +1,12 @@
+{
+  "version": "1.15",
+  "source": "https://github.com/jink47787/Historical_MP_Series_Vic3/blob/f8e3ee6cfb3e1265ef41190f44957a5e4963edf1/basegame-ver/common/diplomatic_actions/43_subjects_handle_states.txt",
+  "canonical_sha256": {
+    "grant_state": "1828d31dded2ac6540bc25a2f29fad8da70a2b98f459d7686bb646be07df35f4",
+    "take_state": "6b027247a8ca7acb38818588ee7ca2649e0291765010283ddec5dac01d5b3b15"
+  },
+  "extended_whitelist_counts": {
+    "grant_state": 1,
+    "take_state": 2
+  }
+}

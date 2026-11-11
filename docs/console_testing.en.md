@@ -1,4 +1,4 @@
-# Console and Language Checks — 1.2.6
+# Console and Language Checks — 1.2.7
 
 These scenarios are prepared from the scripts. They have not been run in a Victoria 3 process.
 
@@ -105,6 +105,10 @@ Manual event calls do not validate the normal scheduling or border trigger. Hove
 
 The Cothon's completion event must wait until at least one building level is complete. A level-zero construction site is insufficient.
 
+## Subject State Transfers
+
+Test **Take State** and **Grant State** on both a Trading Post and a Province with several states, satisfying the normal conditions shown by the vanilla UI. Taking an eligible non-capital state should work; capital and other eligibility restrictions should remain. When granting a state, check eligible land owned directly by Carthage and land held by another Trading Post or Province. Another country's subjects must not supply land. Compare costs and Liberty Desire changes against an ordinary vanilla subject. These interactions should use the vanilla state-selection and execution flow. Restart with the updated mod and include an existing save in the in-game checks.
+
 ## Companies and Music
 
 ```text
@@ -118,6 +122,16 @@ For a quick company preview in Script Runner:
 ```pdx
 c:TUN = { add_company = company_type:company_crb_carthaginian_trade_house }
 ```
+
+For the additional-industry check, research Romanticism or run this in a test save:
+
+```text
+research romanticism
+```
+
+Open **Carthaginian Trading House → Company Charters → Industry Rights → Select Additional Industry**. Arts Academies should be offered and added to the company's industries after granting the charter, while Trade Centers and Ports remain its defaults. Version 1.2.7 uses the current vanilla ID, `building_art_academy`; the old `building_arts_academy` name was replaced in 1.12. The separate vanilla Trade Rights charter still refers to Trade Centers.
+
+Fully exit the game, update the mod copy actually loaded, and check the existing save first. If another industry charter is already active, revoke it when allowed before applying again. Use a separate new test save for comparison if needed, preserving the original. These UI and save-loading steps still require in-game validation.
 
 For music, enable **Carthage**, select **Weighted** mode, and run:
 

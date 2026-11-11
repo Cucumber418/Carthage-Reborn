@@ -450,7 +450,7 @@
 | --- | --- | --- |
 | 迦太基商社 | 本国满足迦太基条件；研究公司章程；已整合的迦太基地区内贸易中心或港口达到 3 级 | 贸易优势 +10%；贸易容量 +5% |
 
-主要产业为贸易中心、港口，可扩展艺术学院；首选总部仍为迦太基。后续带版本号的章节保留历次设计记录，当前扩展产业见 1.2.6 记录。
+主要产业为贸易中心、港口，可扩展艺术学院；首选总部仍为迦太基。后续带版本号的章节保留历次设计记录，当前扩展产业及新版建筑标识修复见 1.2.7 记录。
 
 ## 20. 派系与日志触发修订
 
@@ -620,3 +620,19 @@
 - 基础产业 `building_types` 继续为贸易中心与港口；成立条件、AI 成立建造目标、首选总部、图标、背景和繁荣加成均不变，也不修改原版通用贸易特许状。
 - 同步中英文说明和测试指南。既有 113 项静态与模拟脚本检查通过，并逐节点核对公司定义，仅扩展产业字段发生变化。未作游戏内界面或特许状操作实测。
 - 参考：[公司字段文档](https://github.com/Victoria-3-Modding-Co-op/Modding-Digests/blob/main/documentation/types/company_types.md)、[艺术学院定义](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/buildings/06_urban_center.txt)。
+
+## 37. 1.2.7 修复艺术学院产业权未出现
+
+- 1.2.6 误用了 1.9 参考文件里的 `building_arts_academy`。原版自 1.12 起已将该建筑改名为 `building_art_academy`；公司数据库定义不能使用仅用于存档兼容的旧名称别名。
+- 将商社 `extension_building_types` 改为当前标识 `building_art_academy`。基础产业、成立条件、AI 目标、繁荣修正、图标、背景以及原版通用特许均不改动。
+- 增加一项通用校验：以原版 1.12 建筑改名表检查所有模组公司定义中的过期建筑标识；先验证该检查能在修复前失败，再验证修复后通过。本版合并领土交互检查后总计 115 项静态与模拟脚本检查通过。
+- 中英文测试指南补充浪漫主义、产业权候选入口、授予后的经营产业检查和旧档对照流程。尚未作游戏内界面或旧档加载实测。
+- 依据：[1.12 建筑重命名表](https://github.com/Victoria-3-Modding-Co-op/Modding-Digests/blob/main/1.12.0/renamed_buildings.md)、[官方 1.12 发布说明](https://forum.paradoxplaza.com/forum/developer-diary/victoria-3-dev-diary-171-iberian-twilight-update-1-12-now-live.1887040/)（别名只用于存档，不适用于数据库／初始配置定义）。当前 1.15 的[原版公司解析数据](https://github.com/alcaras/v3co/blob/main/company_data_v6.json)同样使用新标识。
+
+## 38. 1.2.7 商站与行省支持原版领土交互
+
+- 新增后加载的原版 `grant_state`／`take_state` 定义，参照[原版 1.15 固定快照](https://github.com/jink47787/Historical_MP_Series_Vic3/blob/f8e3ee6cfb3e1265ef41190f44957a5e4963edf1/basegame-ver/common/diplomatic_actions/43_subjects_handle_states.txt)。仅在三处原版附庸类型名单中追加 `subject_type_crb_trading_post` 和 `subject_type_crb_province`，不改变“要求地区”等其他行动。
+- “取得地区”允许从商站、行省取得符合条件的地区，仍要求自由欲低于 50，保留外交博弈、革命、首都、殖民状态以及原版其他限制、恶名和自由欲公式。
+- 原版“授予地区”已允许商站、行省接收地区；本次补齐从其他商站或行省调拨土地时的来源资格。既有直属土地授予流程不变，费用、地区选择、效果、通知和 AI 均沿用原版。
+- 新检查移除新增的类型条件后，分别对两项行动的完整 AST 计算 SHA256，与固定原版快照一致；本版全部 115 项检查通过。原版名称与贴图继续使用，不增加本地化键。
+- 使用后加载覆写会与同样修改这两项行动的其他模组冲突；仍需游戏内检查交互入口、土地选择、实际交接及旧档加载。

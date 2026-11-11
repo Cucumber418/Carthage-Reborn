@@ -4,7 +4,7 @@
 
 A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly restored Punic state. Conservative senators govern an unrecognized republic, but the army and the Popular Assembly have ambitions of their own. Choose between the Hannonids and the Barcids, revive Punic culture, and follow the routes of Hanno or Hannibal.
 
-- Version: **1.2.6**
+- Version: **1.2.7**
 - Victoria 3: **1.15.\***
 - Languages: **English and Simplified Chinese**, included in the same mod and selected by the game's language setting.
 - Content: 7 Journal Entries, 2 Decisions, 74 event definitions, 1 company, 13 possible subject countries across 12 regions, and an original Carthaginian music track.
@@ -59,6 +59,8 @@ Both subject forms use a non-hereditary **Governorship**, a special form of mona
 
 Each relationship costs the overlord 10 Influence. Newly established subjects receive Carthage's Protection. Its small weekly Liberty Desire modifiers follow the scale of vanilla subject interactions.
 
+Trading Posts and Provinces support the vanilla **Take State** and **Grant State** diplomatic interactions. Their land can also be a source when granting a state to another subject. State selection, costs, Liberty Desire changes, capital restrictions, and other eligibility rules follow vanilla.
+
 | Region | Trading Post / Province | Province Infamy |
 | --- | --- | --- |
 | Tripoli | Tripolitanian Trading Post / Tripolitanian Province | 10 |
@@ -86,6 +88,8 @@ Existing subjects each have their own expansion button. The **Expand the Trading
 
 The mod adds one company: the **Carthaginian Trading House**, engaged in trade and shipping through Carthage. It requires Corporate Charters and at least three levels of Trade Centers or Ports in incorporated Tunisia. Its industries are Trade Centers and Ports, with Arts Academies as an extension. Prosperity grants +10% Trade Advantage and +5% Trade Capacity.
 
+After researching Romanticism, use **Company Charters → Industry Rights → Select Additional Industry** to apply for Arts Academies. Version 1.2.7 corrects their building identifier for the supported game version. Trade Centers and Ports remain the default industries; Trade Rights remain a separate vanilla charter. Previously granted industry rights in a save are not automatically replaced by changing the candidates; revoke the existing rights when allowed before applying again.
+
 The company retains its custom emblem and vanilla harbor/shipbuilding background. Subject relationships and the Cothon retain their dedicated artwork; original art containing the retained Trading House remains archived in [docs/art](docs/art).
 
 The supplied track **Carthage** is integrated with Victoria 3's 1.15 music system. In **Weighted** mode it is heavily favored for Carthage, particularly at the start of 1836. A new Carthaginian game has an 85% chance to request it at startup; disabled tracks, cooldowns, and non-interruptible music can prevent immediate playback. Random and Least Played modes do not reproduce the intended weighting.
@@ -104,6 +108,6 @@ Run the automated checks from the repository root:
 python -m unittest discover -s tests -v
 ```
 
-The 113 checks cover territorial safeguards, provincialization, recurring events, governance, route separation, building completion, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
+The 115 checks cover territorial safeguards, vanilla state-transfer compatibility, provincialization, recurring events, governance, route separation, building completion, obsolete building identifiers in company definitions, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
 
 Known limitation: the automatic Hannonid result at the three-year deadline still lacks part of its victory effects. Reaching the Hannonid end of the progress bar, or choosing the Hannonids in the stalemate event, uses the complete victory path. This update does not change that deadline behavior.
