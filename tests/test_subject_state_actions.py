@@ -25,9 +25,13 @@ class SubjectStateActionTests(unittest.TestCase):
         path = ROOT / 'common/diplomatic_actions/zz_crb_subject_state_transfers.txt'
         self.assertTrue(path.read_bytes().startswith(b'\xef\xbb\xbf'))
         actions = parse(path.read_text(encoding='utf-8-sig'))
-        self.assertEqual({action.key for action in actions}, set(fixture['canonical_sha256']))
+        # Newer databases reject bare duplicate keys instead of implicitly replacing vanilla.
+        self.assertEqual({action.key for action in actions},
+                         {'REPLACE:' + key for key in fixture['canonical_sha256']},
+                         'Vanilla diplomatic actions require an explicit REPLACE: entry mode')
 
-        for action in actions:
+        for patch in actions:
+            action = Node(patch.key.removeprefix('REPLACE:'), patch.op, patch.value)
             with self.subTest(action=action.key):
                 additions = []
 

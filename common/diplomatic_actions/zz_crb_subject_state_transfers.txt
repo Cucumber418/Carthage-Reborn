@@ -2,8 +2,9 @@
 # Source: jink47787/Historical_MP_Series_Vic3, basegame-ver/common/diplomatic_actions/43_subjects_handle_states.txt
 # Pinned to f8e3ee6cfb3e1265ef41190f44957a5e4963edf1 (2026-11-05, update 1.15).
 # State selection, Liberty Desire, Infamy, effects, notifications and AI otherwise remain vanilla.
+# Database entry modes are mandatory from game 1.12: bare duplicate keys do not override vanilla.
 
-grant_state = {
+REPLACE:grant_state = {
 	groups= {
 		overlord
 	}
@@ -284,7 +285,7 @@ grant_state = {
 	}
 }
 
-take_state = {
+REPLACE:take_state = {
 	groups= {
 		overlord
 	}

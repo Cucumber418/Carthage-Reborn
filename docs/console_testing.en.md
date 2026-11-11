@@ -1,4 +1,4 @@
-# Console and Language Checks — 1.2.7
+# Console and Language Checks — 1.2.8
 
 These scenarios are prepared from the scripts. They have not been run in a Victoria 3 process.
 
@@ -108,6 +108,8 @@ The Cothon's completion event must wait until at least one building level is com
 ## Subject State Transfers
 
 Test **Take State** and **Grant State** on both a Trading Post and a Province with several states, satisfying the normal conditions shown by the vanilla UI. Taking an eligible non-capital state should work; capital and other eligibility restrictions should remain. When granting a state, check eligible land owned directly by Carthage and land held by another Trading Post or Province. Another country's subjects must not supply land. Compare costs and Liberty Desire changes against an ordinary vanilla subject. These interactions should use the vanilla state-selection and execution flow. Restart with the updated mod and include an existing save in the in-game checks.
+
+Version 1.2.8 loading regression: hover over a disabled **Take State** button. A Trading Post or Province should no longer fail the Colony/Puppet/Vassal type requirement. Other vanilla conditions remain, including Liberty Desire below 50, no committed Diplomatic Play participation or revolution, and a selectable non-capital state that is not being colonized. Existing custom subjects need not be founded again for this check. Both actions now use the mandatory `REPLACE:` database mode; the automated check validates that mode as well as the action bodies. Actual button behavior still requires in-game validation.
 
 ## Companies and Music
 

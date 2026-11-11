@@ -4,7 +4,7 @@
 
 A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly restored Punic state. Conservative senators govern an unrecognized republic, but the army and the Popular Assembly have ambitions of their own. Choose between the Hannonids and the Barcids, revive Punic culture, and follow the routes of Hanno or Hannibal.
 
-- Version: **1.2.7**
+- Version: **1.2.8**
 - Victoria 3: **1.15.\***
 - Languages: **English and Simplified Chinese**, included in the same mod and selected by the game's language setting.
 - Content: 7 Journal Entries, 2 Decisions, 74 event definitions, 1 company, 13 possible subject countries across 12 regions, and an original Carthaginian music track.
@@ -60,6 +60,8 @@ Both subject forms use a non-hereditary **Governorship**, a special form of mona
 Each relationship costs the overlord 10 Influence. Newly established subjects receive Carthage's Protection. Its small weekly Liberty Desire modifiers follow the scale of vanilla subject interactions.
 
 Trading Posts and Provinces support the vanilla **Take State** and **Grant State** diplomatic interactions. Their land can also be a source when granting a state to another subject. State selection, costs, Liberty Desire changes, capital restrictions, and other eligibility rules follow vanilla.
+
+Version 1.2.8 fixes the database loading mode by explicitly replacing the two vanilla actions, as required by recent game versions. The added subject types can therefore replace the original eligibility lists. Fully exit and restart the game after updating, then check an existing save: a Trading Post or Province should no longer be rejected merely for not being a Colony, Puppet, or Vassal.
 
 | Region | Trading Post / Province | Province Infamy |
 | --- | --- | --- |
