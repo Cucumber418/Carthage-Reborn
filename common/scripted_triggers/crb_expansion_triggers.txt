@@ -6,9 +6,15 @@ crb_is_actual_territory_subject_trigger = {
 		is_subject_of = root
 	}
 }
+# 州作用域：扩张仅接收非首都、且已结束殖民的直属土地。
+crb_is_expansion_ready_state_trigger = {
+	is_capital = no
+	is_under_colonization = no
+}
+
 crb_can_expand_one_territory_trigger = {
 	crb_is_carthage_trigger = yes
 	is_at_war = no
 	crb_is_actual_territory_subject_trigger = { TAG = $TAG$ }
-	any_scope_state = { is_capital = no $AREA$ = yes }
+	any_scope_state = { crb_is_expansion_ready_state_trigger = yes $AREA$ = yes }
 }

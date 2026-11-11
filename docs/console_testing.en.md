@@ -1,4 +1,4 @@
-# Console and Language Checks — 1.2.8
+# Console and Language Checks — 1.2.9
 
 These scenarios are prepared from the scripts. They have not been run in a Victoria 3 process.
 
@@ -55,6 +55,8 @@ This shortcut does not verify natural expiry.
 After establishing the Numidian Trading Post, check **Provincialize Numidia**. It should require peace and an expired handover, add 15 Infamy, switch payments from 30% to 50%, remove commercial privileges, and retain the existing country's assets and current Liberty Desire.
 
 The conversion button should disappear, replaced by **Expand the Numidian Province**. Acquiring Oran with `own STATE_ORAN TUN` should let that expansion button transfer only the relevant land.
+
+For the 1.2.9 colonization exclusion, test both subject forms and the bulk expansion Decision with an actual ongoing colony in the relevant region. With only land being colonized, expansion should be unavailable. With another eligible non-capital state, transfer only that eligible state and preserve the colony's ownership and progress. Once colonization ends, the excluded state should become eligible if the other requirements are met. Foreign land, capitals, and other subjects' regions remain protected. Changing ownership with `own` alone is not a substitute for testing a real colonization process; the UI and colony continuity still need in-game validation.
 
 For the Roman case, establish the Ionian Trading Post and use **Provincialize Rome**. The same country should become the Roman Province (RPR). A separately existing RPR must block conversion without being overwritten or charging Infamy.
 

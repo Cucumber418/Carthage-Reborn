@@ -134,7 +134,7 @@ crb_at_war_with_sicily_holder_trigger = {
 
 crb_can_expand_trading_posts_trigger = {
 	any_scope_state = {
-		is_capital = no
+		crb_is_expansion_ready_state_trigger = yes
 		OR = {
 		AND = {
 			crb_is_tripoli_post_state_trigger = yes

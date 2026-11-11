@@ -107,6 +107,7 @@ class State:
     buildings: dict = field(default_factory=dict)
     name: str = ''
     area: int = 1
+    under_colonization: bool = False
 
 @dataclass
 class Fleet:
@@ -149,8 +150,8 @@ class World:
     def ctx(self, tag='TUN'): return Context(self.countries[tag], root=self.countries[tag])
     def country(self, tag, **kw):
         self.countries[tag] = Country(tag, **kw); return self.countries[tag]
-    def land(self, region, owner='TUN', capital=False):
-        s = State(region, owner, capital); self.states.append(s); return s
+    def land(self, region, owner='TUN', capital=False, under_colonization=False):
+        s = State(region, owner, capital, under_colonization=under_colonization); self.states.append(s); return s
     def resolve(self, value, ctx):
         if value == 'this': return ctx.obj
         if value == 'root': return ctx.root
@@ -209,6 +210,7 @@ class World:
         if k == 'level':return self.compare(o.level,op,float(v))
         if k == 'is_at_war': return o.war == (v=='yes')
         if k == 'is_capital': return o.capital == (v=='yes')
+        if k == 'is_under_colonization': return o.under_colonization == (v=='yes')
         if k == 'is_fleet': return isinstance(o,Fleet) == (v=='yes')
         if k == 'has_building': return o.buildings.get(v,0)>0
         if k == 'state_region': return o.region == v.removeprefix('s:')

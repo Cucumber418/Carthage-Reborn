@@ -719,7 +719,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_tripoli_post_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_tripoli_post_state_trigger = yes }
 				set_state_owner = c:TRP
 			}
 		}
@@ -732,7 +732,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_numidia_post_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_numidia_post_state_trigger = yes }
 				set_state_owner = c:NUM
 			}
 		}
@@ -745,7 +745,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_spanish_mainland_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_spanish_mainland_state_trigger = yes }
 				set_state_owner = c:IBT
 			}
 		}
@@ -758,7 +758,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_gaul_post_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_gaul_post_state_trigger = yes }
 				set_state_owner = c:GLT
 			}
 		}
@@ -771,7 +771,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_alpine_post_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_alpine_post_state_trigger = yes }
 				set_state_owner = c:SNT
 			}
 		}
@@ -784,7 +784,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_south_italy_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_south_italy_state_trigger = yes }
 				set_state_owner = c:IOP
 			}
 		}
@@ -797,7 +797,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_south_italy_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_south_italy_state_trigger = yes }
 				set_state_owner = c:RPR
 			}
 		}
@@ -810,7 +810,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_mauretania_province_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_mauretania_province_state_trigger = yes }
 				set_state_owner = c:CPM
 			}
 		}
@@ -823,7 +823,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_egypt_province_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_egypt_province_state_trigger = yes }
 				set_state_owner = c:CPE
 			}
 		}
@@ -836,7 +836,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_phoenicia_province_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_phoenicia_province_state_trigger = yes }
 				set_state_owner = c:CPF
 			}
 		}
@@ -849,7 +849,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_syria_province_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_syria_province_state_trigger = yes }
 				set_state_owner = c:CPS
 			}
 		}
@@ -862,7 +862,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_mesopotamia_province_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_mesopotamia_province_state_trigger = yes }
 				set_state_owner = c:CPB
 			}
 		}
@@ -875,7 +875,7 @@ crb_expand_trading_posts_effect = {
 				}
 			}
 			every_scope_state = {
-				limit = { is_capital = no crb_is_arabia_province_state_trigger = yes }
+				limit = { crb_is_expansion_ready_state_trigger = yes crb_is_arabia_province_state_trigger = yes }
 				set_state_owner = c:CPA
 			}
 		}
