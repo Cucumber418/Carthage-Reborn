@@ -4,17 +4,17 @@
 
 A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly restored Punic state. Conservative senators govern an unrecognized republic, but the army and the Popular Assembly have ambitions of their own. Choose between the Hannonids and the Barcids, revive Punic culture, and follow the routes of Hanno or Hannibal.
 
-- Version: **1.2.11**
+- Version: **1.3.0**
 - Victoria 3: **1.15.\***
 - Languages: **English and Simplified Chinese**, included in the same mod and selected by the game's language setting.
-- Content: 7 Journal Entries, 2 Decisions, 74 event definitions, 1 company, 13 possible subject countries across 12 regions, and an original Carthaginian music track.
+- Content: 7 Journal Entries, 2 Decisions, 86 event definitions, 1 company, 25 possible subject countries across 24 regions, and an original Carthaginian music track.
 - Workshop descriptions: [English](docs/workshop_description_english.txt) / [Chinese](docs/workshop_description.txt).
 
 ## Language
 
 Set the game language to **English**, fully exit the game, and restart. The same mod and gameplay scripts serve both languages; a separate English Workshop subscription is unnecessary. Existing saves can be used.
 
-English covers all **1,098 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod. Interest Group variants display their current name alone, without an appended generic type in parentheses.
+English covers all **1,398 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod. Interest Group variants display their current name alone, without an appended generic type in parentheses.
 
 ## The Punic Republic
 
@@ -80,13 +80,34 @@ Version 1.2.8 fixes the database loading mode by explicitly replacing the two va
 | Mesopotamia | Mesopotamian Trading Post / Mesopotamian Province | 15 |
 | Arabia | Arabian Trading Post / Arabian Province | 15 |
 
-The final six regions remain hidden until eligible land is acquired. Subjects receive only the relevant non-capital land Carthage actually owns; foreign holdings, the homeland, Sicily, and the current capital are protected.
+The six regions from Mauretania to Arabia remain hidden until eligible land is acquired. Subjects receive only the relevant non-capital land Carthage actually owns; foreign holdings, the homeland, Sicily, and the current capital are protected.
 
 Founding a subject or converting a trading post into a province starts a **shared three-month handover** across all regions. Canceling a foundation and expanding an existing subject do not start this cooldown.
 
 Each trading post has a **Provincialize** button in the territorial journal. Conversion uses the existing country, retaining its assets and current Liberty Desire. It charges the same Infamy as directly founding the province, replaces the commercial privileges with provincial arrangements, and switches to the province's expansion button. The Ionian Trading Post becomes the Roman Province, provided a separate Roman Province does not already exist.
 
 Existing subjects each have their own expansion button. The **Expand the Trading Posts** Decision can still transfer eligible new territory to all actual subjects at once. Both methods exclude states being colonized: if these are the only holdings available, expansion is unavailable; if other eligible states exist, only those states transfer. Excluded states become eligible when colonization ends and the other requirements are met. The **Convert to Islam** Decision provides another course for the country's religion.
+
+### Additional European Regions
+
+Twelve new regions become available when Carthage owns local non-capital land. Each supports a Trading Post, a Province, individual and bulk expansion, and in-place provincialization. New Trading Posts cost no foundation Infamy; Provinces and conversions cost 15 and share the existing three-month handover. The same creation-time culture and law initialization applies throughout.
+
+| Region | Country tag | Coverage |
+| --- | --- | --- |
+| Lusitania | `XLU` | Entre Douro e Minho, Beira, Portuguese Estremadura, Alentejo |
+| Etruria | `XET` | Tuscany, Umbria, Emilia, Romagna |
+| Illyria | `XIL` | Istria, Dalmatia, Croatia, Slavonia, Slovenia, Bosnia, Montenegro, Albania |
+| Achaea | `XAC` | Attica, the Peloponnese, Thessaly |
+| Macedonia | `XMA` | Macedonia, Skopia, Kosovo |
+| Thrace | `XTH` | Eastern and Western Thrace |
+| Moesia | `XMO` | Western and Eastern Serbia, Bulgaria, Northern Thrace, Dobrudja |
+| Dacia | `XDA` | Wallachia, Moldavia, Northern and Southern Transylvania, Bukovina |
+| Pannonia | `XPA` | Central Hungary, Bekes, Transdanubia, Delvidek, Banat, Slovakia, Ruthenia |
+| Noricum | `XNO` | Austria, Styria, Tyrol, South Tyrol |
+| Belgica | `XBE` | Flanders, Wallonia (including Luxembourg), Holland, Friesland, Gelre |
+| Germania | `XGE` | German states, Silesia, East and West Prussia; excludes Posen, Austria, and Czech lands |
+
+Every region has dedicated bilingual narrative, establishment tooltips, dynamic names, and separate flags for the two forms. Boundaries do not overlap the existing territories. Expansion continues to exclude ongoing colonies, capitals, and foreign holdings.
 
 ## Carthaginian Trading House, Art, and Music
 
@@ -112,6 +133,6 @@ Run the automated checks from the repository root:
 python -m unittest discover -s tests -v
 ```
 
-The 133 checks cover territorial safeguards, expansion exclusions for ongoing colonies, vanilla state-transfer compatibility, provincialization, recurring events, governance, creation-time primary cultures and colonial laws, actual faction outcomes and unfinished route recovery, route separation, building completion, obsolete building identifiers in company definitions, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
+The 143 checks cover territorial safeguards, expansion exclusions for ongoing colonies, vanilla state-transfer compatibility, provincialization, recurring events, governance, creation-time primary cultures and colonial laws, actual faction outcomes and unfinished route recovery, route separation, building completion, obsolete building identifiers in company definitions, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
 
 Known limitation: the automatic Hannonid result at the three-year deadline still lacks part of its victory effects. Reaching the Hannonid end of the progress bar, or choosing the Hannonids in the stalemate event, uses the complete victory path. This update does not change that deadline behavior.

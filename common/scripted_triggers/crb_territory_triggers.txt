@@ -170,6 +170,7 @@ crb_can_found_arabia_trigger = {
 
 crb_can_found_any_territory_trigger = {
 	OR = {
+		crb_can_found_europe_trigger = yes
 		crb_can_found_tripoli_trigger = yes
 		crb_can_found_numidia_trigger = yes
 		crb_can_found_iberia_trigger = yes

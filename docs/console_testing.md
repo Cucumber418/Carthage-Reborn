@@ -1,4 +1,4 @@
-# 关键节点控制台测试（main，1.2.10）
+# 关键节点控制台测试（main，1.3.0）
 
 按当前脚本整理，尚未在游戏进程中逐条执行。普通命令逐行输入控制台；标为 `pdx` 的代码放到 Script Runner 的 Effect 页执行。正式版不需要 `crb_debug` 测试事件。
 
@@ -162,6 +162,29 @@ c:TUN = { crb_check_french_border_effect = yes }
 ```
 
 预期：不再发出新一轮弹窗，清理路线标记与专属修正；已签的停战协议保留原期限。
+
+## 欧陆十二处新增辖区
+
+先备份测试存档，每个地区分别读取建立前的存档；下列命令只给迦太基一块土地。和平且交接期结束后，“迦太基的领土”应只显示相应地区的处置按钮。
+
+| 地区 | 控制台命令 | 成立后代码 |
+| --- | --- | --- |
+| 卢西塔尼亚 | `own STATE_ESTREMADURA TUN` | `XLU` |
+| 伊特鲁里亚 | `own STATE_TUSCANY TUN` | `XET` |
+| 伊利里亚 | `own STATE_DALMATIA TUN` | `XIL` |
+| 阿该亚 | `own STATE_ATTICA TUN` | `XAC` |
+| 马其顿 | `own STATE_MACEDONIA TUN` | `XMA` |
+| 色雷斯 | `own STATE_EASTERN_THRACE TUN` | `XTH` |
+| 默西亚 | `own STATE_BULGARIA TUN` | `XMO` |
+| 达契亚 | `own STATE_WALLACHIA TUN` | `XDA` |
+| 潘诺尼亚 | `own STATE_CENTRAL_HUNGARY TUN` | `XPA` |
+| 诺里库姆 | `own STATE_AUSTRIA TUN` | `XNO` |
+| 贝尔吉卡 | `own STATE_FLANDERS TUN` | `XBE` |
+| 日耳曼尼亚 | `own STATE_RHINELAND TUN` | `XGE` |
+
+每处依次检查商站、行省、取消三选项。商站／行省均保留当地原主流文化并追加布匿，采用臣民身份、总督治理；成立时迦太基有有效殖民政策则新附庸采用边疆殖民。商站免成立恶名，行省与行省化均为 15 恶名，建立／转换共用三个月交接期。已有商站应能原地行省化，保留对象及资产；逐个扩张与批量决议只转交该区合格直属土地，排除殖民中州、首都与外国部分。分别核对两种形式的国家名称、旗帜与中英文文案；只剩既有附庸而无待处置直辖地时，旧档月度仍能补开领土日志。
+
+另检查仅有一块非首都且非名义首都的土地也能成立；外国已占用同一国家代码、战争、交接期或确认前丢地时不能创建或扣恶名。卢森堡属于瓦隆州，不使用不存在的卢森堡州代码。
 
 ## 汉诺派、巴卡派与三年结局
 

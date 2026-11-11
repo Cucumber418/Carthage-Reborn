@@ -1,6 +1,7 @@
 """Exercise guarded in-place conversion; native effects still require in-game checks."""
 import unittest
-from test_territories import Node,World,Fleet,entries,get,load_scripts
+from test_territories import Node,World,Fleet,entries,get,load_scripts,ECONOMIC_LAWS
+from territory_test_data import EUROPE, buttons
 
 REGIONS=[
     ('TRP','TRP',10,'crb_revenge.10'),('NUM','NUM',15,'crb_revenge.11'),
@@ -10,6 +11,8 @@ REGIONS=[
     ('CPF','CPF',10,'crb_territories.3'),('CPS','CPS',15,'crb_territories.4'),
     ('CPB','CPB',15,'crb_territories.5'),('CPA','CPA',15,'crb_territories.6'),
 ]
+REGIONS.extend((region['tag'], region['tag'], region['infamy'], region['event']) for region in EUROPE)
+
 def walk(nodes):
     for n in nodes:
         if isinstance(n,Node):
@@ -28,7 +31,7 @@ class ProvincializationTests(unittest.TestCase):
     def possible(self,tag):return self.w.conditions(get(self.button(tag),'possible'),self.w.ctx())
     def convert(self,tag):self.w.effect(get(self.button(tag),'effect'),self.w.ctx())
     def test_all_twelve_buttons_live_only_in_territorial_journal(self):
-        keys={n.key for n in self.scripts['common/scripted_buttons/crb_provincialization_buttons.txt']}
+        keys={n.key for n in buttons(self.scripts, 'crb_provincialize_')}
         self.assertEqual(keys,{f'crb_provincialize_{tag}_button' for tag,*_ in REGIONS})
         for path,nodes in self.scripts.items():
             if not path.startswith('common/journal_entries/'):continue
@@ -42,6 +45,7 @@ class ProvincializationTests(unittest.TestCase):
                 self.w=World(self.scripts);post=self.post(tag)
                 post.treasury=12345;post.gdp=987654;post.liberty_desire=37.5
                 post.modifiers.add('crb_carthaginian_protection');fleet=Fleet(tag);post.fleets.append(fleet)
+                post.laws.add('law_type:law_laissez_faire')
                 capital=self.w.land('STATE_APULIA',tag,capital=True);capital.buildings['building_port']=4
                 home=self.w.states[0];other=self.w.land('STATE_PROVENCE')
                 self.w.country('FRA');foreign=self.w.land('STATE_APULIA','FRA')
@@ -53,6 +57,7 @@ class ProvincializationTests(unittest.TestCase):
                 self.assertEqual((capital.owner,capital.buildings['building_port'],fleet.owner),(final,4,final))
                 self.assertEqual((home.owner,other.owner,foreign.owner),('TUN','TUN','FRA'))
                 self.assertIn('crb_province',post.variables);self.assertIn('crb_carthaginian_protection',post.modifiers)
+                self.assertEqual(post.laws & ECONOMIC_LAWS, {'law_type:law_agrarianism'})
                 self.assertTrue({'law_type:law_crb_governor_rule','law_type:law_oligarchy','law_type:law_appointed_bureaucrats','law_type:law_secret_police','law_type:law_mercantilism','law_type:law_state_religion'}<=post.laws)
                 self.assertEqual(self.w.countries['TUN'].infamy,cost)
                 self.assertEqual(self.w.countries['TUN'].modifier_months['crb_territory_disposition_cooldown'],3)
@@ -100,7 +105,7 @@ class ProvincializationTests(unittest.TestCase):
     def test_conversion_infamy_matches_direct_province_foundation(self):
         for tag,_,_,event in REGIONS:
             with self.subTest(tag=tag):
-                branch='b' if event.startswith('crb_revenge.') else 'a'
+                branch='a' if event.startswith('crb_territories.') else 'b'
                 option=next(o.value for o in entries(self.w.defs[event],'option') if get(o.value,'name')==event+'.'+branch)
                 cost=next(n.value for n in walk(option) if n.key=='change_infamy')
                 call=get(get(self.button(tag),'effect'),'crb_provincialize_territory_effect')

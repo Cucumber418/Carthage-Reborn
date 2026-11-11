@@ -1,0 +1,256 @@
+﻿# European territorial definitions. State regions are disjoint from existing territories.
+
+crb_is_lusitania_state_trigger = {
+	OR = {
+		state_region = s:STATE_ENTRE_DOURO_E_MINHO
+		state_region = s:STATE_BEIRA
+		state_region = s:STATE_ESTREMADURA
+		state_region = s:STATE_ALENTEJO
+	}
+}
+
+crb_can_found_lusitania_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XLU }
+	any_scope_state = { is_capital = no crb_is_lusitania_state_trigger = yes }
+}
+
+crb_is_etruria_state_trigger = {
+	OR = {
+		state_region = s:STATE_TUSCANY
+		state_region = s:STATE_UMBRIA
+		state_region = s:STATE_EMILIA
+		state_region = s:STATE_ROMAGNA
+	}
+}
+
+crb_can_found_etruria_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XET }
+	any_scope_state = { is_capital = no crb_is_etruria_state_trigger = yes }
+}
+
+crb_is_illyria_state_trigger = {
+	OR = {
+		state_region = s:STATE_ISTRIA
+		state_region = s:STATE_DALMATIA
+		state_region = s:STATE_CROATIA
+		state_region = s:STATE_SLAVONIA
+		state_region = s:STATE_SLOVENIA
+		state_region = s:STATE_BOSNIA
+		state_region = s:STATE_MONTENEGRO
+		state_region = s:STATE_ALBANIA
+	}
+}
+
+crb_can_found_illyria_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XIL }
+	any_scope_state = { is_capital = no crb_is_illyria_state_trigger = yes }
+}
+
+crb_is_achaea_state_trigger = {
+	OR = {
+		state_region = s:STATE_ATTICA
+		state_region = s:STATE_PELOPONNESE
+		state_region = s:STATE_THESSALIA
+	}
+}
+
+crb_can_found_achaea_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XAC }
+	any_scope_state = { is_capital = no crb_is_achaea_state_trigger = yes }
+}
+
+crb_is_macedonia_state_trigger = {
+	OR = {
+		state_region = s:STATE_MACEDONIA
+		state_region = s:STATE_SKOPIA
+		state_region = s:STATE_KOSOVO
+	}
+}
+
+crb_can_found_macedonia_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XMA }
+	any_scope_state = { is_capital = no crb_is_macedonia_state_trigger = yes }
+}
+
+crb_is_thrace_state_trigger = {
+	OR = {
+		state_region = s:STATE_EASTERN_THRACE
+		state_region = s:STATE_WESTERN_THRACE
+	}
+}
+
+crb_can_found_thrace_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XTH }
+	any_scope_state = { is_capital = no crb_is_thrace_state_trigger = yes }
+}
+
+crb_is_moesia_state_trigger = {
+	OR = {
+		state_region = s:STATE_WESTERN_SERBIA
+		state_region = s:STATE_EASTERN_SERBIA
+		state_region = s:STATE_BULGARIA
+		state_region = s:STATE_NORTHERN_THRACE
+		state_region = s:STATE_DOBRUDJA
+	}
+}
+
+crb_can_found_moesia_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XMO }
+	any_scope_state = { is_capital = no crb_is_moesia_state_trigger = yes }
+}
+
+crb_is_dacia_state_trigger = {
+	OR = {
+		state_region = s:STATE_WALLACHIA
+		state_region = s:STATE_MOLDAVIA
+		state_region = s:STATE_NORTHERN_TRANSYLVANIA
+		state_region = s:STATE_SOUTHERN_TRANSYLVANIA
+		state_region = s:STATE_BUKOVINA
+	}
+}
+
+crb_can_found_dacia_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XDA }
+	any_scope_state = { is_capital = no crb_is_dacia_state_trigger = yes }
+}
+
+crb_is_pannonia_state_trigger = {
+	OR = {
+		state_region = s:STATE_CENTRAL_HUNGARY
+		state_region = s:STATE_BEKES
+		state_region = s:STATE_TRANSDANUBIA
+		state_region = s:STATE_DELVIDEK
+		state_region = s:STATE_BANAT
+		state_region = s:STATE_SLOVAKIA
+		state_region = s:STATE_RUTHENIA
+	}
+}
+
+crb_can_found_pannonia_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XPA }
+	any_scope_state = { is_capital = no crb_is_pannonia_state_trigger = yes }
+}
+
+crb_is_noricum_state_trigger = {
+	OR = {
+		state_region = s:STATE_AUSTRIA
+		state_region = s:STATE_STYRIA
+		state_region = s:STATE_TYROL
+		state_region = s:STATE_SOUTH_TYROL
+	}
+}
+
+crb_can_found_noricum_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XNO }
+	any_scope_state = { is_capital = no crb_is_noricum_state_trigger = yes }
+}
+
+crb_is_belgica_state_trigger = {
+	OR = {
+		state_region = s:STATE_FLANDERS
+		state_region = s:STATE_WALLONIA
+		state_region = s:STATE_HOLLAND
+		state_region = s:STATE_FRIESLAND
+		state_region = s:STATE_GELRE
+	}
+}
+
+crb_can_found_belgica_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XBE }
+	any_scope_state = { is_capital = no crb_is_belgica_state_trigger = yes }
+}
+
+crb_is_germania_state_trigger = {
+	OR = {
+		state_region = s:STATE_POMERANIA
+		state_region = s:STATE_ELBE
+		state_region = s:STATE_WESTPHALIA
+		state_region = s:STATE_ANHALT
+		state_region = s:STATE_RHINELAND
+		state_region = s:STATE_NORTH_RHINE
+		state_region = s:STATE_BRANDENBURG
+		state_region = s:STATE_SCHLESWIG_HOLSTEIN
+		state_region = s:STATE_WURTTEMBERG
+		state_region = s:STATE_BADEN
+		state_region = s:STATE_HANNOVER
+		state_region = s:STATE_BRUNSWICK
+		state_region = s:STATE_BAVARIA
+		state_region = s:STATE_FRANCONIA
+		state_region = s:STATE_SAXONY
+		state_region = s:STATE_HESSE
+		state_region = s:STATE_MECKLENBURG
+		state_region = s:STATE_RUHR
+		state_region = s:STATE_LOWER_SILESIA
+		state_region = s:STATE_UPPER_SILESIA
+		state_region = s:STATE_WEST_PRUSSIA
+		state_region = s:STATE_EAST_PRUSSIA
+	}
+}
+
+crb_can_found_germania_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XGE }
+	any_scope_state = { is_capital = no crb_is_germania_state_trigger = yes }
+}
+
+crb_can_found_europe_trigger = {
+	OR = {
+		crb_can_found_lusitania_trigger = yes
+		crb_can_found_etruria_trigger = yes
+		crb_can_found_illyria_trigger = yes
+		crb_can_found_achaea_trigger = yes
+		crb_can_found_macedonia_trigger = yes
+		crb_can_found_thrace_trigger = yes
+		crb_can_found_moesia_trigger = yes
+		crb_can_found_dacia_trigger = yes
+		crb_can_found_pannonia_trigger = yes
+		crb_can_found_noricum_trigger = yes
+		crb_can_found_belgica_trigger = yes
+		crb_can_found_germania_trigger = yes
+	}
+}
+
+crb_has_europe_subject_trigger = {
+	OR = {
+		crb_is_actual_territory_subject_trigger = { TAG = XLU }
+		crb_is_actual_territory_subject_trigger = { TAG = XET }
+		crb_is_actual_territory_subject_trigger = { TAG = XIL }
+		crb_is_actual_territory_subject_trigger = { TAG = XAC }
+		crb_is_actual_territory_subject_trigger = { TAG = XMA }
+		crb_is_actual_territory_subject_trigger = { TAG = XTH }
+		crb_is_actual_territory_subject_trigger = { TAG = XMO }
+		crb_is_actual_territory_subject_trigger = { TAG = XDA }
+		crb_is_actual_territory_subject_trigger = { TAG = XPA }
+		crb_is_actual_territory_subject_trigger = { TAG = XNO }
+		crb_is_actual_territory_subject_trigger = { TAG = XBE }
+		crb_is_actual_territory_subject_trigger = { TAG = XGE }
+	}
+}
+
+crb_can_expand_europe_trigger = {
+	OR = {
+		crb_can_expand_one_territory_trigger = { TAG = XLU AREA = crb_is_lusitania_state_trigger }
+		crb_can_expand_one_territory_trigger = { TAG = XET AREA = crb_is_etruria_state_trigger }
+		crb_can_expand_one_territory_trigger = { TAG = XIL AREA = crb_is_illyria_state_trigger }
+		crb_can_expand_one_territory_trigger = { TAG = XAC AREA = crb_is_achaea_state_trigger }
+		crb_can_expand_one_territory_trigger = { TAG = XMA AREA = crb_is_macedonia_state_trigger }
+		crb_can_expand_one_territory_trigger = { TAG = XTH AREA = crb_is_thrace_state_trigger }
+		crb_can_expand_one_territory_trigger = { TAG = XMO AREA = crb_is_moesia_state_trigger }
+		crb_can_expand_one_territory_trigger = { TAG = XDA AREA = crb_is_dacia_state_trigger }
+		crb_can_expand_one_territory_trigger = { TAG = XPA AREA = crb_is_pannonia_state_trigger }
+		crb_can_expand_one_territory_trigger = { TAG = XNO AREA = crb_is_noricum_state_trigger }
+		crb_can_expand_one_territory_trigger = { TAG = XBE AREA = crb_is_belgica_state_trigger }
+		crb_can_expand_one_territory_trigger = { TAG = XGE AREA = crb_is_germania_state_trigger }
+	}
+}

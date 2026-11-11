@@ -1,0 +1,263 @@
+{
+  "vanilla_version": "1.15",
+  "vanilla_ref": "f8e3ee6cfb3e1265ef41190f44957a5e4963edf1",
+  "regions": [
+    {
+      "key": "lusitania",
+      "tag": "XLU",
+      "name_zh": "卢西塔尼亚",
+      "name_en": "Lusitania",
+      "regions": [
+        "STATE_ENTRE_DOURO_E_MINHO",
+        "STATE_BEIRA",
+        "STATE_ESTREMADURA",
+        "STATE_ALENTEJO"
+      ],
+      "capital": "STATE_ESTREMADURA",
+      "cultures": [
+        "portuguese"
+      ],
+      "event": "crb_europe.1",
+      "infamy": 15
+    },
+    {
+      "key": "etruria",
+      "tag": "XET",
+      "name_zh": "伊特鲁里亚",
+      "name_en": "Etruria",
+      "regions": [
+        "STATE_TUSCANY",
+        "STATE_UMBRIA",
+        "STATE_EMILIA",
+        "STATE_ROMAGNA"
+      ],
+      "capital": "STATE_TUSCANY",
+      "cultures": [
+        "north_italian",
+        "south_italian"
+      ],
+      "event": "crb_europe.2",
+      "infamy": 15
+    },
+    {
+      "key": "illyria",
+      "tag": "XIL",
+      "name_zh": "伊利里亚",
+      "name_en": "Illyria",
+      "regions": [
+        "STATE_ISTRIA",
+        "STATE_DALMATIA",
+        "STATE_CROATIA",
+        "STATE_SLAVONIA",
+        "STATE_SLOVENIA",
+        "STATE_BOSNIA",
+        "STATE_MONTENEGRO",
+        "STATE_ALBANIA"
+      ],
+      "capital": "STATE_DALMATIA",
+      "cultures": [
+        "croat",
+        "slovene",
+        "serb",
+        "bosniak",
+        "albanian"
+      ],
+      "event": "crb_europe.3",
+      "infamy": 15
+    },
+    {
+      "key": "achaea",
+      "tag": "XAC",
+      "name_zh": "阿该亚",
+      "name_en": "Achaea",
+      "regions": [
+        "STATE_ATTICA",
+        "STATE_PELOPONNESE",
+        "STATE_THESSALIA"
+      ],
+      "capital": "STATE_ATTICA",
+      "cultures": [
+        "greek"
+      ],
+      "event": "crb_europe.4",
+      "infamy": 15
+    },
+    {
+      "key": "macedonia",
+      "tag": "XMA",
+      "name_zh": "马其顿",
+      "name_en": "Macedonia",
+      "regions": [
+        "STATE_MACEDONIA",
+        "STATE_SKOPIA",
+        "STATE_KOSOVO"
+      ],
+      "capital": "STATE_MACEDONIA",
+      "cultures": [
+        "greek",
+        "bulgarian",
+        "albanian"
+      ],
+      "event": "crb_europe.5",
+      "infamy": 15
+    },
+    {
+      "key": "thrace",
+      "tag": "XTH",
+      "name_zh": "色雷斯",
+      "name_en": "Thrace",
+      "regions": [
+        "STATE_EASTERN_THRACE",
+        "STATE_WESTERN_THRACE"
+      ],
+      "capital": "STATE_EASTERN_THRACE",
+      "cultures": [
+        "greek",
+        "turkish"
+      ],
+      "event": "crb_europe.6",
+      "infamy": 15
+    },
+    {
+      "key": "moesia",
+      "tag": "XMO",
+      "name_zh": "默西亚",
+      "name_en": "Moesia",
+      "regions": [
+        "STATE_WESTERN_SERBIA",
+        "STATE_EASTERN_SERBIA",
+        "STATE_BULGARIA",
+        "STATE_NORTHERN_THRACE",
+        "STATE_DOBRUDJA"
+      ],
+      "capital": "STATE_BULGARIA",
+      "cultures": [
+        "bulgarian",
+        "serb",
+        "romanian"
+      ],
+      "event": "crb_europe.7",
+      "infamy": 15
+    },
+    {
+      "key": "dacia",
+      "tag": "XDA",
+      "name_zh": "达契亚",
+      "name_en": "Dacia",
+      "regions": [
+        "STATE_WALLACHIA",
+        "STATE_MOLDAVIA",
+        "STATE_NORTHERN_TRANSYLVANIA",
+        "STATE_SOUTHERN_TRANSYLVANIA",
+        "STATE_BUKOVINA"
+      ],
+      "capital": "STATE_WALLACHIA",
+      "cultures": [
+        "romanian",
+        "hungarian"
+      ],
+      "event": "crb_europe.8",
+      "infamy": 15
+    },
+    {
+      "key": "pannonia",
+      "tag": "XPA",
+      "name_zh": "潘诺尼亚",
+      "name_en": "Pannonia",
+      "regions": [
+        "STATE_CENTRAL_HUNGARY",
+        "STATE_BEKES",
+        "STATE_TRANSDANUBIA",
+        "STATE_DELVIDEK",
+        "STATE_BANAT",
+        "STATE_SLOVAKIA",
+        "STATE_RUTHENIA"
+      ],
+      "capital": "STATE_CENTRAL_HUNGARY",
+      "cultures": [
+        "hungarian",
+        "slovak"
+      ],
+      "event": "crb_europe.9",
+      "infamy": 15
+    },
+    {
+      "key": "noricum",
+      "tag": "XNO",
+      "name_zh": "诺里库姆",
+      "name_en": "Noricum",
+      "regions": [
+        "STATE_AUSTRIA",
+        "STATE_STYRIA",
+        "STATE_TYROL",
+        "STATE_SOUTH_TYROL"
+      ],
+      "capital": "STATE_AUSTRIA",
+      "cultures": [
+        "south_german",
+        "north_italian"
+      ],
+      "event": "crb_europe.10",
+      "infamy": 15
+    },
+    {
+      "key": "belgica",
+      "tag": "XBE",
+      "name_zh": "贝尔吉卡",
+      "name_en": "Belgica",
+      "regions": [
+        "STATE_FLANDERS",
+        "STATE_WALLONIA",
+        "STATE_HOLLAND",
+        "STATE_FRIESLAND",
+        "STATE_GELRE"
+      ],
+      "capital": "STATE_FLANDERS",
+      "cultures": [
+        "flemish",
+        "wallonian",
+        "dutch",
+        "north_german"
+      ],
+      "event": "crb_europe.11",
+      "infamy": 15
+    },
+    {
+      "key": "germania",
+      "tag": "XGE",
+      "name_zh": "日耳曼尼亚",
+      "name_en": "Germania",
+      "regions": [
+        "STATE_POMERANIA",
+        "STATE_ELBE",
+        "STATE_WESTPHALIA",
+        "STATE_ANHALT",
+        "STATE_RHINELAND",
+        "STATE_NORTH_RHINE",
+        "STATE_BRANDENBURG",
+        "STATE_SCHLESWIG_HOLSTEIN",
+        "STATE_WURTTEMBERG",
+        "STATE_BADEN",
+        "STATE_HANNOVER",
+        "STATE_BRUNSWICK",
+        "STATE_BAVARIA",
+        "STATE_FRANCONIA",
+        "STATE_SAXONY",
+        "STATE_HESSE",
+        "STATE_MECKLENBURG",
+        "STATE_RUHR",
+        "STATE_LOWER_SILESIA",
+        "STATE_UPPER_SILESIA",
+        "STATE_WEST_PRUSSIA",
+        "STATE_EAST_PRUSSIA"
+      ],
+      "capital": "STATE_RHINELAND",
+      "cultures": [
+        "north_german",
+        "south_german"
+      ],
+      "event": "crb_europe.12",
+      "infamy": 15
+    }
+  ]
+}

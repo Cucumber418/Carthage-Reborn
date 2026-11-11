@@ -32,7 +32,7 @@ The independent journal [b]Carthage's Territories[/b] manages overseas possessio
 [*][b]Trading Posts[/b] pay 30% of income and enjoy commercial privileges. Establishing one adds no Infamy.
 [*][b]Provinces[/b] pay 50% and receive a provincial administration, at a cost of 10 or 15 Infamy.
 [*]Both forms are governed by a non-hereditary governor appointed by Carthage.
-[*]Twelve regions include Tripoli, Numidia, Iberia, Gaul, the Alps, southern Italy, and six hidden regions in North Africa and the Middle East.
+[*]Twenty-four regions include the existing Mediterranean and eastern territories plus Lusitania, Etruria, Illyria, Achaea, Macedonia, Thrace, Moesia, Dacia, Pannonia, Noricum, Belgica, and Germania. All twelve new European regions support both subject forms.
 [*]Expand each subject separately, or convert an existing trading post into a province while retaining its country and assets.
 [*]Foundations and provincial conversions share a three-month handover.
 [/list]

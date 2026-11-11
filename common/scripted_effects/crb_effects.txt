@@ -884,6 +884,7 @@ crb_expand_trading_posts_effect = {
 			}
 		}
 	}
+	crb_expand_europe_effect = yes
 }
 
 # 是否有可以交给商站的州（作用域：迦太基）

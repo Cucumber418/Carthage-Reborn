@@ -4,6 +4,7 @@ import json
 import re
 import unittest
 from test_territories import Node, get, entries, load_scripts
+from territory_test_data import EUROPE, TOTAL_REGIONS, EXPECTED_EVENTS
 
 ROOT=Path(__file__).resolve().parents[1]
 ENTRY=re.compile(r'^ ([A-Za-z_0-9.]+):(?:[0-9]+)?\s*(".*")\s*$')
@@ -88,7 +89,7 @@ class LocalizationTests(unittest.TestCase):
                 keys += [get(n.value,'name') for n in entries(node.value,'option')]
                 for key in keys:
                     if key:self.assertIn(key.strip('"'),self.values,(path,node.key,key))
-        self.assertEqual(count,74)
+        self.assertEqual(count,EXPECTED_EVENTS)
     def test_custom_dollar_substitutions_are_localized(self):
         missing=set()
         for value in self.values.values():

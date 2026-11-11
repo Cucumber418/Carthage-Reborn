@@ -5,6 +5,7 @@ import struct
 import unittest
 from test_territories import Node,World,entries,get,load_scripts,parse
 from test_localization import load_chinese
+from territory_test_data import TOTAL_REGIONS, buttons as all_buttons
 
 ROOT=Path(__file__).resolve().parents[1]
 POLICIES=('crb_gallic_appeasement','crb_flavor_gallic_legacy','crb_gallic_nonintervention')
@@ -104,10 +105,10 @@ class IndividualExpansionTests(unittest.TestCase):
     def setUp(self):self.w=World(self.scripts)
     def effect(self,key):self.w.effect(get(self.w.defs[key],'effect'),self.w.ctx())
     def test_all_twenty_four_form_buttons_live_only_in_territorial_journal(self):
-        buttons={n.key for n in self.scripts['common/scripted_buttons/crb_expansion_buttons.txt'] if isinstance(n,Node)}
-        self.assertEqual(len(buttons),24)
+        buttons={n.key for n in all_buttons(self.scripts, 'crb_expand_')}
+        self.assertEqual(len(buttons),TOTAL_REGIONS * 2)
         registered={n.value for n in entries(self.w.defs['je_crb_territories'],'scripted_button')}
-        self.assertTrue(buttons<=registered);self.assertEqual(len(registered),48)
+        self.assertTrue(buttons<=registered);self.assertEqual(len(registered),TOTAL_REGIONS * 4)
         for p,ns in self.scripts.items():
             if p.startswith('common/journal_entries/'):
                 for n in ns:
@@ -118,7 +119,7 @@ class IndividualExpansionTests(unittest.TestCase):
                 self.w=World(self.scripts);self.w.countries['TUN'].journals.add('je_crb_territories')
                 flags={'crb_carthaginian_subject'}|({'crb_province'} if province else set())
                 subject=self.w.country('NUM',overlord='TUN',variables=flags)
-                def visible():return [n.key for n in self.scripts['common/scripted_buttons/crb_expansion_buttons.txt'] if isinstance(n,Node) and self.w.conditions(get(n.value,'visible'),self.w.ctx())]
+                def visible():return [n.key for n in all_buttons(self.scripts, 'crb_expand_') if self.w.conditions(get(n.value,'visible'),self.w.ctx())]
                 self.assertEqual(visible(),['crb_expand_NUM_'+('province' if province else 'post')+'_button'])
                 self.w.country('FRA');subject.overlord='FRA';self.assertFalse(visible())
     def test_expansion_only_transfers_target_owned_noncapital_land(self):

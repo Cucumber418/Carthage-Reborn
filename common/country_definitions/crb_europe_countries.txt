@@ -1,0 +1,107 @@
+﻿XLU = {
+	color = rgb { 68 103 81 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { portuguese }
+	religion = crb_tanit
+	capital = STATE_ESTREMADURA
+}
+
+XET = {
+	color = rgb { 133 71 58 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { north_italian south_italian }
+	religion = crb_tanit
+	capital = STATE_TUSCANY
+}
+
+XIL = {
+	color = rgb { 58 92 123 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { croat slovene serb bosniak albanian }
+	religion = crb_tanit
+	capital = STATE_DALMATIA
+}
+
+XAC = {
+	color = rgb { 134 125 98 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { greek }
+	religion = crb_tanit
+	capital = STATE_ATTICA
+}
+
+XMA = {
+	color = rgb { 91 72 103 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { greek bulgarian albanian }
+	religion = crb_tanit
+	capital = STATE_MACEDONIA
+}
+
+XTH = {
+	color = rgb { 124 66 109 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { greek turkish }
+	religion = crb_tanit
+	capital = STATE_EASTERN_THRACE
+}
+
+XMO = {
+	color = rgb { 68 98 115 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { bulgarian serb romanian }
+	religion = crb_tanit
+	capital = STATE_BULGARIA
+}
+
+XDA = {
+	color = rgb { 145 116 68 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { romanian hungarian }
+	religion = crb_tanit
+	capital = STATE_WALLACHIA
+}
+
+XPA = {
+	color = rgb { 89 118 70 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { hungarian slovak }
+	religion = crb_tanit
+	capital = STATE_CENTRAL_HUNGARY
+}
+
+XNO = {
+	color = rgb { 147 76 75 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { south_german north_italian }
+	religion = crb_tanit
+	capital = STATE_AUSTRIA
+}
+
+XBE = {
+	color = rgb { 153 128 56 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { flemish wallonian dutch north_german }
+	religion = crb_tanit
+	capital = STATE_FLANDERS
+}
+
+XGE = {
+	color = rgb { 93 99 110 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { north_german south_german }
+	religion = crb_tanit
+	capital = STATE_RHINELAND
+}

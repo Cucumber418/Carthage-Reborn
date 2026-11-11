@@ -1,0 +1,280 @@
+﻿# European subjects use the shared, guarded territorial factory.
+
+crb_create_puppet_XLU_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XLU
+		CAN_FOUND = crb_can_found_lusitania_trigger
+		AREA = crb_is_lusitania_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XLU_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XLU
+		CAN_FOUND = crb_can_found_lusitania_trigger
+		AREA = crb_is_lusitania_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_puppet_XET_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XET
+		CAN_FOUND = crb_can_found_etruria_trigger
+		AREA = crb_is_etruria_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XET_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XET
+		CAN_FOUND = crb_can_found_etruria_trigger
+		AREA = crb_is_etruria_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_puppet_XIL_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XIL
+		CAN_FOUND = crb_can_found_illyria_trigger
+		AREA = crb_is_illyria_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XIL_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XIL
+		CAN_FOUND = crb_can_found_illyria_trigger
+		AREA = crb_is_illyria_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_puppet_XAC_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XAC
+		CAN_FOUND = crb_can_found_achaea_trigger
+		AREA = crb_is_achaea_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XAC_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XAC
+		CAN_FOUND = crb_can_found_achaea_trigger
+		AREA = crb_is_achaea_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_puppet_XMA_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XMA
+		CAN_FOUND = crb_can_found_macedonia_trigger
+		AREA = crb_is_macedonia_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XMA_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XMA
+		CAN_FOUND = crb_can_found_macedonia_trigger
+		AREA = crb_is_macedonia_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_puppet_XTH_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XTH
+		CAN_FOUND = crb_can_found_thrace_trigger
+		AREA = crb_is_thrace_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XTH_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XTH
+		CAN_FOUND = crb_can_found_thrace_trigger
+		AREA = crb_is_thrace_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_puppet_XMO_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XMO
+		CAN_FOUND = crb_can_found_moesia_trigger
+		AREA = crb_is_moesia_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XMO_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XMO
+		CAN_FOUND = crb_can_found_moesia_trigger
+		AREA = crb_is_moesia_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_puppet_XDA_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XDA
+		CAN_FOUND = crb_can_found_dacia_trigger
+		AREA = crb_is_dacia_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XDA_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XDA
+		CAN_FOUND = crb_can_found_dacia_trigger
+		AREA = crb_is_dacia_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_puppet_XPA_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XPA
+		CAN_FOUND = crb_can_found_pannonia_trigger
+		AREA = crb_is_pannonia_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XPA_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XPA
+		CAN_FOUND = crb_can_found_pannonia_trigger
+		AREA = crb_is_pannonia_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_puppet_XNO_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XNO
+		CAN_FOUND = crb_can_found_noricum_trigger
+		AREA = crb_is_noricum_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XNO_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XNO
+		CAN_FOUND = crb_can_found_noricum_trigger
+		AREA = crb_is_noricum_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_puppet_XBE_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XBE
+		CAN_FOUND = crb_can_found_belgica_trigger
+		AREA = crb_is_belgica_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XBE_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XBE
+		CAN_FOUND = crb_can_found_belgica_trigger
+		AREA = crb_is_belgica_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_create_puppet_XGE_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XGE
+		CAN_FOUND = crb_can_found_germania_trigger
+		AREA = crb_is_germania_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XGE_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XGE
+		CAN_FOUND = crb_can_found_germania_trigger
+		AREA = crb_is_germania_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+crb_expand_europe_effect = {
+	crb_expand_one_territory_effect = { TAG = XLU AREA = crb_is_lusitania_state_trigger }
+	crb_expand_one_territory_effect = { TAG = XET AREA = crb_is_etruria_state_trigger }
+	crb_expand_one_territory_effect = { TAG = XIL AREA = crb_is_illyria_state_trigger }
+	crb_expand_one_territory_effect = { TAG = XAC AREA = crb_is_achaea_state_trigger }
+	crb_expand_one_territory_effect = { TAG = XMA AREA = crb_is_macedonia_state_trigger }
+	crb_expand_one_territory_effect = { TAG = XTH AREA = crb_is_thrace_state_trigger }
+	crb_expand_one_territory_effect = { TAG = XMO AREA = crb_is_moesia_state_trigger }
+	crb_expand_one_territory_effect = { TAG = XDA AREA = crb_is_dacia_state_trigger }
+	crb_expand_one_territory_effect = { TAG = XPA AREA = crb_is_pannonia_state_trigger }
+	crb_expand_one_territory_effect = { TAG = XNO AREA = crb_is_noricum_state_trigger }
+	crb_expand_one_territory_effect = { TAG = XBE AREA = crb_is_belgica_state_trigger }
+	crb_expand_one_territory_effect = { TAG = XGE AREA = crb_is_germania_state_trigger }
+}

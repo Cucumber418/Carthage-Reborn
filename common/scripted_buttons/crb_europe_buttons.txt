@@ -1,0 +1,709 @@
+﻿# Hidden European foundations, individual expansion and in-place provincialization.
+
+crb_found_lusitania_button = {
+	name = crb_found_lusitania_button
+	desc = crb_found_lusitania_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_lusitania_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_lusitania_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_lusitania_trigger = yes }
+			trigger_event = { id = crb_europe.1 popup = yes }
+		}
+	}
+}
+
+crb_expand_XLU_post_button = {
+	name = crb_expand_XLU_post_button
+	desc = crb_expand_XLU_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XLU }
+		c:XLU ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XLU AREA = crb_is_lusitania_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XLU_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XLU AREA = crb_is_lusitania_state_trigger } }
+	}
+}
+
+crb_expand_XLU_province_button = {
+	name = crb_expand_XLU_province_button
+	desc = crb_expand_XLU_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XLU }
+		c:XLU ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XLU AREA = crb_is_lusitania_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XLU_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XLU AREA = crb_is_lusitania_state_trigger } }
+	}
+}
+
+crb_provincialize_XLU_button = {
+	name = crb_provincialize_XLU_button
+	desc = crb_provincialize_XLU_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XLU }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XLU FINAL_TAG = XLU } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XLU FINAL_TAG = XLU INFAMY = 15 } }
+}
+
+crb_found_etruria_button = {
+	name = crb_found_etruria_button
+	desc = crb_found_etruria_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_etruria_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_etruria_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_etruria_trigger = yes }
+			trigger_event = { id = crb_europe.2 popup = yes }
+		}
+	}
+}
+
+crb_expand_XET_post_button = {
+	name = crb_expand_XET_post_button
+	desc = crb_expand_XET_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XET }
+		c:XET ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XET AREA = crb_is_etruria_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XET_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XET AREA = crb_is_etruria_state_trigger } }
+	}
+}
+
+crb_expand_XET_province_button = {
+	name = crb_expand_XET_province_button
+	desc = crb_expand_XET_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XET }
+		c:XET ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XET AREA = crb_is_etruria_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XET_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XET AREA = crb_is_etruria_state_trigger } }
+	}
+}
+
+crb_provincialize_XET_button = {
+	name = crb_provincialize_XET_button
+	desc = crb_provincialize_XET_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XET }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XET FINAL_TAG = XET } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XET FINAL_TAG = XET INFAMY = 15 } }
+}
+
+crb_found_illyria_button = {
+	name = crb_found_illyria_button
+	desc = crb_found_illyria_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_illyria_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_illyria_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_illyria_trigger = yes }
+			trigger_event = { id = crb_europe.3 popup = yes }
+		}
+	}
+}
+
+crb_expand_XIL_post_button = {
+	name = crb_expand_XIL_post_button
+	desc = crb_expand_XIL_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XIL }
+		c:XIL ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XIL AREA = crb_is_illyria_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XIL_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XIL AREA = crb_is_illyria_state_trigger } }
+	}
+}
+
+crb_expand_XIL_province_button = {
+	name = crb_expand_XIL_province_button
+	desc = crb_expand_XIL_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XIL }
+		c:XIL ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XIL AREA = crb_is_illyria_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XIL_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XIL AREA = crb_is_illyria_state_trigger } }
+	}
+}
+
+crb_provincialize_XIL_button = {
+	name = crb_provincialize_XIL_button
+	desc = crb_provincialize_XIL_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XIL }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XIL FINAL_TAG = XIL } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XIL FINAL_TAG = XIL INFAMY = 15 } }
+}
+
+crb_found_achaea_button = {
+	name = crb_found_achaea_button
+	desc = crb_found_achaea_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_achaea_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_achaea_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_achaea_trigger = yes }
+			trigger_event = { id = crb_europe.4 popup = yes }
+		}
+	}
+}
+
+crb_expand_XAC_post_button = {
+	name = crb_expand_XAC_post_button
+	desc = crb_expand_XAC_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XAC }
+		c:XAC ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XAC AREA = crb_is_achaea_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XAC_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XAC AREA = crb_is_achaea_state_trigger } }
+	}
+}
+
+crb_expand_XAC_province_button = {
+	name = crb_expand_XAC_province_button
+	desc = crb_expand_XAC_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XAC }
+		c:XAC ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XAC AREA = crb_is_achaea_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XAC_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XAC AREA = crb_is_achaea_state_trigger } }
+	}
+}
+
+crb_provincialize_XAC_button = {
+	name = crb_provincialize_XAC_button
+	desc = crb_provincialize_XAC_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XAC }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XAC FINAL_TAG = XAC } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XAC FINAL_TAG = XAC INFAMY = 15 } }
+}
+
+crb_found_macedonia_button = {
+	name = crb_found_macedonia_button
+	desc = crb_found_macedonia_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_macedonia_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_macedonia_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_macedonia_trigger = yes }
+			trigger_event = { id = crb_europe.5 popup = yes }
+		}
+	}
+}
+
+crb_expand_XMA_post_button = {
+	name = crb_expand_XMA_post_button
+	desc = crb_expand_XMA_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XMA }
+		c:XMA ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XMA AREA = crb_is_macedonia_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XMA_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XMA AREA = crb_is_macedonia_state_trigger } }
+	}
+}
+
+crb_expand_XMA_province_button = {
+	name = crb_expand_XMA_province_button
+	desc = crb_expand_XMA_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XMA }
+		c:XMA ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XMA AREA = crb_is_macedonia_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XMA_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XMA AREA = crb_is_macedonia_state_trigger } }
+	}
+}
+
+crb_provincialize_XMA_button = {
+	name = crb_provincialize_XMA_button
+	desc = crb_provincialize_XMA_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XMA }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XMA FINAL_TAG = XMA } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XMA FINAL_TAG = XMA INFAMY = 15 } }
+}
+
+crb_found_thrace_button = {
+	name = crb_found_thrace_button
+	desc = crb_found_thrace_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_thrace_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_thrace_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_thrace_trigger = yes }
+			trigger_event = { id = crb_europe.6 popup = yes }
+		}
+	}
+}
+
+crb_expand_XTH_post_button = {
+	name = crb_expand_XTH_post_button
+	desc = crb_expand_XTH_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XTH }
+		c:XTH ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XTH AREA = crb_is_thrace_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XTH_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XTH AREA = crb_is_thrace_state_trigger } }
+	}
+}
+
+crb_expand_XTH_province_button = {
+	name = crb_expand_XTH_province_button
+	desc = crb_expand_XTH_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XTH }
+		c:XTH ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XTH AREA = crb_is_thrace_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XTH_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XTH AREA = crb_is_thrace_state_trigger } }
+	}
+}
+
+crb_provincialize_XTH_button = {
+	name = crb_provincialize_XTH_button
+	desc = crb_provincialize_XTH_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XTH }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XTH FINAL_TAG = XTH } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XTH FINAL_TAG = XTH INFAMY = 15 } }
+}
+
+crb_found_moesia_button = {
+	name = crb_found_moesia_button
+	desc = crb_found_moesia_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_moesia_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_moesia_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_moesia_trigger = yes }
+			trigger_event = { id = crb_europe.7 popup = yes }
+		}
+	}
+}
+
+crb_expand_XMO_post_button = {
+	name = crb_expand_XMO_post_button
+	desc = crb_expand_XMO_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XMO }
+		c:XMO ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XMO AREA = crb_is_moesia_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XMO_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XMO AREA = crb_is_moesia_state_trigger } }
+	}
+}
+
+crb_expand_XMO_province_button = {
+	name = crb_expand_XMO_province_button
+	desc = crb_expand_XMO_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XMO }
+		c:XMO ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XMO AREA = crb_is_moesia_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XMO_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XMO AREA = crb_is_moesia_state_trigger } }
+	}
+}
+
+crb_provincialize_XMO_button = {
+	name = crb_provincialize_XMO_button
+	desc = crb_provincialize_XMO_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XMO }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XMO FINAL_TAG = XMO } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XMO FINAL_TAG = XMO INFAMY = 15 } }
+}
+
+crb_found_dacia_button = {
+	name = crb_found_dacia_button
+	desc = crb_found_dacia_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_dacia_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_dacia_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_dacia_trigger = yes }
+			trigger_event = { id = crb_europe.8 popup = yes }
+		}
+	}
+}
+
+crb_expand_XDA_post_button = {
+	name = crb_expand_XDA_post_button
+	desc = crb_expand_XDA_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XDA }
+		c:XDA ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XDA AREA = crb_is_dacia_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XDA_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XDA AREA = crb_is_dacia_state_trigger } }
+	}
+}
+
+crb_expand_XDA_province_button = {
+	name = crb_expand_XDA_province_button
+	desc = crb_expand_XDA_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XDA }
+		c:XDA ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XDA AREA = crb_is_dacia_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XDA_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XDA AREA = crb_is_dacia_state_trigger } }
+	}
+}
+
+crb_provincialize_XDA_button = {
+	name = crb_provincialize_XDA_button
+	desc = crb_provincialize_XDA_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XDA }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XDA FINAL_TAG = XDA } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XDA FINAL_TAG = XDA INFAMY = 15 } }
+}
+
+crb_found_pannonia_button = {
+	name = crb_found_pannonia_button
+	desc = crb_found_pannonia_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_pannonia_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_pannonia_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_pannonia_trigger = yes }
+			trigger_event = { id = crb_europe.9 popup = yes }
+		}
+	}
+}
+
+crb_expand_XPA_post_button = {
+	name = crb_expand_XPA_post_button
+	desc = crb_expand_XPA_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XPA }
+		c:XPA ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XPA AREA = crb_is_pannonia_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XPA_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XPA AREA = crb_is_pannonia_state_trigger } }
+	}
+}
+
+crb_expand_XPA_province_button = {
+	name = crb_expand_XPA_province_button
+	desc = crb_expand_XPA_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XPA }
+		c:XPA ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XPA AREA = crb_is_pannonia_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XPA_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XPA AREA = crb_is_pannonia_state_trigger } }
+	}
+}
+
+crb_provincialize_XPA_button = {
+	name = crb_provincialize_XPA_button
+	desc = crb_provincialize_XPA_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XPA }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XPA FINAL_TAG = XPA } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XPA FINAL_TAG = XPA INFAMY = 15 } }
+}
+
+crb_found_noricum_button = {
+	name = crb_found_noricum_button
+	desc = crb_found_noricum_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_noricum_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_noricum_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_noricum_trigger = yes }
+			trigger_event = { id = crb_europe.10 popup = yes }
+		}
+	}
+}
+
+crb_expand_XNO_post_button = {
+	name = crb_expand_XNO_post_button
+	desc = crb_expand_XNO_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XNO }
+		c:XNO ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XNO AREA = crb_is_noricum_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XNO_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XNO AREA = crb_is_noricum_state_trigger } }
+	}
+}
+
+crb_expand_XNO_province_button = {
+	name = crb_expand_XNO_province_button
+	desc = crb_expand_XNO_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XNO }
+		c:XNO ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XNO AREA = crb_is_noricum_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XNO_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XNO AREA = crb_is_noricum_state_trigger } }
+	}
+}
+
+crb_provincialize_XNO_button = {
+	name = crb_provincialize_XNO_button
+	desc = crb_provincialize_XNO_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XNO }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XNO FINAL_TAG = XNO } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XNO FINAL_TAG = XNO INFAMY = 15 } }
+}
+
+crb_found_belgica_button = {
+	name = crb_found_belgica_button
+	desc = crb_found_belgica_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_belgica_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_belgica_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_belgica_trigger = yes }
+			trigger_event = { id = crb_europe.11 popup = yes }
+		}
+	}
+}
+
+crb_expand_XBE_post_button = {
+	name = crb_expand_XBE_post_button
+	desc = crb_expand_XBE_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XBE }
+		c:XBE ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XBE AREA = crb_is_belgica_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XBE_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XBE AREA = crb_is_belgica_state_trigger } }
+	}
+}
+
+crb_expand_XBE_province_button = {
+	name = crb_expand_XBE_province_button
+	desc = crb_expand_XBE_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XBE }
+		c:XBE ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XBE AREA = crb_is_belgica_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XBE_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XBE AREA = crb_is_belgica_state_trigger } }
+	}
+}
+
+crb_provincialize_XBE_button = {
+	name = crb_provincialize_XBE_button
+	desc = crb_provincialize_XBE_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XBE }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XBE FINAL_TAG = XBE } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XBE FINAL_TAG = XBE INFAMY = 15 } }
+}
+
+crb_found_germania_button = {
+	name = crb_found_germania_button
+	desc = crb_found_germania_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_germania_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_germania_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_germania_trigger = yes }
+			trigger_event = { id = crb_europe.12 popup = yes }
+		}
+	}
+}
+
+crb_expand_XGE_post_button = {
+	name = crb_expand_XGE_post_button
+	desc = crb_expand_XGE_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XGE }
+		c:XGE ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XGE AREA = crb_is_germania_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XGE_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XGE AREA = crb_is_germania_state_trigger } }
+	}
+}
+
+crb_expand_XGE_province_button = {
+	name = crb_expand_XGE_province_button
+	desc = crb_expand_XGE_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XGE }
+		c:XGE ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XGE AREA = crb_is_germania_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XGE_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XGE AREA = crb_is_germania_state_trigger } }
+	}
+}
+
+crb_provincialize_XGE_button = {
+	name = crb_provincialize_XGE_button
+	desc = crb_provincialize_XGE_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XGE }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XGE FINAL_TAG = XGE } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XGE FINAL_TAG = XGE INFAMY = 15 } }
+}

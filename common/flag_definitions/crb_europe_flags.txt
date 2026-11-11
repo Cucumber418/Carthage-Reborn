@@ -1,0 +1,119 @@
+﻿XLU = {
+	flag_definition = { coa = crb_XLU subject_canton = crb_XLU priority = 1 }
+	flag_definition = {
+		coa = crb_XLU_trading_post
+		subject_canton = crb_XLU_trading_post
+		priority = 10
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XET = {
+	flag_definition = { coa = crb_XET subject_canton = crb_XET priority = 1 }
+	flag_definition = {
+		coa = crb_XET_trading_post
+		subject_canton = crb_XET_trading_post
+		priority = 10
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XIL = {
+	flag_definition = { coa = crb_XIL subject_canton = crb_XIL priority = 1 }
+	flag_definition = {
+		coa = crb_XIL_trading_post
+		subject_canton = crb_XIL_trading_post
+		priority = 10
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XAC = {
+	flag_definition = { coa = crb_XAC subject_canton = crb_XAC priority = 1 }
+	flag_definition = {
+		coa = crb_XAC_trading_post
+		subject_canton = crb_XAC_trading_post
+		priority = 10
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XMA = {
+	flag_definition = { coa = crb_XMA subject_canton = crb_XMA priority = 1 }
+	flag_definition = {
+		coa = crb_XMA_trading_post
+		subject_canton = crb_XMA_trading_post
+		priority = 10
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XTH = {
+	flag_definition = { coa = crb_XTH subject_canton = crb_XTH priority = 1 }
+	flag_definition = {
+		coa = crb_XTH_trading_post
+		subject_canton = crb_XTH_trading_post
+		priority = 10
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XMO = {
+	flag_definition = { coa = crb_XMO subject_canton = crb_XMO priority = 1 }
+	flag_definition = {
+		coa = crb_XMO_trading_post
+		subject_canton = crb_XMO_trading_post
+		priority = 10
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XDA = {
+	flag_definition = { coa = crb_XDA subject_canton = crb_XDA priority = 1 }
+	flag_definition = {
+		coa = crb_XDA_trading_post
+		subject_canton = crb_XDA_trading_post
+		priority = 10
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XPA = {
+	flag_definition = { coa = crb_XPA subject_canton = crb_XPA priority = 1 }
+	flag_definition = {
+		coa = crb_XPA_trading_post
+		subject_canton = crb_XPA_trading_post
+		priority = 10
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XNO = {
+	flag_definition = { coa = crb_XNO subject_canton = crb_XNO priority = 1 }
+	flag_definition = {
+		coa = crb_XNO_trading_post
+		subject_canton = crb_XNO_trading_post
+		priority = 10
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XBE = {
+	flag_definition = { coa = crb_XBE subject_canton = crb_XBE priority = 1 }
+	flag_definition = {
+		coa = crb_XBE_trading_post
+		subject_canton = crb_XBE_trading_post
+		priority = 10
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XGE = {
+	flag_definition = { coa = crb_XGE subject_canton = crb_XGE priority = 1 }
+	flag_definition = {
+		coa = crb_XGE_trading_post
+		subject_canton = crb_XGE_trading_post
+		priority = 10
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}

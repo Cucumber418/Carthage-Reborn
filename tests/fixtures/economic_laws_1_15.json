@@ -1,0 +1,14 @@
+{
+  "source": "https://github.com/jink47787/Historical_MP_Series_Vic3/blob/f8e3ee6cfb3e1265ef41190f44957a5e4963edf1/basegame-ver/common/laws/01_economic_system.txt",
+  "group": "lawgroup_economic_system",
+  "laws": [
+    "law_traditionalism",
+    "law_interventionism",
+    "law_agrarianism",
+    "law_industry_banned",
+    "law_extraction_economy",
+    "law_laissez_faire",
+    "law_cooperative_ownership",
+    "law_command_economy"
+  ]
+}

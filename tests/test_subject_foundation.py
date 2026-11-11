@@ -4,6 +4,7 @@ import unittest
 
 from test_territories import World, get, load_scripts
 from test_expansion_colonization import REGIONS
+from territory_test_data import TOTAL_REGIONS
 
 
 SETUP = 'crb_initialize_territory_culture_and_laws_effect'
@@ -28,8 +29,8 @@ class SubjectFoundationTests(unittest.TestCase):
             for key, nodes in world.defs.items()
             if re.fullmatch(r'crb_create_(puppet|province)_[A-Z]+_effect', key)
         }
-        if len(cls.foundations) != 24 or any(params is None for params in cls.foundations.values()):
-            raise AssertionError('Expected all 24 direct trading-post/province foundation paths')
+        if len(cls.foundations) != TOTAL_REGIONS * 2 or any(params is None for params in cls.foundations.values()):
+            raise AssertionError('Expected both direct foundation paths for every territorial region')
 
     def found(self, key, params, colonial_policy):
         world = World(self.scripts)

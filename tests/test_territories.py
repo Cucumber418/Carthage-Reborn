@@ -10,6 +10,7 @@ import struct
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
+ECONOMIC_LAWS = {'law_type:' + law for law in json.loads((ROOT / 'tests/fixtures/economic_laws_1_15.json').read_text())['laws']}
 TOKEN = re.compile(r'\s+|#[^\n]*|"(?:\\.|[^"\\])*"|\?=|>=|<=|!=|[{}=<>]|[^\s{}=<>?\x22#]+')
 
 @dataclass
@@ -316,7 +317,9 @@ class World:
             elif k=='create_bidirectional_truce':
                 target=self.resolve(get(v,'country'),ctx);months=int(get(v,'months'))
                 o.truces[target.tag]=months;target.truces[o.tag]=months
-            elif k=='activate_law':o.laws.add(v)
+            elif k=='activate_law':
+                if v in ECONOMIC_LAWS:o.laws.difference_update(ECONOMIC_LAWS)
+                o.laws.add(v)
             elif k=='change_infamy':o.infamy+=int(v)
             elif k=='create_country':
                 tag=get(v,'tag');assert tag not in self.countries
@@ -471,8 +474,9 @@ class TerritoriesTests(unittest.TestCase):
                 self.w.effect(state_nodes,self.w.ctx().enter(s));self.assertEqual(s.buildings['building_naval_administration'],1)
     def test_establishment_buttons_only_belong_to_territorial_journal(self):
         journal=self.w.defs['je_crb_territories']
-        buttons={n.key for n in self.scripts['common/scripted_buttons/crb_territory_buttons.txt'] if isinstance(n,Node)}
-        self.assertEqual(len(buttons),12)
+        from territory_test_data import formation_buttons, TOTAL_REGIONS
+        buttons={n.key for n in formation_buttons(self.scripts)}
+        self.assertEqual(len(buttons),TOTAL_REGIONS)
         self.assertTrue(buttons.issubset({n.value for n in entries(journal,'scripted_button')}))
         for path,ns in self.scripts.items():
             if not path.startswith('common/journal_entries/'):continue
@@ -522,7 +526,7 @@ class TerritoriesTests(unittest.TestCase):
             data=p.read_bytes();self.assertTrue(data.startswith(b'\xef\xbb\xbf'))
             for k,v in re.findall(r'^ (\S+):\s*(".*")$',data.decode('utf-8-sig'),re.M):
                 self.assertNotIn(k,texts);texts[k]=json.loads(v)
-        for path in ('common/scripted_buttons/crb_territory_buttons.txt','events/crb_territories_events.txt'):
+        for path in ('common/scripted_buttons/crb_territory_buttons.txt','common/scripted_buttons/crb_europe_buttons.txt','events/crb_territories_events.txt','events/crb_europe_events.txt'):
             source=(ROOT/path).read_text(encoding='utf-8-sig')
             for key in re.findall(r'(?:name|desc|title|flavor)\s*=\s*(crb_[\w.]+)',source):self.assertIn(key,texts)
         for key in re.findall(r'custom_tooltip\s*=\s*(crb_create_\w+)',(ROOT/'common/scripted_effects/crb_effects.txt').read_text(encoding='utf-8-sig')):self.assertIn(key,texts)

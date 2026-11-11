@@ -7,6 +7,7 @@ import unittest
 import math
 from test_territories import Node, World, entries, get, load_scripts
 from test_localization import load_chinese
+from territory_test_data import EUROPE, TOTAL_REGIONS, formation_buttons
 
 COOLDOWN='crb_territory_disposition_cooldown'
 REGIONS=[
@@ -17,7 +18,9 @@ REGIONS=[
     ('phoenicia','STATE_LEBANON','CPF'),('syria','STATE_ALEPPO','CPS'),
     ('mesopotamia','STATE_BAGHDAD','CPB'),('arabia','STATE_YEMEN','CPA'),
 ]
-EVENTS=['crb_revenge.'+str(i) for i in (10,11,12,6,7,5)]+['crb_territories.'+str(i) for i in range(1,7)]
+LEGACY_HIDDEN = REGIONS[6:]
+REGIONS.extend((region['key'],region['capital'],region['tag']) for region in EUROPE)
+EVENTS=['crb_revenge.'+str(i) for i in (10,11,12,6,7,5)]+['crb_territories.'+str(i) for i in range(1,7)]+[region['event'] for region in EUROPE]
 def walk(nodes):
     for n in nodes:
         if isinstance(n,Node):
@@ -36,9 +39,9 @@ class DispositionTests(unittest.TestCase):
         for _,region,_ in REGIONS:self.w.land(region)
         self.execute('crb_try_unlock_territorial_journal_effect')
         self.w.countries['TUN'].modifiers.add(COOLDOWN)
-        formation_keys={n.key for n in self.scripts['common/scripted_buttons/crb_territory_buttons.txt'] if isinstance(n,Node)}
+        formation_keys={n.key for n in formation_buttons(self.scripts)}
         buttons=[n for n in entries(self.w.defs['je_crb_territories'],'scripted_button') if n.value in formation_keys]
-        self.assertEqual(len(buttons),12)
+        self.assertEqual(len(buttons),TOTAL_REGIONS)
         for n in buttons:
             with self.subTest(button=n.value):
                 b=self.w.defs[n.value]
@@ -79,7 +82,7 @@ class DispositionTests(unittest.TestCase):
                 with self.subTest(option=get(option.value,'name')):
                     self.assertFalse(self.w.conditions(get(option.value,'trigger'),self.w.ctx()))
                     self.w.effect(payload(option.value),self.w.ctx())
-        self.assertEqual(checked,24)
+        self.assertEqual(checked,TOTAL_REGIONS * 2)
         self.assertEqual(set(self.w.countries),{'TUN'})
         self.assertEqual(self.w.countries['TUN'].infamy,0)
     def test_another_region_is_available_when_the_cooldown_expires(self):
@@ -91,7 +94,7 @@ class DispositionTests(unittest.TestCase):
         self.execute('crb_create_province_CPF_effect');self.assertIn('CPF',self.w.countries)
         self.assertIn(COOLDOWN,self.w.countries['TUN'].modifiers)
     def test_hidden_regions_offer_both_forms_with_their_correct_costs(self):
-        for number,(_,region,tag) in enumerate(REGIONS[6:],1):
+        for number,(_,region,tag) in enumerate(LEGACY_HIDDEN,1):
             for suffix,province in [('c',False),('a',True)]:
                 with self.subTest(tag=tag,province=province):
                     self.w=World(self.scripts);land=self.w.land(region)
@@ -117,8 +120,8 @@ class DispositionTests(unittest.TestCase):
                     self.assertEqual('crb_province' in subject.variables,first=='province')
                     self.assertNotIn(COOLDOWN,self.w.countries['TUN'].modifiers)
     def test_hidden_names_and_flags_match_form_and_preserve_old_provinces(self):
-        names=self.scripts['common/dynamic_country_names/crb_dynamic_country_names.txt']
-        flags=self.scripts['common/flag_definitions/crb_hidden_province_flags.txt']
+        names=[n for path,nodes in self.scripts.items() if path.startswith('common/dynamic_country_names/') for n in nodes]
+        flags=[n for path,nodes in self.scripts.items() if path.startswith('common/flag_definitions/') for n in nodes]
         for _,region,tag in REGIONS[6:]:
             for form in ('puppet','province'):
                 with self.subTest(tag=tag,form=form):
@@ -145,7 +148,7 @@ class DispositionTests(unittest.TestCase):
         for event in EVENTS[6:]:
             for option in entries(self.w.defs[event],'option'):
                 keys.extend(n.value for n in walk(option.value) if n.key=='custom_tooltip' and isinstance(n.value,str) and n.value.startswith('crb_create_') and n.value.endswith('_effect_tt'))
-        self.assertEqual(len(keys),24)
+        self.assertEqual(len(keys),TOTAL_REGIONS * 2)
         for key in keys:
             with self.subTest(key=key):
                 value=self.locales[key];self.assertNotIn('$law_',value);self.assertNotIn('法律',value)

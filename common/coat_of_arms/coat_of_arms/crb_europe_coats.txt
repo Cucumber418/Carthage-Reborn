@@ -1,0 +1,515 @@
+﻿crb_XLU = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_green"
+		color2 = "crb_green"
+		instance = { position = { 0.12 0.5 } scale = { 0.24 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.60 0.55 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.60 0.49 } scale = { 0.34 0.34 } }
+	}
+}
+
+crb_XLU_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_green"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.5 0.89 } scale = { 1.0 0.12 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.47 } scale = { 0.58 0.58 } }
+	}
+}
+
+crb_XET = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_red"
+		color2 = "crb_red"
+		instance = { position = { 0.12 0.5 } scale = { 0.24 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.60 0.55 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.60 0.49 } scale = { 0.34 0.34 } }
+	}
+}
+
+crb_XET_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_red"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.5 0.89 } scale = { 1.0 0.12 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.47 } scale = { 0.58 0.58 } }
+	}
+}
+
+crb_XIL = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_sea"
+		color2 = "crb_sea"
+		instance = { position = { 0.12 0.5 } scale = { 0.24 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.60 0.55 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.60 0.49 } scale = { 0.34 0.34 } }
+	}
+}
+
+crb_XIL_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_sea"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.5 0.89 } scale = { 1.0 0.12 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.47 } scale = { 0.58 0.58 } }
+	}
+}
+
+crb_XAC = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_cream"
+		color2 = "crb_cream"
+		instance = { position = { 0.12 0.5 } scale = { 0.24 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.60 0.55 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.60 0.49 } scale = { 0.34 0.34 } }
+	}
+}
+
+crb_XAC_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_cream"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.5 0.89 } scale = { 1.0 0.12 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.5 0.47 } scale = { 0.58 0.58 } }
+	}
+}
+
+crb_XMA = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_black"
+		color2 = "crb_black"
+		instance = { position = { 0.12 0.5 } scale = { 0.24 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.60 0.55 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.60 0.49 } scale = { 0.34 0.34 } }
+	}
+}
+
+crb_XMA_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_black"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.5 0.89 } scale = { 1.0 0.12 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.47 } scale = { 0.58 0.58 } }
+	}
+}
+
+crb_XTH = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian"
+		color2 = "crb_tyrian"
+		instance = { position = { 0.12 0.5 } scale = { 0.24 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.60 0.55 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.60 0.49 } scale = { 0.34 0.34 } }
+	}
+}
+
+crb_XTH_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.5 0.89 } scale = { 1.0 0.12 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.47 } scale = { 0.58 0.58 } }
+	}
+}
+
+crb_XMO = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_sea"
+		color2 = "crb_sea"
+		instance = { position = { 0.12 0.5 } scale = { 0.24 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_sea"
+		color2 = "crb_sea"
+		instance = { position = { 0.5 0.92 } scale = { 1.0 0.06 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.60 0.55 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.60 0.49 } scale = { 0.34 0.34 } }
+	}
+}
+
+crb_XMO_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_sea"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.07 0.5 } scale = { 0.14 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.47 } scale = { 0.58 0.58 } }
+	}
+}
+
+crb_XDA = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_sand"
+		color2 = "crb_sand"
+		instance = { position = { 0.12 0.5 } scale = { 0.24 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_sand"
+		color2 = "crb_sand"
+		instance = { position = { 0.5 0.92 } scale = { 1.0 0.06 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.60 0.55 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.60 0.49 } scale = { 0.34 0.34 } }
+	}
+}
+
+crb_XDA_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_sand"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.07 0.5 } scale = { 0.14 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.5 0.47 } scale = { 0.58 0.58 } }
+	}
+}
+
+crb_XPA = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_green"
+		color2 = "crb_green"
+		instance = { position = { 0.88 0.5 } scale = { 0.24 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_green"
+		color2 = "crb_green"
+		instance = { position = { 0.5 0.92 } scale = { 1.0 0.06 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.40 0.55 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.40 0.49 } scale = { 0.34 0.34 } }
+	}
+}
+
+crb_XPA_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_green"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.93 0.5 } scale = { 0.14 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.47 } scale = { 0.58 0.58 } }
+	}
+}
+
+crb_XNO = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_red"
+		color2 = "crb_red"
+		instance = { position = { 0.88 0.5 } scale = { 0.24 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_red"
+		color2 = "crb_red"
+		instance = { position = { 0.5 0.92 } scale = { 1.0 0.06 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.40 0.55 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.40 0.49 } scale = { 0.34 0.34 } }
+	}
+}
+
+crb_XNO_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_red"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.93 0.5 } scale = { 0.14 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.5 0.47 } scale = { 0.58 0.58 } }
+	}
+}
+
+crb_XBE = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.12 0.5 } scale = { 0.24 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.5 0.92 } scale = { 1.0 0.06 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.60 0.55 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.60 0.49 } scale = { 0.34 0.34 } }
+	}
+}
+
+crb_XBE_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_gold"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.07 0.5 } scale = { 0.14 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.5 0.47 } scale = { 0.58 0.58 } }
+	}
+}
+
+crb_XGE = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_tyrian_dark"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_cream"
+		color2 = "crb_cream"
+		instance = { position = { 0.88 0.5 } scale = { 0.24 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_cream"
+		color2 = "crb_cream"
+		instance = { position = { 0.5 0.92 } scale = { 1.0 0.06 } }
+	}
+	colored_emblem = {
+		texture = "ce_laurel.dds"
+		color1 = "crb_gold"
+		color2 = "crb_gold"
+		instance = { position = { 0.40 0.55 } scale = { 0.55 0.55 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_baal_hammon.dds"
+		color1 = "crb_gold_light"
+		color2 = "crb_gold_light"
+		instance = { position = { 0.40 0.49 } scale = { 0.34 0.34 } }
+	}
+}
+
+crb_XGE_trading_post = {
+	pattern = "pattern_solid.tga"
+	color1 = "crb_cream"
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.93 0.5 } scale = { 0.14 1.0 } }
+	}
+	colored_emblem = {
+		texture = "ce_crb_tanit.dds"
+		color1 = "crb_tyrian_dark"
+		color2 = "crb_tyrian_dark"
+		instance = { position = { 0.5 0.47 } scale = { 0.58 0.58 } }
+	}
+}

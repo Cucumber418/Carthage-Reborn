@@ -3,6 +3,7 @@ import re
 import unittest
 from test_localization import load_localization
 from test_territories import Node,entries,get,load_scripts
+from territory_test_data import EUROPE, TOTAL_REGIONS, EXPECTED_EVENTS
 
 REGIONS=[
  ('crb_revenge.10','TRP','TRP_crb_province'),
@@ -13,6 +14,8 @@ REGIONS=[
  ('crb_revenge.5','IOP','RPR'),
  *[(f'crb_territories.{i}',tag+'_crb_trading_post',tag) for i,tag in enumerate(('CPM','CPE','CPF','CPS','CPB','CPA'),1)],
 ]
+
+REGIONS.extend((region['event'], region['tag'] + '_crb_trading_post', region['tag']) for region in EUROPE)
 
 class EventPresentationTests(unittest.TestCase):
     @classmethod
@@ -40,7 +43,7 @@ class EventPresentationTests(unittest.TestCase):
                     for lang,values in self.locales.items():
                         with self.subTest(event=n.key,field=field,language=lang):
                             self.assertIsNone(forbidden.search(values[key]),values[key])
-        self.assertEqual(count,74)
+        self.assertEqual(count,EXPECTED_EVENTS)
     def test_all_twenty_four_foundations_use_named_concept_links_and_values(self):
         checked=0
         for event,post_name,province_name in REGIONS:
@@ -65,7 +68,7 @@ class EventPresentationTests(unittest.TestCase):
                         self.assertIn('#v 3#!',values['crb_territory_disposition_cooldown_effect_tt'])
                         self.assertNotIn('$law_',values[details[0]])
                 checked+=1
-        self.assertEqual(checked,24)
+        self.assertEqual(checked,TOTAL_REGIONS * 2)
     def test_cothon_unlock_is_explained_in_the_option_tooltip(self):
         event=self.defs['crb_revival.5']
         option=entries(event,'option')[0].value

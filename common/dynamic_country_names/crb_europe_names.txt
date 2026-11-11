@@ -1,0 +1,119 @@
+﻿XLU = {
+	dynamic_country_name = {
+		name = XLU_crb_trading_post
+		adjective = XLU_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XET = {
+	dynamic_country_name = {
+		name = XET_crb_trading_post
+		adjective = XET_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XIL = {
+	dynamic_country_name = {
+		name = XIL_crb_trading_post
+		adjective = XIL_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XAC = {
+	dynamic_country_name = {
+		name = XAC_crb_trading_post
+		adjective = XAC_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XMA = {
+	dynamic_country_name = {
+		name = XMA_crb_trading_post
+		adjective = XMA_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XTH = {
+	dynamic_country_name = {
+		name = XTH_crb_trading_post
+		adjective = XTH_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XMO = {
+	dynamic_country_name = {
+		name = XMO_crb_trading_post
+		adjective = XMO_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XDA = {
+	dynamic_country_name = {
+		name = XDA_crb_trading_post
+		adjective = XDA_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XPA = {
+	dynamic_country_name = {
+		name = XPA_crb_trading_post
+		adjective = XPA_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XNO = {
+	dynamic_country_name = {
+		name = XNO_crb_trading_post
+		adjective = XNO_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XBE = {
+	dynamic_country_name = {
+		name = XBE_crb_trading_post
+		adjective = XBE_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}
+
+XGE = {
+	dynamic_country_name = {
+		name = XGE_crb_trading_post
+		adjective = XGE_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}

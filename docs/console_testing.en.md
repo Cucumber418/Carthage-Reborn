@@ -1,4 +1,4 @@
-# Console and Language Checks — 1.2.10
+# Console and Language Checks — 1.3.0
 
 These scenarios are prepared from the scripts. They have not been run in a Victoria 3 process.
 
@@ -114,6 +114,27 @@ event crb_flavor.17 TUN
 Manual event calls do not validate the normal scheduling or border trigger. Hover over all three choices: the agreement shows only its actual weekly payment for five years, +20 relations and a five-year truce; confrontation shows only -50 relations and +10% Kill Rate for five years; non-intervention shows reconsideration in five years. Use the vanilla automatic effect list, country and value formatting, modifier breakdowns, and hover details. No hand-written paragraph should replace those effects; no other policy removals or GDP formulas should appear. The payer and France must have opposite budget entries of exactly the same whole-unit weekly amount for 60 months, without an immediate Treasury transfer. The rate is 0.12% of the payer's GDP, rounded when chosen: 800–900K GDP gives 960–1,080 per week, fixed for the term. France leaving North Africa must clear both payment modifiers on the monthly check while preserving the existing truce. Old saves with the former one-time agreement start payments only on their next choice. Event monetary previews retain vanilla K/M abbreviations; check the small and large values and confirm income/expense colors and durations.
 
 The Cothon's completion event must wait until at least one building level is complete. A level-zero construction site is insufficient.
+
+## Additional European Territories
+
+Use separate pre-foundation saves for each region. Own one non-capital state at peace, then check its foundation button in Carthage's Territories.
+
+| Region | Console command | Subject tag |
+| --- | --- | --- |
+| Lusitania | `own STATE_ESTREMADURA TUN` | `XLU` |
+| Etruria | `own STATE_TUSCANY TUN` | `XET` |
+| Illyria | `own STATE_DALMATIA TUN` | `XIL` |
+| Achaea | `own STATE_ATTICA TUN` | `XAC` |
+| Macedonia | `own STATE_MACEDONIA TUN` | `XMA` |
+| Thrace | `own STATE_EASTERN_THRACE TUN` | `XTH` |
+| Moesia | `own STATE_BULGARIA TUN` | `XMO` |
+| Dacia | `own STATE_WALLACHIA TUN` | `XDA` |
+| Pannonia | `own STATE_CENTRAL_HUNGARY TUN` | `XPA` |
+| Noricum | `own STATE_AUSTRIA TUN` | `XNO` |
+| Belgica | `own STATE_FLANDERS TUN` | `XBE` |
+| Germania | `own STATE_RHINELAND TUN` | `XGE` |
+
+For all twelve regions, test all three choices, creation-time primary cultures and laws, both names and flags, conversion in place, and individual/bulk expansion. Provinces and conversions cost 15 Infamy; Trading Posts have no foundation Infamy. New foundations and conversions share the three-month handover. Capitals, foreign holdings, and ongoing colonies remain protected from expansion. War, cooldown, loss of land before confirmation, or an existing foreign tag must prevent creation and Infamy charges. Test one non-capital holding away from the nominal capital as well. Luxembourg is covered through Wallonia. Existing-subject saves with no new direct land must still recover the journal on the monthly check.
 
 ## New Subject Cultures and Laws
 

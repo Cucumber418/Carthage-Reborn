@@ -2,6 +2,7 @@
 import unittest
 
 from test_territories import Node, World, get, load_scripts
+from territory_test_data import EUROPE, TOTAL_REGIONS, buttons
 
 
 REGIONS = {
@@ -20,15 +21,16 @@ REGIONS = {
     'CPA': 'STATE_YEMEN',
 }
 
+REGIONS.update({region['tag']: region['capital'] for region in EUROPE})
+
 
 class ExpansionColonizationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.scripts = load_scripts()
-        cls.buttons = [node for node in cls.scripts['common/scripted_buttons/crb_expansion_buttons.txt']
-                       if isinstance(node, Node)]
-        if len(cls.buttons) != 24:
-            raise AssertionError('Expected all 24 trading-post/province expansion buttons')
+        cls.buttons = buttons(cls.scripts, 'crb_expand_')
+        if len(cls.buttons) != TOTAL_REGIONS * 2:
+            raise AssertionError('Expected both expansion buttons for every territorial region')
 
     def world(self, tag, province):
         world = World(self.scripts)

@@ -30,6 +30,7 @@ crb_can_provincialize_territory_trigger = {
 # Legacy saves with existing subjects must retain access even without new direct land.
 crb_territory_journal_available_trigger = {
 	OR = {
+		crb_has_europe_subject_trigger = yes
 		crb_can_found_any_territory_trigger = yes
 		crb_is_actual_territory_subject_trigger = { TAG = TRP }
 		crb_is_actual_territory_subject_trigger = { TAG = NUM }
