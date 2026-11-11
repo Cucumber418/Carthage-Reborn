@@ -14,13 +14,13 @@ je_crb_hanno_barca = {
 	}
 
 	is_shown_when_inactive = {
-		country_has_primary_culture = cu:crb_punic
+		crb_is_carthage_trigger = yes
 		crb_initial_conquests_trigger = yes
 		NOT = { has_variable = crb_hanno_barca_concluded }
 	}
 
 	possible = {
-		country_has_primary_culture = cu:crb_punic
+		crb_is_carthage_trigger = yes
 		NOT = { has_variable = crb_hanno_barca_concluded }
 		custom_tooltip = {
 			text = crb_hb_claims_taken_tt
@@ -149,6 +149,7 @@ je_crb_hanno_barca = {
 				id = crb_hanno_barca.2
 				popup = yes
 			}
+			hidden_effect = { crb_barca_victory_effect = yes }
 		}
 	}
 
@@ -207,6 +208,7 @@ je_crb_hanno_barca = {
 					id = crb_hanno_barca.2
 					popup = yes
 				}
+				hidden_effect = { crb_barca_victory_effect = yes }
 			}
 			else_if = {
 				limit = {
@@ -233,7 +235,7 @@ je_crb_hanno_barca = {
 		flags = { hidden invalid_outcome }
 		conclusion_desc = je_standard_failure_conclusion_desc
 		trigger = {
-			NOT = { country_has_primary_culture = cu:crb_punic }
+			NOT = { crb_is_carthage_trigger = yes }
 		}
 		effect = {
 			set_variable = crb_hanno_barca_concluded

@@ -98,6 +98,7 @@ class Country:
     modifier_months: dict = field(default_factory=dict)
     modifier_amounts: dict = field(default_factory=dict)
     variable_values: dict = field(default_factory=dict)
+    primary_cultures: set = field(default_factory=set)
 
 @dataclass
 class State:
@@ -141,6 +142,11 @@ class World:
     def __init__(self, scripts):
         self.scripts = scripts
         self.defs = {n.key:n.value for ns in scripts.values() for n in ns if isinstance(n, Node)}
+        self.country_definitions = {
+            n.key.removeprefix('REPLACE:'): n.value
+            for path, nodes in scripts.items() if path.startswith('common/country_definitions/')
+            for n in nodes if isinstance(n, Node)
+        }
         self.countries = {'TUN':Country('TUN', punic=True)}
         self.states = [State('STATE_TUNISIA', 'TUN', True)]
         self.borders = []
@@ -202,7 +208,7 @@ class World:
         if k == 'has_variable': return v in o.variables
         if k == 'has_modifier': return v in o.modifiers
         if k == 'has_journal_entry': return v in o.journals
-        if k == 'has_law': return v in o.laws
+        if k in ('has_law','has_law_or_variant'): return v in o.laws
         if k == 'is_subject':return bool(o.overlord)==(v=='yes')
         if k == 'is_subject_type':return bool(o.overlord) and get(self.defs[v],'diplomatic_action')==o.pact
         if k in ('this','root') and isinstance(v,str):return self.resolve(k,ctx) is self.resolve(v,ctx)
@@ -291,6 +297,9 @@ class World:
             elif k=='set_state_name':o.name=v
             elif k=='add_claim':self.claims.setdefault(o.name,set()).add(self.resolve(v,ctx).tag)
             elif k=='set_state_religion':o.religion=v
+            elif k=='add_primary_culture':
+                culture=v.removeprefix('cu:');o.primary_cultures.add(culture)
+                if culture=='crb_punic':o.punic=True
             elif k=='add_modifier':
                 name=get(v,'name');o.modifiers.add(name)
                 if get(v,'months') is not None:o.modifier_months[name]=int(get(v,'months'))
@@ -311,7 +320,9 @@ class World:
             elif k=='change_infamy':o.infamy+=int(v)
             elif k=='create_country':
                 tag=get(v,'tag');assert tag not in self.countries
-                country=self.country(tag);state=self.resolve(get(v,'state'),ctx)
+                cultures=set(get(self.country_definitions.get(tag,[]),'cultures',[]))
+                country=self.country(tag,primary_cultures=cultures,punic='crb_punic' in cultures)
+                state=self.resolve(get(v,'state'),ctx)
                 state.owner=tag
                 self.effect(get(v,'on_created'),ctx.enter(country))
             elif k=='set_state_owner':o.owner=self.resolve(v,ctx).tag

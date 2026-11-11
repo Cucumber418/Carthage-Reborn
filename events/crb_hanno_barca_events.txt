@@ -55,6 +55,7 @@ crb_hanno_barca.2 = {
 	option = {
 		name = crb_hanno_barca.2.a
 		default_option = yes
+		# 日志结局已结算；幂等调用兼容旧档尚待确认的胜利弹窗。
 		crb_barca_victory_effect = yes
 	}
 }

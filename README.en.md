@@ -4,7 +4,7 @@
 
 A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly restored Punic state. Conservative senators govern an unrecognized republic, but the army and the Popular Assembly have ambitions of their own. Choose between the Hannonids and the Barcids, revive Punic culture, and follow the routes of Hanno or Hannibal.
 
-- Version: **1.2.9**
+- Version: **1.2.10**
 - Victoria 3: **1.15.\***
 - Languages: **English and Simplified Chinese**, included in the same mod and selected by the game's language setting.
 - Content: 7 Journal Entries, 2 Decisions, 74 event definitions, 1 company, 13 possible subject countries across 12 regions, and an original Carthaginian music track.
@@ -28,7 +28,7 @@ The starting navy is adjusted to three frigates, with one naval base level. New-
 
 - **The Hannonids and the Barcids** opens after Carthage or its actual subjects acquire land in Constantine or Tripoli. The Hannonids favor the Senate, African estates, and commerce. The Barcids favor the Popular Assembly and overseas expansion. The contest lasts up to three years, with concessions and political events influencing its outcome.
 - **Carthaginian Cultural Revival** restores plantations, reclaims the salted land over ten years, spreads the worship of Tanit, and rebuilds the **Cothon**. Its completion event requires a completed building level, rather than a newly placed construction site.
-- **Hannibal Returns** is the Barcid route to the pre-Punic-War dominions: Tripoli, Numidia, Sicily, the Mediterranean islands, Iberia, and Tyre. Its land objectives count Carthage's holdings and those of its actual subjects. The opening has a single guarded country-level entry point. Existing saves with an active journal, prior opening, progress, or completion are marked as already started; enacting colonial laws cannot replay the opening or charge its Infamy again.
+- **Hannibal Returns** is the Barcid route to the pre-Punic-War dominions: Tripoli, Numidia, Sicily, the Mediterranean islands, Iberia, and Tyre. Its land objectives count Carthage's holdings and those of its actual subjects. Barcid journal outcomes settle victory directly. The guarded country entry point distinguishes an unfinished request from an opening actually shown, so deferred journal registration can resume. Existing openings, rewards, progress, and completion prevent replay; enacting colonial laws cannot charge opening Infamy again. The test guide includes a guarded manual recovery command for old saves with false startup markers.
 - **Punic War** journals accompany conflict with the rulers of Sicily. Their titles begin with the Fourth Punic War and advance with subsequent wars.
 - **Two Thousand Years of Vengeance** follows Hannibal from Iberia through Gaul and over the Alps toward Rome.
 - **The Voyage of Hanno** opens through the Hannonid route or colonial laws. Follow the Atlantic coast to Lixus, Cerne, the Chretes, and the Chariot of the Gods, and maintain ten consecutive years of peace. Target titles and conditions use live map names: current foreign names before acquisition, then the actual renamed names afterward. Split states prefer directly held land, then a Carthaginian subject, and otherwise the largest current state in the region.
@@ -51,6 +51,8 @@ The payment agreement cannot be selected while France is an enemy in a war or Di
 Acquire any directly owned non-capital state in an eligible region while at peace to open **Carthage's Territories**. You do not need to conquer the entire region. Constantine alone can support a Numidian subject; a holding in Provence can support a Gallic subject.
 
 Both subject forms use a non-hereditary **Governorship**, a special form of monarchy.
+
+Every newly founded Trading Post and Province keeps its original primary cultures and adds Punic, with **Subjecthood** as its citizenship law. If Carthage has Internal Colonization, Frontier Colonization, Colonial Resettlement, or Colonial Exploitation at foundation, the new subject adopts Frontier Colonization. No Colonial Affairs does not enable it. These are creation-time settings; later changes to Carthage's laws do not rewrite existing subjects. Adding Punic does not grant subjects Carthage's factional journal.
 
 | Form | Payments | Administration |
 | --- | --- | --- |
@@ -110,6 +112,6 @@ Run the automated checks from the repository root:
 python -m unittest discover -s tests -v
 ```
 
-The 120 checks cover territorial safeguards, expansion exclusions for ongoing colonies, vanilla state-transfer compatibility, provincialization, recurring events, governance, route separation, building completion, obsolete building identifiers in company definitions, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
+The 133 checks cover territorial safeguards, expansion exclusions for ongoing colonies, vanilla state-transfer compatibility, provincialization, recurring events, governance, creation-time primary cultures and colonial laws, actual faction outcomes and unfinished route recovery, route separation, building completion, obsolete building identifiers in company definitions, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
 
 Known limitation: the automatic Hannonid result at the three-year deadline still lacks part of its victory effects. Reaching the Hannonid end of the progress bar, or choosing the Hannonids in the stalemate event, uses the complete victory path. This update does not change that deadline behavior.

@@ -1,4 +1,4 @@
-# Console and Language Checks — 1.2.9
+# Console and Language Checks — 1.2.10
 
 These scenarios are prepared from the scripts. They have not been run in a Victoria 3 process.
 
@@ -86,7 +86,15 @@ To inspect the opening event's English:
 event crb_carthage.1 TUN
 ```
 
-The first conquest should also open the factional struggle. Complete the Barcid route and check that **Hannibal Returns** opens immediately; later adoption of a colonial law should not repeat its introduction.
+The first conquest should also open the factional struggle. Full Barcid victory and the Barcid advantage at the three-year deadline now settle victory directly, before confirmation of the victory notice. A stalemate choice for the Barcids must also open **Hannibal Returns**. Reconfirming the notice must not repeat settlement or refresh its modifier. If journal registration is deferred, the pending request must survive for the next monthly retry. Later adoption of a colonial law must not repeat the introduction.
+
+For an existing save where a normal Barcid victory never produced either the opening or the journal, fully restart after updating and allow the monthly recovery check. If an unfinished request was previously marked as shown, this manual Effect Script Runner command retries it:
+
+```pdx
+c:TUN = { crb_repair_hannibal_start_effect = yes }
+```
+
+It requires an eligible Barcid route, no active Hannibal journal, and no opening reward, objective progress, conclusion, or final modifier. It clears only startup markers before retrying. It cannot reset routes with rewards or progress. Directly forcing the Barcid victory event is a real settlement, not a cosmetic preview, and does not replace testing natural journal outcomes.
 
 To arrange the initial French border:
 
@@ -106,6 +114,10 @@ event crb_flavor.17 TUN
 Manual event calls do not validate the normal scheduling or border trigger. Hover over all three choices: the agreement shows only its actual weekly payment for five years, +20 relations and a five-year truce; confrontation shows only -50 relations and +10% Kill Rate for five years; non-intervention shows reconsideration in five years. Use the vanilla automatic effect list, country and value formatting, modifier breakdowns, and hover details. No hand-written paragraph should replace those effects; no other policy removals or GDP formulas should appear. The payer and France must have opposite budget entries of exactly the same whole-unit weekly amount for 60 months, without an immediate Treasury transfer. The rate is 0.12% of the payer's GDP, rounded when chosen: 800–900K GDP gives 960–1,080 per week, fixed for the term. France leaving North Africa must clear both payment modifiers on the monthly check while preserving the existing truce. Old saves with the former one-time agreement start payments only on their next choice. Event monetary previews retain vanilla K/M abbreviations; check the small and large values and confirm income/expense colors and durations.
 
 The Cothon's completion event must wait until at least one building level is complete. A level-zero construction site is insufficient.
+
+## New Subject Cultures and Laws
+
+Found both subject forms under each current Carthaginian colonial policy: No Colonial Affairs, Internal Colonization, Frontier Colonization, Colonial Resettlement, and Colonial Exploitation. Each new country must keep its original primary cultures and add Punic, adopt Subjecthood, and retain its Governorship. The latter four founder policies must give the new subject Frontier Colonization; No Colonial Affairs must not enable it. Carthage's own cultures and laws must remain unchanged. Later founder law changes must not rewrite existing subjects. Check Tripolitanian and Numidian subjects in particular: adding Punic must not activate Carthage's factional journal for them. These settings initialize new countries; they do not migrate existing subjects or rerun on provincialization.
 
 ## Subject State Transfers
 

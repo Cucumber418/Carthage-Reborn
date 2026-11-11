@@ -31,7 +31,10 @@ je_crb_hannibal_returns = {
         NOT = { has_variable = crb_hannibal_concluded }
         OR = {
             has_journal_entry = je_crb_hannibal_returns
-            NOT = { crb_hannibal_has_history_trigger = yes }
+            AND = {
+                has_variable = crb_hannibal_intro_pending
+                NOT = { crb_hannibal_has_history_trigger = yes }
+            }
         }
     }
 

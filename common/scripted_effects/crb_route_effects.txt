@@ -24,24 +24,50 @@ crb_preserve_hannibal_history_effect = {
     }
 }
 
-# 开场事件只有这一个受永久标记保护的入口；日志自身不再播放开场。
+# 先登记请求，再注册日志；仅在日志实际可见后播放开场，失败请求可继续。
 crb_try_start_hannibal_route_effect = {
     crb_preserve_hannibal_history_effect = yes
     if = {
         limit = {
             crb_barca_route_eligible_trigger = yes
-            NOT = { crb_hannibal_has_history_trigger = yes }
-            NOT = { has_journal_entry = je_crb_hannibal_returns }
+            OR = {
+                NOT = { crb_hannibal_has_history_trigger = yes }
+                crb_hannibal_has_unshown_request_trigger = yes
+            }
+            OR = {
+                NOT = { has_journal_entry = je_crb_hannibal_returns }
+                has_variable = crb_hannibal_intro_pending
+            }
         }
-        hidden_effect = { set_variable = crb_hannibal_route_open }
+        hidden_effect = {
+            set_variable = crb_hannibal_intro_pending
+            set_variable = crb_hannibal_route_open
+        }
         if = {
             limit = { NOT = { has_journal_entry = je_crb_hannibal_returns } }
             add_journal_entry = { type = je_crb_hannibal_returns }
         }
-        hidden_effect = {
-            set_variable = crb_hannibal_route_started
-            set_variable = crb_hannibal_intro_pending
+        if = {
+            limit = { has_journal_entry = je_crb_hannibal_returns }
+            trigger_event = { id = crb_hannibal.0 popup = yes }
         }
-        trigger_event = { id = crb_hannibal.0 popup = yes }
+    }
+}
+
+# 仅供玩家明确确认从未收到开场的旧档手动修复，不在月度或法律回调中调用。
+# 已结算奖励、推进过目标或结束路线的存档不会被重置。
+crb_repair_hannibal_start_effect = {
+    if = {
+        limit = {
+            crb_barca_route_eligible_trigger = yes
+            NOT = { has_journal_entry = je_crb_hannibal_returns }
+            NOT = { crb_hannibal_has_settled_history_trigger = yes }
+        }
+        hidden_effect = {
+            set_variable = crb_hannibal_intro_pending
+            remove_variable = crb_hannibal_route_started
+            remove_variable = crb_hannibal_intro_shown
+        }
+        crb_try_start_hannibal_route_effect = yes
     }
 }

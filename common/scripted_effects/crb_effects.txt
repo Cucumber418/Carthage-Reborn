@@ -113,13 +113,17 @@ crb_update_ig_names_effect = {
 # 作用域：国家
 # ============================================================
 crb_barca_victory_effect = {
+	set_variable = crb_hanno_barca_concluded
 	# 两派胜利标记互斥，防止旧存档/残留变量误开启另一条路线
 	remove_variable = crb_hanno_victory
-	set_variable = crb_barca_victory
-	add_modifier = {
-		name = crb_popular_assembly_restored
-		days = long_modifier_time
+	if = {
+		limit = { NOT = { has_variable = crb_barca_victory } }
+		add_modifier = {
+			name = crb_popular_assembly_restored
+			days = long_modifier_time
+		}
 	}
+	set_variable = crb_barca_victory
 	crb_try_start_hannibal_route_effect = yes
 }
 

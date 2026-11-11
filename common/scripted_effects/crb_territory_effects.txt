@@ -29,6 +29,7 @@ crb_create_territory_subject_effect = {
 				hidden_effect = {
 					crb_apply_governor_rule_effect = yes
 					$LAWS$ = yes
+					crb_initialize_territory_culture_and_laws_effect = yes
 				}
 			}
 		}

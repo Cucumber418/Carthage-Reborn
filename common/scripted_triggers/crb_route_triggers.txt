@@ -6,11 +6,9 @@
 	NOT = { has_variable = crb_hannibal_concluded }
 }
 
-# 国家层面永久记录；兼容旧版已经开启、推进或完成的日志。
-crb_hannibal_has_history_trigger = {
+# 已结算奖励、推进目标或结束的确切记录；请求标记不代表事件已经发生。
+crb_hannibal_has_settled_history_trigger = {
     OR = {
-        has_variable = crb_hannibal_route_started
-        has_variable = crb_hannibal_intro_shown
         has_variable = crb_hannibal_intro_rewards_granted
         has_variable = crb_hannibal_concluded
         has_variable = crb_hannibal_tripoli_done
@@ -22,4 +20,21 @@ crb_hannibal_has_history_trigger = {
         has_variable = crb_hannibal_tyre_done
         has_modifier = crb_hannibal_returned
     }
+}
+
+crb_hannibal_has_history_trigger = {
+    OR = {
+        has_variable = crb_hannibal_intro_shown
+        crb_hannibal_has_settled_history_trigger = yes
+    }
+}
+
+# 新日志可能先结算目标进度；明确待办且从未创建开场的请求仍可继续。
+crb_hannibal_has_unshown_request_trigger = {
+    has_variable = crb_hannibal_intro_pending
+    has_journal_entry = je_crb_hannibal_returns
+    NOT = { has_variable = crb_hannibal_intro_shown }
+    NOT = { has_variable = crb_hannibal_intro_rewards_granted }
+    NOT = { has_variable = crb_hannibal_concluded }
+    NOT = { has_modifier = crb_hannibal_returned }
 }
