@@ -5,7 +5,7 @@ company_crb_carthaginian_trade_house = {
 	flavored_company = yes
 	preferred_headquarters = { STATE_TUNISIA }
 	building_types = { building_trade_center building_port }
-	extension_building_types = { building_shipyards }
+	extension_building_types = { building_arts_academy }
 	potential = { crb_is_carthage_trigger = yes }
 	possible = {
 		has_technology_researched = corporate_charters

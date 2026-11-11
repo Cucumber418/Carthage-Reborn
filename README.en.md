@@ -4,7 +4,7 @@
 
 A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly restored Punic state. Conservative senators govern an unrecognized republic, but the army and the Popular Assembly have ambitions of their own. Choose between the Hannonids and the Barcids, revive Punic culture, and follow the routes of Hanno or Hannibal.
 
-- Version: **1.2.5**
+- Version: **1.2.6**
 - Victoria 3: **1.15.\***
 - Languages: **English and Simplified Chinese**, included in the same mod and selected by the game's language setting.
 - Content: 7 Journal Entries, 2 Decisions, 74 event definitions, 1 company, 13 possible subject countries across 12 regions, and an original Carthaginian music track.
@@ -84,7 +84,7 @@ Existing subjects each have their own expansion button. The **Expand the Trading
 
 ## Carthaginian Trading House, Art, and Music
 
-The mod adds one company: the **Carthaginian Trading House**, engaged in trade and shipping through Carthage. It requires Corporate Charters and at least three levels of Trade Centers or Ports in incorporated Tunisia. Its industries are Trade Centers and Ports, with Shipyards as an extension. Prosperity grants +10% Trade Advantage and +5% Trade Capacity.
+The mod adds one company: the **Carthaginian Trading House**, engaged in trade and shipping through Carthage. It requires Corporate Charters and at least three levels of Trade Centers or Ports in incorporated Tunisia. Its industries are Trade Centers and Ports, with Arts Academies as an extension. Prosperity grants +10% Trade Advantage and +5% Trade Capacity.
 
 The company retains its custom emblem and vanilla harbor/shipbuilding background. Subject relationships and the Cothon retain their dedicated artwork; original art containing the retained Trading House remains archived in [docs/art](docs/art).
 

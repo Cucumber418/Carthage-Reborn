@@ -1,4 +1,4 @@
-# Console and Language Checks — 1.2.5
+# Console and Language Checks — 1.2.6
 
 These scenarios are prepared from the scripts. They have not been run in a Victoria 3 process.
 
@@ -111,7 +111,7 @@ The Cothon's completion event must wait until at least one building level is com
 research corporate_charters
 ```
 
-The mod adds only the Carthaginian Trading House. Own an incorporated Tunisia with at least three levels of Trade Centers or Ports, then establish the company through the normal interface. Check its custom emblem, vanilla harbor/shipbuilding background, English name, and prosperity bonuses (+10% Trade Advantage and +5% Trade Capacity). The other three custom companies, their two Prestige Goods, and the specialized Lebanese dye plantation have been removed.
+The mod adds only the Carthaginian Trading House. Own an incorporated Tunisia with at least three levels of Trade Centers or Ports, then establish the company through the normal interface. Check its custom emblem, vanilla harbor/shipbuilding background, English name, and prosperity bonuses (+10% Trade Advantage and +5% Trade Capacity). Default industries remain Trade Centers and Ports; an additional-industry charter offers Arts Academies. The other three custom companies, their two Prestige Goods, and the specialized Lebanese dye plantation have been removed.
 
 For a quick company preview in Script Runner:
 

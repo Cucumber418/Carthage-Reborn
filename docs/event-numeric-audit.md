@@ -450,7 +450,7 @@
 | --- | --- | --- |
 | 迦太基商社 | 本国满足迦太基条件；研究公司章程；已整合的迦太基地区内贸易中心或港口达到 3 级 | 贸易优势 +10%；贸易容量 +5% |
 
-主要产业为贸易中心、港口，可扩展船坞；首选总部仍为迦太基。后续带版本号的章节保留历次设计记录，当前精简范围见 1.2.5 记录。
+主要产业为贸易中心、港口，可扩展艺术学院；首选总部仍为迦太基。后续带版本号的章节保留历次设计记录，当前扩展产业见 1.2.6 记录。
 
 ## 20. 派系与日志触发修订
 
@@ -613,3 +613,10 @@
 - 汉诺航海记四个目标的标题与条件通过国家自定义本地化读取实际 State 名称，优先直辖，其次实际附庸，未控制时读取该地区主要 State。保存的是地块对象而非名称字符串，后续改名会实时反映；开局、地区易手／新建、日志激活与月度检查更新对象引用，失效引用通过 `exists` 回退。
 - 新增十二个场景检查，覆盖新旧档、立即改法、航海记同时开启、日志重初始化、完成后不重开、开场效果一次性、改名前后、分割州、附庸转交、失去控制、失效引用及地块根作用域回调。总计 113 项通过；仍需游戏内验证事件队列、日志刷新与文本显示。
 - API 依据：[原版日志文档](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/journal_entries/journal_entries.md)确认根作用域为所有者国家、`possible` 在显式添加时被忽略；[1.15 数据类型](https://github.com/Victoria-3-Modding-Co-op/Modding-Digests/blob/main/1.15.0/docs/data_types_uncategorized.txt)提供 `StateRegion.GetLargestStateInRegion`、`State.GetName`，脚本 Scope 支持 `Var(...).GetState`。
+
+## 36. 1.2.6 商社可扩展产业调整
+
+- 根据用户澄清，只将迦太基商社的 `extension_building_types` 从船坞改为艺术学院（`building_arts_academy`）。这是额外产业特许状使用的候选列表。
+- 基础产业 `building_types` 继续为贸易中心与港口；成立条件、AI 成立建造目标、首选总部、图标、背景和繁荣加成均不变，也不修改原版通用贸易特许状。
+- 同步中英文说明和测试指南。既有 113 项静态与模拟脚本检查通过，并逐节点核对公司定义，仅扩展产业字段发生变化。未作游戏内界面或特许状操作实测。
+- 参考：[公司字段文档](https://github.com/Victoria-3-Modding-Co-op/Modding-Digests/blob/main/documentation/types/company_types.md)、[艺术学院定义](https://github.com/tjysdsg/Victoria-3-files/blob/0e8b62590c36bc9fdd2c8cba3cb5dda255092656/game/common/buildings/06_urban_center.txt)。
