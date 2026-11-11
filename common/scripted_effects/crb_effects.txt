@@ -1081,6 +1081,7 @@ crb_trading_post_laws_effect = {
 
 # 行省的法律：由迦太基派出的总督治理（作用域：新建的行省）
 crb_province_laws_effect = {
+	activate_law = law_type:law_agrarianism
 	activate_law = law_type:law_oligarchy
 	activate_law = law_type:law_appointed_bureaucrats
 	activate_law = law_type:law_secret_police

@@ -1,7 +1,7 @@
 {
   "name" : "迦太基重生 Carthage Reborn",
   "id" : "com.github.cucumber418.carthage-reborn",
-  "version" : "1.2.10",
+  "version" : "1.2.11",
   "supported_game_version" : "1.15.*",
   "short_description" : "布匿国家在突尼斯重生。选择汉诺派或巴卡派，复兴文化，重建迦太基。 / A Punic state rises in Tunisia. Choose the Hannonids or Barcids, revive its culture, and rebuild Carthage. 简体中文 / English.",
   "tags" : [ "Historical", "Gameplay" ],
