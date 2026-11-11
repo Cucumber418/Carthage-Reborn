@@ -1,4 +1,4 @@
-# Console and Language Checks — 1.3.0
+# Console and Language Checks — 1.3.1
 
 These scenarios are prepared from the scripts. They have not been run in a Victoria 3 process.
 
@@ -135,6 +135,18 @@ Use separate pre-foundation saves for each region. Own one non-capital state at 
 | Germania | `own STATE_RHINELAND TUN` | `XGE` |
 
 For all twelve regions, test all three choices, creation-time primary cultures and laws, both names and flags, conversion in place, and individual/bulk expansion. Provinces and conversions cost 15 Infamy; Trading Posts have no foundation Infamy. New foundations and conversions share the three-month handover. Capitals, foreign holdings, and ongoing colonies remain protected from expansion. War, cooldown, loss of land before confirmation, or an existing foreign tag must prevent creation and Infamy charges. Test one non-capital holding away from the nominal capital as well. Luxembourg is covered through Wallonia. Existing-subject saves with no new direct land must still recover the journal on the monthly check.
+
+## Independence and Government Choices
+
+Test both subject forms under Governorship, Monarchy, republics, Theocracy, and Colonial Administration. Every marked territorial subject must receive one government-choice event after independence. In an appropriate test save, the Effect Script Runner can use:
+
+```pdx
+c:NUM = { make_independent = yes }
+```
+
+Advance about one day and inspect the independent country's event. The AI handles its own event if you remain Carthage; switch to the independent country to test player choices. The existing law remains until selection. Only the chosen governance law changes; recognition is not granted. Conditional options retain vanilla governing-interest-group requirements, with the additional factory-councils requirement for a Council Republic.
+
+Check all 25 potential countries: Numidian Province or Trading Post becomes Numidia; IOP becomes Ionia, RPR becomes Rome, and SNT uses Alps. Attached, foreign-subject, and unmarked countries keep their former naming rules. Repeated monthly checks cannot reopen a settled choice. Re-subjugation cancels an old choice; another independence permits a new one, and stale queued events or options must not change the new cycle. Marked countries must not receive the overlapping vanilla Colonial Administration choice; other countries keep vanilla behavior. Already independent old-save subjects recover their first new choice on a monthly check.
 
 ## New Subject Cultures and Laws
 

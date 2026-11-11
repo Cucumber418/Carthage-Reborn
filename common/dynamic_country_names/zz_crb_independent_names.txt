@@ -1,0 +1,378 @@
+﻿# Append independent geographic names without replacing existing subject names.
+# INJECT_OR_CREATE also covers IOP/RPR, which have no existing dynamic-name object.
+# Source: Modding-Digests/1.12.0/inject_types.md (dynamic_country_names is supported).
+
+INJECT_OR_CREATE:TRP = {
+	dynamic_country_name = {
+		name = TRP_crb_independent
+		adjective = TRP_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:NUM = {
+	dynamic_country_name = {
+		name = NUM_crb_independent
+		adjective = NUM_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:IBT = {
+	dynamic_country_name = {
+		name = IBT_crb_independent
+		adjective = IBT_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:GLT = {
+	dynamic_country_name = {
+		name = GLT_crb_independent
+		adjective = GLT_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:SNT = {
+	dynamic_country_name = {
+		name = SNT_crb_independent
+		adjective = SNT_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:IOP = {
+	dynamic_country_name = {
+		name = IOP_crb_independent
+		adjective = IOP_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:RPR = {
+	dynamic_country_name = {
+		name = RPR_crb_independent
+		adjective = RPR_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:CPM = {
+	dynamic_country_name = {
+		name = CPM_crb_independent
+		adjective = CPM_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:CPE = {
+	dynamic_country_name = {
+		name = CPE_crb_independent
+		adjective = CPE_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:CPF = {
+	dynamic_country_name = {
+		name = CPF_crb_independent
+		adjective = CPF_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:CPS = {
+	dynamic_country_name = {
+		name = CPS_crb_independent
+		adjective = CPS_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:CPB = {
+	dynamic_country_name = {
+		name = CPB_crb_independent
+		adjective = CPB_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:CPA = {
+	dynamic_country_name = {
+		name = CPA_crb_independent
+		adjective = CPA_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:XLU = {
+	dynamic_country_name = {
+		name = XLU_crb_independent
+		adjective = XLU_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:XET = {
+	dynamic_country_name = {
+		name = XET_crb_independent
+		adjective = XET_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:XIL = {
+	dynamic_country_name = {
+		name = XIL_crb_independent
+		adjective = XIL_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:XAC = {
+	dynamic_country_name = {
+		name = XAC_crb_independent
+		adjective = XAC_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:XMA = {
+	dynamic_country_name = {
+		name = XMA_crb_independent
+		adjective = XMA_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:XTH = {
+	dynamic_country_name = {
+		name = XTH_crb_independent
+		adjective = XTH_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:XMO = {
+	dynamic_country_name = {
+		name = XMO_crb_independent
+		adjective = XMO_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:XDA = {
+	dynamic_country_name = {
+		name = XDA_crb_independent
+		adjective = XDA_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:XPA = {
+	dynamic_country_name = {
+		name = XPA_crb_independent
+		adjective = XPA_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:XNO = {
+	dynamic_country_name = {
+		name = XNO_crb_independent
+		adjective = XNO_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:XBE = {
+	dynamic_country_name = {
+		name = XBE_crb_independent
+		adjective = XBE_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}
+
+INJECT_OR_CREATE:XGE = {
+	dynamic_country_name = {
+		name = XGE_crb_independent
+		adjective = XGE_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}

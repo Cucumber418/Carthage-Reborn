@@ -11,6 +11,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 ECONOMIC_LAWS = {'law_type:' + law for law in json.loads((ROOT / 'tests/fixtures/economic_laws_1_15.json').read_text())['laws']}
+GOVERNANCE_LAWS = {'law_type:' + law for law in json.loads((ROOT / 'tests/fixtures/governance_laws_1_15.json').read_text())['laws']} | {'law_type:law_crb_governor_rule', 'law_type:law_crb_dual_sufetes'}
 TOKEN = re.compile(r'\s+|#[^\n]*|"(?:\\.|[^"\\])*"|\?=|>=|<=|!=|[{}=<>]|[^\s{}=<>?\x22#]+')
 
 @dataclass
@@ -153,6 +154,8 @@ class World:
         self.borders = []
         self.saved = {}; self.events = []; self.unlocked = 0
         self.scheduled = []
+        self.scheduled_days = []
+        self.event_contexts = []
         self.claims = {}
     def ctx(self, tag='TUN'): return Context(self.countries[tag], root=self.countries[tag])
     def country(self, tag, **kw):
@@ -212,6 +215,11 @@ class World:
         if k in ('has_law','has_law_or_variant'): return v in o.laws
         if k == 'is_subject':return bool(o.overlord)==(v=='yes')
         if k == 'is_subject_type':return bool(o.overlord) and get(self.defs[v],'diplomatic_action')==o.pact
+        if k.startswith('var:') and not isinstance(v, list):
+            current = self.resolve(k, ctx)
+            if current is None:return False
+            if not isinstance(current, (int, float, bool)):raise AssertionError(('Non-numeric variable comparison', k))
+            return self.compare(current, op, self.numeric(v, ctx))
         if k in ('this','root') and isinstance(v,str):return self.resolve(k,ctx) is self.resolve(v,ctx)
         if k == 'is_building_type':return o.kind==v
         if k == 'level':return self.compare(o.level,op,float(v))
@@ -250,6 +258,8 @@ class World:
         if isinstance(value,list):return self.value(value,ctx)
         if value=='root.gdp':return ctx.root.gdp
         if value in self.defs:return self.value(self.defs[value],ctx)
+        resolved = self.resolve(value, ctx)
+        if isinstance(resolved, (int, float, bool)):return float(resolved)
         return float(value)
     def value(self,nodes,ctx):
         result=0
@@ -288,6 +298,13 @@ class World:
                 for obj in eligible[:1] if k.startswith('random_') else eligible:
                     self.effect([x for x in v if x.key!='limit'],ctx.enter(obj))
             elif k=='save_scope_as':self.saved[v]=o
+            elif k=='save_scope_value_as':self.saved[get(v, 'name')]=self.numeric(get(v, 'value'), ctx)
+            elif k=='change_variable':
+                name = get(v, 'name')
+                addition = get(v, 'add')
+                if addition is None:raise AssertionError(('Unsupported variable change', v))
+                o.variables.add(name)
+                o.variable_values[name] = o.variable_values.get(name, 0) + self.numeric(addition, ctx)
             elif k=='set_variable':
                 if isinstance(v,list):
                     name=get(v,'name');value=get(v,'value');o.variables.add(name)
@@ -319,6 +336,7 @@ class World:
                 o.truces[target.tag]=months;target.truces[o.tag]=months
             elif k=='activate_law':
                 if v in ECONOMIC_LAWS:o.laws.difference_update(ECONOMIC_LAWS)
+                if v in GOVERNANCE_LAWS:o.laws.difference_update(GOVERNANCE_LAWS)
                 o.laws.add(v)
             elif k=='change_infamy':o.infamy+=int(v)
             elif k=='create_country':
@@ -354,11 +372,15 @@ class World:
                 self.conditions(get(self.defs[key],'possible'),ctx) or self.fail('Invalid journal')
                 o.journals.add(key);self.unlocked+=1;self.effect(get(self.defs[key],'immediate',[]),ctx)
             elif k=='trigger_event':
-                key=get(v,'id');ev=self.defs[key]
+                key=get(v,'id')
+                if get(v,'days') is not None:
+                    self.scheduled_days.append((key,int(get(v,'days')),o.tag,dict(self.saved)));continue
                 if get(v,'months') is not None:
                     self.scheduled.append((key,int(get(v,'months')),o.tag));continue
+                ev=self.defs[key]
                 if self.conditions(get(ev,'trigger',[]),ctx):
                     self.events.append(key);self.effect(get(ev,'immediate',[]),ctx)
+                    self.event_contexts.append((key,o.tag,dict(self.saved)))
             elif k=='hidden_effect':self.effect(v,ctx)
             elif k=='custom_tooltip' and isinstance(v,list):
                 self.effect([x for x in v if x.key not in ('text','subject')],ctx)
@@ -371,6 +393,24 @@ class World:
                 if target is None and n.op=='?=':continue
                 if target is None:raise AssertionError(('Unknown effect',k,v))
                 self.effect(v,ctx.enter(target))
+    def fire_scheduled_day_events(self):
+        """Fire the queued day-delayed requests, retaining their saved event-chain values."""
+        requests, self.scheduled_days = self.scheduled_days, []
+        for key, days, tag, captured in requests:
+            prior = self.saved
+            self.saved = dict(captured)
+            try:
+                ctx = self.ctx(tag)
+                event = self.defs[key]
+                cancellation = get(event, 'cancellation_trigger')
+                if self.conditions(get(event, 'trigger', []), ctx) and not (
+                        cancellation is not None and self.conditions(cancellation, ctx)):
+                    self.events.append(key)
+                    self.effect(get(event, 'immediate', []), ctx)
+                    self.event_contexts.append((key, tag, dict(self.saved)))
+            finally:
+                self.saved = prior
+
     @staticmethod
     def fail(message):raise AssertionError(message)
 

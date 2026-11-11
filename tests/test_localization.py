@@ -4,7 +4,7 @@ import json
 import re
 import unittest
 from test_territories import Node, get, entries, load_scripts
-from territory_test_data import EUROPE, TOTAL_REGIONS, EXPECTED_EVENTS
+from territory_test_data import EUROPE, TOTAL_REGIONS, EXPECTED_EVENTS, native_event_localization_keys
 
 ROOT=Path(__file__).resolve().parents[1]
 ENTRY=re.compile(r'^ ([A-Za-z_0-9.]+):(?:[0-9]+)?\s*(".*")\s*$')
@@ -42,7 +42,7 @@ def ui_references(scripts):
     def walk(nodes,path,parent=''):
         for n in nodes:
             if not isinstance(n,Node):continue
-            if n.key in fields and not (n.key=='name' and parent in ('set_variable','change_variable','add_progress')):add(custom_key(n.value),path)
+            if n.key in fields and not (n.key=='name' and parent in ('set_variable','change_variable','add_progress','save_scope_value_as')):add(custom_key(n.value),path)
             if isinstance(n.value,list):walk(n.value,path,n.key)
     roots={'buildings','cultures','religions','discrimination_traits','discrimination_trait_groups','laws','government_types','ideologies','interest_group_traits','company_types','prestige_goods','production_methods','production_method_groups','static_modifiers','subject_types','diplomatic_actions','journal_entry_groups','journal_entries','game_concepts'}
     for path,nodes in scripts.items():
@@ -84,9 +84,13 @@ class LocalizationTests(unittest.TestCase):
             if not path.startswith('events/'):continue
             for node in nodes:
                 if not isinstance(node,Node) or not isinstance(node.value,list) or get(node.value,'type')!='country_event':continue
-                count+=1
                 keys=[get(node.value,x) for x in ('title','desc','flavor')]
                 keys += [get(n.value,'name') for n in entries(node.value,'option')]
+                native_keys = native_event_localization_keys(path, node.key)
+                if native_keys is not None:
+                    self.assertEqual({key.strip('"') for key in keys if key}, native_keys)
+                    continue
+                count+=1
                 for key in keys:
                     if key:self.assertIn(key.strip('"'),self.values,(path,node.key,key))
         self.assertEqual(count,EXPECTED_EVENTS)

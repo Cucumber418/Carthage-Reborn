@@ -1,0 +1,102 @@
+﻿namespace = crb_independence
+
+# Former territorial subjects choose their government; recognition is unaffected.
+crb_independence.1 = {
+	type = country_event
+	placement = root
+	duration = 3
+	title = crb_independence.1.t
+	desc = crb_independence.1.d
+	flavor = crb_independence.1.f
+	event_image = { video = "unspecific_politicians_arguing" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	trigger = { has_variable = crb_carthaginian_subject is_subject = no has_variable = crb_independence_choice_pending NOT = { has_variable = crb_independence_choice_done } var:crb_independence_choice_cycle = scope:crb_independence_choice_request_cycle }
+	cancellation_trigger = {
+		OR = {
+			is_subject = yes
+			NOT = { has_variable = crb_carthaginian_subject }
+			NOT = { has_variable = crb_independence_choice_pending }
+			has_variable = crb_independence_choice_done
+			NOT = { var:crb_independence_choice_cycle = scope:crb_independence_choice_request_cycle }
+		}
+	}
+	option = {
+		name = crb_independence.1.a
+		default_option = yes
+		if = {
+			limit = { has_variable = crb_carthaginian_subject is_subject = no has_variable = crb_independence_choice_pending NOT = { has_variable = crb_independence_choice_done } var:crb_independence_choice_cycle = scope:crb_independence_choice_request_cycle }
+			activate_law = law_type:law_parliamentary_republic
+			crb_finish_independence_choice_effect = yes
+		}
+	}
+	option = {
+		name = crb_independence.1.b
+		if = {
+			limit = { has_variable = crb_carthaginian_subject is_subject = no has_variable = crb_independence_choice_pending NOT = { has_variable = crb_independence_choice_done } var:crb_independence_choice_cycle = scope:crb_independence_choice_request_cycle }
+			activate_law = law_type:law_presidential_republic
+			crb_finish_independence_choice_effect = yes
+		}
+	}
+	option = {
+		name = crb_independence.1.c
+		trigger = {
+			any_interest_group = {
+				is_in_government = yes
+				is_strongest_ig_in_government = yes
+				law_stance = { law = law_type:law_monarchy value >= approve }
+			}
+		}
+		if = {
+			limit = { has_variable = crb_carthaginian_subject is_subject = no has_variable = crb_independence_choice_pending NOT = { has_variable = crb_independence_choice_done } var:crb_independence_choice_cycle = scope:crb_independence_choice_request_cycle }
+			activate_law = law_type:law_monarchy
+			crb_finish_independence_choice_effect = yes
+		}
+	}
+	option = {
+		name = crb_independence.1.e
+		trigger = {
+			any_interest_group = {
+				is_in_government = yes
+				is_strongest_ig_in_government = yes
+				law_stance = { law = law_type:law_corporate_state value >= approve }
+			}
+		}
+		if = {
+			limit = { has_variable = crb_carthaginian_subject is_subject = no has_variable = crb_independence_choice_pending NOT = { has_variable = crb_independence_choice_done } var:crb_independence_choice_cycle = scope:crb_independence_choice_request_cycle }
+			activate_law = law_type:law_corporate_state
+			crb_finish_independence_choice_effect = yes
+		}
+	}
+	option = {
+		name = crb_independence.1.g
+		trigger = {
+			any_interest_group = {
+				is_in_government = yes
+				is_strongest_ig_in_government = yes
+				law_stance = { law = law_type:law_council_republic value >= approve }
+			}
+			has_factory_councils_law_or_amendment = yes
+		}
+		if = {
+			limit = { has_variable = crb_carthaginian_subject is_subject = no has_variable = crb_independence_choice_pending NOT = { has_variable = crb_independence_choice_done } var:crb_independence_choice_cycle = scope:crb_independence_choice_request_cycle }
+			activate_law = law_type:law_council_republic
+			crb_finish_independence_choice_effect = yes
+		}
+	}
+	option = {
+		name = crb_independence.1.h
+		trigger = {
+			any_interest_group = {
+				is_in_government = yes
+				is_strongest_ig_in_government = yes
+				law_stance = { law = law_type:law_theocracy value >= approve }
+			}
+		}
+		if = {
+			limit = { has_variable = crb_carthaginian_subject is_subject = no has_variable = crb_independence_choice_pending NOT = { has_variable = crb_independence_choice_done } var:crb_independence_choice_cycle = scope:crb_independence_choice_request_cycle }
+			activate_law = law_type:law_theocracy
+			crb_finish_independence_choice_effect = yes
+		}
+	}
+}

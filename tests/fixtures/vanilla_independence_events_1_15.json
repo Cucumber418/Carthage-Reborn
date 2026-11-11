@@ -1,0 +1,49 @@
+{
+  "source": "https://github.com/jink47787/Historical_MP_Series_Vic3/blob/f8e3ee6cfb3e1265ef41190f44957a5e4963edf1/basegame-ver/events/iberia_events/independence.txt",
+  "path": "events/iberia_events/independence.txt",
+  "canonical_sha256": "2e1e13f1b257fc20ddd59ce914f3f072f62f55c67943aa72361db77e08408d0e",
+  "events": {
+    "independence.1": [
+      "independence.1.a",
+      "independence.1.b",
+      "independence.1.c",
+      "independence.1.d",
+      "independence.1.e",
+      "independence.1.f",
+      "independence.1.g",
+      "independence.1.h",
+      "independence.1.t"
+    ],
+    "independence.2": [
+      "independence.2.a",
+      "independence.2.b",
+      "independence.2.c",
+      "independence.2.d",
+      "independence.2.e",
+      "independence.2.f",
+      "independence.2.g",
+      "independence.2.h",
+      "independence.2.t"
+    ]
+  },
+  "localization_keys": [
+    "independence.1.a",
+    "independence.1.b",
+    "independence.1.c",
+    "independence.1.d",
+    "independence.1.e",
+    "independence.1.f",
+    "independence.1.g",
+    "independence.1.h",
+    "independence.1.t",
+    "independence.2.a",
+    "independence.2.b",
+    "independence.2.c",
+    "independence.2.d",
+    "independence.2.e",
+    "independence.2.f",
+    "independence.2.g",
+    "independence.2.h",
+    "independence.2.t"
+  ]
+}

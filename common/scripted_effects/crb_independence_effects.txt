@@ -1,0 +1,62 @@
+﻿# Country scope: one government-choice request per independence cycle.
+crb_clear_independence_choice_effect = {
+    remove_variable = crb_independence_choice_pending
+    remove_variable = crb_independence_choice_done
+}
+
+crb_advance_independence_choice_cycle_effect = {
+    if = {
+        limit = { NOT = { has_variable = crb_independence_choice_cycle } }
+        set_variable = { name = crb_independence_choice_cycle value = 0 }
+    }
+    change_variable = { name = crb_independence_choice_cycle add = 1 }
+    crb_clear_independence_choice_effect = yes
+}
+
+crb_try_request_independence_choice_effect = {
+    if = {
+        limit = { has_variable = crb_carthaginian_subject }
+        if = {
+            limit = { is_subject = yes }
+            # Fallback for a missed subject transition: increment only while flags need clearing.
+            if = {
+                limit = {
+                    OR = {
+                        has_variable = crb_independence_choice_pending
+                        has_variable = crb_independence_choice_done
+                    }
+                }
+                crb_advance_independence_choice_cycle_effect = yes
+            }
+        }
+        else_if = {
+            limit = {
+                NOT = { has_variable = crb_independence_choice_pending }
+                NOT = { has_variable = crb_independence_choice_done }
+            }
+            if = {
+                limit = { NOT = { has_variable = crb_independence_choice_cycle } }
+                set_variable = { name = crb_independence_choice_cycle value = 0 }
+            }
+            set_variable = crb_independence_choice_pending
+            save_scope_value_as = {
+                name = crb_independence_choice_request_cycle
+                value = var:crb_independence_choice_cycle
+            }
+            trigger_event = { id = crb_independence.1 days = 1 popup = yes }
+        }
+    }
+}
+
+crb_finish_independence_choice_effect = {
+    if = {
+        limit = {
+            has_variable = crb_carthaginian_subject
+            is_subject = no
+            has_variable = crb_independence_choice_pending
+            NOT = { has_variable = crb_independence_choice_done }
+        }
+        remove_variable = crb_independence_choice_pending
+        set_variable = crb_independence_choice_done
+    }
+}

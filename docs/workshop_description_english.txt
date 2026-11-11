@@ -26,6 +26,8 @@ Both languages are included in the same mod. Set your game language to English o
 [/list]
 
 [h2]Trading Posts and Provinces[/h2]
+Former Trading Posts and Provinces use geographic names after independence and choose a government under vanilla option conditions. Re-subjugation invalidates an old choice.
+
 The independent journal [b]Carthage's Territories[/b] manages overseas possessions. A single directly owned non-capital holding in an eligible region is enough to choose its government.
 
 [list]

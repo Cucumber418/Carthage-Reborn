@@ -1,0 +1,15 @@
+{
+  "source": "https://github.com/jink47787/Historical_MP_Series_Vic3/blob/f8e3ee6cfb3e1265ef41190f44957a5e4963edf1/basegame-ver/common/laws/00_governance_principles.txt",
+  "group": "lawgroup_governance_principles",
+  "laws": [
+    "law_chiefdom",
+    "law_monarchy",
+    "law_colonial_administration",
+    "law_presidential_republic",
+    "law_parliamentary_republic",
+    "law_theocracy",
+    "law_council_republic",
+    "law_corporate_state",
+    "law_social_monarchy"
+  ]
+}

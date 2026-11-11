@@ -95,6 +95,7 @@ crb_monthly_pulse_subject = {
 		has_variable = crb_carthaginian_subject
 	}
 	effect = {
+		crb_try_request_independence_choice_effect = yes
 		# 对旧档的实际迦太基附庸进行一次性总督制迁移。
 		if = {
 			limit = {

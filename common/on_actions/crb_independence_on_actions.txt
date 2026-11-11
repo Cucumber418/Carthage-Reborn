@@ -1,0 +1,25 @@
+﻿# Both native hooks have the changed country as root in the pinned vanilla 1.15 script.
+# Source: 00_code_on_actions.txt at f8e3ee6cfb3e1265ef41190f44957a5e4963edf1.
+on_become_independent = {
+    on_actions = { crb_on_territory_independence }
+}
+
+on_become_subject = {
+    on_actions = { crb_on_territory_subjecthood }
+}
+
+crb_on_territory_independence = {
+    trigger = {
+        has_variable = crb_carthaginian_subject
+        is_subject = no
+    }
+    effect = { crb_try_request_independence_choice_effect = yes }
+}
+
+crb_on_territory_subjecthood = {
+    trigger = {
+        has_variable = crb_carthaginian_subject
+        is_subject = yes
+    }
+    effect = { crb_advance_independence_choice_cycle_effect = yes }
+}

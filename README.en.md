@@ -4,17 +4,17 @@
 
 A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly restored Punic state. Conservative senators govern an unrecognized republic, but the army and the Popular Assembly have ambitions of their own. Choose between the Hannonids and the Barcids, revive Punic culture, and follow the routes of Hanno or Hannibal.
 
-- Version: **1.3.0**
+- Version: **1.3.1**
 - Victoria 3: **1.15.\***
 - Languages: **English and Simplified Chinese**, included in the same mod and selected by the game's language setting.
-- Content: 7 Journal Entries, 2 Decisions, 86 event definitions, 1 company, 25 possible subject countries across 24 regions, and an original Carthaginian music track.
+- Content: 7 Journal Entries, 2 Decisions, 87 custom event definitions (plus two vanilla compatibility definitions), 1 company, 25 possible subject countries across 24 regions, and an original Carthaginian music track.
 - Workshop descriptions: [English](docs/workshop_description_english.txt) / [Chinese](docs/workshop_description.txt).
 
 ## Language
 
 Set the game language to **English**, fully exit the game, and restart. The same mod and gameplay scripts serve both languages; a separate English Workshop subscription is unnecessary. Existing saves can be used.
 
-English covers all **1,398 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod. Interest Group variants display their current name alone, without an appended generic type in parentheses.
+English covers all **1,432 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod. Interest Group variants display their current name alone, without an appended generic type in parentheses.
 
 ## The Punic Republic
 
@@ -62,6 +62,11 @@ Every newly founded Trading Post and Province keeps its original primary culture
 Each relationship costs the overlord 10 Influence. Newly established subjects receive Carthage's Protection. Its small weekly Liberty Desire modifiers follow the scale of vanilla subject interactions.
 
 Trading Posts and Provinces support the vanilla **Take State** and **Grant State** diplomatic interactions. Their land can also be a source when granting a state to another subject. State selection, costs, Liberty Desire changes, capital restrictions, and other eligibility rules follow vanilla.
+
+On independence, every former Trading Post and Province receives a government-choice event. Parliamentary and Presidential Republics are available; Monarchy, Corporate State, Council Republic, and Theocracy retain vanilla interest-group and other eligibility conditions. The current government law stays in place until a choice is made. The choice changes governance without granting recognition. Becoming a subject invalidates an old choice; a later independence starts a new choice cycle. The overlapping vanilla Colonial Administration independence event is suppressed only for these marked countries.
+
+Independent former subjects use geographic names, such as **Numidia** instead of **Numidian Province** or **Numidian Trading Post**. Attached subjects keep their usual names. A monthly fallback can recover the first choice for an already independent country in an old save; settled choices do not reopen every month.
+
 
 Version 1.2.8 fixes the database loading mode by explicitly replacing the two vanilla actions, as required by recent game versions. The added subject types can therefore replace the original eligibility lists. Fully exit and restart the game after updating, then check an existing save: a Trading Post or Province should no longer be rejected merely for not being a Colony, Puppet, or Vassal.
 
@@ -133,6 +138,6 @@ Run the automated checks from the repository root:
 python -m unittest discover -s tests -v
 ```
 
-The 143 checks cover territorial safeguards, expansion exclusions for ongoing colonies, vanilla state-transfer compatibility, provincialization, recurring events, governance, creation-time primary cultures and colonial laws, actual faction outcomes and unfinished route recovery, route separation, building completion, obsolete building identifiers in company definitions, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
+The 157 checks cover territorial safeguards, expansion exclusions for ongoing colonies, vanilla state-transfer compatibility, provincialization, recurring events, governance, independent naming and government-choice cycles, creation-time primary cultures and colonial laws, actual faction outcomes and unfinished route recovery, route separation, building completion, obsolete building identifiers in company definitions, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
 
 Known limitation: the automatic Hannonid result at the three-year deadline still lacks part of its victory effects. Reaching the Hannonid end of the progress bar, or choosing the Hannonids in the stalemate event, uses the complete victory path. This update does not change that deadline behavior.

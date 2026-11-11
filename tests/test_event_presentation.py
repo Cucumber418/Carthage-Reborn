@@ -3,7 +3,7 @@ import re
 import unittest
 from test_localization import load_localization
 from test_territories import Node,entries,get,load_scripts
-from territory_test_data import EUROPE, TOTAL_REGIONS, EXPECTED_EVENTS
+from territory_test_data import EUROPE, TOTAL_REGIONS, EXPECTED_EVENTS, native_event_localization_keys
 
 REGIONS=[
  ('crb_revenge.10','TRP','TRP_crb_province'),
@@ -36,6 +36,10 @@ class EventPresentationTests(unittest.TestCase):
             if not path.startswith('events/'):continue
             for n in nodes:
                 if not isinstance(n,Node) or get(n.value,'type')!='country_event':continue
+                native_keys = native_event_localization_keys(path, n.key)
+                if native_keys is not None:
+                    self.assertTrue({get(n.value, field) for field in ('desc', 'flavor')} <= native_keys)
+                    continue
                 count+=1
                 for field in ('desc','flavor'):
                     key=get(n.value,field)
