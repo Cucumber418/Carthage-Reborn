@@ -76,27 +76,16 @@ crb_controls_region_trigger = {
 
 # 各商站的地区范围（作用域：地块）
 crb_is_gaul_post_state_trigger = {
-	OR = {
-		state_region = s:STATE_ILE_DE_FRANCE
-		state_region = s:STATE_PROVENCE
-		state_region = s:STATE_NORMANDY
-		state_region = s:STATE_LANGUEDOC
-		state_region = s:STATE_RHONE
-		state_region = s:STATE_PICARDY
-		state_region = s:STATE_ALSACE_LORRAINE
-		state_region = s:STATE_POITOU
-		state_region = s:STATE_GUYENNE
-		state_region = s:STATE_AUVERGNE_LIMOUSIN
-		state_region = s:STATE_BRITTANY
-		state_region = s:STATE_BURGUNDY
-		state_region = s:STATE_CHAMPAGNE
-		state_region = s:STATE_FRANCHE_COMTE
-		state_region = s:STATE_LORRAINE
-		state_region = s:STATE_AQUITAINE
-		state_region = s:STATE_ORLEANS
-		state_region = s:STATE_MAINE_ANJOU
-		state_region = s:STATE_FRENCH_LOW_COUNTRIES
-	}
+ OR = {
+  state_region = s:STATE_PROVENCE
+  state_region = s:STATE_LANGUEDOC
+  state_region = s:STATE_RHONE
+  state_region = s:STATE_POITOU
+  state_region = s:STATE_GUYENNE
+  state_region = s:STATE_AUVERGNE_LIMOUSIN
+  state_region = s:STATE_BURGUNDY
+  state_region = s:STATE_AQUITAINE
+ }
 }
 
 crb_is_alpine_post_state_trigger = {

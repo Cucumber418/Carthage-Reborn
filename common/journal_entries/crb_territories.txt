@@ -116,6 +116,10 @@
 	scripted_button = crb_expand_XGE_post_button
 	scripted_button = crb_expand_XGE_province_button
 	scripted_button = crb_provincialize_XGE_button
+ scripted_button = crb_found_lugdunensis_button
+ scripted_button = crb_expand_XLG_post_button
+ scripted_button = crb_expand_XLG_province_button
+ scripted_button = crb_provincialize_XLG_button
 	outcome = {
 		flags = { hidden invalid_outcome }
 		conclusion_desc = je_standard_failure_conclusion_desc

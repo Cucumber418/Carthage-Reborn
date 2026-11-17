@@ -117,3 +117,14 @@ XGE = {
 		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
 	}
 }
+
+
+XLG = {
+	dynamic_country_name = {
+		name = XLG_crb_trading_post
+		adjective = XLG_ADJ
+		is_main_tag_only = yes
+		priority = 50
+		trigger = { scope:actor ?= { has_variable = crb_carthaginian_subject is_subject = yes NOT = { has_variable = crb_province } } }
+	}
+}

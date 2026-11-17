@@ -54,14 +54,11 @@ subject_type_crb_trading_post = {
 	}
 
 	valid_subject_ranks = {
-		great_power
-		major_power
-		minor_power
-		insignificant_power
-		unrecognized_major_power
-		unrecognized_regional_power
-		unrecognized_power
-	}
+ minor_power
+ insignificant_power
+ unrecognized_regional_power
+ unrecognized_power
+ }
 
 	ai_value = {
 		value = 1.5
@@ -120,14 +117,11 @@ subject_type_crb_province = {
 	}
 
 	valid_subject_ranks = {
-		great_power
-		major_power
-		minor_power
-		insignificant_power
-		unrecognized_major_power
-		unrecognized_regional_power
-		unrecognized_power
-	}
+ minor_power
+ insignificant_power
+ unrecognized_regional_power
+ unrecognized_power
+ }
 
 	ai_value = {
 		value = 1.5

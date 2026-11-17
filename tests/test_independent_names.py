@@ -12,7 +12,7 @@ OLD_NAMES = {
     'TRP': ('的黎波里', 'Tripolitania'),
     'NUM': ('努米底亚', 'Numidia'),
     'IBT': ('伊比利亚', 'Iberia'),
-    'GLT': ('高卢', 'Gaul'),
+    'GLT': ('纳尔波高卢', 'Narbonese Gaul'),
     'SNT': ('阿尔卑斯', 'Alps'),
     'IOP': ('伊奥尼亚', 'Ionia'),
     'RPR': ('罗马', 'Rome'),
@@ -72,7 +72,7 @@ class IndependentNameTests(unittest.TestCase):
                        for language in ('simp_chinese', 'english')}
 
     def test_all_subject_tags_use_supported_explicit_entry_modes_and_geographic_names(self):
-        self.assertEqual(len(EXPECTED), 25)
+        self.assertEqual(len(EXPECTED), 26)
         self.assertTrue((ROOT / PATCH).read_bytes().startswith(b'\xef\xbb\xbf'))
         patch = self.scripts[PATCH]
         self.assertEqual({node.key for node in patch},

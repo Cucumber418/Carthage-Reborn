@@ -4,17 +4,17 @@
 
 A Victoria 3 alternate-history mod. In 1836, Tunisia is replaced by a newly restored Punic state. Conservative senators govern an unrecognized republic, but the army and the Popular Assembly have ambitions of their own. Choose between the Hannonids and the Barcids, revive Punic culture, and follow the routes of Hanno or Hannibal.
 
-- Version: **1.3.1**
+- Version: **1.3.2**
 - Victoria 3: **1.15.\***
 - Languages: **English and Simplified Chinese**, included in the same mod and selected by the game's language setting.
-- Content: 7 Journal Entries, 2 Decisions, 87 custom event definitions (plus two vanilla compatibility definitions), 1 company, 25 possible subject countries across 24 regions, and an original Carthaginian music track.
+- Content: 7 Journal Entries, 2 Decisions, 88 custom event definitions (plus two vanilla compatibility definitions), 1 company, 26 possible subject countries across 25 regions, and an original Carthaginian music track.
 - Workshop descriptions: [English](docs/workshop_description_english.txt) / [Chinese](docs/workshop_description.txt).
 
 ## Language
 
 Set the game language to **English**, fully exit the game, and restart. The same mod and gameplay scripts serve both languages; a separate English Workshop subscription is unnecessary. Existing saves can be used.
 
-English covers all **1,432 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod. Interest Group variants display their current name alone, without an appended generic type in parentheses.
+English covers all **1,458 localization keys**: country and character names, cultures and religions, laws and governments, events, journals, decisions, territorial buttons, subject concepts, companies, modifiers, and historical place names. English files mirror the Chinese directory, including the `replace` overrides. No additional language button is required inside the mod. Interest Group variants display their current name alone, without an appended generic type in parentheses.
 
 ## The Punic Republic
 
@@ -138,6 +138,13 @@ Run the automated checks from the repository root:
 python -m unittest discover -s tests -v
 ```
 
-The 157 checks cover territorial safeguards, expansion exclusions for ongoing colonies, vanilla state-transfer compatibility, provincialization, recurring events, governance, independent naming and government-choice cycles, creation-time primary cultures and colonial laws, actual faction outcomes and unfinished route recovery, route separation, building completion, obsolete building identifiers in company definitions, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
+The 161 checks cover territorial safeguards, expansion exclusions for ongoing colonies, vanilla state-transfer compatibility, provincialization, recurring events, governance, independent naming and government-choice cycles, creation-time primary cultures and colonial laws, actual faction outcomes and unfinished route recovery, route separation, building completion, obsolete building identifiers in company definitions, localization references, complete language coverage, and preservation of dynamic expressions and numbers. These are static and simulated-script checks, not an in-game test.
 
 Known limitation: the automatic Hannonid result at the three-year deadline still lacks part of its victory effects. Reaching the Hannonid end of the progress bar, or choosing the Hannonids in the stalemate event, uses the complete victory path. This update does not change that deadline behavior.
+
+
+[Complete land and annexation commands](docs/land_commands.en.md): 25 jurisdictions, all 152 relevant state regions, single/multiple-country annexation, and one-shot Script Runner setup.
+
+Gaul is divided into southern Narbonese Gaul (GLT) and northern Lugdunensian Gaul (XLG). Trading Posts and Provinces use vanilla chartered-company subject rank eligibility, and cannot initiate vanilla country formations or stand as unification candidates while attached. Independent countries are not subject to this formation restriction.
+
+Legacy Gaul subjects holding both halves are partitioned on the monthly pulse at peace after the handover, provided XLG does not exist. Eligible northern states form the same subject form; the southern country and its Treasury remain, without foundation Infamy. Capitals, ongoing colonies and foreign land are excluded.

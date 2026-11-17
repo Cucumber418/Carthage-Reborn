@@ -443,3 +443,41 @@ crb_europe.12 = {
 	}
 	option = { name = crb_europe.12.c default_option = yes }
 }
+
+
+crb_europe.13 = {
+	type = country_event
+	placement = root
+	title = crb_europe.13.t
+	desc = crb_europe.13.d
+	flavor = crb_europe.13.f
+	duration = 3
+	event_image = { video = "europenorthamerica_capitalists_meeting" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_lugdunensis_trigger = yes }
+	option = {
+		name = crb_europe.13.a
+		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_lugdunensis_trigger = yes }
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_lugdunensis_trigger = yes }
+			custom_tooltip = crb_create_puppet_XLG_tt
+			custom_tooltip = crb_create_puppet_XLG_effect_tt
+			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
+			hidden_effect = { crb_create_puppet_XLG_effect = yes }
+		}
+	}
+	option = {
+		name = crb_europe.13.b
+		trigger = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_lugdunensis_trigger = yes }
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_lugdunensis_trigger = yes }
+			change_infamy = 15
+			custom_tooltip = crb_create_province_XLG_tt
+			custom_tooltip = crb_create_province_XLG_effect_tt
+			custom_tooltip = crb_territory_disposition_cooldown_effect_tt
+			hidden_effect = { crb_create_province_XLG_effect = yes }
+		}
+	}
+	option = { name = crb_europe.13.c default_option = yes }
+}

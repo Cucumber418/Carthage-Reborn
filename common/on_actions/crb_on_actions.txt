@@ -68,6 +68,7 @@ crb_monthly_pulse_country = {
 		this = c:TUN
 	}
 	effect = {
+		crb_partition_legacy_gaul_effect = yes
 		crb_update_ig_names_effect = yes
 		crb_try_unlock_territorial_journal_effect = yes
 		crb_check_french_border_effect = yes

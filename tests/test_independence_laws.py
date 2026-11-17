@@ -61,8 +61,8 @@ class IndependenceGovernmentChoiceTests(unittest.TestCase):
     def setUpClass(cls):
         cls.scripts = load_scripts()
         cls.tags = sorted(tag for tag in World(cls.scripts).country_definitions if tag != 'TUN')
-        if len(cls.tags) != 25:
-            raise AssertionError('Expected all 25 territorial country definitions')
+        if len(cls.tags) != 26:
+            raise AssertionError('Expected all 26 territorial country definitions')
 
     def country(self, tag='NUM', province=False, law=GOVERNOR, independent=True, marked=True):
         world = ChoiceWorld(self.scripts)

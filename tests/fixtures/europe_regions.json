@@ -258,6 +258,31 @@
       ],
       "event": "crb_europe.12",
       "infamy": 15
+    },
+    {
+      "key": "lugdunensis",
+      "tag": "XLG",
+      "name_zh": "卢格敦高卢",
+      "name_en": "Lugdunensian Gaul",
+      "regions": [
+        "STATE_ILE_DE_FRANCE",
+        "STATE_NORMANDY",
+        "STATE_PICARDY",
+        "STATE_ALSACE_LORRAINE",
+        "STATE_BRITTANY",
+        "STATE_CHAMPAGNE",
+        "STATE_FRANCHE_COMTE",
+        "STATE_LORRAINE",
+        "STATE_ORLEANS",
+        "STATE_MAINE_ANJOU",
+        "STATE_FRENCH_LOW_COUNTRIES"
+      ],
+      "capital": "STATE_ILE_DE_FRANCE",
+      "cultures": [
+        "french"
+      ],
+      "event": "crb_europe.13",
+      "infamy": 15
     }
   ]
 }

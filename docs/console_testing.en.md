@@ -1,4 +1,4 @@
-# Console and Language Checks — 1.3.1
+# Console and Language Checks — 1.3.2
 
 These scenarios are prepared from the scripts. They have not been run in a Victoria 3 process.
 
@@ -146,7 +146,7 @@ c:NUM = { make_independent = yes }
 
 Advance about one day and inspect the independent country's event. The AI handles its own event if you remain Carthage; switch to the independent country to test player choices. The existing law remains until selection. Only the chosen governance law changes; recognition is not granted. Conditional options retain vanilla governing-interest-group requirements, with the additional factory-councils requirement for a Council Republic.
 
-Check all 25 potential countries: Numidian Province or Trading Post becomes Numidia; IOP becomes Ionia, RPR becomes Rome, and SNT uses Alps. Attached, foreign-subject, and unmarked countries keep their former naming rules. Repeated monthly checks cannot reopen a settled choice. Re-subjugation cancels an old choice; another independence permits a new one, and stale queued events or options must not change the new cycle. Marked countries must not receive the overlapping vanilla Colonial Administration choice; other countries keep vanilla behavior. Already independent old-save subjects recover their first new choice on a monthly check.
+Check all 26 potential countries: Numidian Province or Trading Post becomes Numidia; IOP becomes Ionia, RPR becomes Rome, and SNT uses Alps. Attached, foreign-subject, and unmarked countries keep their former naming rules. Repeated monthly checks cannot reopen a settled choice. Re-subjugation cancels an old choice; another independence permits a new one, and stale queued events or options must not change the new cycle. Marked countries must not receive the overlapping vanilla Colonial Administration choice; other countries keep vanilla behavior. Already independent old-save subjects recover their first new choice on a monthly check.
 
 ## New Subject Cultures and Laws
 
@@ -215,3 +215,10 @@ Check all four objective titles and conditions against the current map. Before a
 For split states, directly held land takes priority over a Carthaginian subject's land and then the largest current state in the region. Test subject transfers and loss of control. Existing saves refresh on the monthly check; `crb_refresh_hanno_target_names_effect = yes` in the Effect Script Runner refreshes the references immediately. Check both languages for raw keys, invalid State references, and clipping.
 
 The automated scenarios do not run Victoria 3's event or GUI engine.
+
+
+[Complete land and annexation commands](land_commands.en.md): 25 jurisdictions, all 152 relevant state regions, single/multiple-country annexation, and one-shot Script Runner setup.
+
+Gaul is divided into southern Narbonese Gaul (GLT) and northern Lugdunensian Gaul (XLG). Trading Posts and Provinces use vanilla chartered-company subject rank eligibility, and cannot initiate vanilla country formations or stand as unification candidates while attached. Independent countries are not subject to this formation restriction.
+
+Legacy Gaul subjects holding both halves are partitioned on the monthly pulse at peace after the handover, provided XLG does not exist. Eligible northern states form the same subject form; the southern country and its Treasury remain, without foundation Infamy. Capitals, ongoing colonies and foreign land are excluded.

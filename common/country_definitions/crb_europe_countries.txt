@@ -105,3 +105,13 @@ XGE = {
 	religion = crb_tanit
 	capital = STATE_RHINELAND
 }
+
+
+XLG = {
+	color = rgb { 68 103 81 }
+	country_type = unrecognized
+	tier = principality
+	cultures = { french }
+	religion = crb_tanit
+	capital = STATE_ILE_DE_FRANCE
+}

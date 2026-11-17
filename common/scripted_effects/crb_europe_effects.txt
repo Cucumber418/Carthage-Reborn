@@ -265,6 +265,7 @@ crb_create_province_XGE_effect = {
 }
 
 crb_expand_europe_effect = {
+ crb_expand_one_territory_effect = { TAG = XLG AREA = crb_is_lugdunensis_state_trigger }
 	crb_expand_one_territory_effect = { TAG = XLU AREA = crb_is_lusitania_state_trigger }
 	crb_expand_one_territory_effect = { TAG = XET AREA = crb_is_etruria_state_trigger }
 	crb_expand_one_territory_effect = { TAG = XIL AREA = crb_is_illyria_state_trigger }
@@ -277,4 +278,56 @@ crb_expand_europe_effect = {
 	crb_expand_one_territory_effect = { TAG = XNO AREA = crb_is_noricum_state_trigger }
 	crb_expand_one_territory_effect = { TAG = XBE AREA = crb_is_belgica_state_trigger }
 	crb_expand_one_territory_effect = { TAG = XGE AREA = crb_is_germania_state_trigger }
+}
+
+
+crb_create_puppet_XLG_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XLG
+		CAN_FOUND = crb_can_found_lugdunensis_trigger
+		AREA = crb_is_lugdunensis_state_trigger
+		PROVINCE = no
+		LAWS = crb_trading_post_laws_effect
+		PACT = crb_trading_post
+	}
+}
+
+crb_create_province_XLG_effect = {
+	crb_create_territory_subject_effect = {
+		TAG = XLG
+		CAN_FOUND = crb_can_found_lugdunensis_trigger
+		AREA = crb_is_lugdunensis_state_trigger
+		PROVINCE = yes
+		LAWS = crb_province_laws_effect
+		PACT = crb_province
+	}
+}
+
+# Old-save partition: only eligible non-capital northern land of an actual GLT subject.
+crb_partition_legacy_gaul_effect = {
+ if = {
+  limit = {
+   crb_is_carthage_trigger = yes
+   is_at_war = no
+   crb_territory_disposition_ready_trigger = yes
+   NOT = { exists = c:XLG }
+   crb_is_actual_territory_subject_trigger = { TAG = GLT }
+   c:GLT = {
+    is_at_war = no
+    any_scope_state = { crb_is_gaul_post_state_trigger = yes }
+    any_scope_state = { crb_is_lugdunensis_state_trigger = yes crb_is_expansion_ready_state_trigger = yes }
+   }
+  }
+  c:GLT = {
+   every_scope_state = {
+    limit = { crb_is_lugdunensis_state_trigger = yes crb_is_expansion_ready_state_trigger = yes }
+    set_state_owner = c:TUN
+   }
+  }
+  if = {
+   limit = { c:GLT = { has_variable = crb_province } }
+   crb_create_province_XLG_effect = yes
+  }
+  else = { crb_create_puppet_XLG_effect = yes }
+ }
 }

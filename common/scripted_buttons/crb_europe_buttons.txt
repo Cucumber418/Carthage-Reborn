@@ -707,3 +707,63 @@ crb_provincialize_XGE_button = {
 	ai_chance = { value = 0 }
 	effect = { crb_provincialize_territory_effect = { TAG = XGE FINAL_TAG = XGE INFAMY = 15 } }
 }
+
+
+crb_found_lugdunensis_button = {
+	name = crb_found_lugdunensis_button
+	desc = crb_found_lugdunensis_button_desc
+	visible = { has_journal_entry = je_crb_territories crb_can_found_lugdunensis_trigger = yes }
+	possible = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_lugdunensis_trigger = yes }
+	ai_chance = { value = 50 }
+	effect = {
+		if = {
+			limit = { crb_is_carthage_trigger = yes is_at_war = no crb_territory_disposition_ready_trigger = yes crb_can_found_lugdunensis_trigger = yes }
+			trigger_event = { id = crb_europe.13 popup = yes }
+		}
+	}
+}
+
+crb_expand_XLG_post_button = {
+	name = crb_expand_XLG_post_button
+	desc = crb_expand_XLG_post_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XLG }
+		c:XLG ?= { NOT = { has_variable = crb_province } }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XLG AREA = crb_is_lugdunensis_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XLG_post_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XLG AREA = crb_is_lugdunensis_state_trigger } }
+	}
+}
+
+crb_expand_XLG_province_button = {
+	name = crb_expand_XLG_province_button
+	desc = crb_expand_XLG_province_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_actual_territory_subject_trigger = { TAG = XLG }
+		c:XLG ?= { has_variable = crb_province }
+	}
+	possible = { crb_can_expand_one_territory_trigger = { TAG = XLG AREA = crb_is_lugdunensis_state_trigger } }
+	ai_chance = { value = 10 }
+	effect = {
+		custom_tooltip = crb_expand_XLG_province_button_effect_tt
+		hidden_effect = { crb_expand_one_territory_effect = { TAG = XLG AREA = crb_is_lugdunensis_state_trigger } }
+	}
+}
+
+crb_provincialize_XLG_button = {
+	name = crb_provincialize_XLG_button
+	desc = crb_provincialize_XLG_button_desc
+	visible = {
+		has_journal_entry = je_crb_territories
+		crb_is_carthage_trigger = yes
+		crb_is_provincializable_post_trigger = { TAG = XLG }
+	}
+	possible = { crb_can_provincialize_territory_trigger = { TAG = XLG FINAL_TAG = XLG } }
+	ai_chance = { value = 0 }
+	effect = { crb_provincialize_territory_effect = { TAG = XLG FINAL_TAG = XLG INFAMY = 15 } }
+}

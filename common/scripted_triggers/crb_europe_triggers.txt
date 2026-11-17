@@ -206,6 +206,7 @@ crb_can_found_germania_trigger = {
 
 crb_can_found_europe_trigger = {
 	OR = {
+ crb_can_found_lugdunensis_trigger = yes
 		crb_can_found_lusitania_trigger = yes
 		crb_can_found_etruria_trigger = yes
 		crb_can_found_illyria_trigger = yes
@@ -218,11 +219,13 @@ crb_can_found_europe_trigger = {
 		crb_can_found_noricum_trigger = yes
 		crb_can_found_belgica_trigger = yes
 		crb_can_found_germania_trigger = yes
+ crb_can_found_lugdunensis_trigger = yes
 	}
 }
 
 crb_has_europe_subject_trigger = {
 	OR = {
+ crb_is_actual_territory_subject_trigger = { TAG = XLG }
 		crb_is_actual_territory_subject_trigger = { TAG = XLU }
 		crb_is_actual_territory_subject_trigger = { TAG = XET }
 		crb_is_actual_territory_subject_trigger = { TAG = XIL }
@@ -240,6 +243,7 @@ crb_has_europe_subject_trigger = {
 
 crb_can_expand_europe_trigger = {
 	OR = {
+ AND = { crb_is_actual_territory_subject_trigger = { TAG = XLG } any_scope_state = { crb_is_expansion_ready_state_trigger = yes crb_is_lugdunensis_state_trigger = yes } }
 		crb_can_expand_one_territory_trigger = { TAG = XLU AREA = crb_is_lusitania_state_trigger }
 		crb_can_expand_one_territory_trigger = { TAG = XET AREA = crb_is_etruria_state_trigger }
 		crb_can_expand_one_territory_trigger = { TAG = XIL AREA = crb_is_illyria_state_trigger }
@@ -253,4 +257,27 @@ crb_can_expand_europe_trigger = {
 		crb_can_expand_one_territory_trigger = { TAG = XBE AREA = crb_is_belgica_state_trigger }
 		crb_can_expand_one_territory_trigger = { TAG = XGE AREA = crb_is_germania_state_trigger }
 	}
+}
+
+
+crb_is_lugdunensis_state_trigger = {
+ OR = {
+  state_region = s:STATE_ILE_DE_FRANCE
+  state_region = s:STATE_NORMANDY
+  state_region = s:STATE_PICARDY
+  state_region = s:STATE_ALSACE_LORRAINE
+  state_region = s:STATE_BRITTANY
+  state_region = s:STATE_CHAMPAGNE
+  state_region = s:STATE_FRANCHE_COMTE
+  state_region = s:STATE_LORRAINE
+  state_region = s:STATE_ORLEANS
+  state_region = s:STATE_MAINE_ANJOU
+  state_region = s:STATE_FRENCH_LOW_COUNTRIES
+ }
+}
+
+crb_can_found_lugdunensis_trigger = {
+	crb_is_carthage_trigger = yes
+	NOT = { exists = c:XLG }
+	any_scope_state = { is_capital = no crb_is_lugdunensis_state_trigger = yes }
 }

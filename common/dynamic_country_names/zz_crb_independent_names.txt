@@ -376,3 +376,18 @@ INJECT_OR_CREATE:XGE = {
 		}
 	}
 }
+
+INJECT_OR_CREATE:XLG = {
+	dynamic_country_name = {
+		name = XLG_crb_independent
+		adjective = XLG_ADJ
+		is_main_tag_only = yes
+		priority = 1000
+		trigger = {
+			scope:actor ?= {
+				has_variable = crb_carthaginian_subject
+				is_subject = no
+			}
+		}
+	}
+}

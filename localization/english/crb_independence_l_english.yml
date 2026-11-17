@@ -2,7 +2,7 @@
  TRP_crb_independent: "Tripolitania"
  NUM_crb_independent: "Numidia"
  IBT_crb_independent: "Iberia"
- GLT_crb_independent: "Gaul"
+ GLT_crb_independent: "Narbonese Gaul"
  SNT_crb_independent: "Alps"
  IOP_crb_independent: "Ionia"
  RPR_crb_independent: "Rome"
@@ -33,3 +33,4 @@
  crb_independence.1.e: "Let the organized professions shape the state."
  crb_independence.1.g: "Entrust power to the councils of workers."
  crb_independence.1.h: "Let faith guide the country."
+ XLG_crb_independent: "Lugdunensian Gaul"

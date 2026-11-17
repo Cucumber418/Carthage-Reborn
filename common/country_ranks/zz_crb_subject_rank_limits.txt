@@ -1,0 +1,18 @@
+﻿INJECT:great_power = {
+ possible = {
+ NOT = { is_subject_type = subject_type_crb_trading_post }
+ NOT = { is_subject_type = subject_type_crb_province }
+ }
+}
+INJECT:major_power = {
+ possible = {
+ NOT = { is_subject_type = subject_type_crb_trading_post }
+ NOT = { is_subject_type = subject_type_crb_province }
+ }
+}
+INJECT:unrecognized_major_power = {
+ possible = {
+ NOT = { is_subject_type = subject_type_crb_trading_post }
+ NOT = { is_subject_type = subject_type_crb_province }
+ }
+}

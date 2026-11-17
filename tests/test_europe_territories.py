@@ -40,10 +40,10 @@ class EuropeTerritoryTests(unittest.TestCase):
         return world.countries[region['tag']]
 
     def test_manifest_and_actual_state_triggers_are_disjoint_from_every_existing_region(self):
-        self.assertEqual(len(EUROPE), 12)
-        self.assertEqual(len({r['key'] for r in EUROPE}), 12)
-        self.assertEqual(len({r['tag'] for r in EUROPE}), 12)
-        self.assertEqual(len({r['event'] for r in EUROPE}), 12)
+        self.assertEqual(len(EUROPE), 13)
+        self.assertEqual(len({r['key'] for r in EUROPE}), 13)
+        self.assertEqual(len({r['tag'] for r in EUROPE}), 13)
+        self.assertEqual(len({r['event'] for r in EUROPE}), 13)
         states = [state for r in EUROPE for state in r['regions']]
         self.assertTrue(states)
         self.assertEqual(len(states), len(set(states)), 'A state is assigned to multiple new regions')
